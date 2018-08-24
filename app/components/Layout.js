@@ -8,15 +8,16 @@ import { ToastContainer, toast } from 'react-toastify';
 
 class Layout extends React.Component{
        render(){
-        
+
          return(
                <div className="">
-                  
-                        <div className="row">
+
+                        <div className="">
                       		  <Nav />
                         </div>
                         <div className="clearfix"></div>
-                        <div className="container jumbotron">
+                        {/* <div className="container jumbotron"> */}
+                        <div className="col-md-12">
 		                     {this.props.children}
 		                       </div>
                            <ToastContainer />
@@ -28,7 +29,7 @@ class Layout extends React.Component{
 }
 module.exports =Layout;
   // <div className="container">
-                  
+
   //                       <div className="row">
   //                           <Nav />
   //                       </div>

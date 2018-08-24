@@ -11,11 +11,12 @@ import {connect} from 'react-redux'
 
     return (
 
-          <header className="header">
+           <header className="header">
 
-                    <Navbar fixedTop={true} inverse collapseOnSelect>
+                    {/* <Navbar fixedTop={true} inverse collapseOnSelect>
                       <Navbar.Header>
-                        <Navbar.Brand>
+                        <Navbar.Brand> */}
+                      <div className="col-md-12">
                          <div className="div-header">
                            <div className="div-logo"><img className="logo" src="./images/0dd4ccc0cf89e354e9d24d21c771def030181d83.png" /> </div>
                            <div className="div-title">
@@ -23,9 +24,9 @@ import {connect} from 'react-redux'
                               <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>24/08/2018 - 17h:30</div>
                             </div>
                           </div>
-                        </Navbar.Brand>
+                        {/* </Navbar.Brand>
                         <Navbar.Toggle />
-                      </Navbar.Header>
+                      </Navbar.Header> */}
                       <Navbar.Collapse>
                         {/* <Nav>
                           <NavItem eventKey={1} href="#">
@@ -70,7 +71,7 @@ import {connect} from 'react-redux'
 
                         </Nav> */}
                       </Navbar.Collapse>
-                    </Navbar>;
+                    </div>;
 
           </header>
 

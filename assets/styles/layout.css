@@ -59,7 +59,7 @@ header .dropdown-menu>li>a{
 }
 .jumbotron{
   background-color: #00398f!important;
-
+ padding-top: 80px !important;
   ;
 }
 body{

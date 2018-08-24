@@ -32,3 +32,120 @@
     line-height: 40px;
     font-size: 28px;
 }
+.module{
+  background: #002864;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.header-chart{
+  font-family: MavenPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.header-chart .type-filter{
+  background: #00398f  ;
+  border-radius: 18px;
+  width: 70px;
+  height: 36px;
+  padding: 10px 18px 10px 18px;
+  margin-left: 4px;
+}
+.header-chart .type-filter .text{
+  line-height: 16px;
+  font-size: 14px;
+  color: white;
+  /* width: 34px;
+  height: 16px; */
+}
+.header-chart .active{
+  background: #0092f1;
+}
+
+.header-chart .option-filter{
+  width: 180px;
+  background: #00398f  ;
+  border-radius: 18px;
+  height: 36px;
+  padding: 10px 18px 10px 18px;
+  margin-left: 4px;
+  float: right
+}
+.left{
+  width: 480px;
+}
+.header-chart  .form-control {
+
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 16px;
+    color: white;
+    background-color: #00398f;
+    border: 1px solid #00398f;
+}
+.header-channel{
+padding-bottom: 10px;
+}
+.text-channel{
+  font-family: MavenPro;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.tiu-cc{
+  font-family: MavenPro;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  color: #0092f1;
+}
+.channel{
+  border-top: solid 1px   #00327d;
+  border-bottom: solid 1px   #00327d;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.channel i{
+  color: #0092f1;
+  font-size: 20px;
+  /* padding: 10px; */
+  line-height: 20px;
+  margin-right: 16px;
+  float: left;
+  width: 29px
+}
+.channel .name-channel{
+  font-family: MavenPro;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.channel .progress{
+  border-radius: 10px !important;
+}
+.channel .progress-bar-danger{
+  border-radius: 10px;
+  float: right !important;
+  background-image: linear-gradient(to right, #ff0000 3%, #ff0000) !important;
+}
+.channel .progress-bar-success{
+  border-radius: 10px;
+  background-color: #00ce7d;
+}
