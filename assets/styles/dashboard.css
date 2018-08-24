@@ -1,0 +1,34 @@
+.div-logo{
+  float: left;
+}
+.logo{
+  width: 70px;
+  height: 70px;
+  float: left;
+}
+.div-title{
+  float: left;
+  padding: 3px;
+}
+.div-header{
+  height: 70px;
+}
+.div-header .clock{
+ color: #42b6f6;
+ font-size: 18px;
+ padding-left: 5px;
+  padding-right: 5px;
+
+}
+.div-header .text-clock{
+  font-size: 14px;
+  color:white;
+  font-weight: bold;
+
+}
+
+.div-header .title-web{
+     height: 40px;
+    line-height: 40px;
+    font-size: 28px;
+}
