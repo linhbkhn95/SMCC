@@ -14,9 +14,9 @@ const data = [
 class SimpleLineChart extends React.Component{
 	render () {
   	return (
-    	<LineChart width={570} height={200} data={data}>
+    	<LineChart width={570} height={150} data={data}>
        <CartesianGrid strokeDasharray="3 3"/>
-       <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
+       <XAxis            fontFamily="Maven Pro" dataKey="name" padding={{left: 30, right: 30}}/>
        <YAxis/>
        <Tooltip/>
        <Legend />

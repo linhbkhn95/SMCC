@@ -123,6 +123,7 @@ padding-right: 0px;
   line-height: 1.23;
   letter-spacing: normal;
   color: #0092f1;
+  text-align: center;
 }
 .channel{
   border-top: solid 1px   #00327d;
@@ -158,13 +159,19 @@ padding-right: 0px;
   border-radius: 10px !important;
   background-color: #002864 !important;
   margin-bottom: 0px !important;
+  height: 17px;
 
+}
+.channel .progress-bar{
+  line-height: 17px;
 }
 .channel .progress-bar-danger{
   text-align: left;
   padding-left: 3px;
   /* margin-left: 2px; */
-  /* border-radius: 10px; */
+  border-radius: 10px ;
+
+  position: absolute;
   font-size: 11px;
   float: right !important;
   background-image: linear-gradient(to right, #ff0000 3%, #ff0000) !important;
@@ -176,6 +183,7 @@ padding-right: 0px;
     padding-right: 3px;
     /* margin-left: 2px; */
     font-size: 11px;
+    position: absolute;
 }
 .name-chirld-channel{
   font-family: Maven Pro;
@@ -390,11 +398,11 @@ padding-right: 0px;
 }
 .progress:before {
   content: '';
-  /* position: absolute; */
+  position: absolute;
   height: 4px;
   border-bottom: 3px #00398f solid;
+  width: 100%;
   height: 100%;
-  width: 45%;
   transform: translateY(-50%);
    }
 
@@ -479,8 +487,8 @@ padding-right: 0px;
 
 .custom-progess-success .progress{
   display: flex;
-  justify-content:flex-start !important;
-  direction: rtl;
+  justify-content: flex-start !important;
+  direction: ltr;
 }
 .parent-note .progress{
   background: rgb(0, 44, 110) !important;
@@ -523,3 +531,12 @@ padding-right: 0px;
    .pie-chart .note{
      padding: 10px;
    }
+.note-list .note-channel .custom-progess-danger{
+padding-right: 0px;
+}
+.channel .custom-progess-success{
+  padding-left: 0px;
+}
+.channel .note-list .custom-progess-success{
+  padding-left: 15px;
+}
