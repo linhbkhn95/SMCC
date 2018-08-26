@@ -23,7 +23,19 @@ import {connect} from 'react-redux'
                               <div className="title-web" href="#brand">TRUNG TÂM PHÂN TÍCH XU HƯỚNG MẠNG XÃ HỘI</div>
                               <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>24/08/2018 - 17h:30</div>
                             </div>
+
+                            <div className="pull-right div-filter">
+                              <div className="header-chart">
+                              <div className="type-filter active">
+                                      <div className="text" ><i className="fa fa-filter" aria-hidden="true"></i>Filter</div>
+                                    </div>
+                                    <div className="btn-view type-filter ">
+                                          <div className="text" ><i className="fa fa-eye" aria-hidden="true"></i>View</div>
+                                    </div>
+                              </div>
                           </div>
+                          </div>
+
                         {/* </Navbar.Brand>
                         <Navbar.Toggle />
                       </Navbar.Header> */}

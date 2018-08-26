@@ -6,14 +6,14 @@ class DashBoard extends React.Component{
   render(){
      return(
 
-        <div className="col-md-12 header-chart" >
-            <div className="col-md-3 type-filter active">
+        <div className="header-chart" >
+            <div className="type-filter active">
                <div className="text" > Ngày</div>
             </div>
-            <div className="col-md-3 type-filter">
+            <div className=" type-filter">
                  <div className="text" > Tuần</div>
             </div>
-            <div className="col-md-3 type-filter">
+            <div className=" type-filter">
                  <div className="text" > Tháng</div>
             </div>
             {/* <div className="option-filter"> */}

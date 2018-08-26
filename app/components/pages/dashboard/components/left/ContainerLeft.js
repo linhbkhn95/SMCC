@@ -7,7 +7,7 @@ class DashBoard extends React.Component{
   render(){
      return(
 
-        <div className=" col-md-12 " >
+        <div className="left" >
               <Chart />
               {/* <Chart /> */}
               <Channel />
