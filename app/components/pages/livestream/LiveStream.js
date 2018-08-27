@@ -6,7 +6,7 @@ class LiveStream extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showSidebar: true
+            showSidebar: false
         }
     }
     showSidebar = () => {

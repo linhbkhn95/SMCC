@@ -3,31 +3,31 @@
 var Nav = require('./Nav.js');
 var Menu = require('./Menu.js');
 var React = require('react');
-var {connect} = require('react-redux');
+var { connect } = require('react-redux');
 import { ToastContainer, toast } from 'react-toastify';
+import SideBarSearch from 'app/components/pages/livestream/containers/SideBarSearch'
+class Layout extends React.Component {
+  render() {
 
-class Layout extends React.Component{
-       render(){
+    return (
+      <div className="">
 
-         return(
-               <div className="">
+        <div className="">
+          <Nav />
+        </div>
+        <div className="clearfix"></div>
+        {/* <div className="container jumbotron"> */}
+        <div className="col-md-12">
+          {this.props.children}
+        </div>
+        <ToastContainer />
 
-                        <div className="">
-                      		  <Nav />
-                        </div>
-                        <div className="clearfix"></div>
-                        {/* <div className="container jumbotron"> */}
-                        <div className="col-md-12">
-		                     {this.props.children}
-		                       </div>
-                           <ToastContainer />
+      </div>
 
-               </div>
-
-         )
-     }
+    )
+  }
 }
-module.exports =Layout;
+module.exports = Layout;
   // <div className="container">
 
   //                       <div className="row">
