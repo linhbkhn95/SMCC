@@ -2,35 +2,38 @@
   float: left;
 }
 .logo{
-  width: 70px;
-  height: 70px;
+  width: 63px;
+  /* height: 70px; */
   float: left;
+  padding: 5px;
 }
 .div-title{
   float: left;
-  padding: 3px;
+  padding: 5px;
 }
 .div-header{
   height: 70px;
 }
 .div-header .clock{
- color: #42b6f6;
- font-size: 18px;
- padding-left: 5px;
+  color: #42b6f6;
+  font-size: 16px;
+  /* padding-left: 5px; */
   padding-right: 5px;
+  font-weight: 100;
 
 }
 .div-header .text-clock{
-  font-size: 14px;
-  color:white;
+  font-size: 11px;
+  color: white;
+  display: flex;
   font-weight: bold;
-
 }
 
+
 .div-header .title-web{
-     height: 40px;
-    line-height: 40px;
-    font-size: 28px;
+     /* height: 40px; */
+     line-height: 36px;
+     font-size: 23px;
 }
 .module{
   background: #002864;
@@ -39,7 +42,7 @@
   margin-bottom: 10px;
 }
 .header-chart{
-  font-family: MavenPro;
+  font-family: Maven Pro;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -47,53 +50,59 @@
   line-height: 1.14;
   letter-spacing: normal;
   color: #ffffff;
+  padding-left: 3px;
+  padding-right: 0px;
 }
 .header-chart .type-filter{
-  background: #00398f  ;
+  background: #00398f;
   border-radius: 18px;
-  width: 70px;
-  height: 36px;
-  padding: 10px 18px 10px 18px;
+  float: left;
+  font-size: 12px;
+  padding: 10px 13px 10px 12px;
   margin-left: 4px;
 }
 .header-chart .type-filter .text{
-  line-height: 16px;
-  font-size: 14px;
+  line-height: 14px;
+  font-size: 12px;
   color: white;
-  /* width: 34px;
-  height: 16px; */
+  font-family: Maven Pro;
+
 }
 .header-chart .active{
   background: #0092f1;
 }
 
 .header-chart .option-filter{
-  width: 180px;
-  background: #00398f  ;
+  background: #00398f;
   border-radius: 18px;
-  height: 36px;
+  height: 32px;
   padding: 10px 18px 10px 18px;
   margin-left: 4px;
-  float: right
+  float: right;
 }
 .left{
   width: 480px;
 }
 .header-chart  .form-control {
+  width: auto;
 
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 16px;
-    color: white;
-    background-color: #00398f;
-    border: 1px solid #00398f;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 14px;
+  color: white;
+  font-family: Maven Pro;
+
+  background-color: #00398f;
+  border: 1px solid #00398f;
 }
 .header-channel{
 padding-bottom: 10px;
+padding-left: 0px;
+padding-right: 0px;
 }
 .text-channel{
-  font-family: MavenPro;
-  font-size: 16px;
+  font-family: Maven Pro,sans-serif;
+  font-size: 14px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -101,34 +110,43 @@ padding-bottom: 10px;
   letter-spacing: normal;
   color: #ffffff;
 }
+.name-channel .name-note{
+    line-height: 21px;
+    font-size: 12px;
+}
 .tiu-cc{
-  font-family: MavenPro;
-  font-size: 13px;
+  font-family: Maven Pro;
+  font-size: 12px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.23;
   letter-spacing: normal;
   color: #0092f1;
+  text-align: center;
 }
 .channel{
   border-top: solid 1px   #00327d;
   border-bottom: solid 1px   #00327d;
 
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .channel i{
   color: #0092f1;
-  font-size: 20px;
+  font-size: 15px;
   /* padding: 10px; */
   line-height: 20px;
-  margin-right: 16px;
+  margin-right: 4px;
   float: left;
-  width: 29px
+  width: 22px;
 }
 .channel .name-channel{
-  font-family: MavenPro;
+  font-family: Maven Pro,sans-serif ;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
@@ -139,13 +157,386 @@ padding-bottom: 10px;
 }
 .channel .progress{
   border-radius: 10px !important;
+  background-color: #002864 !important;
+  margin-bottom: 0px !important;
+  height: 17px;
+
+}
+.channel .progress-bar{
+  line-height: 17px;
 }
 .channel .progress-bar-danger{
-  border-radius: 10px;
+  text-align: left;
+  padding-left: 3px;
+  /* margin-left: 2px; */
+  border-radius: 10px ;
+
+  position: absolute;
+  font-size: 11px;
   float: right !important;
   background-image: linear-gradient(to right, #ff0000 3%, #ff0000) !important;
 }
 .channel .progress-bar-success{
   border-radius: 10px;
   background-color: #00ce7d;
+  text-align: right;
+    padding-right: 3px;
+    /* margin-left: 2px; */
+    font-size: 11px;
+    position: absolute;
+}
+.name-chirld-channel{
+  font-family: Maven Pro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #9eccf8;
+  padding-right: 0px;
+}
+.name-chirld-channel .name-note{
+  font-size: 12px;
+  line-height: 21px;
+}
+.note-channel{
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.note-channel .progress{
+  height: 10px;
+}
+.note-channel .progress .progress-bar {
+  font-size: 9px;
+    line-height: 11px;
+}
+ .note-list{
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+
+
+
+
+
+/*css phía bên phải màn hình dashboard */
+
+.dashboard .right .comment{
+
+}
+.dashboard .right .comment .header-filter{
+
+}
+.dashboard .right .comment .name-city{
+  font-family: Maven Pro,sans-serif;
+  width: 70px;
+  height: 36px;
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #ffffff;
+  align-items: center;
+}
+
+.filter-comment .type-filter{
+  transform: rotate(1deg);
+  font-family: Maven Pro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  float: left;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+  background: #002864;
+}
+.header-chart .filter-comment .active {
+  background: #0092f1 !important;
+}
+.list-status .status{
+  border-radius: 4px;
+  background: white;
+  padding: 6px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 0px;
+}
+.list-status .status .user-info .img-user{
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  float: left;
+}
+.info .name{
+  font-family: Maven Pro;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #000000;
+}
+.info .title-facbook{
+  font-family: Maven Pro;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  color: #999999;
+  margin-left: 2px;
+}
+.status .info{
+  float: left;
+  padding: 2px 4px 2px;
+
+}
+.status .content-status{
+  clear: both;
+  padding: 2px;
+
+  font-family: Maven Pro;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  color: #000000;
+}
+.status .info-status{
+  color: #999999;
+  font-size: 13px;
+  padding-bottom: 7px;
+
+}
+.status .info-status a{
+  font-family: Maven Pro;
+  font-size: 13px;
+  font-weight: normal;
+  cursor: pointer;
+
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  color: #0092f1;
+}
+.status .like-comment{
+  border-radius: 4px;
+  background-color: #e8e8e8;
+  margin-right: -6px;
+  margin-left: -6px;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+}
+.status .like-comment .action{
+  font-family: Maven Pro;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  color: #999999;
+  float: left;
+  width: 33%;
+
+}
+.status .like-comment .action i{
+   color: #999999;
+   margin-right: 2px;
+
+}
+.list-status{
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+.left{
+  width: 100%;
+}
+
+.name-chart{
+  font-family: Maven Pro;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-left: 3px;
+}
+.chart-develop{
+  font-family: Maven Pro;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    color: #0092f1;
+    padding-top: 10px;
+}
+.progress:before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  border-bottom: 3px #00398f solid;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+   }
+
+
+
+
+   /* css phần center dashboard */
+
+   .header-filter-center {
+
+   }
+
+   .header-filter-center .active{
+
+    background-color: #002864 !important;
+
+   }
+   .header-filter-center .type-filter{
+     background: #00449f;
+   }
+.header-filter-center .active{
+  font-family: Maven Pro;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+
+}
+.header-filter-center   i{
+  margin-right: 3px;
+}
+.header-filter-center .active i{
+  color:#0092f1 !important;
+
+}
+.header-filter-center  i{
+  color:#0092f1 !important;
+
+}
+.center .header-chart .type-filter .text{
+  font-family: Maven Pro;
+  font-size: 12px;
+
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.type-filter{
+  cursor: pointer;
+
+}
+.type-filter:hover{
+  /* font-weight: bold; */
+   background: #0092f1;
+}
+.header .type-filter:hover{
+    background-color: rgb(23, 145, 97) !important;
+
+}
+.btn-view{
+  background-color: rgb(0, 206, 125) !important;
+}
+
+.div-progress:before { content: '';
+  position: absolute;
+  border-bottom: 2px green solid;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-50%);
+   }
+.custom-progess-danger .progress{
+     display: flex ;
+    /* right: 0; */
+    justify-content: flex-end;
+}
+
+.custom-progess-success .progress{
+  display: flex;
+  justify-content: flex-start !important;
+  direction: ltr;
+}
+.parent-note .progress{
+  background: rgb(0, 44, 110) !important;
+}
+/* .progress-bar:before { content: '';
+  position: absolute;
+  border-bottom: 2px green solid;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-50%);
+   } */
+.pie-chart{
+  float: left;
+  padding-top: 20px;
+}
+   .pie-chart .note-chart{
+       clear: both;
+       display: flex;
+       align-items: center;
+       padding: 5px;
+   }
+   .pie-chart .note-chart .color-title{
+     margin-right: 6px;
+     float: left;
+     width: 20px;
+     height: 10px;
+     border-radius: 10px;
+      }
+   .pie-chart .note-chart .name-title{
+    font-family: Maven Pro;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #ffffff;
+   }
+
+   .pie-chart .note{
+     padding: 10px;
+   }
+.note-list .note-channel .custom-progess-danger{
+padding-right: 0px;
+}
+.channel .custom-progess-success{
+  padding-left: 0px;
+}
+.channel .note-list .custom-progess-success{
+  padding-left: 15px;
 }

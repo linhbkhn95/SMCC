@@ -1,0 +1,5 @@
+@media (min-width: 992px){
+.dashboard .right .list-status .col-md-4 {
+    width: 32% !important;
+    }
+}

@@ -63,8 +63,8 @@ header .dropdown-menu>li>a{
   ;
 }
 body{
-  background-color: #00398f!important;
-
+  /* background-color: #00398f!important; */
+  background-image: linear-gradient(123deg, #00398f, #006bd7);
 
 }
 .navbar-inverse{
@@ -107,7 +107,7 @@ body{
     margin-bottom: 40px;
 }
 .fa{
-    color: #19ab27
+   margin-right: 3px;
 }
 .post header h2{
     font-weight: bold !important;
@@ -117,9 +117,9 @@ body{
     color:#4A4A50
 }
 .post .img-user{
-    width: 36px;
+    /* width: 36px;
     border-radius: 50%;
-    float: left;
+    float: left; */
 }
 .post .user-avatar{
     float: left;
@@ -129,9 +129,9 @@ body{
     width: 46px;
 }
 .img-user{
-    width: 26px;
+    /* width: 26px;
     border-radius: 50%;
-    float: left;
+    float: left; */
 }
 .user-avatar{
     float: left;
@@ -260,4 +260,15 @@ body, input, textarea {
 }
 .content-question .search input[type=text]:focus {
     width: 100%;
+}
+body{
+  font-family: Maven Pro, sans-serif;
+
+}
+
+.header .div-filter{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-right: 15px;
 }

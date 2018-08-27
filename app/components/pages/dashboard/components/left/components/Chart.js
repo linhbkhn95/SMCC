@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import ChartCustom from './PieChart'
 import HeaderFilterChart from './HeaderFilterChart'
 var Recharts = require( 'recharts')
 const { PieChart, Pie, Sector, Cell } = Recharts;
@@ -25,7 +26,7 @@ class Chart extends React.Component{
   	return (
       <div className="row module" >
        <HeaderFilterChart />
-    	<PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
+    	{/* <PieChart width={400} height={200} onMouseEnter={this.onPieEnter}>
         <Pie
           data={data}
           cx={300}
@@ -39,7 +40,9 @@ class Chart extends React.Component{
           	data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
           }
         </Pie>
-      </PieChart>
+      </PieChart> */}
+         <ChartCustom />
+
       </div>
     );
   }

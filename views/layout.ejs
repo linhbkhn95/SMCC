@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%=typeof title == 'undefined' ? 'New Sails App' : title%></title>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <title>
+    <%=typeof title == 'undefined' ? 'New Sails App' : title%>
+  </title>
+
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-    <!--
+  <!--
         Stylesheets and Preprocessors
         ==============================
 
@@ -28,62 +31,64 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/animate.css">
-    <link rel="stylesheet" href="/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/common/common-style.css">
-    <link rel="stylesheet" href="/styles/dashboard.css">
-    <link rel="stylesheet" href="/styles/font-awesome.min.css">
-    <link rel="stylesheet" href="/styles/importer.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/livestream/content.css">
-    <link rel="stylesheet" href="/styles/livestream/livestream.css">
-    <link rel="stylesheet" href="/styles/livestream/sidebar.css">
-    <link rel="stylesheet" href="/styles/livestream/top-city.css">
-    <link rel="stylesheet" href="/styles/livestream/top-livestream.css">
-    <link rel="stylesheet" href="/styles/react-select.css">
-    <link rel="stylesheet" href="/styles/react-table.css">
-    <link rel="stylesheet" href="/styles/responsive.css">
-    <link rel="stylesheet" href="/styles/slick-theme.min.css">
-    <link rel="stylesheet" href="/styles/slick.min.css">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/userpage.css">
-    <!--STYLES END-->
-  </head>
-   <script>
-    //    var recognition = new webkitSpeechRecognition();
-    //   recognition.continuous = true;
+  <!--STYLES-->
+  <link rel="stylesheet" href="/styles/animate.css">
+  <link rel="stylesheet" href="/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/common/common-style.css">
+  <link rel="stylesheet" href="/styles/custombootstrap.css">
+  <link rel="stylesheet" href="/styles/dashboard.css">
+  <link rel="stylesheet" href="/styles/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/importer.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/livestream/content.css">
+  <link rel="stylesheet" href="/styles/livestream/livestream.css">
+  <link rel="stylesheet" href="/styles/livestream/sidebar.css">
+  <link rel="stylesheet" href="/styles/livestream/top-city.css">
+  <link rel="stylesheet" href="/styles/livestream/top-livestream.css">
+  <link rel="stylesheet" href="/styles/react-select.css">
+  <link rel="stylesheet" href="/styles/react-table.css">
+  <link rel="stylesheet" href="/styles/responsive.css">
+  <link rel="stylesheet" href="/styles/slick-theme.min.css">
+  <link rel="stylesheet" href="/styles/slick.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/userpage.css">
+  <!--STYLES END-->
+</head>
+<script>
+  //    var recognition = new webkitSpeechRecognition();
+  //   recognition.continuous = true;
 
-    //  var output = document.getElementById('output');
-    //   recognition.onresult = function(event) {
-    //     console.log(event);
-    //   output.textContent = event.results[0][0].transcript;
-      function like(){
-        console.log('like');
+  //  var output = document.getElementById('output');
+  //   recognition.onresult = function(event) {
+  //     console.log(event);
+  //   output.textContent = event.results[0][0].transcript;
+  function like() {
+    console.log('like');
 
-        var recognition = new webkitSpeechRecognition();
-      // recognition.continuous = true;
-      // recognition.lang= "vie";
+    var recognition = new webkitSpeechRecognition();
+    // recognition.continuous = true;
+    // recognition.lang= "vie";
 
-      //  console.log(recognition);
-        recognition.onresult = function(e) {
-          console.log(e);
-        // var rs = event.results[event.results.length-1]
-          // if(event.results.length>0){
-          //    var rs = event.results[event.results.length-1];
-          //    if(rs.isFinal){
-          //      console.log(rs[0].transcript);
-          //    }
-          // }
-        //  output.textContent = event.results[0][0].transcript;
-        }
-        recognition.start();
+    //  console.log(recognition);
+    recognition.onresult = function (e) {
+      console.log(e);
+      // var rs = event.results[event.results.length-1]
+      // if(event.results.length>0){
+      //    var rs = event.results[event.results.length-1];
+      //    if(rs.isFinal){
+      //      console.log(rs[0].transcript);
+      //    }
+      // }
+      //  output.textContent = event.results[0][0].transcript;
     }
+    recognition.start();
+  }
 
 
-    </script>
-  <body >
-    <%- body %>
+</script>
+
+<body>
+  <%- body %>
 
     <div id="ouput"></div>
     <div id="layout"></div>
@@ -109,7 +114,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
 
@@ -144,5 +149,6 @@
     <script src="/js/lib/jquery.min.js"></script>
     <script src="/js/notifipopup.js"></script>
     <!--SCRIPTS END-->
-  </body>
+</body>
+
 </html>
