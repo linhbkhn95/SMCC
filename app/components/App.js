@@ -57,20 +57,18 @@ class App extends React.Component {
           <Router>
             <Layout>
               {/* <Link to="/user/login">Đăng nhập</Link>  */}
-              <div>
-                <Switch>
-                  <Route exact path="/" component={UserManager} />
-                  <Route path="/wall" component={Home} />
-                  <Route path="/userpage" component={UserPage} />
-                  <Route path="/dashboard" component={DashBoard} />
-                  <Route path='/livestream' component={LiveStream} />
-                  {/* <Route  exact   path="/wall" component={Home}/> */}
-                  <Route render={function () {
-                    return <p> not found</p>
-                  }
-                  } />
-                </Switch>
-              </div>
+              <Switch>
+                <Route exact path="/" component={UserManager} />
+                <Route path="/wall" component={Home} />
+                <Route path="/userpage" component={UserPage} />
+                <Route path="/dashboard" component={DashBoard} />
+                <Route path='/livestream' component={LiveStream} />
+                {/* <Route  exact   path="/wall" component={Home}/> */}
+                <Route render={function () {
+                  return <p> not found</p>
+                }
+                } />
+              </Switch>
             </Layout>
           </Router>
         </Provider>

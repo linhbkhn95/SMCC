@@ -5,18 +5,6 @@ import { NavDropdown, Navbar, NavItem, MenuItem, Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 class NavContent extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showNavBar: false
-    }
-  }
-  onClick = () => {
-    this.setState({
-      showNavBar: !this.state.showNavBar
-    })
-    console.log('ab')
-  }
   render() {
     return (
       <header className="header">
@@ -25,7 +13,7 @@ class NavContent extends React.Component {
                         <Navbar.Brand> */}
         <div className="col-md-12">
           <div className="div-header">
-            <div className="div-logo" onClick={this.onClick}>
+            <div className="div-logo" onClick={this.props.onClick}>
               <img className="logo" src="./images/0dd4ccc0cf89e354e9d24d21c771def030181d83.png" />
             </div>
             <div className="div-title">

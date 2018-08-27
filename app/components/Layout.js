@@ -5,25 +5,35 @@ var Menu = require('./Menu.js');
 var React = require('react');
 var { connect } = require('react-redux');
 import { ToastContainer, toast } from 'react-toastify';
-import SideBarSearch from 'app/components/pages/livestream/containers/SideBarSearch'
+import SideBar from './SideBar'
 class Layout extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: false
+    }
+  }
+  onClick = () => {
+    this.setState({
+      visible: !this.state.visible
+    })
+    console.log('ab')
+  }
   render() {
-
+    const paddingLeft = this.state.visible ? '500px' : '0px';
     return (
       <div className="">
-
-        <div className="">
-          <Nav />
+        <SideBar visible={this.state.visible} />
+        <div className="" style={{ paddingLeft }}>
+          <Nav onClick={this.onClick} />
+          <div className="clearfix"></div>
+          {/* <div className="container jumbotron"> */}
+          <div className="col-md-12" onClick={() => this.setState({ visible: false })}>
+            {this.props.children}
+          </div>
+          <ToastContainer />
         </div>
-        <div className="clearfix"></div>
-        {/* <div className="container jumbotron"> */}
-        <div className="col-md-12">
-          {this.props.children}
-        </div>
-        <ToastContainer />
-
       </div>
-
     )
   }
 }

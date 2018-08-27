@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import NotificationComponent from '../components/NotificationComponent'
+import NotificationComponent from './pages/livestream/components/NotificationComponent'
 
 
-class SideBarNotification extends Component {
+class SideBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,7 +22,9 @@ class SideBarNotification extends Component {
         return (
             <nav id='sidebar' style={{ marginLeft }}>
                 <div className="bar-header">
-                    <i className="fa fa-bars" aria-hidden="true" />
+                    <div className="i-bars">
+                        <i className="fa fa-bars" aria-hidden="true" />
+                    </div>
                     <div className="name-header">BẢN ĐỒ LIVESTREAM TRỰC TUYẾN</div>
                 </div>
                 <div className="search">
@@ -61,4 +63,4 @@ class SideBarNotification extends Component {
         )
     }
 }
-module.exports = SideBarNotification
+module.exports = SideBar
