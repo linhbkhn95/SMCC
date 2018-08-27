@@ -1,0 +1,53 @@
+.notification {
+    display: flex;
+    background-color: #D4E7FC;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+}
+.notification .content{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    width: 100%;
+    justify-content: space-between;
+    height: 80px;
+}
+.notification .avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+}
+.notification .content .user-name {
+    color: #000;
+    font-weight: bold;
+    line-height: 1.14;
+    font-size: 14px;
+    display: inline;
+}
+.notification .content .status-livestream{
+    display: inline;
+    color: #999;
+    padding-left: 5px;
+}
+.reaction {
+    display: flex;
+    bottom: 10px;
+    width: 100%;
+    justify-content: space-between;
+    color: #999;
+}
+.reaction .info {
+    display: flex;
+}
+#content .status-rating{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 30px;
+}
+.notification .content .caption .user-content{
+    color: #000;
+}
