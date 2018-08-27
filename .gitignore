@@ -118,3 +118,4 @@ nbproject
 .node_history
 assets/js/bundle.js
 package-lock.json
+views/layout.ejs
