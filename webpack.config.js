@@ -11,7 +11,7 @@ module.exports={
   ],
   output:{
      path:__dirname,
-     filename:'./assets/js/bundel.js'
+     filename:'./assets/js/bundle.js'
   },
   // externals: {
   //   jquery: 'jQuery'
