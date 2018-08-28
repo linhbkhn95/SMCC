@@ -11,7 +11,7 @@ class NotificationComponent extends Component {
         return (
             <div className="notification">
                 <div className="avatar">
-                    <img src="./avatar/avatar.jpg" />
+                    <img src={"./images/" + this.props.avatar} />
                 </div>
                 <div className="content">
                     <div className="caption">
