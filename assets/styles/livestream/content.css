@@ -2,3 +2,8 @@
     min-height: 100vh;
     transition: all 0.5s;
 }
+#content .livestream{
+    position: absolute;
+    left: 600px;
+    top: 50px;
+}

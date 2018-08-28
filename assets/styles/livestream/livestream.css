@@ -1,8 +1,8 @@
 .notification {
     display: flex;
-    background-color: #D4E7FC;
+    background-color: #ffffff;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
 }
 .notification .content{
@@ -11,11 +11,11 @@
     padding-left: 10px;
     width: 100%;
     justify-content: space-between;
-    height: 80px;
+    height: 70px;
 }
 .notification .avatar img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 4px;
 }
 .notification .content .user-name {
@@ -46,8 +46,31 @@
     position: absolute;
     bottom: 27px;
     right: 0;
-    padding-right: 30px;
+    padding: 0px 30px 0px 0px;
+
 }
 .notification .content .caption .user-content{
     color: #000;
+}
+#content .live{
+    border-radius: 100px;
+    background-color: rgba(0, 206, 125, 0.2);
+    border: solid 1px #00ce7d;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 24px;
+    padding: 5px;
+}
+#content .live p{
+    color:#00ce7d;
+    display: inline;
+}
+#content .live i{
+    color:#00ce7d;
+    font-size: 10px;
+    display: inline;
 }
