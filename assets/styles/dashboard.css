@@ -367,6 +367,8 @@ padding-right: 0px;
   padding-top: 10px;
   padding-left: 0px;
   padding-right: 0px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 
@@ -539,4 +541,9 @@ padding-right: 0px;
 }
 .channel .note-list .custom-progess-success{
   padding-left: 15px;
+}
+.right .module .chart-gauge{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
