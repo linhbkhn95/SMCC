@@ -1,27 +1,98 @@
  import React from 'react';
 import {NavLink} from 'react-router-dom';
 import ListStatus from './ListStatus'
+import Chart from 'react-google-charts'
+
 import ReactSpeedometer from "react-d3-speedometer";
 class ChartSatify extends React.Component{
 	render () {
   	return (
       <div className="comment col-md-12 module" >
          <div className="chart-gauge">
-            <ReactSpeedometer
+            {/* <ReactSpeedometer
             value={55}
             maxValue={100}
             needleColor="#002864"
             startColor="#ff0000"
             segments={12}
 
-            height={200}
+            height={150}
             endColor="#4e7ea9"
             textColor="white"
             needleTransitionDuration={100}
             ringWidth={50}
             needleTransition="easeElastic"
             currentValueText="Chỉ số hài lòng: ${value}"
-            />
+            /> */}
+<Chart
+// width={600}
+height={200}
+chartType="Gauge"
+className="title"
+loader={<div>Loading Chart</div>}
+data={[
+  ['Label', 'Value'],
+  ['Chỉ số hài lòng', 65],
+
+]}
+options={
+
+  {
+    legendTextStyle: { color: '#FFF' },
+    titleTextStyle: { color: '#FFF',
+     fontFamily: 'Maven Pro',
+    fontSize: '10',
+    fontName:'Maven Pro',
+    float:'left',
+    fontWeight:"normal",
+
+   },
+   hAxis: {
+    format: 'decimal',
+    textStyle: {
+      color: "#0092f1",
+      fontFamily: 'Maven Pro',
+      fontName:'Maven Pro',
+      fontSize: '10'
+    },
+    gridlines: {
+      color: "#0092f1"
+    },
+     baselineColor: '#002864'
+  },
+  vAxis: {
+      textStyle: {
+    color: "#FFFFFF",
+    fontFamily: 'Maven Pro',
+    fontName:'Maven Pro',
+    fontSize: '10'
+      },
+    gridlines: {
+      color: "#fffff"
+    },
+    baselineColor: '#fffff',
+
+  } ,
+
+   bar: { groupWidth: '65%' },
+   legend: { position: 'none' },
+    backgroundColor: '#002864',
+  greenFrom: 75,
+  greenTo: 100,
+  blueFrom: 25,
+  blueTo:50,
+  yellowFrom:50,
+  yellowTo: 75,
+  redFrom: 0,
+  redTo: 25,
+  minorTicks: 2,
+  blueColor:"#ff6900",
+  greenColor: '#0092f1',
+  yellowColor: '#ffbb00',
+  redColor: '#ff0000',
+}}
+rootProps={{ 'data-testid': '1' }}
+/>
         </div>
        </div>
     );

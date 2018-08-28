@@ -12,10 +12,10 @@ class DashBoard extends React.Component{
              <div className="col-md-3 ">
                 <ContainerLeft />
              </div>
-             <div className="col-md-4">
+             <div className="col-md-5">
                 <Center />
              </div>
-             <div className="col-md-5">
+             <div className="col-md-4">
                 <ContainerRight />
              </div>
         </div>

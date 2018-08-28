@@ -24,8 +24,7 @@ module.exports = class Charts extends React.Component{
          <div className="chart-gauge">
          <Chart
          width={"100%"}
-         height={'300px'}
-         background={'red'}
+         height={'180px'}
          chartType="BarChart"
          loader={<div>Loading Chart</div>}
          data={[
@@ -47,25 +46,34 @@ module.exports = class Charts extends React.Component{
              },
            ],
            ['ASIAD 2018', 41, '#ff0000', null],
-           ['Tuyển sinh 2018', 64, '#ff6900 ', null],
+           ['TS 2018', 64, '#ff6900 ', null],
            ['Hà Giang', 32,'#ffbb00', null],
            ['Thảo luận',41, '#0092f1', null],
            ['Ế',98, '#00ce7d', null],
 
          ]}
          options={{
-           title: 'XU HƯỚNG THẢO LUẬN CHÍNH',
-           height: 300,
+           title: 'PHÂN TÍCH NHÂN ĐỊNH VỀ XU HƯỚNG THẢO LUẬN',
+           height: 180,
 
           //  colors: ['#b0120a', '#ffab91'],
            backgroundColor: '#002864',
            legendTextStyle: { color: '#FFF' },
-           titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro',
-           fontSize: '16', },
+           titleTextStyle: { color: '#FFF',
+            fontFamily: 'Maven Pro',
+           fontSize: '13',
+           fontName:'Maven Pro',
+           float:'left',
+           fontWeight:"normal",
+
+          },
            hAxis: {
             format: 'decimal',
             textStyle: {
-              color: "#0092f1"
+              color: "#0092f1",
+              fontFamily: 'Maven Pro',
+              fontName:'Maven Pro',
+              fontSize: '10'
             },
             gridlines: {
               color: "#0092f1"
@@ -77,15 +85,16 @@ module.exports = class Charts extends React.Component{
             color: "#FFFFFF",
             fontFamily: 'Maven Pro',
             fontName:'Maven Pro',
-            fontSize: '12',
+            fontSize: '10'
+              },
             gridlines: {
               color: "#fffff"
             },
             baselineColor: '#fffff',
 
-          } },
+          } ,
 
-           bar: { groupWidth: '60%' },
+           bar: { groupWidth: '65%' },
            legend: { position: 'none' },
          }}
          style={{
