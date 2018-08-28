@@ -7,7 +7,6 @@
 }
 .list-top-city .title{
     height: 20px;
-    font-family: MavenPro;
     font-size: 16px;
     font-weight: bold;
     font-style: normal;
@@ -24,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
-    font-family: MavenPro;
     font-size: 14px;
     font-weight: normal;
     font-style: normal;

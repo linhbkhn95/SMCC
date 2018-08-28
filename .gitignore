@@ -116,4 +116,6 @@ npm-debug.log
 nbproject
 .idea
 .node_history
-assets/js/bundel.js
+assets/js/bundle.js
+package-lock.json
+views/layout.ejs
