@@ -1,0 +1,95 @@
+.livestream{
+    padding: 0px;
+}
+.content-livestream{
+    font-size: 14px;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+.header-post .avatar img{
+    width: 40px;
+    height: 40px;
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+    /* center the image vertically and horizontally */
+    background-position: top center;
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+}
+.content-livestream .header-post{
+    display: flex;
+    padding: 10px 5px;
+}
+.content-livestream .caption{
+    padding: 10px;
+}
+.content-livestream .panel-reaction{
+    padding: 10px 0px;
+}
+.header-post .user-post{
+    padding-left: 10px;
+    width: 100%;
+}
+.header-post .user-post .top{
+    display: flex;
+    justify-content: space-between;
+}
+.header-post .user-post .top .more{
+    padding-left: 10px
+}
+.header-post .user-post .time-post{
+    display: flex;
+}
+.video-livestream img{
+    width: 100%
+}
+.panel-reaction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.panel-reaction .reaction-3-icon{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    align-items: center;
+}
+.panel-reaction .info-post{
+    display: flex;
+    justify-content: space-between;
+}
+.info-post .views, .info-post .shares, .info-post .comments{
+    padding-right: 8px;
+}
+.time-post .who-see{
+    padding-left: 10px;
+}
+.reaction-3-icon .count{
+    padding-left: 2px;
+}
+.user .strong-username{
+    display: inline;
+    color: #365899;
+    font-weight: bold;
+    cursor: pointer;
+}
+.user-post .more{
+    font-size: 16px;
+}
+.reaction-3-icon .icon{
+    background-image: url('../../images/MP58kMKr2FX.png');
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    background-size: 19px 1258px;
+}
+.reaction-3-icon .like{
+    background-position: 0 -761px;
+}
+.reaction-3-icon .heart{
+    background-position: 0 -710px;
+}
+.reaction-3-icon .smile{
+    background-position: 0 -676px;
+}

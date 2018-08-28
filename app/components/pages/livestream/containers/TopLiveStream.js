@@ -3,13 +3,13 @@ import React, { Component } from 'react'
 class TopLiveStream extends Component {
 
     render() {
-        const data = [1, 2, 3, 4, 5]
+        const data = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg']
         return (
             <div className="list-livestream">
                 <div className="title">TOP LIVESTREAM</div>
                 <div className="content">
                     {
-                        data.map(e => <TopLiveStreamItem city={e} />)
+                        data.map(e => <TopLiveStreamItem avatar={e} />)
                     }
                 </div>
 
@@ -21,7 +21,7 @@ const TopLiveStreamItem = (props) => {
     return (
         <div className="livestream-views">
             <div className="avatar">
-                <img src="./avatar/avatar.jpg" style={{ width: 30, height: 30 }} />
+                <img src={"./images/" + props.avatar} style={{ width: 30, height: 30 }} />
             </div>
             <div className="info">
                 <div className="name">Lee flores</div>
