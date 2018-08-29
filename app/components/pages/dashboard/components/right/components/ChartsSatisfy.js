@@ -35,9 +35,13 @@ data={[
   ['Chỉ số hài lòng', 65],
 
 ]}
+
 options={
 
   {
+    title: {
+      text: 'Speedometer'
+  },
     legendTextStyle: { color: '#FFF' },
     titleTextStyle: { color: '#FFF',
      fontFamily: 'Maven Pro',

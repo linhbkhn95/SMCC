@@ -272,3 +272,27 @@ body{
   align-items: center;
   padding-right: 15px;
 }
+body ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+body ::-webkit-scrollbar-track {
+  background: #002864;
+}
+
+/* Handle */
+body ::-webkit-scrollbar-thumb {
+  background: #4e7ea9;
+  border-radius: 3px;
+  ;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #4e7ea9;
+  border-radius: 3px;
+
+
+
+}

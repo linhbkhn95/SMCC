@@ -8,11 +8,8 @@ import DashBoard from './pages/dashboard/DashBoard'
 var store = require('app/store.js');
 // var Test =require('app/components/Test.js');
 var Layout = require('app/components/Layout.js');
-var Home = require('app/components/pages/wall/Wall.js');
 var Login = require('app/components/pages/login/Login.js');
 // var ShopCart = require('app/components/pages/shopcart/ShopCart.js');
-import UserPage from 'app/components/pages/userpage/UserPage.js';
-var UserManager = require('app/components/pages/usershopmanager/UserManager.js');
 var LiveStream = require('app/components/pages/livestream/LiveStream.js');
 
 // import OrderStep from  'app/components/pages/shopcart/OrderStep.js';
@@ -58,9 +55,7 @@ class App extends React.Component {
             <Layout>
               {/* <Link to="/user/login">Đăng nhập</Link>  */}
               <Switch>
-                <Route exact path="/" component={UserManager} />
-                <Route path="/wall" component={Home} />
-                <Route path="/userpage" component={UserPage} />
+                <Route exact path="/" component={DashBoard} />
                 <Route path="/dashboard" component={DashBoard} />
                 <Route path='/livestream' component={LiveStream} />
                 {/* <Route  exact   path="/wall" component={Home}/> */}
