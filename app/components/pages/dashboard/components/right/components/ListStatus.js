@@ -121,22 +121,23 @@ class ListStatus extends React.Component{
   }
 
   componentDidMount(){
-    let self  = this
-     $(".container-list").scroll(function () {
+    let that  = this
+     $(".list-status").scroll(function () {
+       console.log('vao')
       var $this = $(this);
 
           // if( ( ($(document).height() - $(window).height())-$(window).scrollTop())<50&&!self.state.fulldata) {
-            if(($("#list-status").height() - $this.scrollTop()) -$this.height()<50&&!self.state.fulldata) {
+            if(($("#list-status").height() - $this.scrollTop()) -$this.height()<50&&!that.state.fulldata) {
 
-             console.log('load')
-              self.loadMoreItems();
+             console.log('load',$("#list-status").height(),$this.scrollTop(),$this.height())
+              that.loadMoreItems();
           }
       });
 
         console.log('  componentDidMount(){')
-      io.socket.post('/post/getListPost',{page:this.state.page},function(res,jwres){
+      io.socket.post('/post/getListPost',{page:that.state.page},function(res,jwres){
           if(res.EC==0){
-              self.setState({listStatus:res.DT,page:self.state.page+1,loadingState:false})
+              that.setState({listStatus:res.DT,page:that.state.page+1,loadingState:false})
 
           }
       })
@@ -169,9 +170,9 @@ class ListStatus extends React.Component{
 	render () {
     let {listStatus} = this.state
     let ListStatus = listStatus.length>0?
-    listStatus.map((status)=>{
+    listStatus.map((status,index)=>{
       return(
-       <div className="col-md-4 status ">
+       <div key={index} className="col-md-4 status ">
        <div className="user-info">
           <img className="img-user" src={status.user.url_avatar} />
            <div className="info">

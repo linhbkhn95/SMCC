@@ -1,13 +1,13 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import {green100, green500, green700} from 'material-ui/styles/colors';
+// import {green100, green500, green700} from 'material-ui/styles/colors';
 
-if (!global._babelPolyfill) {
-	require('babel-polyfill');
-}
+// if (!global._babelPolyfill) {
+// 	require('babel-polyfill');
+// }
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 

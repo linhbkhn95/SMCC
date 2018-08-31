@@ -12,10 +12,10 @@ class DashBoard extends React.Component{
   render(){
      return(
           <div className="right" >
-              <Comment />
-              {/* <GaugeChart />
+              {/* <Comment /> */}
+              <GaugeChart />
               <BarChart />
-              <ChartAnalyst /> */}
+              <ChartAnalyst />
               <Chart />
 
 
