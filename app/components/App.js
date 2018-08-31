@@ -8,7 +8,9 @@ import DashBoardChart from './pages/dashboard/DashBoardChart'
 
 var store = require('app/store.js');
 // var Test =require('app/components/Test.js');
-var Layout = require('app/components/Layout.js');
+import Layout from 'app/components/Menu.js';
+import  LayoutMaterial from './LayoutMaterial';
+
 var Login = require('app/components/pages/login/Login.js');
 // var ShopCart = require('app/components/pages/shopcart/ShopCart.js');
 var LiveStream = require('app/components/pages/livestream/LiveStream.js');
@@ -71,7 +73,6 @@ class App extends React.Component {
           </Router>
         </Provider>
 
-      // </MuiThemeProvider>
     )
   }
 }

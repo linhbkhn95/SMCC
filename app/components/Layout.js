@@ -1,8 +1,9 @@
 // var Menu = require('Menu');
 // var Main = require('Main');
 var Nav = require('./Nav.js');
-var Menu = require('./Menu.js');
+import Menu from './Menu.js';
 var React = require('react');
+import LayoutMaterial from './LayoutMaterial'
 var { connect } = require('react-redux');
 import { ToastContainer, toast } from 'react-toastify';
 class Layout extends React.Component {
@@ -15,7 +16,9 @@ class Layout extends React.Component {
     return (
       <div className="">
         <div className="" >
-          <Nav />
+          {/* <LayoutMaterial /> */}
+          <Menu />
+          {/* <Nav /> */}
           <div className="clearfix"></div>
           {/* <div className="container jumbotron"> */}
           <div className="col-md-12">
@@ -28,18 +31,3 @@ class Layout extends React.Component {
   }
 }
 module.exports = Layout;
-  // <div className="container">
-
-  //                       <div className="row">
-  //                           <Nav />
-  //                       </div>
-  //                       <div className="">
-  //                            <div style={{paddingRight:"0px"}} className="col-md-2">
-  //                                <Menu />
-  //                            </div>
-  //                         <div style={{paddingLeft:"0px",paddingRight:"0px"}} className="col-md-10" >
-  //                             {this.props.children}
-  //                          </div>
-  //                   </div>
-
-  //              </div>

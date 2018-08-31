@@ -1,168 +1,166 @@
-// // import React from 'react';
-//  import {NavLink,Link} from 'react-router-dom';
-// //  class Menu extends React.Component {
-// // 	render() {
-// // 		return (
-// // 			<div className="list-group">
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import DataMenu from './DataMenu';
+import AcessTimeIcon from '@material-ui/icons/AccessTime';
+const drawerWidth = 240;
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    // height: 440,
+    zIndex: 1,
+    overflow: 'hidden',
+    position: 'relative',
+    display: 'flex',
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginLeft: 12,
+    marginRight: 36,
+  },
+  hide: {
+    display: 'none',
+  },
+  drawerPaper: {
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerPaperClose: {
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    width: theme.spacing.unit * 7,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing.unit * 9,
+    },
+  },
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+  },
+  content: {
+    flexGrow: 1,
+    // backgroundColor: theme.palette.background.default,
+    padding: theme.spacing.unit * 3,
+  },
+});
 
-// // 			  <Link to="/" className="list-group-item">TRANG CHỦ</Link>
-// // 			  <Link to="#" className="list-group-item">BẢNG HOẠT ĐỘNG WEBSITES</Link>
-// // 			  <Link to="/eventLog" className="list-group-item">SỰ KIỆN LOGS</Link>
-// // 			  <Link to="#" className="list-group-item">CẢNH BÁO</Link>
-// // 			  <Link to="#" className="list-group-item">QUẢN LÝ SENSORS</Link>
-// // 		   </div>
-// // 		);
-// // 	}
-// // }
-// //  module.exports = Menu;
-// // @flow weak
+class MiniDrawer extends React.Component {
+  state = {
+    open: false,
+  };
 
-// // import React from 'react';
-// // import PropTypes from 'prop-types';
+  handleDrawerOpen = () => {
+    this.setState({ open: true });
+  };
 
-// // import List, { ListItem, ListItemText } from 'material-ui/List';
-// // import Avatar from 'material-ui/Avatar';
-// // import Divider from 'material-ui/Divider';
-// // import FolderIcon from 'material-ui-icons/Folder';
-// // import ImageIcon from 'material-ui-icons/Image';
+  handleDrawerClose = () => {
+    this.setState({ open: false });
+  };
 
+  render() {
+    const { classes, theme } = this.props;
 
+    return (
+      <div className={classes.root}>
+        <AppBar
+          position="absolute"
+          className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
+        >
+          <Toolbar disableGutters={!this.state.open}>
+            <IconButton
+              color="inherit"
+              aria-label="Open drawer"
+              onClick={this.handleDrawerOpen}
+              className={classNames(classes.menuButton, this.state.open && classes.hide)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <div className="div-header">
+            <div className="div-logo" onClick={this.props.onClick}>
+                 <img className="logo" src="./images/0dd4ccc0cf89e354e9d24d21c771def030181d83.png" />
 
-// // class InsetDividers extends React.Component {
-// // 	render(){
-// // 		  return (
-// // 		    <List className="">
-// // 		      <ListItem button>
-// // 		        <Avatar>
-// // 		          <FolderIcon />
-// // 		        </Avatar>
+            </div>
+            <div className="div-title">
 
-// // 		      </ListItem>
-// // 		      <Divider inset />
-// // 		      <ListItem button>
-// // 		        <Avatar>
-// // 		          <ImageIcon />
-// // 		        </Avatar>
+             <Typography variant="title" color="inherit" noWrap>
 
-// // 		      </ListItem>
-// // 		    </List>
-// // 		  );
-// // 		}
-// // }
+              TRUNG TÂM PHÂN TÍCH XU HƯỚNG MẠNG XÃ HỘI
+            </Typography>
+            <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>24/08/2018 - 17h:30</div>
 
+            </div>
+            </div>
+            <img className="logo" src="./images/background.png" />
 
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          classes={{
+            paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
+          }}
+          open={this.state.open}
+        >
+          <div className={classes.toolbar}>
+            <IconButton onClick={this.handleDrawerClose}>
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
+          </div>
+          <Divider />
+          <DataMenu />
+          {/* <Divider />
+          <List>{otherMailFolderListItems}</List> */}
+        </Drawer>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          {this.props.children}
+          {/* <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography> */}
+        </main>
+      </div>
+    );
+  }
+}
 
-// // module.exports= InsetDividers;
-// import React from 'react';
+MiniDrawer.propTypes = {
+  classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired,
+};
 
-// import {List, ListItem} from 'material-ui/List';
-// import ActionGrade from 'material-ui/svg-icons/action/grade';
-// import ContentInbox from 'material-ui/svg-icons/content/inbox';
-// import ContentDrafts from 'material-ui/svg-icons/content/drafts';
-// import ContentSend from 'material-ui/svg-icons/content/send';
-// import Subheader from 'material-ui/Subheader';
-// import Toggle from 'material-ui/Toggle';
-//  import MapsHome from 'material-ui-icons/Home';
-//  import MapsGroupWork from 'material-ui-icons/GroupWork';
-//   import MapsEvent from 'material-ui-icons/Event';
-//   import MapsWarning from 'material-ui-icons/Warning';
-
-//  class ListMenu extends React.Component{
-//    constructor(props){
-// 		super(props);
-// 		this.state ={
-// 			list:[
-// 				{text:"TRANG CHỦ",url:"/home",icon:<MapsHome style={{fill:"black"}} />},
-// 				{text:"BẢNG HOẠT ĐỘNG WEBSITES",url:"/",icon:<MapsGroupWork style={{fill:"rgb(232, 130, 50)"}} />},
-// 				{text:"SỰ KIỆN LOGS",url:"/eventLog",icon:<MapsEvent style={{fill:"rgba(44, 152, 210, 0.83)"}}  />},
-// 				{text:"CẢNH BÁO",url:"/",icon:<MapsWarning style={{fill:"yellow"}}  />}
-
-
-
-// 			]
-// 		}
-
-// 	}
-//  	render() {
-// 	    return (
-// 	    	   <List>
-//           		  <Subheader style={{backgroundColor:"#00bcd4",fontWeight:"bold",color:"white"}}><Link style={{color:"white"}} to="/dashboard">WebAsistant</Link></Subheader>
-//                    {this.state.list.map((item,index)=>{
-//                    	 return(
-// 	                   	      <ListItem key={index} style={{fontSize:"11px",fontWeight:"bold",    color: "rgb(0, 150, 136)"}} primaryText={item.text}  containerElement={ <Link to={item.url} />}  leftIcon={item.icon } />
-// 	                   	  )
-// 	                   })
-//               	 }
-//           	  </List>
-// 	    	)
-//      }
-//  }
-//  class ListExampleNested extends React.Component {
-
-//   state = {
-//     open: true,
-//   };
-
-//   handleToggle = () => {
-//     this.setState({
-//       open: !this.state.open,
-//     });
-//   };
-
-//   handleNestedListToggle = (item) => {
-//     this.setState({
-//       open: item.state.open,
-//     });
-//   };
-
-//   render() {
-//     return (
-//       <div>
-
-//         <br />
-//           <ListMenu />
-
-
-//       </div>
-//     );
-//   }
-// }
-// module.exports = ListExampleNested;
-  // <List>
-          //   <Subheader >WebAsistant</Subheader>
-          //   <ListItem style={{fontSize:"14px"}} primaryText="SỰ KIỆN LOGS"  containerElement={ <Link to="/eventLog" />}  leftIcon={<ContentSend />} />
-          //   <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />
-          //   <ListItem
-          //     primaryText="Inbox"
-          //     leftIcon={<ContentInbox />}
-          //     initiallyOpen={true}
-          //     primaryTogglesNestedList={true}
-          //     nestedItems={[
-          //       <ListItem
-          //         key={1}
-          //         primaryText="Starred"
-          //         leftIcon={<ActionGrade />}
-          //       />,
-          //       <ListItem
-          //         key={2}
-          //         primaryText="Sent Mail"
-          //         leftIcon={<ContentSend />}
-          //         disabled={true}
-          //         nestedItems={[
-          //           <ListItem key={1} primaryText="Drafts" leftIcon={<ContentDrafts />} />,
-          //         ]}
-          //       />,
-          //       <ListItem
-          //         key={3}
-          //         primaryText="Inbox"
-          //         leftIcon={<ContentInbox />}
-          //         open={this.state.open}
-          //         onNestedListToggle={this.handleNestedListToggle}
-          //         nestedItems={[
-          //           <ListItem key={1} primaryText="Drafts" leftIcon={<ContentDrafts />} />,
-          //         ]}
-          //       />,
-          //     ]}
-          //   />
-          // </List>
+export default withStyles(styles, { withTheme: true })(MiniDrawer);

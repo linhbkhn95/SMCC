@@ -9,12 +9,12 @@ var ReactDOM = require('react-dom');
 // 	require('babel-polyfill');
 // }
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
+// import injectTapEventPlugin from 'react-tap-event-plugin';
 
  var App = require('./components/App.js');
 
 
-injectTapEventPlugin();
+// injectTapEventPlugin();
 ReactDOM.render(
 
 
