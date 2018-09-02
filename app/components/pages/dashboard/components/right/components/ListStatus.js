@@ -127,11 +127,11 @@ class ListStatus extends React.Component{
       var $this = $(this);
 
           // if( ( ($(document).height() - $(window).height())-$(window).scrollTop())<50&&!self.state.fulldata) {
-            if(($("#list-status").height() - $this.scrollTop()) -$this.height()<50&&!that.state.fulldata) {
+          //   if(($("#list-status").height() - $this.scrollTop()) -$this.height()<50&&!that.state.fulldata) {
 
-             console.log('load',$("#list-status").height(),$this.scrollTop(),$this.height())
-              that.loadMoreItems();
-          }
+          //    console.log('load',$("#list-status").height(),$this.scrollTop(),$this.height())
+          //     that.loadMoreItems();
+          // }
       });
 
         console.log('  componentDidMount(){')

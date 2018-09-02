@@ -63,8 +63,8 @@ header .dropdown-menu>li>a{
   ;
 }
 body{
-  /* background-color: #00398f!important; */
-  background-image: linear-gradient(123deg, #00398f, #006bd7);
+  background-color: #00398f!important;
+  /* background-image: linear-gradient(123deg, #00398f, #006bd7); */
 
 }
 .navbar-inverse{
@@ -319,4 +319,22 @@ body{
    url('images/bacground.jpg') no-repeat;
           background-blend-mode: multiply;
             background-size: cover; */
+}
+.div-filter{
+  margin-left: auto;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+}
+.fullname-user{
+  font-family: Maven Pro;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left: 17px;
+  margin-right: -6px;
 }

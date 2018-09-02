@@ -14,6 +14,12 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import DataMenu from './DataMenu';
 import AcessTimeIcon from '@material-ui/icons/AccessTime';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Notifications from '@material-ui/icons/Notifications';
+import Badge from '@material-ui/core/Badge';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -84,7 +90,23 @@ const styles = theme => ({
 class MiniDrawer extends React.Component {
   state = {
     open: false,
+    auth: true,
+    anchorEl: null,
   };
+
+
+  handleChange = event => {
+    this.setState({ auth: event.target.checked });
+  };
+
+  handleMenu = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
+
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
@@ -96,6 +118,8 @@ class MiniDrawer extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
+    const { auth, anchorEl } = this.state;
+    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>
@@ -127,8 +151,47 @@ class MiniDrawer extends React.Component {
 
             </div>
             </div>
-            <img className="logo" src="./images/background.png" />
+            {/* <img className="logo" src="./images/background.png" /> */}
+            <div className="div-filter ">
+              <div style={{float:"left",marginRight:"40px"}} className="header-chart">
+                <div className="type-filter active">
+                  <div className="text" ><i className="fa fa-filter" aria-hidden="true"></i>Filter</div>
+                </div>
+                <div className="btn-view type-filter ">
+                  <div className="text" ><i className="fa fa-eye" aria-hidden="true"></i>View</div>
+                </div>
+              </div>
+              <Badge className={classes.margin} badgeContent={10} color="secondary">
+                  <Notifications />
+                </Badge>
 
+                 <div className="fullname-user" >Admin</div>
+                <IconButton
+                  aria-owns={open ? 'menu-appbar' : null}
+                  aria-haspopup="true"
+                  onClick={this.handleMenu}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={open}
+                  onClose={this.handleClose}
+                >
+                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                </Menu>
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer

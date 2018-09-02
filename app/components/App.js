@@ -14,6 +14,7 @@ import  LayoutMaterial from './LayoutMaterial';
 var Login = require('app/components/pages/login/Login.js');
 // var ShopCart = require('app/components/pages/shopcart/ShopCart.js');
 var LiveStream = require('app/components/pages/livestream/LiveStream.js');
+var ListUser = require('app/components/pages/listuser/ListUser.js');
 
 // import OrderStep from  'app/components/pages/shopcart/OrderStep.js';
 // import DetailProduct from 'app/utils/DetailProduct.js';
@@ -63,6 +64,8 @@ class App extends React.Component {
                 <Route exact path="/" component={DashBoard} />
                 <Route path="/dashboard" component={DashBoardChart} />
                 <Route path='/livestream' component={LiveStream} />
+                <Route path='/listuser' component={ListUser} />
+
                 {/* <Route  exact   path="/wall" component={Home}/> */}
                 <Route render={function () {
                   return <p> not found</p>
