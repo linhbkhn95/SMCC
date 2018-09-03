@@ -15,6 +15,7 @@ var Login = require('app/components/pages/login/Login.js');
 // var ShopCart = require('app/components/pages/shopcart/ShopCart.js');
 var LiveStream = require('app/components/pages/livestream/LiveStream.js');
 var ListUser = require('app/components/pages/listuser/ListUser.js');
+var UserDetail = require('app/components/pages/userdetail/UserDetail.js');
 
 // import OrderStep from  'app/components/pages/shopcart/OrderStep.js';
 // import DetailProduct from 'app/utils/DetailProduct.js';
@@ -65,6 +66,7 @@ class App extends React.Component {
                 <Route path="/dashboard" component={DashBoardChart} />
                 <Route path='/livestream' component={LiveStream} />
                 <Route path='/listuser' component={ListUser} />
+                <Route path='/userdetail' component={UserDetail} />
 
                 {/* <Route  exact   path="/wall" component={Home}/> */}
                 <Route render={function () {

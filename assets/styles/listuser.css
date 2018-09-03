@@ -13,6 +13,7 @@
   height: 1px;
   /* background-color: #00398f; */
   background: #1456ba;
+  clear: both;
 }
 
 #custom-search-input {
@@ -317,4 +318,72 @@
   position: absolute;
   color: #006bd7;
   z-index:1
+}
+
+/* css page detail user */
+
+.list-user .info-detail{
+  color: white;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.list-user .info-detail .info-person .infor-atribute .note{
+float: left;
+color: #85b7e4;
+margin-right: 4px;
+}
+
+.list-user .info-detail .info-person .infor-atribute{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.list-user  .info-detail .info-person .info-channel{
+
+}
+.list-user  .info-detail .info-person .info-channel i{
+  /* font-family: Material-Design-Iconic-Font; */
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.8;
+  letter-spacing: -0.4px;
+  text-align: center;
+  color: #0092f1;
+  margin-right: 7px;
+}
+.user-action{
+  width: 167px;
+  height: 167px;
+  border-radius: 90px;
+  border: solid 6px transparent;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(230deg, #0092f1, #00398f);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.user-action img{
+  width: 157px;
+  height: 157px;
+  border-radius: 90px;
+  border: solid 6px transparent;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(230deg, #0092f1, #00398f);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.div-action{
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  background-color: #0092f1;
+}
+.user-action img:hover .circle-right-half {
+  transition: 1s transform linear;
+  transform: rotate(315deg);
+}
+.user-action img{
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
 }
