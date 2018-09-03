@@ -8,6 +8,7 @@ class ListUser extends React.Component{
     super(props);
 
     this.state = {
+      rating_half_star: 3.5,
 
       value5: {
         min: 14,
@@ -19,7 +20,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'5',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -37,7 +38,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'3',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -46,7 +47,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'4.5',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -55,7 +56,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'1.5',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -64,7 +65,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'2.5',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -73,7 +74,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'3',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -82,7 +83,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'3',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -91,7 +92,7 @@ class ListUser extends React.Component{
           name:'Trịnh Đức Bảo Linh',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
-          star:'4',
+          star:'2',
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         },
@@ -205,11 +206,12 @@ class ListUser extends React.Component{
                       <div className="filter">
                       <InputRange
                                 draggableTrack
-                                maxValue={20}
+                                maxValue={70}
                                 minValue={0}
                                 onChange={value => this.setState({ value5: value })}
                                 onChangeComplete={value => console.log(value)}
                                 value={this.state.value5} />
+
                       </div>
 
                     </div>
@@ -243,13 +245,30 @@ class ListUser extends React.Component{
 
                                   </div>
                                   <div className="star">
-                                        <StarRatingComponent
-                                          name="rate2"
-                                          editing={false}
-                                          // renderStarIcon={() => <span></span>}
-                                          starCount={5}
-                                          value={4}
-                                        />
+                                  <div style={{fontSize: 16}}>
+                                <StarRatingComponent
+                                  name="app6"
+                                  starColor="#ffb400"
+                                  emptyStarColor="#ffb400"
+                                  value={user.star}
+                                  // onStarClick={this.onStarClickHalfStar.bind(this)}
+                                  renderStarIcon={(index, value) => {
+                                    return (
+                                      <span>
+                                        <i style={{color:index <= value ?"":"#006bd7"}} className='fa fa-star' />
+                                      </span>
+                                    );
+                                  }}
+                                  renderStarIconHalf={() => {
+                                    return (
+                                      <span>
+                                         <span style={{position: ''}}><i className="fa fa-star unrated" /></span>
+
+                                        <span><i style={{float: "left",top: "3px"}} className="fa fa-star-half-o" /></span>
+                                      </span>
+                                    );
+                                  }} />
+                              </div>
                                   </div>
                               </div>
                               </div>

@@ -95,7 +95,7 @@
 
 #custom-search-input {
   margin:0;
-  margin-top: 10px;
+  margin-top: 4px;
   padding: 0;
 }
 
@@ -214,8 +214,8 @@
   clear: both;
 }
 .list-data .user .div-avatar .avatar{
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 40px;
 }
 .list-data .user{
@@ -224,7 +224,16 @@
   background-color: #00327d;
   border: solid 1px #00398f;
   padding: 15px;
-  margin-top: 7px;
+  padding-top: 18px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+
 }
 .list-data .user .star{
   padding-top: 15px;
@@ -232,4 +241,80 @@
 .list-data .remove-padding-col {
   padding-left: 5px !important;
   padding-right: 5px !important;
+}
+.list-data .user:hover,list-data .user:active,list-data .user:focus{
+   border: 1px solid #1850a5;
+   border: 1px solid #1850a5;
+    /* box-shadow: 0px 3px 7px 4px #285aa6; */
+    box-shadow: 0 5px 11px #285aa6;
+    -webkit-transform: scale(1.25, 1.25);
+    transform: scale(1.05, 1.05);
+
+}
+.list-data .user::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+/* .list-data .user .star .fa-star-half-o:after {
+  font-family: FontAwesome;
+  content: '\f089';
+  position: absolute;
+  z-index: 1;
+}
+
+.list-data .user .star .fa-star-half-o:before {
+  font-family: FontAwesome;
+  content: '\f089';
+  position: absolute;
+  color: #006bd7;
+
+
+  z-index: 1;
+} */
+/* .fa-star-half-empty:after, .fa-star-half-full:after, .fa-star-half-o:after {
+  content: "\f123";
+  transform: rotateY(-180deg);
+  display: inline-block;
+  right:21px;
+  position: absolute;
+  top: 3px;
+  color: #006bd7;
+  overflow: hidden;
+  width: 7px;
+} */
+.unrated {
+  color: #006bd7;
+  cursor: pointer;
+}
+.fa-star-half-o{
+  -webkit-text-stroke-color: orange;
+
+}
+.fa-star-half-o {
+  position: relative;
+}
+
+
+.fa-star-half-o:after {
+  font-family: FontAwesome;
+  content: '\f089';
+  position: absolute;
+  z-index: 1;
+}
+
+.fa-star-half-o:before{
+  font-family: FontAwesome;
+  content: '\f089';
+  position: absolute;
+  color: #006bd7;
+  z-index:1
 }

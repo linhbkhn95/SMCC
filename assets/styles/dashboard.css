@@ -18,18 +18,19 @@
 }
 .div-header .clock{
   color: #42b6f6;
-  font-size: 16px;
+  font-size: 15px;
   /* padding-left: 5px; */
-  padding-right: 5px;
+  padding-right: 2px;
   font-weight: 100;
-  margin-top: 2px;
+  /* margin-top: 2px; */
 
 }
 .div-header .text-clock{
-  font-size: 11px;
+  font-size: 10px;
   color: white;
   display: flex;
-  font-weight: bold;
+  align-items: center;
+  padding-top: 2px;
 }
 
 
