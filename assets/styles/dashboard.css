@@ -271,10 +271,10 @@ padding-right: 0px;
 .list-status .status{
   border-radius: 4px;
   background: white;
-  padding: 6px;
-  margin-left: 5px;
+  padding: 10px;
+    margin-left: 5px;
   margin-bottom: 5px;
-  padding-bottom: 0px;
+  padding-bottom: 7px;
 }
 .list-status .status .user-info .img-user{
   width: 30px;
@@ -320,11 +320,15 @@ padding-right: 0px;
   line-height: 1.23;
   letter-spacing: normal;
   color: #000000;
+  padding-top: 7px;
+  padding-bottom: 10px;
 }
 .status .info-status{
   color: #999999;
   font-size: 13px;
-  padding-bottom: 7px;
+  padding-left: 3px;
+  /* padding-bottom: 7px; */
+  clear: both;
 
 }
 .status .info-status a{
@@ -341,12 +345,12 @@ padding-right: 0px;
 }
 .status .like-comment{
   border-radius: 4px;
-  background-color: #e8e8e8;
+  /* background-color: #e8e8e8; */
   margin-right: -6px;
   margin-left: -6px;
   padding: 6px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 
 }
 .status .like-comment .action{
@@ -357,14 +361,22 @@ padding-right: 0px;
   font-stretch: normal;
   line-height: 1.23;
   letter-spacing: normal;
-  color: #999999;
   float: left;
   width: 33%;
-
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  color: #666666
 }
 .status .like-comment .action i{
-   color: #999999;
-   margin-right: 2px;
+   /* color: #999999;
+   margin-right: 2px; */
+   border-radius: 4px;
+    font-size: 16px;
+    color: #999999;
+    background-color: #ffffff;
 
 }
 .list-status{

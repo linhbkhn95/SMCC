@@ -4,17 +4,28 @@ import StarRatingComponent from 'react-star-rating-component';
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css'
 import PieChart from './components/PieChart'
+import ChartLine from './components/ChartTendencyComment'
+import moment from 'moment'
+var datedemo=1536072804565
+
+
 class ListUser extends React.Component{
   constructor(props) {
     super(props);
 
     this.state = {
+
+      items: 10,
+      page:1,
+      loadingState: false,
+      fulldata:false,
       rating_half_star: 3.5,
 
       value5: {
         min: 14,
         max: 40,
       },
+      listStatus:[],
       listData:[
         {
           url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
@@ -129,6 +140,30 @@ class ListUser extends React.Component{
 
     }
   }
+  componentDidMount(){
+     console.log(Date.now())
+    let that  = this
+     $(".list-status").scroll(function () {
+       console.log('vao')
+      var $this = $(this);
+
+          // if( ( ($(document).height() - $(window).height())-$(window).scrollTop())<50&&!self.state.fulldata) {
+          //   if(($("#list-status").height() - $this.scrollTop()) -$this.height()<50&&!that.state.fulldata) {
+
+          //    console.log('load',$("#list-status").height(),$this.scrollTop(),$this.height())
+          //     that.loadMoreItems();
+          // }
+      });
+
+        console.log('  componentDidMount(){')
+      io.socket.post('/post/getListPost',{page:that.state.page},function(res,jwres){
+          if(res.EC==0){
+              that.setState({listStatus:res.DT,page:that.state.page+1,loadingState:false})
+
+          }
+      })
+
+  }
   render(){
      return(
 
@@ -204,11 +239,75 @@ class ListUser extends React.Component{
                                   <img className="" src="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/38841972_2127002624179299_7207603301972443136_n.jpg?_nc_cat=0&oh=4db74a3c43cac0a1f0d1240fd3e7977a&oe=5C2AC3B6" />
                               </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-3 remove-padding-col">
                             <PieChart />
+                        </div>
+                        <div className="col-md-3 remove-padding-col">
+                            <ChartLine />
                         </div>
                       </div>
                    <div className="hr-title"></div>
+                   <div className="col-md-12 remove-padding-col info-detail ">
+                         <div className="list-tab">
+                              <div className="tab-filter active">
+                                  <div className="text">Tất cả</div>
+                              </div>
+                              <div className="tab-filter ">
+                                  <div className="text">Facebook</div>
+                              </div>
+                              <div className="tab-filter ">
+                                  <div className="text">Youtube</div>
+                              </div>
+                              <div className="tab-filter ">
+                                  <div className="text">Twitter</div>
+                              </div>
+                              <div className="tab-filter ">
+                                  <div className="text">Khác</div>
+                              </div>
+                         </div>
+
+                   </div>
+                   <div className="col-md-12 remove-padding-col info-detail list-status ">
+                     {this.state.listStatus.map((status,index)=>{
+                        let id = index%3
+                        let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
+                            return(
+
+                          <div key={index} className="col-md-2 status ">
+                              <div className="user-info">
+                                  {/* <img className="img-user" src={status.user.url_avatar} /> */}
+                                  <div className="type-channel" ><i className={typeChannel} aria-hidden="true"></i></div>
+
+                                  <div className="info">
+                                        {/* <div className="name">{status.user.fullname} </div> */}
+                                        <p className="time">{moment(datedemo).lang('vi').fromNow()}</p>
+
+                                  </div>
+                                    <div className={index%2?"type-action tieu-cuc":"type-action tich-cuc"}>{index%2?"Tiêu cực":"Tích cực"}</div>
+
+                              </div>
+                              <div className="col-md-12 hr" ></div>
+                              <div className="info-status">
+                                      <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>{status.user.fullname}</a>
+                              </div>
+
+                              <div className="content-status">
+                                  {status.status.content}
+                              </div>
+
+                              <div className="like-comment row">
+                                  <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.action.like}</div>
+                                  <div className="action"><i className="fa fa-commenting-o" aria-hidden="true"></i>{status.action.comment}</div>
+                                  <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.action.share}</div>
+
+                              </div>
+
+
+                            </div>
+                                )
+                      }) }
+
+                   </div>
 
             </div>
 

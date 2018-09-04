@@ -326,7 +326,7 @@
   color: white;
   font-size: 12px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .list-user .info-detail .info-person .infor-atribute .note{
 float: left;
@@ -387,3 +387,101 @@ margin-right: 4px;
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
 }
+.list-user .info-detail .list-tab .tab-filter {
+  float: left;
+  padding: 5px 20px;
+  /* height: 32px; */
+  font-size: 11px;
+  border-radius: 16px;
+  font-weight: bold;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.list-user .info-detail .list-tab .active{
+  background-color: #0092f1;
+
+}
+.list-user .list-status .status{
+  border-radius: 4px;
+  background: white;
+  padding: 10px;
+  margin-left: 24px;
+  margin-bottom: 15px;
+  padding-bottom: 7px;
+}
+ .list-status .info-status a{
+  color: #0092f1 !important;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+}
+.list-status .info p{
+  padding-top: 2px;
+  font-family: Maven Pro;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.05;
+  letter-spacing: normal;
+  color: #666666 !important;
+}
+.list-status .type-action {
+  border-radius: 10px;
+  /* padding-top: 5px; */
+  padding: 4px 10px;
+  float: right;
+  font-family: Maven Pro;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+}
+.list-status .status .tieu-cuc{
+  background-color: rgba(255, 0, 0, 0.2);
+  color: #ff0000;
+
+}
+.list-status .tich-cuc{
+  background-color: rgba(0, 206, 125, 0.2);
+  color: #00ce7d;
+
+}
+.list-status .status .hr{
+  border-bottom: 1px solid #f6f2f2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.list-user .status .type-channel{
+  float: left;
+  font-size: 15px;
+  padding-top: 3px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: -0.3px;
+  text-align: center;
+  /* color: #3a5a99; */
+}
+.list-status .status .type-channel .fa-facebook{
+  color: #3a5a99;
+
+}
+.list-status .status .type-channel .fa-youtube-play{
+  color:#fe0605;
+
+
+}
+
+
+
+  .list-status .status .type-channel .fa-twitter{
+    color: #1da1f2;
+
+  }

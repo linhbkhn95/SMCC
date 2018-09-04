@@ -6,7 +6,7 @@ class ChartSatify extends React.Component{
   	return (
 <Chart
   width={'300px'}
-  height={'300px'}
+  height={'250px'}
   chartType="PieChart"
   loader={<div>Tải dữ liệu...</div>}
   data={[
@@ -19,10 +19,24 @@ class ChartSatify extends React.Component{
   options={{
     // title: 'My Daily Activities',
     // Just add this option
-    pieHole: 0.6,
+    pieHole: 0.5,
     backgroundColor: 'none',
-    color:"white"
-
+    titleTextStyle:{
+      color:'white'
+    }
+      ,
+      slices: [],
+      titleTextStyle:{
+        color: 'white'
+      },
+      legend:{
+          position:'right',
+          textStyle: {color: 'white'}
+      },
+    pieSliceBorderColor:'',
+    fontSize:'11px',
+    fontName:'Maven Pro',
+    chartArea:{left:20,top:0,width:'100%',height:'75%'}
   }}
   rootProps={{ 'data-testid': '3' }}
 />
