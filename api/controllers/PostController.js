@@ -4,7 +4,10 @@
  * @description :: Server-side logic for managing posts
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
+var Ioutput = require('../common/OutputInterface.js');
+var RestfulHandler = require('../common/RestfulHandler');
+var processingserver = require('../commonwebuser/ProcessingServer');
+var LogHelper = require('../common/LogHelper.js');
 module.exports = {
   getListPost:function(req,res){
     // if (!req.isSocket) {
@@ -394,6 +397,43 @@ module.exports = {
            }
 
            res.send(result)
-   }
+   },
+   test:function(req,res){
+
+    let body={
+      usermame:'adv',
+      password:'aaa'
+    }
+   var data = {
+     'data':body,
+     'action':'/authentication/login'
+   };
+
+          processingserver.callAPI(data, async function (err, rs) {
+
+
+
+                return res.send(rs);
+
+        });
+   },
+   get:function(req,res){
+     let body={
+       usermame:'adv',
+       password:'aaa'
+     }
+    var data = {
+      'data':body,
+      'action':'/authentication/login'
+    };
+
+      processingserver.callAPIWithUrl( async function (err, rs) {
+
+
+
+            return res.send(rs);
+
+    });
+}
 };
 

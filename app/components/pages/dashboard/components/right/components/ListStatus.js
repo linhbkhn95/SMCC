@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-
+import moment from 'moment'
+var datedemo=1536072804565
 class ListStatus extends React.Component{
   constructor(props){
     super(props);
@@ -171,20 +172,23 @@ class ListStatus extends React.Component{
     let {listStatus} = this.state
     let ListStatus = listStatus.length>0?
     listStatus.map((status,index)=>{
+      let id = index%3
+      let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
       return(
        <div key={index} className="col-md-4 status ">
        <div className="user-info">
           <img className="img-user" src={status.user.url_avatar} />
            <div className="info">
                  <div className="name">{status.user.fullname} </div>
-                 <div className="title-facbook">Facbook</div>
-           </div>
+                 <div className="info-status">
+                 <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>{status.user.fullname}</a>
+                 </div>
+             </div>
        </div>
        <div className="content-status">
            {status.status.content}
        </div>
-       <div className="info-status">
-             <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>{status.user.fullname}</a> </div>
+
 
        <div className="like-comment row">
           <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.action.like}</div>
@@ -192,6 +196,19 @@ class ListStatus extends React.Component{
           <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.action.share}</div>
 
        </div>
+       <div className="col-md-12 hr" ></div>
+       <div className="user-info">
+       {/* <img className="img-user" src={status.user.url_avatar} /> */}
+       <div className="type-channel" ><i className={typeChannel} aria-hidden="true"></i></div>
+
+       <div className="info">
+             {/* <div className="name">{status.user.fullname} </div> */}
+             <p className="time">{moment(datedemo).lang('vi').fromNow()}</p>
+
+       </div>
+         <div className={index%2?"type-action tieu-cuc":"type-action tich-cuc"}>{index%2?"Tiêu cực":"Tích cực"}</div>
+
+      </div>
    </div>
       )
     }):<div style={{
@@ -202,7 +219,7 @@ class ListStatus extends React.Component{
    }}>Chưa có bài đăng nào</div>
   	return (
         <div className="container-list">
-         <div id="list-status" className="col-md-12 list-status">
+         <div id="list-status list-user" className="col-md-12 list-status">
              {/* {listStatus.map((status)=>{
                return(
                 <div className="col-md-4 status ">

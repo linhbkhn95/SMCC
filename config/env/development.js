@@ -20,5 +20,6 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
+  URL_PROCESSING: 'http://103.192.236.178:1338', //link BPSService
 
 };
