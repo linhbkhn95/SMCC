@@ -63,10 +63,10 @@ class App extends React.Component {
               {/* <Link to="/user/login">Đăng nhập</Link>  */}
               <Switch>
                 <Route exact path="/" component={DashBoard} />
-                <Route path="/dashboard" component={DashBoardChart} />
+                <Route path="/trend" component={DashBoardChart} />
                 <Route path='/livestream' component={LiveStream} />
-                <Route path='/listuser' component={ListUser} />
-                <Route path='/userdetail' component={UserDetail} />
+                <Route path='/list-user' component={ListUser} />
+                <Route path='/user-special' component={UserDetail} />
 
                 {/* <Route  exact   path="/wall" component={Home}/> */}
                 <Route render={function () {

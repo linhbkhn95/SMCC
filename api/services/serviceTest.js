@@ -47,6 +47,8 @@ module.exports = {
     }
   },
   requsetPost: function (body, urlApi, done) {
+    console.log('url',sails.config.URL_PROCESSING + urlApi)
+
     request({
       url: sails.config.URL_PROCESSING + urlApi,
       method: 'POST',
@@ -55,6 +57,8 @@ module.exports = {
       json: body
 
     }, function (err, res) {
+      console.log('url',sails.config.URL_PROCESSING + urlApi,res,err)
+
       if (err) {
         sails.log('err',sails.config.URL_PROCESSING + urlApi, err);
         return done(null, err)

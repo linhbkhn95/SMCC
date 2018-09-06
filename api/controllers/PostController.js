@@ -398,14 +398,11 @@ module.exports = {
 
            res.send(result)
    },
-   test:function(req,res){
+   login:function(req,res){
 
-    let body={
-      usermame:'adv',
-      password:'aaa'
-    }
+    let body=req.body;
    var data = {
-     'data':body,
+     'data':{"username":"cuc_attt_monitor","password":"attT#0928"},
      'action':'/authentication/login'
    };
 
@@ -423,11 +420,14 @@ module.exports = {
        password:'aaa'
      }
     var data = {
-      'data':body,
-      'action':'/authentication/login'
+      "access_token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM3NDUxMjU0LCJpYXQiOjE1MzYyNDE2NTR9.3I5YO2tepdLuB-B5cN9eiudTDl5RPdXPKeOOI-x-h-6KB1VWNTMFcflzlj73gJ9yiSZ4OkNB5qo4RACitRMLpQ",
+      "action":"/user/get-all-info"
     };
 
-      processingserver.callAPIWithUrl( async function (err, rs) {
+    // curl -X GET -H "Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM3NDQ2NzE3LCJpYXQiOjE1MzYyMzcxMTd9.nq6LBpg8y74t7VTqeYy61dsTey_eeV6QHYlvgBV9orB0zR729B9MYMsuZZZ0N8toYzdeZV8-xCiR5H-DieI-UA" "http://203.113.152.30:1200/user/get-all-info"
+
+
+      processingserver.callAPIWithUrl(data, async function (err, rs) {
 
 
 

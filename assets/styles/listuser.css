@@ -370,6 +370,7 @@ margin-right: 4px;
   background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(230deg, #0092f1, #00398f);
   background-origin: border-box;
   background-clip: content-box, border-box;
+  position: absolute;
 }
 .div-action{
   width: 150px;
@@ -387,6 +388,55 @@ margin-right: 4px;
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
 }
+
+.text-info-user::after{
+  content: "";
+  display: block;
+  border-bottom: 1px solid #faf9f9;
+  position: absolute;
+  width: 48px;
+  left: -148px;
+  top: 50%;
+}
+
+
+
+
+
+.text-info-user{
+  top: -26px;
+  right: 30px;
+  /* left: 100px; */
+  position: absolute;
+  transform: rotate(-23deg);
+}
+.user-info-image{
+  position: relative;
+  /* margin: 150px; */
+  /* width: 90px; */
+  width: 100%;
+}
+
+.text-information{
+  position: absolute;
+    top: -5px;
+    right: 47px;
+    border-bottom: 1px solid;
+    text-align: right;
+    width: 152px;
+}
+
+
+
+
+
+.pagination-web{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .list-user .info-detail .list-tab .tab-filter {
   float: left;
   padding: 5px 20px;
@@ -485,3 +535,8 @@ margin-right: 4px;
     color: #1da1f2;
 
   }
+
+
+
+
+

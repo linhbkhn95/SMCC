@@ -41,6 +41,7 @@
     "moment": "^2.21.0",
     "r-dom": "^2.4.0",
     "rc": "1.0.1",
+    "rc-pagination": "^1.17.1",
     "rc-rate": "^2.1.1",
     "react": "^16.4.2",
     "react-bootstrap": "^0.31.3",

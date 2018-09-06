@@ -8,7 +8,7 @@ module.exports = {
 
     callAPI: function (obj, done) {
         serviceTest.requsetPost(obj,'/front/postRequest', function (err, rs) {
-          console.log(err,rs)
+          // console.log('serviceTest.requsetPost(obj/front/postRequest',err,rs)
             if (err) {
                 done(err, null)
             }
@@ -26,8 +26,8 @@ module.exports = {
      * @description API thực thi model
      */
 
-    callAPIWithUrl: function (done) {
-      serviceTest.requesetGet('/front/get', function (err, rs) {
+    callAPIWithUrl: function (obj,done) {
+      serviceTest.requsetPost(obj,'/front/getRequest', function (err, rs) {
           if (err) {
               done(err, null)
           }

@@ -112,7 +112,7 @@ class MiniDrawer extends React.Component {
     this.setState({ open: true });
   };
 
-  handleDrawerClose = () => {
+  handleDrawerClose(){
     this.setState({ open: false });
   };
 
@@ -124,7 +124,7 @@ class MiniDrawer extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar
-          position="absolute"
+          position="fixed"
           className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
         >
           <Toolbar disableGutters={!this.state.open}>
@@ -195,19 +195,23 @@ class MiniDrawer extends React.Component {
           </Toolbar>
         </AppBar>
         <Drawer
-          variant="permanent"
+              docked="false"
+              ModalProps={{ onBackdropClick: this.toggleDrawer  }}
+
+              // onRequestClose={this.handleDrawerClose.bind(this) }
+           variant="permanent"
           classes={{
             paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
           }}
           open={this.state.open}
         >
           <div className={classes.toolbar}>
-            <IconButton onClick={this.handleDrawerClose}>
+            <IconButton onClick={this.handleDrawerClose.bind(this)}>
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
           </div>
           <Divider />
-          <DataMenu />
+          <DataMenu closeDrawer={this.handleDrawerClose.bind(this)} openMenu={this.state.open} />
           {/* <Divider />
           <List>{otherMailFolderListItems}</List> */}
         </Drawer>

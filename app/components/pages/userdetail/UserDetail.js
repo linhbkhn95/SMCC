@@ -7,6 +7,8 @@ import PieChart from './components/PieChart'
 import ChartLine from './components/ChartTendencyComment'
 import moment from 'moment'
 var datedemo=1536072804565
+import Pagination from 'rc-pagination';
+import 'rc-pagination/assets/index.css';
 
 
 class ListUser extends React.Component{
@@ -235,9 +237,38 @@ class ListUser extends React.Component{
                             </div>
                         </div>
                         <div className="col-md-3">
+                             <div className="user-info-image">
                               <div className="user-action" >
                                   <img className="" src="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/38841972_2127002624179299_7207603301972443136_n.jpg?_nc_cat=0&oh=4db74a3c43cac0a1f0d1240fd3e7977a&oe=5C2AC3B6" />
+
                               </div>
+                                <div className="text-info-user" >
+
+                                </div>
+                                <div style={{right:"-29px",borderBottom:" 1.1px dotted #0092f1"}} className="text-information" >
+                                    <strong style={{color:"#0092f1"}}>123,000</strong> lần được nhắc đến
+                                </div>
+                                 <div style={{ display:'none',   marginTop: "100px",transform:" rotate(0deg)"}}  className="text-info-user" >
+
+                                    </div>
+                                        <div style={{top: '63px',right: "0px",borderBottom:" 1.1px dotted #00ce7d"}} className="text-information" >
+                                             <strong style={{color:"#00ce7d"}}>456</strong> thông tin tích cực
+                                     </div>
+                                     <div style={{    marginTop: "206px",transform:" rotate(18deg)"}}  className="text-info-user" >
+
+                                  </div>
+                                      <div style={{top: '132px',right: "-3px",width:"132px",borderBottom:" 1.1px dotted #ff0000"}} className="text-information" >
+                                          <strong style={{color:"#ff0000"}}>100</strong> Thông tin tiêu cực
+                                  </div>
+                                  <div style={{  marginTop: "335px",
+    left: "174px",transform:" rotate(44deg)"}}  className="text-info-user" >
+
+                                  </div>
+                                      <div style={{top:"181px",borderBottom:"1.1px dotted #ffbb00",right: "9px",width:"193px"}} className="text-information" >
+                                          <strong style={{color:"#ffbb00"}}>789</strong> Thông tin spam
+                                  </div>
+                             </div>
+
                         </div>
                         <div className="col-md-3 remove-padding-col">
                             <PieChart />
@@ -306,6 +337,8 @@ class ListUser extends React.Component{
                             </div>
                                 )
                       }) }
+                      <div className="col-md-12 pagination-web remove-padding-col info-detail list-status ">
+                        <Pagination className="ant-pagination" defaultCurrent={3} total={1000} /></div>
 
                    </div>
 
