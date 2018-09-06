@@ -297,7 +297,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 }
 .MiniDrawer-content-9{
-background: none  !important
+background: none  !important;
+padding-left: 104px !important;
 }
 .MuiPaper-root-18{
   background-image: url("../images/background.png");

@@ -9,13 +9,13 @@ class DashBoard extends React.Component{
      return(
 
         <div className="dashboard" >
-             <div className="col-md-3 ">
+             <div className="col-md-3 remove-padding-col ">
                 <ContainerLeft />
              </div>
-             <div className="col-md-3">
+             <div className="col-md-4">
                 <Center />
              </div>
-             <div className="col-md-6">
+             <div className="col-md-5 remove-padding-col">
                 <ContainerRight />
              </div>
         </div>

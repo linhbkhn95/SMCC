@@ -181,7 +181,7 @@ class ListStatus extends React.Component{
            <div className="info">
                  <div className="name">{status.user.fullname} </div>
                  <div className="info-status">
-                 <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>{status.user.fullname}</a>
+                 <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>Trịnh ...</a>
                  </div>
              </div>
        </div>
