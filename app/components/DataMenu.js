@@ -69,7 +69,15 @@ const styles = theme => ({
 
     }
     handleClick = () => {
-      this.setState(state => ({ open: !state.open }));
+      console.log('setstassssssadase',this.props.openDrawer)
+
+      if(this.props.openDrawer){
+        this.setState(state => ({ open: !state.open }));
+        console.log('setstate')
+      }
+      else{
+        this.props.showDrawer()
+      }
     };
 
   componentDidMount(){

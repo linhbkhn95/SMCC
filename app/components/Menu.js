@@ -211,7 +211,7 @@ class MiniDrawer extends React.Component {
             </IconButton>
           </div>
           <Divider />
-          <DataMenu closeDrawer={this.handleDrawerClose.bind(this)} openMenu={this.state.open} />
+          <DataMenu showDrawer={this.handleDrawerOpen} openDrawer={this.state.open} closeDrawer={this.handleDrawerClose.bind(this)} openMenu={this.state.open} />
           {/* <Divider />
           <List>{otherMailFolderListItems}</List> */}
         </Drawer>
