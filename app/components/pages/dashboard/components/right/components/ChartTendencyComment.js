@@ -90,11 +90,11 @@ module.exports = class Charts extends React.Component{
                calc: 'stringify',
              },
            ],
-           ['ASIAD 2018', 41, '#ff0000', null],
-           ['TS 2018', 64, '#ff6900 ', null],
+           ['Cộng sản', 41, '#ff0000', null],
+           ['Vòng xoay dần', 64, '#ff6900 ', null],
            ['Hà Giang', 32,'#ffbb00', null],
-           ['Thảo luận',41, '#0092f1', null],
-           ['Ế',98, '#00ce7d', null],
+           ['Tự do',41, '#0092f1', null],
+           ['Hồ ngọc đại',98, '#00ce7d', null],
 
          ]}
          options={{

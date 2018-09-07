@@ -51,11 +51,11 @@ module.exports = class Charts extends React.Component{
                calc: 'stringify',
              },
            ],
-           ['ASIAD 2018', 41, '#ff0000', null],
-           ['TS 2018', 64, '#ff6900 ', null],
-           ['Hà Giang', 32,'#ffbb00', null],
-           ['Thảo luận',41, '#0092f1', null],
-           ['Ế',98, '#00ce7d', null],
+           ['Nhân dân tệ được sử dụng tại biên giới', 41, '#ff0000', null],
+           ['TBT Nguyễn Phú Trọng thăm Nga', 64, '#ff6900 ', null],
+           ['Dùng ký tự trong dạy tiếng việt', 32,'#ffbb00', null],
+           ['Bức xúc tại trường tiểu học Sơn Đồng',41, '#0092f1', null],
+           ['Nhà máy rác thải tại quảng ngãi và hải dương',98, '#00ce7d', null],
 
          ]}
          options={{

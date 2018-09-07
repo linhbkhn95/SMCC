@@ -13,6 +13,7 @@ class DashBoard extends React.Component{
                 <ContainerLeft />
              </div>
              <div className="col-md-4">
+                <div className="map">   </div>
                 <Center />
              </div>
              <div className="col-md-5 remove-padding-col">

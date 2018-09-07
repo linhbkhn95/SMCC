@@ -312,7 +312,7 @@ padding-right: 0px;
 .status .content-status{
   clear: both;
   padding: 2px;
-
+  min-height: 85px;
   font-family: Maven Pro;
   font-size: 13px;
   font-weight: normal;
@@ -574,4 +574,7 @@ padding-right: 0px;
 .title{
   font-size: 11px;
   color: red
+}
+.map{
+  background-image: url('../images/map.PNG')
 }

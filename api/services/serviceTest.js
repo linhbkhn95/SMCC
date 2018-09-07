@@ -52,12 +52,13 @@ module.exports = {
     request({
       url: sails.config.URL_PROCESSING + urlApi,
       method: 'POST',
+      
       // gzip: !(sails.config.DISABLE_GZIP_PROCESSING || false),
       // timeout: sails.config.TIMEOUT_PROCESSING || (5 * 60 * 1000),
       json: body
 
     }, function (err, res) {
-      console.log('url',sails.config.URL_PROCESSING + urlApi,res,err)
+      // console.log('url',sails.config.URL_PROCESSING + urlApi,res,err)
 
       if (err) {
         sails.log('err',sails.config.URL_PROCESSING + urlApi, err);
@@ -71,7 +72,7 @@ module.exports = {
 
     });
   },
-  requesetGet: function (urlApi,done) {
+  requestGet: function (urlApi,done) {
     console.log('url',sails.config.URL_PROCESSING + urlApi)
     request.get(sails.config.URL_PROCESSING + urlApi, {
 

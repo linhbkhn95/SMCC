@@ -31,7 +31,7 @@ class ListUser extends React.Component{
       listData:[
         {
           url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
+          name:'Thanh Hiếu Bùi',
           studied:'Studied at Hust',
           live:'Lives in Ha Noi',
           star:'5',
@@ -158,7 +158,7 @@ class ListUser extends React.Component{
       });
 
         console.log('  componentDidMount(){')
-      io.socket.post('/post/getListPost',{page:that.state.page},function(res,jwres){
+      io.socket.post('/post/getSpecial',{page:that.state.page},function(res,jwres){
           if(res.EC==0){
               that.setState({listStatus:res.DT,page:that.state.page+1,loadingState:false})
 
@@ -172,13 +172,13 @@ class ListUser extends React.Component{
         <div className="row list-user" >
             <div className="col-md-12">
                   <div className="title-content">
-                     Nguyễn Văn A
+                  Thủ tướng Nguyễn Xuân Phúc
                   </div>
                   <div className="hr-title"></div>
                   <div className="col-md-12 remove-padding-col info-detail">
                        <div className="col-md-3 remove-padding-col ">
-                            <div className=" info-person">
-                                <div className="col-md-12 remove-padding-col">
+                          <div className=" info-person">
+                                {/* <div className="col-md-12 remove-padding-col">
                                       <div className="infor-atribute">
                                           <div className="note">Works at </div>
                                            Hệ Điều Hanh Salon Tuyền Anh
@@ -204,7 +204,7 @@ class ListUser extends React.Component{
                                           <div className="note">Manages by </div>
                                            Tuyền Anh Hair Salon
                                       </div>
-                                </div>
+                                </div> */}
                                 <div style={{paddingTop:"20px"}} className="col-md-12 remove-padding-col">
                                      <div className="col-md-4 remove-padding-col info-channel ">
                                             <i className="fa fa-facebook" aria-hidden="true"></i>
@@ -239,7 +239,7 @@ class ListUser extends React.Component{
                         <div className="col-md-3">
                              <div className="user-info-image">
                               <div className="user-action" >
-                                  <img className="" src="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/38841972_2127002624179299_7207603301972443136_n.jpg?_nc_cat=0&oh=4db74a3c43cac0a1f0d1240fd3e7977a&oe=5C2AC3B6" />
+                                  <img className="" src="https://dantricdn.com/thumb_w/640/2018/5/31/thu-tuong-nguyen-xuan-phuc-1-1527766780284318074732.jpg" />
 
                               </div>
                                 <div className="text-info-user" >
@@ -319,7 +319,7 @@ class ListUser extends React.Component{
                               </div>
                               <div className="col-md-12 hr" ></div>
                               <div className="info-status">
-                                      <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>{status.user.fullname}</a>
+                                      <a target="_blank" href={status.status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>{status.user.fullname}</a>
                               </div>
 
                               <div className="content-status">
