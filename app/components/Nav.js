@@ -17,7 +17,7 @@ class NavContent extends React.Component {
               <img className="logo" src="./images/0dd4ccc0cf89e354e9d24d21c771def030181d83.png" />
             </div>
             <div className="div-title">
-              <div className="title-web" href="#brand">TRUNG TÂM PHÂN TÍCH XU HƯỚNG MẠNG XÃ HỘI</div>
+              <div className="title-web" href="#brand">HỆ THỐNG PHÂN TÍCH XU HƯỚNG THÔNG TIN TRÊN MẠNG</div>
               <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>24/08/2018 - 17h:30</div>
             </div>
             <div className="pull-right div-filter">

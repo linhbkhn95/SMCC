@@ -100,7 +100,7 @@ class ListStatus extends React.Component{
          status.content_oryginal = status.content_oryginal.substring(0, 80) +"...";
       let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
       return(
-       <div key={index} className="col-md-5 status ">
+       <div key={index} className="col-md-4 status ">
        <div className="user-info">
           <img className="img-user" src={status.author_avatar_url} />
            <div className="info">
@@ -128,7 +128,7 @@ class ListStatus extends React.Component{
 
        <div style={{float:"left"}} className="">
              {/* <div className="name">{status.user.fullname} </div> */}
-             <p className="time">{moment(datedemo).lang('vi').fromNow()}</p>
+             <p className="time">{moment(status.created_date).lang('vi').fromNow()}</p>
 
        </div>
          <div className={index%2?"type-action tieu-cuc":"type-action tich-cuc"}>{index%2?"Tiêu cực":"Tích cực"}</div>
@@ -176,7 +176,7 @@ class ListStatus extends React.Component{
             <div style={{textAlign:"center",fontSize:"12px"}}>{this.state.loadingState ? <p style={{fontSize:"12px"}} className="loading"> đang tải dữ liệu..</p> : ""} </div>
 
 
-            <Pagination className="ant-pagination" defaultCurrent={1} total={100} />
+            <div style={{display:"flex",justifyContent:"center"}} className="col-md-12"><Pagination className="ant-pagination" defaultCurrent={1} total={100} /> </div>
 
          </div>
     );
