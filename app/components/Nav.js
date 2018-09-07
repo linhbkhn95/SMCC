@@ -4,6 +4,7 @@ import React from 'react';
 import { NavDropdown, Navbar, NavItem, MenuItem, Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
+import moment from 'moment'
 class NavContent extends React.Component {
   render() {
     return (
@@ -18,7 +19,7 @@ class NavContent extends React.Component {
             </div>
             <div className="div-title">
               <div className="title-web" href="#brand">HỆ THỐNG PHÂN TÍCH XU HƯỚNG THÔNG TIN TRÊN MẠNG</div>
-              <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>24/08/2018 - 17h:30</div>
+              <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>{moment().format()}   </div>
             </div>
             <div className="pull-right div-filter">
               <div className="header-chart">

@@ -19,7 +19,7 @@ import Notifications from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-
+import moment from 'moment'
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -145,9 +145,9 @@ class MiniDrawer extends React.Component {
 
              <Typography variant="title" color="inherit" noWrap>
 
-              TRUNG TÂM PHÂN TÍCH XU HƯỚNG MẠNG XÃ HỘI
+             HỆ THỐNG PHÂN TÍCH XU HƯỚNG THÔNG TIN TRÊN MẠNG
             </Typography>
-            <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>24/08/2018 - 17h:30</div>
+            <div className="text-clock">  <i className="fa fa-clock-o clock" aria-hidden="true"></i>{moment().format()}</div>
 
             </div>
             </div>

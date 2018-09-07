@@ -116,9 +116,9 @@ class ListStatus extends React.Component{
 
 
        <div className="like-comment row">
-          <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.like_count}</div>
-          <div className="action"><i className="fa fa-commenting-o" aria-hidden="true"></i>{status.response}</div>
-          <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.shares_count}</div>
+          <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.like_count?status.like_count:0}</div>
+          <div className="action"><i className="fa fa-commenting-o" aria-hidden="true"></i>{status.response?status.response:0}</div>
+          <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.shares_count?status.shares_count:0}</div>
 
        </div>
        <div className="col-md-12 hr" ></div>
