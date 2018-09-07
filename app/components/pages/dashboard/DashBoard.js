@@ -3,11 +3,14 @@ import {NavLink} from 'react-router-dom';
 import ContainerLeft from './components/left/ContainerLeft'
 import ContainerRight from './components/right/ContainerRight'
 import Center from './components/center/Center'
+import axios from 'axios'
 class DashBoard extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-        city_id : '0'
+        city_id : '0',
+        dataPieChart:[],
+        dataLineChart:[]
     }
 
   }
@@ -23,6 +26,13 @@ class DashBoard extends React.Component{
   }
   componentWillUnmount(){
     clearInterval(this.intervalId);
+  }
+  componentDidMount(){
+    let self = this
+    axios.get('/dashboard/getDataChart')
+    .then((resdata)=>{
+        self.setState({listDataPieChart:resdata.data.charts.dataPieChart,dataLineChart:resdata.data.charts.dataLineChart})
+    })
   }
   render(){
      return(

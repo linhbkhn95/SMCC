@@ -21,13 +21,13 @@ module.exports = {
 
           });
 
-          },
+        },
         getDataChart:function(req,res){
           let urlAPi = '/ChartApi.aspx?&prjid=29421&d1=2018-09-01&d2=2018-09-07&rt=0,1,2,3,4,5,6&dr=4&size=10'
           processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
             let dt  = JSON.parse(data);
             let {tab_results_count} = dt.charts;
-            let result  = tab_results_count;
+            let result  = {...tab_results_count};
 
             let sum = 0;
             // {
@@ -67,6 +67,11 @@ module.exports = {
                   color : "#ffbb00",
                   value : 0
             }
+            delete result["Forum"]
+            delete result["Youtube"]
+            delete result["News"]
+            delete result["Forum"]
+
             for(var index in result) {
                rowPeChart ={}
 
@@ -79,15 +84,15 @@ module.exports = {
                 //   rowPeChart.value = result[index].count;
 
                 //   break ;
-                case 'Forum' :
-                      rowPeChart.title= "Diễn đàn"
+                case 'Group Post' :
+                      rowPeChart.title= "Bài viết trong Nhóm"
                       rowPeChart.color = "#ff6900"
                       rowPeChart.value = result[index].count;
 
                       break ;
 
-                case 'Youtube' :
-                    rowPeChart.title= "Youtube"
+                case 'Fanpage Post' :
+                    rowPeChart.title= "Bài viết Fanpage"
                     rowPeChart.color = "#00ce7d"
                     rowPeChart.value = result[index].count;
 
@@ -98,26 +103,41 @@ module.exports = {
                 //     rowPeChart.value = result[index].count;
 
                 //     break ;
-                case 'News' :
-                    rowPeChart.title= "Báo chí"
+                case 'User Post' :
+                    rowPeChart.title= "Bài viết cá nhân"
                     rowPeChart.color = "#ff3b8e"
                     rowPeChart.value = result[index].count;
 
                     break ;
                  default :
-                    // rowPeChart.title= index
-                    rowfb.value +=result[index].count
-                   console.log('fb',index)
+                      rowPeChart.title= "Bình luận"
+                      rowPeChart.color = "#ff3b8e"
+                      rowPeChart.value = result[index].count;
+
                     break ;
               }
-              if(rowPeChart.title)
-                  dataPieChart.push(rowPeChart)
+
+                dataPieChart.push(rowPeChart)
 
             }
-            dataPieChart.push(rowfb)
+
 
             dt.charts.dataPieChart = dataPieChart;
             // row
+
+            let {sentiment_positive_count_per_day,sentiment_negative_count_per_day} = dt.charts.chart_sentiment
+            let row = []
+            let resultLineChart = []
+            console.log('sentment',sentiment_positive_count_per_day,sentiment_negative_count_per_day)
+            for(var index in sentiment_negative_count_per_day) {
+                row =[]
+                row[0]=index
+                row[1] = sentiment_negative_count_per_day[index]
+                row[2] = sentiment_positive_count_per_day[index]
+                resultLineChart.push[row]
+            }
+            dt.charts.dataLineChart = resultLineChart
+
             return res.send(dt);
 
         });
@@ -167,8 +187,11 @@ module.exports = {
 
         let urlAPi = '/ChartApi.aspx?key=[{"main_keyword":"chính+phủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&location='+city_id
         processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
-          // let dt  = JSON.parse(data);
-          // dt = dt.slice(0,5)
+          let dt  = JSON.parse(data);
+
+
+
+            // dt = dt.slice(0,5)
 
           return res.send(data);
 
