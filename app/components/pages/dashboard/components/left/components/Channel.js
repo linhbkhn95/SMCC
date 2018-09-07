@@ -37,7 +37,7 @@ class Channel extends React.Component{
 
       })
   }
-  
+
 	render () {
   	return (
       <div className="row module" >
@@ -50,13 +50,13 @@ class Channel extends React.Component{
 
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-newspaper-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Báo chí</div></div>
-              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={70} bsStyle="danger"/></div>
-              <div className="col-md-3 custom-progess-success"><ProgressBarCustom showLabel={true} now={30} bsStyle="success"/></div>
+              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={30} bsStyle="danger"/></div>
+              <div className="col-md-3 custom-progess-success"><ProgressBarCustom showLabel={true} now={70} bsStyle="success"/></div>
           </div>
           <div style={{ display: this.state.display["facebook"] ? "block" : "none" ,backgroundColor:" #002c6e",borderRadius:"8px" }} className="col-md-12 channel parent-note">
           <div onClick={this.collapse.bind(this, 'facebook')} style={{ cursor: "pointer" }} className="col-md-6 name-channel"><i className="fa fa-facebook" style={{    cursor: "pointer"}} aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px",float:"left"}}>Facebook  </div><i style={{cursor: "pointer", cursor: "pointer", left: "8px",fontSize: "9px",lineHeight:"22px",fontWeight:"bold" }} className={!this.state.collapse["facebook"] ? "glyphicon glyphicon-menu-down" : "glyphicon glyphicon-menu-up"}></i> </div>
-          <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={60} bsStyle="danger"/></div>
-          <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={80} bsStyle="success"/></div>
+          <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={40} bsStyle="danger"/></div>
+          <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={60} bsStyle="success"/></div>
            <Collapse in={this.state.collapse["facebook"]}>
                <div className="col-md-12 note-list">
                <div className="col-md-12 note-channel">

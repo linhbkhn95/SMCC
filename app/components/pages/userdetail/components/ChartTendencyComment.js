@@ -45,7 +45,7 @@ class Charts extends React.Component{
   chartType="LineChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['x', 'dogs', 'cats','pig'],
+    ['x', 'Facebook', 'Youtube','Blog'],
     [0, 0, 0,0],
     [1, 10, 5,3],
     [2, 23, 15,4],

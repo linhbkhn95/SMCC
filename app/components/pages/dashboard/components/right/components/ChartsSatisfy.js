@@ -32,7 +32,7 @@ className="title"
 loader={<div>Loading Chart</div>}
 data={[
   ['Label', 'Value'],
-  ['Chỉ số hài lòng', 65],
+  ['Mức độ nóng', 65],
 
 ]}
 

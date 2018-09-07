@@ -172,7 +172,7 @@ class ListUser extends React.Component{
         <div className="row list-user" >
             <div className="col-md-12">
                   <div className="title-content">
-                  Thủ tướng Nguyễn Xuân Phúc
+                  Thủ Tướng Nguyễn Xuân Phúc
                   </div>
                   <div className="hr-title"></div>
                   <div className="col-md-12 remove-padding-col info-detail">
@@ -246,27 +246,27 @@ class ListUser extends React.Component{
 
                                 </div>
                                 <div style={{right:"-29px",borderBottom:" 1.1px dotted #0092f1"}} className="text-information" >
-                                    <strong style={{color:"#0092f1"}}>123,000</strong> lần được nhắc đến
+                                    <strong style={{color:"#0092f1"}}>47</strong> lần được nhắc đến
                                 </div>
                                  <div style={{ display:'none',   marginTop: "100px",transform:" rotate(0deg)"}}  className="text-info-user" >
 
                                     </div>
                                         <div style={{top: '63px',right: "0px",borderBottom:" 1.1px dotted #00ce7d"}} className="text-information" >
-                                             <strong style={{color:"#00ce7d"}}>456</strong> thông tin tích cực
+                                             <strong style={{color:"#00ce7d"}}>46</strong> thông tin tích cực
                                      </div>
                                      <div style={{    marginTop: "206px",transform:" rotate(18deg)"}}  className="text-info-user" >
 
                                   </div>
                                       <div style={{top: '132px',right: "-3px",width:"132px",borderBottom:" 1.1px dotted #ff0000"}} className="text-information" >
-                                          <strong style={{color:"#ff0000"}}>100</strong> Thông tin tiêu cực
+                                          <strong style={{color:"#ff0000"}}>1</strong> Thông tin tiêu cực
                                   </div>
-                                  <div style={{  marginTop: "335px",
+                                  {/* <div style={{  marginTop: "335px",
     left: "174px",transform:" rotate(44deg)"}}  className="text-info-user" >
 
                                   </div>
                                       <div style={{top:"181px",borderBottom:"1.1px dotted #ffbb00",right: "9px",width:"193px"}} className="text-information" >
                                           <strong style={{color:"#ffbb00"}}>789</strong> Thông tin spam
-                                  </div>
+                                  </div> */}
                              </div>
 
                         </div>
@@ -311,7 +311,7 @@ class ListUser extends React.Component{
 
                                   <div className="info">
                                         {/* <div className="name">{status.user.fullname} </div> */}
-                                        <p className="time">{moment(datedemo).lang('vi').fromNow()}</p>
+                                        <p className="time">{moment().startOf('hour').lang('vi').fromNow()}</p>
 
                                   </div>
                                     <div className={index%2?"type-action tieu-cuc":"type-action tich-cuc"}>{index%2?"Tiêu cực":"Tích cực"}</div>
@@ -338,7 +338,7 @@ class ListUser extends React.Component{
                                 )
                       }) }
                       <div className="col-md-12 pagination-web remove-padding-col info-detail list-status ">
-                        <Pagination className="ant-pagination" defaultCurrent={3} total={1000} /></div>
+                        <Pagination className="ant-pagination" defaultCurrent={1} total={100} /></div>
 
                    </div>
 
