@@ -111,7 +111,7 @@ module.exports = {
                     break ;
                  default :
                       rowPeChart.title= "Bình luận"
-                      rowPeChart.color = "#ff3b8e"
+                      rowPeChart.color = "#0092f1"
                       rowPeChart.value = result[index].count;
 
                     break ;
@@ -128,13 +128,14 @@ module.exports = {
             let {sentiment_positive_count_per_day,sentiment_negative_count_per_day} = dt.charts.chart_sentiment
             let row = []
             let resultLineChart = []
+            let i=0
             console.log('sentment',sentiment_positive_count_per_day,sentiment_negative_count_per_day)
             for(var index in sentiment_negative_count_per_day) {
                 row =[]
                 row[0]=index
                 row[1] = sentiment_negative_count_per_day[index]
                 row[2] = sentiment_positive_count_per_day[index]
-                resultLineChart.push[row]
+                resultLineChart[i++] = row
             }
             dt.charts.dataLineChart = resultLineChart
 
