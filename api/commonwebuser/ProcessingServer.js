@@ -41,7 +41,21 @@ module.exports = {
 
       })
     },
+    callAPIWithUrlPublic: function (urlApi,done) {
+      serviceTest.getUrlPulic(urlApi, function (err, rs) {
+          if (err) {
+              done(err, null)
+          }
+          try {
+              done(null, rs)
 
+          } catch (error) {
+              done(error, null)
+          }
+
+
+      })
+    },
     postFormData: function (url, formdata, done) {
         request({
             url: sails.config.URL_PROCESSING + url,

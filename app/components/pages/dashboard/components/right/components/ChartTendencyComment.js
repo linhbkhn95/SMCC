@@ -1,6 +1,8 @@
 import React from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import Chart from 'react-google-charts'
+import axios from 'axios'
+
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
@@ -17,7 +19,50 @@ const data = {
 };
 
 module.exports = class Charts extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+          listDataPieChart:[
+            {
+              value : 11,
+              color:"#ffbb00",
+              title:"Tiêu chí 1"
 
+            },
+            {
+              value : 9,
+              color:"#ff6900",
+              title:"Tiêu chí 2"
+
+            },
+            {
+              value : 47,
+              color:"#00ce7d",
+              title:"Tiêu chí 3"
+
+            },
+            {
+              value : 21,
+              color:"#0092f1",
+              title:"Tiêu chí 4"
+
+            },
+            {
+              value : 12,
+              color:"#ff3b8e",
+              title:"Tiêu chí 5"
+
+            },
+          ]
+    }
+  }
+  componentDidMount(){
+    let self = this
+    axios.get('/dashboard/getDataLineChart')
+    .then((resdata)=>{
+        // self.setState({listDataPieChart:resdata.data.charts.dataPieChart})
+    })
+  }
   render() {
     return (
       <div className="comment col-md-12 module" >

@@ -2,12 +2,14 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {ProgressBar,Collapse} from 'react-bootstrap'
 import ProgressBarCustom from './ProgressBarCustom'
+import axios from 'axios'
 const now = 60;
 const moment = 80
 const progressInstance1 = <ProgressBar active bsStyle="danger" now={now} label={`${now}%`} />;
 const progressInstance2 = <ProgressBar active bsStyle="success" now={moment} label={`${moment}%`} />;
 const progressInstance3 = <ProgressBar active bsStyle="danger" now={now}  />;
 const progressInstance4 = <ProgressBar active bsStyle="success" now={moment}/>;
+
 class Channel extends React.Component{
   constructor(props) {
     super(props);
@@ -29,6 +31,13 @@ class Channel extends React.Component{
     this.state.collapse[tab] = !this.state.collapse[tab];
     this.setState({ collapse: this.state.collapse })
 }
+  componentDidMount(){
+      axios.get('/dashboard/getDataChart')
+      .then((resdata)=>{
+
+      })
+  }
+  
 	render () {
   	return (
       <div className="row module" >

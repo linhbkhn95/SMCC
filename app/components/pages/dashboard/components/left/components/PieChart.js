@@ -1,6 +1,7 @@
 import React from 'react'
 import PieChart from 'react-minimal-pie-chart';
 import Chart from 'react-google-charts'
+import axios from 'axios'
 
 class Charts extends React.Component{
   constructor(props){
@@ -39,6 +40,13 @@ class Charts extends React.Component{
             },
           ]
     }
+  }
+  componentDidMount(){
+    let self = this
+    axios.get('/dashboard/getDataChart')
+    .then((resdata)=>{
+        self.setState({listDataPieChart:resdata.data.charts.dataPieChart})
+    })
   }
   render(){
     return(

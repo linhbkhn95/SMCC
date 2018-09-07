@@ -420,7 +420,7 @@ module.exports = {
        password:'aaa'
      }
     var data = {
-      "access_token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM3NDUxMjU0LCJpYXQiOjE1MzYyNDE2NTR9.3I5YO2tepdLuB-B5cN9eiudTDl5RPdXPKeOOI-x-h-6KB1VWNTMFcflzlj73gJ9yiSZ4OkNB5qo4RACitRMLpQ",
+      "access_token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM3NDk5OTIwLCJpYXQiOjE1MzYyOTAzMjB9.J7C8Ad7br2xXqyavBhk5LqqxYnDL02ApT0DBUVIBpprNCuohrMVW7XOJROjuZVnoM4Dr95vxXzSxhpn9mKVsXA",
       "action":"/user/get-all-info"
     };
 

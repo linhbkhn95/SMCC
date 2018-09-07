@@ -97,6 +97,18 @@ module.exports = {
         done('Error', res);
       }
     });
+  },
+  getUrlPulic: function (urlApi, done) {
+    request.get(sails.config.URL_PUBLIC_GET_DATA +urlApi
+
+    , function (err, res) {
+      if (res.body)
+        done(null, res.body);
+      else {
+        sails.log.error('getInfo.:Error', err);
+        done('Error', res);
+      }
+    });
   }
 }
 

@@ -15,7 +15,13 @@ const data = {
     }
   ]
 };
-
+// componentDidMount(){
+//   let self = this
+//   axios.get('/dashboard/getDataChart')
+//   .then((resdata)=>{
+//       self.setState({listDataPieChart:resdata.data.charts.dataPieChart})
+//   })
+// }
 module.exports = class Charts extends React.Component{
 
   render() {
