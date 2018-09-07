@@ -31,19 +31,21 @@ class SimpleLineChart extends React.Component{
         city_id:0
     }
   }
-  getDataWithCity(city_id){
+  getDataChartLine(city_id){
     let that = this
     RestfulUtils.post('/dashboard/getDataChartLine',{city_id}).then((res)=>{
           that.setState({listStatus:res.results})
 
     })
 }  componentDidMount(){
-  this.getDataWithCity('24');
+      this.getDataChartLine('24');
 
 
 
 
-}  componentWillReceiveProps(nextProps){
+}
+
+componentWillReceiveProps(nextProps){
   let {city_id} = nextProps
   if(this.state.city_id!=city_id){
       this.setState({city_id})

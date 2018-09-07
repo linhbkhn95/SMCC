@@ -60,17 +60,17 @@ class Channel extends React.Component{
            <Collapse in={this.state.collapse["facebook"]}>
                <div className="col-md-12 note-list">
                <div className="col-md-12 note-channel">
-                   < div className="col-md-6 name-chirld-channel"> <div  className="name-note" style={{lineHeight:"21px"}}>Fanpage</div></div>
+                   < div className="col-md-6 name-chirld-channel"> <div  className="name-note" style={{lineHeight:"21px"}}>Bài viết Fanpage</div></div>
                    <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={20} bsStyle="danger"/></div>
                    <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={10} bsStyle="success"/></div>
              </div>
              <div className="col-md-12 note-channel">
-                   < div className="col-md-6 name-chirld-channel"> <div  className="name-note" style={{lineHeight:"21px"}}>Trang cá nhân</div></div>
+                   < div className="col-md-6 name-chirld-channel"> <div  className="name-note" style={{lineHeight:"21px"}}>Bài viết cá nhân</div></div>
                    <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={80} bsStyle="danger"/></div>
                    <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={60} bsStyle="success"/></div>
              </div>
              <div className="col-md-12 note-channel">
-                   < div className="col-md-6 name-chirld-channel"> <div  className="name-note"  style={{lineHeight:"21px"}}>Nhóm</div></div>
+                   < div className="col-md-6 name-chirld-channel"> <div  className="name-note"  style={{lineHeight:"21px"}}>Bài viết trong Nhóm</div></div>
                    <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={90} bsStyle="danger"/></div>
                    <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={100} bsStyle="success"/></div>
              </div>

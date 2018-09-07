@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import RestfulUtils from 'app/utils/RestfulUtils'
-
+import Pagination from 'rc-pagination';
+import 'rc-pagination/assets/index.css';
 import moment from 'moment'
 var datedemo=1536072804565
 class ListStatus extends React.Component{
@@ -23,7 +24,7 @@ class ListStatus extends React.Component{
   }
   getDataWithCity(city_id){
     let that = this
-    
+
     RestfulUtils.post('/dashboard/getDataWithCity',{city_id}).then((res)=>{
           that.setState({listStatus:res.results})
 
@@ -173,6 +174,9 @@ class ListStatus extends React.Component{
              {ListStatus}
             </div>
             <div style={{textAlign:"center",fontSize:"12px"}}>{this.state.loadingState ? <p style={{fontSize:"12px"}} className="loading"> đang tải dữ liệu..</p> : ""} </div>
+
+
+            <Pagination className="ant-pagination" defaultCurrent={1} total={100} />
 
          </div>
     );
