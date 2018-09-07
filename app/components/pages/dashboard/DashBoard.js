@@ -13,9 +13,9 @@ class DashBoard extends React.Component{
                 <ContainerLeft />
              </div>
              <div className="col-md-4">
-                <div className="map">   </div>
+                 <img style={{width: "103%",height: "914px",}} src="./images/map.png" />
+                   </div>
                 {/* <Center /> */}
-             </div>
              <div className="col-md-5 remove-padding-col">
                 <ContainerRight />
              </div>
