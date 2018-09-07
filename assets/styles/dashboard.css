@@ -576,5 +576,7 @@ padding-right: 0px;
   color: red
 }
 .map{
-  background-image: url('../images/map.PNG')
-}
+  background-image: url(../images/map.PNG);
+  width: 258%;
+  height: 1021px;
+  background-repeat: no-repeat}
