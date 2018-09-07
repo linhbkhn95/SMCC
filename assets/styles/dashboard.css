@@ -240,7 +240,6 @@ padding-right: 0px;
 }
 .dashboard .right .comment .name-city{
   font-family: Maven Pro,sans-serif;
-  width: 70px;
   height: 36px;
   display: flex;
   font-size: 16px;
@@ -276,6 +275,7 @@ padding-right: 0px;
     margin-left: 5px;
   margin-bottom: 5px;
   padding-bottom: 7px;
+
 }
 .list-status .status .user-info .img-user{
   width: 30px;
@@ -580,3 +580,18 @@ padding-right: 0px;
   width: 258%;
   height: 1021px;
   background-repeat: no-repeat}
+.right .status .content-status{
+  height: 50px;
+  word-wrap: break-word;
+
+
+}
+.right .status .info{
+}
+.right .info .name{
+  word-wrap: break-word;
+
+}
+.right .status{
+  height: 273px;
+}

@@ -9,7 +9,7 @@ class Center extends React.Component{
 
         <div className="center" >
               <HeaderFilter />
-              <Map />
+              {/* <Map /> */}
         </div>
      )
   }

@@ -63,8 +63,16 @@ header .dropdown-menu>li>a{
   ;
 }
 body{
-  background-color: #00398f!important;
+  /* 4e7ea9 */
+    background-color: #4e7ea9!important;
+
+  /* background-color: #00398f!important; */
   /* background-image: linear-gradient(123deg, #00398f, #006bd7); */
+
+}
+#layout{
+  position: absolute;
+  z-index: 2;
 
 }
 .navbar-inverse{
@@ -338,4 +346,62 @@ body{
   color: #ffffff;
   margin-left: 17px;
   margin-right: -6px;
+}
+#output{
+  width: 100%;
+  height: 800px;
+  position:absolute;
+  height:100%;
+}
+.MiniDrawer-root-1 {
+  z-index: 1 !important;
+  display: flex !important;
+  overflow: hidden;
+  position: static !important;
+  flex-grow: 1 ;
+}
+head {
+  height:100%;
+}
+#map1 {
+  position:absolute;
+  height:100%;
+}
+.map-container{
+  height: 300px;
+}
+
+.jvmap-smart{
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 576px) {
+  .map-container{
+      height: 350px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .map-container{
+      height: 400px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .map-container{
+      height: 500px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .map-container{
+      height: 600px;
+  }
+}
+#map{
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+}
+.center{
+  position: absolute;
+  z-index: 5
 }

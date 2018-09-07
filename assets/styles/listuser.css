@@ -1,13 +1,20 @@
 .title-content{
   font-family: Maven Pro;
-  font-size: 20px;
+  font-family: Maven Pro;
+  font-size: 18px;
+  padding: 0px 12px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.17;
-  letter-spacing: -0.5px;
+  /* font-style: normal; */
+  /* font-stretch: normal; */
+  /* line-height: 1.17; */
+  /* letter-spacing: -0.5px; */
   color: #ffffff;
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
+  background: none;
+  background: #00398f;
+  color: white;
+  height: 38px;
+  /* line-height: 26px; */
 }
 .hr-title{
   height: 1px;

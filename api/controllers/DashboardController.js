@@ -1,3 +1,4 @@
+
 /**
  * DashboardController
  *
@@ -8,6 +9,7 @@ var Ioutput = require('../common/OutputInterface.js');
 var RestfulHandler = require('../common/RestfulHandler');
 var processingserver = require('../commonwebuser/ProcessingServer');
 var LogHelper = require('../common/LogHelper.js');
+var listCountry = require('./country.json')
 module.exports = {
 
         getDataLineChart:function(req,res){
@@ -25,7 +27,6 @@ module.exports = {
           let urlAPi = '/ChartApi.aspx?&prjid=29421&d1=2018-09-01&d2=2018-09-07&rt=0,1,2,3,4,5,6&dr=4&size=10'
           processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
             let dt  = JSON.parse(data);
-            console.log('data',dt.charts)
             let {tab_results_count} = dt.charts;
             let result  = tab_results_count;
 
@@ -68,7 +69,6 @@ module.exports = {
                   value : 0
             }
             for(var index in result) {
-              console.log(index)
                rowPeChart ={}
 
               rowPeChart.value = result[index].count;
@@ -116,13 +116,65 @@ module.exports = {
 
             }
             dataPieChart.push(rowfb)
-             console.log('data1',dataPieChart,rowfb)
 
             dt.charts.dataPieChart = dataPieChart;
             // row
             return res.send(dt);
 
         });
-        }
+      },
+       getDataWithCity: async function(req,res){
+        // let {city_id} = req.body
+        // if(city_id==0||!city_id)
+        //     city_id = '24'
+        let urlAPi = '/PagingApi.aspx?key=[{"main_keyword":"chính+phủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&p=1&size=10&location=24'
+         processingserver.callAPIWithUrlPublic(urlAPi,async function (err, data) {
+          console.log(data)
+           let dt  = JSON.parse(data);
+
+          return res.send(dt);
+
+          });
+      },
+
+      //lay thong tin tieu cuc tichs cuc
+      getDataTC:function(req,res){
+        let {city_id} = req.body
+
+        let urlAPi = '/ChartApi.aspx?key=[{"main_keyword":"chính+phủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&se='+city_id
+        processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
+          // let dt  = JSON.parse(data);
+          // dt = dt.slice(0,5)
+
+          return res.send(data);
+
+      });
+      },
+      getDataChartPie:function(req,res){
+        let {city_id} = req.body
+
+        let urlAPi = '/ChartApi.aspx?key=[{"main_keyword":"chính+phủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4'
+
+        processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
+          let dt  = JSON.parse(data);
+          // dt = dt.slice(0,5)
+
+          return res.send(dt);
+
+         });
+      },
+      //xu huong
+      getDataChartLine:function(req,res){
+        let {city_id} = req.body
+
+        let urlAPi = '/ChartApi.aspx?key=[{"main_keyword":"chính+phủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&location='+city_id
+        processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
+          // let dt  = JSON.parse(data);
+          // dt = dt.slice(0,5)
+
+          return res.send(data);
+
+      });
+      },
 };
 

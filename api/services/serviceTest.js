@@ -52,7 +52,7 @@ module.exports = {
     request({
       url: sails.config.URL_PROCESSING + urlApi,
       method: 'POST',
-      
+
       // gzip: !(sails.config.DISABLE_GZIP_PROCESSING || false),
       // timeout: sails.config.TIMEOUT_PROCESSING || (5 * 60 * 1000),
       json: body
@@ -100,6 +100,8 @@ module.exports = {
     });
   },
   getUrlPulic: function (urlApi, done) {
+    console.log('url',sails.config.URL_PUBLIC_GET_DATA + urlApi)
+
     request.get(sails.config.URL_PUBLIC_GET_DATA +urlApi
 
     , function (err, res) {

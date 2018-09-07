@@ -14,6 +14,42 @@ const data = [
       {name: '7 Aug', uv: 3490, pv: 4300, amt: 2100},
 ];
 class SimpleLineChart extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      options:[],
+      subject:null,
+
+      items: 10,
+      page:1,
+      loadingState: false,
+      fulldata:false,
+       listStatus:[
+
+        ],
+        city_id:0
+    }
+  }
+  getDataWithCity(city_id){
+    let that = this
+    RestfulUtils.post('/dashboard/getDataChartLine',{city_id}).then((res)=>{
+          that.setState({listStatus:res.results})
+
+    })
+}  componentDidMount(){
+  this.getDataWithCity('24');
+
+
+
+
+}  componentWillReceiveProps(nextProps){
+  let {city_id} = nextProps
+  if(this.state.city_id!=city_id){
+      this.setState({city_id})
+      this.getDataWithCity(city_id)
+  }
+}
 	render () {
   	return (
     	<LineChart width={570} height={150} data={data}>

@@ -32,10 +32,10 @@ class Channel extends React.Component{
     this.setState({ collapse: this.state.collapse })
 }
   componentDidMount(){
-      axios.get('/dashboard/getDataChart')
-      .then((resdata)=>{
+      // axios.post('/dashboard/getDataTC',{city_id:1})
+      // .then((resdata)=>{
 
-      })
+      // })
   }
 
 	render () {

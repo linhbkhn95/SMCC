@@ -22,6 +22,6 @@ module.exports = {
   // }
   // URL_PROCESSING: 'http://103.192.236.178:1338', //link BPSService
 
-  URL_PROCESSING: 'http://103.192.236.178:1338', //link BPSService
+  URL_PROCESSING: 'http://localhost:1338', //link BPSService
   URL_PUBLIC_GET_DATA:'http://smcc.socials.vn'
 };

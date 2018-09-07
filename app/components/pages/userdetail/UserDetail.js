@@ -9,8 +9,8 @@ import moment from 'moment'
 var datedemo=1536072804565
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
-
-
+import DropdownUtils from 'app/utils/input/DropdownUtils'
+import RestfulUtils from 'app/utils/RestfulUtils'
 class ListUser extends React.Component{
   constructor(props) {
     super(props);
@@ -137,8 +137,8 @@ class ListUser extends React.Component{
           from:'From Ha Noi, Viet Nam',
           work:'Works at Điều hành'
         }
-      ]
-
+      ],
+      user:{}
 
     }
   }
@@ -164,15 +164,29 @@ class ListUser extends React.Component{
 
           }
       })
+      this.get_all_info();
 
   }
+  get_all_info(){
+      RestfulUtils.post('/user/get_all_info',{}).then((res)=>{
+
+      })
+  }
+  onChangeDropdown(type,data){
+
+
+
+     this.state.user[type] = data.value;
+
+     this.setState(this.state)
+ }
   render(){
      return(
 
         <div className="row list-user" >
             <div className="col-md-12">
-                  <div className="title-content">
-                  Thủ Tướng Nguyễn Xuân Phúc
+                   <div style={{marginBottom:"9px"}} className="col-md-4">
+                        <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.user_id} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="user_id"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
                   </div>
                   <div className="hr-title"></div>
                   <div className="col-md-12 remove-padding-col info-detail">

@@ -8,6 +8,14 @@ import ChartAnalyst from './components/ChartAnalyst'
 
 // and just use it
 class DashBoard extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      city_id:'1'
+    }
+  }
+
+
 
   render(){
      return(
@@ -15,10 +23,10 @@ class DashBoard extends React.Component{
               {/*
               <BarChart />
               <ChartAnalyst /> */}
-              <GaugeChart />
-              <Comment />
+              {/* <GaugeChart /> */}
+              <Comment city_id={this.props.city_id} />
 
-              <Chart />
+              <Chart city_id ={this.props.city_id} />
 
 
 

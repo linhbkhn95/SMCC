@@ -23,7 +23,7 @@ import jwt from 'jsonwebtoken';
 import jwtDecode from 'jwt-decode';
 import setAuthorizationToken from 'app/utils/setAuthorizationToken.js';
 import { setCurrentUser } from 'app/action/authActions.js';
-
+import Map from './pages/dashboard/components/center/components/Map'
 import { logout } from 'app/action/actionAuthenticate.js';
 if (localStorage.jwToken) {
   console.log('cssssssssssssssssssssssssssmm');
@@ -67,6 +67,7 @@ class App extends React.Component {
                 <Route path='/livestream' component={LiveStream} />
                 <Route path='/list-user' component={ListUser} />
                 <Route path='/user-special' component={UserDetail} />
+                <Route path='/map' component={Map} />
 
                 {/* <Route  exact   path="/wall" component={Home}/> */}
                 <Route render={function () {

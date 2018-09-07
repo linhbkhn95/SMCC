@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import RestfulUtils from 'app/utils/RestfulUtils'
 
 import moment from 'moment'
 var datedemo=1536072804565
@@ -15,113 +16,29 @@ class ListStatus extends React.Component{
       loadingState: false,
       fulldata:false,
        listStatus:[
-      //    {
-      //      user:{
-      //         url_avatar:"https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7",
-      //         fullname:"Trịnh Linh",
-      //         user_user:"#"
-      //      },
-      //      status:{
-      //           content:"Thưa các bạn thanh niên, cách đây 27 năm, ngày 26/3/1991 sau khi bước chân vào học …",
-      //           url_ref:"#",
 
-      //      },
-      //      action:{
-      //         like:"1.2K",
-      //         comment:"456",
-      //         share:"1.3K"
-      //      }
-      //   },
-      //   {
-      //     user:{
-      //        url_avatar:"https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7",
-      //        fullname:"Trịnh Linh",
-      //        user_user:"#"
-      //     },
-      //     status:{
-      //          content:"Thưa các bạn thanh niên, cách đây 27 năm, ngày 26/3/1991 sau khi bước chân vào học …",
-      //          url_ref:"#",
-
-      //     },
-      //     action:{
-      //        like:"1.2K",
-      //        comment:"456",
-      //        share:"1.3K"
-      //     }
-      //  },
-      //  {
-      //   user:{
-      //      url_avatar:"https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7",
-      //      fullname:"Trịnh Linh",
-      //      user_user:"#"
-      //   },
-      //   status:{
-      //        content:"Thưa các bạn thanh niên, cách đây 27 năm, ngày 26/3/1991 sau khi bước chân vào học …",
-      //        url_ref:"#",
-
-      //   },
-      //   action:{
-      //      like:"1.2K",
-      //      comment:"456",
-      //      share:"1.3K"
-      //   }
-      //  },
-      //  {
-      //   user:{
-      //      url_avatar:"https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7",
-      //      fullname:"Trịnh Linh",
-      //      user_user:"#"
-      //   },
-      //   status:{
-      //        content:"Thưa các bạn thanh niên, cách đây 27 năm, ngày 26/3/1991 sau khi bước chân vào học …",
-      //        url_ref:"#",
-
-      //   },
-      //   action:{
-      //      like:"1.2K",
-      //      comment:"456",
-      //      share:"1.3K"
-      //   }
-      //  },
-      //  {
-      //   user:{
-      //      url_avatar:"https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7",
-      //      fullname:"Trịnh Linh",
-      //      user_user:"#"
-      //   },
-      //   status:{
-      //        content:"Thưa các bạn thanh niên, cách đây 27 năm, ngày 26/3/1991 sau khi bước chân vào học …",
-      //        url_ref:"#",
-
-      //   },
-      //   action:{
-      //      like:"1.2K",
-      //      comment:"456",
-      //      share:"1.3K"
-      //   }
-      //  },
-      //  {
-      //   user:{
-      //      url_avatar:"https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7",
-      //      fullname:"Trịnh Linh",
-      //      user_user:"#"
-      //   },
-      //   status:{
-      //        content:"Thưa các bạn thanh niên, cách đây 27 năm, ngày 26/3/1991 sau khi bước chân vào học …",
-      //        url_ref:"#",
-
-      //   },
-      //   action:{
-      //      like:"1.2K",
-      //      comment:"456",
-      //      share:"1.3K"
-      //   }
-      //  }
-        ]
+        ],
+        city_id:0
     }
   }
+  getDataWithCity(city_id){
+    let that = this
+    
+    RestfulUtils.post('/dashboard/getDataWithCity',{city_id}).then((res)=>{
+          that.setState({listStatus:res.results})
 
+    })
+}
+  componentWillReceiveProps(nextProps){
+      let {city_id} = nextProps
+      if(this.state.city_id!=city_id){
+          this.setState({city_id})
+          this.getDataWithCity(city_id)
+      }
+  }
   componentDidMount(){
+    this.getDataWithCity('24');
+
     let that  = this
      $(".list-status").scroll(function () {
        console.log('vao')
@@ -136,12 +53,13 @@ class ListStatus extends React.Component{
       });
 
         console.log('  componentDidMount(){')
-      io.socket.post('/post/getListPost',{page:that.state.page},function(res,jwres){
-          if(res.EC==0){
-              that.setState({listStatus:res.DT,page:that.state.page+1,loadingState:false})
+      // io.socket.post('/post/getListPost',{page:that.state.page},function(res,jwres){
+      //     if(res.EC==0){
+      //         that.setState({listStatus:res.DT,page:that.state.page+1,loadingState:false})
 
-          }
-      })
+      //     }
+      // })
+      // this.getDataWithCity();
 
   }
   loadMoreItems() {
@@ -173,27 +91,33 @@ class ListStatus extends React.Component{
     let ListStatus = listStatus.length>0?
     listStatus.map((status,index)=>{
       let id = index%3
+      let length = status.content_oryginal.length
+      let len = status.tag.length
+      if(len>20)
+        status.tag = status.tag.substring(0, 20) +"...";
+      if(length>80)
+         status.content_oryginal = status.content_oryginal.substring(0, 80) +"...";
       let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
       return(
-       <div key={index} className="col-md-4 status ">
+       <div key={index} className="col-md-5 status ">
        <div className="user-info">
-          <img className="img-user" src={status.user.url_avatar} />
+          <img className="img-user" src={status.author_avatar_url} />
            <div className="info">
-                 <div className="name">{status.user.fullname} </div>
+                 <div className="name">{status.tag} </div>
                  <div className="info-status">
-                 <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>Trịnh ...</a>
+                 <a href={status.url_ref}>Bài viết</a> trên <a href={status.author_url}>{status.author} </a>
                  </div>
              </div>
        </div>
        <div className="content-status">
-           {status.status.content}
+           {status.content_oryginal}
        </div>
 
 
        <div className="like-comment row">
-          <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.action.like}</div>
-          <div className="action"><i className="fa fa-commenting-o" aria-hidden="true"></i>{status.action.comment}</div>
-          <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.action.share}</div>
+          <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.like_count}</div>
+          <div className="action"><i className="fa fa-commenting-o" aria-hidden="true"></i>{status.response}</div>
+          <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.shares_count}</div>
 
        </div>
        <div className="col-md-12 hr" ></div>
@@ -201,7 +125,7 @@ class ListStatus extends React.Component{
        {/* <img className="img-user" src={status.user.url_avatar} /> */}
        <div className="type-channel" ><i className={typeChannel} aria-hidden="true"></i></div>
 
-       <div className="info">
+       <div style={{float:"left"}} className="">
              {/* <div className="name">{status.user.fullname} </div> */}
              <p className="time">{moment(datedemo).lang('vi').fromNow()}</p>
 
