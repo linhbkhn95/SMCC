@@ -31,20 +31,24 @@ class ListStatus extends React.Component{
         pagesize:6
     }
   }
-  getDataWithCity(city_id,page,pagesize){
+  getDataWithCity(city_id,page,pagesize,valueActive){
     let that = this
     this.setState({showLoading:true})
-    RestfulUtils.post('/dashboard/getDataWithCity',{city_id,page,pagesize}).then((res)=>{
+    RestfulUtils.post('/dashboard/getDataWithCity',{city_id,page,pagesize,se:valueActive}).then((res)=>{
           let pager = parseInt(res.pager)
           that.setState({listStatus:res.results,pager,page,pagesize,showLoading:false})
 
     })
 }
   componentWillReceiveProps(nextProps){
-      let {city_id} = nextProps
+      let {city_id,valueActive} = nextProps
       if(this.state.city_id!=city_id){
           this.setState({city_id,page:1,pagesice:6})
           this.getDataWithCity(city_id,1,6)
+      }
+      if(this.props.valueActive!=nextProps.valueActive){
+          this.setState({city_id,page:1,pagesice:6})
+          this.getDataWithCity(city_id,1,6,valueActive)
       }
   }
   componentDidMount(){

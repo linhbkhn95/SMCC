@@ -9,13 +9,28 @@ $(function(){
                         // $('id_city').text('test');
 
                     },
+                    onRegionTipShow: function (e, el, code) {
+
+                      // el.html(el.html() + '<p  id="popop"></p>').css("zIndex","5");
+                      el.html(el.html()).css("zIndex","5");
+
+                    },
                     zoomOnScroll: false,
                     zoomButtons : false,
                     regionStyle: {
                         initial: {
                             fill: '#0f5acb',
                         },
+                        selected: {
+                          fill: 'black',
+                          "fill-opacity": 0.7,
 
+                        },
+                        hover : {
+                           fill:'#002864',
+                           "fill-opacity": 1,
+                           cursor: 'pointer',
+                      },
                     },
                     series: {
                         regions: [{

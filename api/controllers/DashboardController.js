@@ -146,11 +146,11 @@ module.exports = {
         });
       },
        getDataWithCity: async function(req,res){
-        let {city_id,page,pagesize} = req.body
+        let {city_id,page,pagesize,se} = req.body
         page = page ||1,
         pagesize = pagesize || 6
         city_id = city_id || 24
-
+        se = se || 2
         if(city_id==0||!city_id)
             city_id = '24'
         let urlAPi = '/PagingApi.aspx?key=[{"main_keyword":"chính+phủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&p=1&size=10&location=24'
