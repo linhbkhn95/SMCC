@@ -121,7 +121,8 @@ class ListStatus extends React.Component{
       //   status.tag = status.tag.substring(0, 20) +"...";
       // if(length>80)
       //    status.content_oryginal = status.content_oryginal.substring(0, 80) +"...";
-      let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
+      // let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
+      let typeChannel = "fa fa-facebook"
       return(
        <div key={index} className="col-md-4 status ">
        <div className="user-info col-md-12 remove-padding-col">
@@ -155,7 +156,7 @@ class ListStatus extends React.Component{
              <p className="time">{moment(status.created_date).lang('vi').fromNow()}</p>
 
        </div>
-         <div className={index%2?"type-action tieu-cuc":"type-action tich-cuc"}>{index%2?"Tiêu cực":"Tích cực"}</div>
+         <div className={status.results_sentiment==1?"type-action tieu-cuc":"type-action tich-cuc"}>{status.results_sentiment==1?"Tiêu cực":"Tích cực"}</div>
 
       </div>
    </div>
