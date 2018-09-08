@@ -20,16 +20,17 @@ class DashBoard extends React.Component{
   getCity_id(){
     let city_id = localStorage.getItem('city_id');
     if(city_id&& this.state.city_id!=city_id){
-      console.log('city_id',city_id)
+      this.getDataChart(city_id);
       this.setState({city_id})
     }
   }
   componentWillUnmount(){
     clearInterval(this.intervalId);
   }
-  componentDidMount(){
+
+  getDataChart(city_id){
     let self = this
-    axios.get('/dashboard/getDataChart')
+    axios.post('/dashboard/getDataChart',{city_id})
     .then((resdata)=>{
         self.setState({listDataPieChart:resdata.data.charts.dataPieChart,dataLineChart:resdata.data.charts.dataLineChart})
     })
