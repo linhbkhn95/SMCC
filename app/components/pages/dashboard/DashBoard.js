@@ -15,6 +15,11 @@ class DashBoard extends React.Component{
 
   }
   componentDidMount() {
+    let self = this
+    axios.post('/dashboard/getDataChart',{city_id:'24'})
+    .then((resdata)=>{
+        self.setState({dataPieChart:resdata.data.charts.dataPieChart,dataLineChart:resdata.data.charts.dataLineChart,city_id:'24'})
+    })
     this.intervalId = setInterval(this.getCity_id.bind(this), 1000);
   }
   getCity_id(){
@@ -32,7 +37,7 @@ class DashBoard extends React.Component{
     let self = this
     axios.post('/dashboard/getDataChart',{city_id})
     .then((resdata)=>{
-        self.setState({listDataPieChart:resdata.data.charts.dataPieChart,dataLineChart:resdata.data.charts.dataLineChart})
+        self.setState({dataPieChart:resdata.data.charts.dataPieChart,dataLineChart:resdata.data.charts.dataLineChart})
     })
   }
   render(){
@@ -40,7 +45,7 @@ class DashBoard extends React.Component{
 
         <div className="dashboard" >
              <div className="col-md-3 remove-padding-col ">
-                <ContainerLeft />
+                <ContainerLeft  city_id={this.state.city_id} dataPieChart={this.state.dataPieChart} />
              </div>
              <div className="col-md-4">
                 <div id="map">
@@ -51,7 +56,7 @@ class DashBoard extends React.Component{
                  {/* <img style={{width: "103%",height: "914px",}} src="./images/map.png" /> */}
                    </div>
              <div className="col-md-5 remove-padding-col">
-                <ContainerRight city_id={this.state.city_id} />
+                <ContainerRight dataLineChart ={this.state.dataLineChart} city_id={this.state.city_id} />
              </div>
         </div>
      )

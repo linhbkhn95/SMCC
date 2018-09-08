@@ -3,18 +3,18 @@ import {NavLink} from 'react-router-dom';
 var Recharts = require('recharts')
 import Chart from 'react-google-charts'
 
-const {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} = Recharts;
-const data = [
-      {name: '1 Aug', uv: 4000, pv: 2400, amt: 2400},
-      {name: '2 Aug', uv: 3000, pv: 1398, amt: 2210},
-      {name: '3 Aug', uv: 2000, pv: 9800, amt: 2290},
-      {name: '4 Aug', uv: 2780, pv: 3908, amt: 2000},
-      {name: '5 Aug', uv: 1890, pv: 4800, amt: 2181},
-      {name: '6 Aug', uv: 2390, pv: 3800, amt: 2500},
-      {name: '7 Aug', uv: 3490, pv: 4300, amt: 2100},
-];
-class SimpleLineChart extends React.Component{
 
+
+class Charts extends React.Component{
+
+  componentWillReceiveProps(nextProps){
+    let {city_id,dataLineChart} = nextProps
+    if(this.state.city_id!=city_id){
+        this.setState({city_id,dataLineChart})
+
+        // this.getDataWithCity(city_id)
+    }
+  }
   constructor(props){
     super(props);
     this.state = {
@@ -28,46 +28,18 @@ class SimpleLineChart extends React.Component{
        listStatus:[
 
         ],
-        city_id:0
+        city_id:0,
+        dataLineChart:[]
     }
   }
-  getDataChartLine(city_id){
-    let that = this
-    RestfulUtils.post('/dashboard/getDataChartLine',{city_id}).then((res)=>{
-          that.setState({listStatus:res.results})
+  // getDataChartLine(city_id){
+  //   let that = this
+  //   RestfulUtils.post('/dashboard/getDataChartLine',{city_id}).then((res)=>{
+  //         that.setState({listStatus:res.results})
 
-    })
-}  componentDidMount(){
-      this.getDataChartLine('24');
+  //   })
 
 
-
-
-}
-
-componentWillReceiveProps(nextProps){
-  let {city_id} = nextProps
-  if(this.state.city_id!=city_id){
-      this.setState({city_id})
-      this.getDataWithCity(city_id)
-  }
-}
-	render () {
-  	return (
-    	<LineChart width={570} height={150} data={data}>
-       <CartesianGrid strokeDasharray="3 3"/>
-       <XAxis            fontFamily="Maven Pro" dataKey="name" padding={{left: 30, right: 30}}/>
-       <YAxis/>
-       <Tooltip/>
-       <Legend />
-       <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
-       <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-      </LineChart>
-    );
-  }
-}
-
-class Charts extends React.Component{
 
 	render () {
   	return (
@@ -79,20 +51,10 @@ class Charts extends React.Component{
             </div> */}
          <Chart
   width={'100%'}
-  height={'150px'}
+  height={'200px'}
   chartType="LineChart"
   loader={<div>Loading Chart</div>}
-  data={[
-    ['x', 'dogs', 'cats'],
-    [0, 0, 0],
-    [1, 10, 5],
-    [2, 23, 15],
-    [3, 17, 9],
-    [4, 18, 10],
-    [5, 9, 5],
-    [6, 11, 3],
-    [7, 27, 19],
-  ]}
+  data={this.state.dataLineChart}
   options={{
     title: 'ĐƯỜNG XU HƯỚNG THẢO LUẬN',
 
@@ -106,7 +68,7 @@ class Charts extends React.Component{
               color: "#0092f1",
               fontFamily: 'Maven Pro',
               fontName:'Maven Pro',
-              fontSize: '10',
+              fontSize: '8',
               fontWeight:"normal",
 
             },
@@ -120,7 +82,7 @@ class Charts extends React.Component{
             color: "#0092f1",
             fontFamily: 'Maven Pro',
             fontName:'Maven Pro',
-            fontSize: '12',
+            fontSize: '10',
             },
             gridlines: {
               color: "#002864"

@@ -38,23 +38,59 @@ class Charts extends React.Component{
               title:"Tiêu chí 5"
 
             },
-          ]
+          ],
+          city_id:'',
+          dataPieChart:[]
     }
   }
   componentDidMount(){
     let self = this
-    axios.get('/dashboard/getDataChart')
-    .then((resdata)=>{
-        self.setState({listDataPieChart:resdata.data.charts.dataPieChart})
-    })
+    // axios.post('/dashboard/getDataChart',{city_id:24})
+    // .then((resdata)=>{
+    //     self.setState({listDataPieChart:resdata.data.charts.dataPieChart})
+    // })
+  }
+  componentWillReceiveProps(nextProps){
+    let {city_id,dataPieChart} = nextProps
+    if(this.state.city_id!=city_id){
+        this.setState({city_id,dataPieChart})
+
+        // this.getDataWithCity(city_id)
+    }
   }
   render(){
     return(
        <div className="pie-chart">
        <div className="col-md-7">
+
+       {/* <Chart
+  width={'100%'}
+  height={'300px'}
+  chartType="PieChart"
+  loader={<div>Loading Chart</div>}
+  data={[
+    ['Task', 'Hours per Day'],
+    ['Work', 11],
+    ['Eat', 2],
+    ['Commute', 2],
+    ['Watch TV', 2],
+    ['Sleep', 7],
+  ]}
+  options={{
+    title: 'My Daily Activities',
+    backgroundColor: '#002864',
+    legendTextStyle: { color: '#FFF' },
+    titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro',   fontSize: '13',},
+    bar: { groupWidth: '65%' },
+    legend: { position: 'none' },
+    is3D: true,
+
+  }}
+  rootProps={{ 'data-testid': '1' }}
+/> */}
             <PieChart
                 data={
-                    this.state.listDataPieChart
+                    this.state.dataPieChart
                 }
                 lineWith={100}
                 animate
@@ -63,7 +99,7 @@ class Charts extends React.Component{
               />
        </div>
        <div className="col-md-5 note">
-                  {this.state.listDataPieChart.map((data,index)=>{
+                  {this.state.dataPieChart.map((data,index)=>{
                     return(
                        <div key={index} className="note-chart">
                             <div style={{background:data.color}} className="color-title">

@@ -323,7 +323,7 @@ class ListUser extends React.Component{
                                   {/* <img className="img-user" src={status.user.url_avatar} /> */}
                                   <div className="type-channel" ><i className={typeChannel} aria-hidden="true"></i></div>
 
-                                  <div className="info">
+                                  <div style={{float:"left"}} className="info">
                                         {/* <div className="name">{status.user.fullname} </div> */}
                                         <p className="time">{moment().startOf('hour').lang('vi').fromNow()}</p>
 

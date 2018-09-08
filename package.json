@@ -43,6 +43,7 @@
     "rc": "1.0.1",
     "rc-pagination": "^1.17.1",
     "rc-rate": "^2.1.1",
+    "rc-select": "^8.2.6",
     "react": "^16.4.2",
     "react-bootstrap": "^0.31.3",
     "react-burger-menu": "^2.1.5",

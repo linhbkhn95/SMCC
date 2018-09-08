@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import Chart from './components/Chart'
 import Channel from './components/Channel'
-class DashBoard extends React.Component{
+class ContainerLeft extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -21,11 +21,11 @@ class DashBoard extends React.Component{
      return(
 
         <div className="left" >
-              <Chart />
+              <Chart city_id={this.props.city_id}  dataPieChart = {this.props.dataPieChart} />
               {/* <Chart /> */}
               <Channel />
         </div>
      )
   }
 }
-module.exports =  DashBoard;
+module.exports =  ContainerLeft;

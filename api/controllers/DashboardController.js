@@ -127,9 +127,11 @@ module.exports = {
 
             let {sentiment_positive_count_per_day,sentiment_negative_count_per_day} = dt.charts.chart_sentiment
             let row = []
-            let resultLineChart = []
-            let i=0
-            console.log('sentment',sentiment_positive_count_per_day,sentiment_negative_count_per_day)
+            let resultLineChart = [
+              ['x','Tích cực','Tiêu cực']
+            ]
+            let i=1
+            // console.log('sentment',sentiment_positive_count_per_day,sentiment_negative_count_per_day)
             for(var index in sentiment_negative_count_per_day) {
                 row =[]
                 row[0]=index
@@ -144,11 +146,15 @@ module.exports = {
         });
       },
        getDataWithCity: async function(req,res){
-        let {city_id} = req.body
+        let {city_id,page,pagesize} = req.body
+        page = page ||1,
+        pagesize = pagesize || 6
+        city_id = city_id || 24
+
         if(city_id==0||!city_id)
             city_id = '24'
         let urlAPi = '/PagingApi.aspx?key=[{"main_keyword":"chính+phủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&p=1&size=10&location=24'
-         serviceTest.getUrlPulic('/PagingApi.aspx?key=[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&p=1&size=10&location='+city_id,async function (err, data) {
+         serviceTest.getUrlPulic('/PagingApi.aspx?key=[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&p='+page+'&size='+pagesize+'&location='+city_id,async function (err, data) {
            let dt  = JSON.parse(data);
 
           return res.send(dt);

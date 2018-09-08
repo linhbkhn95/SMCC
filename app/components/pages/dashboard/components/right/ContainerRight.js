@@ -26,7 +26,7 @@ class DashBoard extends React.Component{
               {/* <GaugeChart /> */}
               <Comment city_id={this.props.city_id} />
 
-              <Chart city_id ={this.props.city_id} />
+              <Chart dataLineChart ={this.props.dataLineChart} city_id ={this.props.city_id} />
 
 
 
