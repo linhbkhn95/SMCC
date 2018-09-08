@@ -328,7 +328,7 @@ padding-right: 0px;
 .status .content-status{
   clear: both;
   padding: 2px;
-  /* height: 80px; */
+  height: 80px;
   font-family: Maven Pro;
   font-size: 13px;
   font-weight: normal;
@@ -336,7 +336,7 @@ padding-right: 0px;
   font-stretch: normal;
   line-height: 1.23;
   /* letter-spacing: normal; */
-  /* color: #000000; */
+  color: #000000;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

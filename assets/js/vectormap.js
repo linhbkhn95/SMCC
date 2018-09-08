@@ -13,7 +13,7 @@ $(function(){
                     zoomButtons : false,
                     regionStyle: {
                         initial: {
-                            fill: '#00398f',
+                            fill: '#0f5acb',
                         },
 
                     },

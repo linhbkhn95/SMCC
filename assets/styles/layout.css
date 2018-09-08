@@ -64,9 +64,9 @@ header .dropdown-menu>li>a{
 }
 body{
   /* 4e7ea9 */
-    background-color: #4e7ea9!important;
+    /* background-color: #4e7ea9!important; */
 
-  /* background-color: #00398f!important; */
+  background-color: #00398f!important;
   /* background-image: linear-gradient(123deg, #00398f, #006bd7); */
 
 }
