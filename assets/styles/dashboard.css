@@ -352,18 +352,22 @@ padding-right: 0px;
   white-space:normal;
 }
 .status .info-status{
+  position: relative;
+  /* margin-top: 35px; */
   color: #999999;
   font-size: 13px;
   padding-left: 3px;
+  top: 2px;
   /* padding-bottom: 7px; */
-  height: 34px;
-  display: flex;
+  height: 36px;
+  /* display: flex; */
+  vertical-align: middle;
+  align-items: center;
   align-items: center;
   clear: both;
-
   overflow: hidden;
   /* width: 350px; */
-  word-break: break-all;
+  /* word-break: break-all; */
   white-space: normal;
 
 }

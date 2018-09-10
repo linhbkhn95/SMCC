@@ -547,3 +547,58 @@ margin-right: 4px;
 
 
 
+/* danh cho Trang tag word */
+.header-top-keyword{
+  font-family: Maven Pro;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.module .keyword{
+  font-family: Maven Pro;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+.module .list-keyword .row-data{
+    padding-top:6px;
+    padding-bottom: 6px;
+}
+.tagcloud{
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  /* width: 500px; */
+  padding: 50px;
+  border-radius: 50%;
+  align-items: center;
+}
+.list-keyword{
+  max-height: 350px;
+  overflow-y: auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  clear: both;
+}
+.data-trend{
+  font-family: Maven Pro;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #ffffff;
+  background: #00327d;
+  border-radius: 3px;
+
+
+}

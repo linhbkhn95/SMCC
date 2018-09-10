@@ -27,6 +27,7 @@ class Comment extends React.Component{
                 label:'Tiêu cực'
               },
           ],
+          
           valueActive:2
     }
   }
@@ -48,6 +49,7 @@ class Comment extends React.Component{
       else
         listFilter[i].className = "type-filter"
     }
+    this.props.onChangeSe(value)
     console.log('listfilet',listFilter)
     this.setState({valueActive:value,listFilter})
   }
@@ -61,14 +63,14 @@ class Comment extends React.Component{
                   <div className="name-city">{this.state.city}</div>
               </div>
               <div className="pull-right filter-comment">
-                {listFilter.map((filter)=>{
+                {listFilter.map((filter,index)=>{
                    let active  = filter.value==self.state.valueActive
 
                    return(
-                       active?<div  className={filter.className}>
+                       active?<div key={index}  className={filter.className}>
                                <div className="text" >{filter.label}</div>
                            </div>:
-                      <div  onClick={this.filter.bind(this,filter.value)}  className={filter.className}>
+                      <div key={index}    onClick={this.filter.bind(this,filter.value)}  className={filter.className}>
                       <div className="text" >{filter.label}</div>
                 </div>
                    )

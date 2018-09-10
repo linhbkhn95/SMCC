@@ -25,7 +25,7 @@ class Chart extends React.Component{
 	render () {
   	return (
       <div className="row module" >
-       <HeaderFilterChart />
+       <HeaderFilterChart onChangeFilterDay={this.props.onChangeFilterDay}/>
     	{/* <PieChart width={400} height={200} onMouseEnter={this.onPieEnter}>
         <Pie
           data={data}

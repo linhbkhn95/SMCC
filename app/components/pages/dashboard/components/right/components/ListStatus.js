@@ -7,7 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Select from 'rc-select';
 import localeInfo from 'rc-pagination/lib/locale/vi_VN';
-
+import Post from './Post'
 import moment from 'moment'
 var datedemo=1536072804565
 class ListStatus extends React.Component{
@@ -44,7 +44,7 @@ class ListStatus extends React.Component{
       let {city_id,valueActive} = nextProps
       if(this.state.city_id!=city_id){
           this.setState({city_id,page:1,pagesice:6})
-          this.getDataWithCity(city_id,1,6)
+          this.getDataWithCity(city_id,1,6,this.props.se)
       }
       if(this.props.valueActive!=nextProps.valueActive){
           this.setState({city_id,page:1,pagesice:6})
@@ -52,7 +52,7 @@ class ListStatus extends React.Component{
       }
   }
   componentDidMount(){
-    this.getDataWithCity('24',1,6);
+    // this.getDataWithCity('24',1,6);
 
     let that  = this
      $(".list-status").scroll(function () {
@@ -104,19 +104,21 @@ class ListStatus extends React.Component{
   onShowSizeChange(current, pageSize) {
     // console.log(current);
     // console.log(pageSize);
-    this.getDataWithCity(this.state.city_id,current,pageSize)
+
+    this.getDataWithCity(this.state.city_id,current,pageSize,this.props.valueActive)
 }
 
  onChange(current, pageSize) {
   // console.log('onChange:current=', current);
   // console.log('onChange:pageSize=', pageSize);
-  this.getDataWithCity(this.state.city_id,current,pageSize)
+  this.getDataWithCity(this.state.city_id,current,pageSize,this.props.valueActive)
 
   }
 
 	render () {
     let {listStatus} = this.state
     let ListStatus = listStatus.length>0?
+
     listStatus.map((status,index)=>{
       let id = index%3
       // let length = status.content_oryginal.length
@@ -127,43 +129,9 @@ class ListStatus extends React.Component{
       //    status.content_oryginal = status.content_oryginal.substring(0, 80) +"...";
       // let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
       let typeChannel = "fa fa-facebook"
+      let isSentiment = status.sentiment ==1
       return(
-       <div key={index} className="col-md-4 status ">
-       <div className="user-info col-md-12 remove-padding-col">
-           <div className="col-md-1 remove-padding-col"><img className="img-user" src={status.author_avatar_url} /></div>
-           <div  className="info col-md-11">
-                 <div className="name">{status.tag} </div>
-
-             </div>
-       </div>
-       <div className="info-status">
-                 <a style={{marginRight:"3px"}} href={status.url_ref}>Bài viết</a> trên <a style={{marginLeft:"3px"}} href={status.author_url}>{status.author} </a>
-       </div>
-       <div className="content-status">
-           {status.content_oryginal}
-       </div>
-
-
-       <div className="like-comment row">
-          <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.like_count?status.like_count:0}</div>
-          <div className="action"><i className="fa fa-commenting-o" aria-hidden="true"></i>{status.response?status.response:0}</div>
-          <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.shares_count?status.shares_count:0}</div>
-
-       </div>
-       <div className="col-md-12 hr" ></div>
-       <div className="user-info">
-       {/* <img className="img-user" src={status.user.url_avatar} /> */}
-       <div className="type-channel" ><i className={typeChannel} aria-hidden="true"></i></div>
-
-       <div style={{float:"left"}} className="">
-             {/* <div className="name">{status.user.fullname} </div> */}
-             <p className="time">{moment(status.created_date).lang('vi').fromNow()}</p>
-
-       </div>
-         <div className={status.results_sentiment==1?"type-action tieu-cuc":"type-action tich-cuc"}>{status.results_sentiment==1?"Tiêu cực":"Tích cực"}</div>
-
-      </div>
-   </div>
+        <Post key={index} status={status} />
       )
     }):<div style={{
       textAlign: "center",

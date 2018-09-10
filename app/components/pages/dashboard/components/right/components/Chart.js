@@ -6,10 +6,14 @@ import Chart from 'react-google-charts'
 
 
 class Charts extends React.Component{
+  componentDidMount(){
+    let {city_id,dataLineChart} = this.props
 
+    this.setState({city_id,dataLineChart})
+  }
   componentWillReceiveProps(nextProps){
     let {city_id,dataLineChart} = nextProps
-    if(this.state.city_id!=city_id){
+    if(this.state.dataLineChart.length==0||this.state.city_id!=city_id){
         this.setState({city_id,dataLineChart})
 
         // this.getDataWithCity(city_id)
@@ -63,36 +67,42 @@ class Charts extends React.Component{
            titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro',
            fontSize: '13', },
            hAxis: {
-            format: 'decimal',
+            // format: 'decimal',
             textStyle: {
               color: "#0092f1",
               fontFamily: 'Maven Pro',
               fontName:'Maven Pro',
               fontSize: '8',
               fontWeight:"normal",
-
             },
+            // titleTextStyle: {color: 'white'},
+            // title: 'Thời gian',
             gridlines: {
-              color: "#002864"
+              color: "#ffffff"
             },
-             baselineColor: '#002864'
+            baselineColor: '#0a4caf',
           },
           vAxis: {
             textStyle: {
             color: "#0092f1",
             fontFamily: 'Maven Pro',
             fontName:'Maven Pro',
-            fontSize: '10',
+            fontSize: '8',
             },
+            titleTextStyle: {color: 'white'},
             gridlines: {
-              color: "#002864"
+              color: "#0a4caf"
             },
-            baselineColor: '#002864',
+            // title: 'Số lần thảo luận',
+            baselineColor: '#0a4caf',
 
           },
+          curveType: 'function',
+          legend: { position: 'bottom' },
 
-           bar: { groupWidth: '65%' },
-           legend: { position: 'none' },
+
+           bar: { groupWidth: '100%' },
+          //  legend: { position: 'none' },
           series: {
             1: { curveType: 'function' },
           },

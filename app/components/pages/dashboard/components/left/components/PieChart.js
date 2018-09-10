@@ -45,14 +45,14 @@ class Charts extends React.Component{
   }
   componentDidMount(){
     let self = this
-    // axios.post('/dashboard/getDataChart',{city_id:24})
-    // .then((resdata)=>{
-    //     self.setState({listDataPieChart:resdata.data.charts.dataPieChart})
-    // })
+    let {city_id,dataPieChart} = this.props
+
+    this.setState({city_id,dataPieChart})
   }
   componentWillReceiveProps(nextProps){
     let {city_id,dataPieChart} = nextProps
-    if(this.state.city_id!=city_id){
+    if(this.state.dataPieChart.length==0||this.state.city_id!=city_id){
+         console.log('set piechart',city_id,dataPieChart)
         this.setState({city_id,dataPieChart})
 
         // this.getDataWithCity(city_id)

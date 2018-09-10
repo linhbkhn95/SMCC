@@ -23,6 +23,18 @@ class Channel extends React.Component{
            facebook: true,
 
         },
+        city_id:'',
+        dataProgress:{
+            "Group Post":{},
+            "User Post":{},
+            "Facebook":{},
+            "Youtube":{},
+            "Forum":{},
+            "Fanpage Post":{},
+            "News":{},
+            "Comment":{}
+
+        }
 
     };
 
@@ -31,14 +43,24 @@ class Channel extends React.Component{
     this.state.collapse[tab] = !this.state.collapse[tab];
     this.setState({ collapse: this.state.collapse })
 }
-  componentDidMount(){
-      // axios.post('/dashboard/getDataTC',{city_id:1})
-      // .then((resdata)=>{
 
-      // })
+componentDidMount(){
+  let self = this
+  let {city_id,dataProgress} = this.props
+
+  this.setState({city_id,dataProgress})
+}
+componentWillReceiveProps(nextProps){
+  let {city_id,dataProgress} = nextProps
+  if(this.state.city_id!=city_id){
+      this.setState({city_id,dataProgress})
+
+   }
   }
 
+
 	render () {
+    let dataProgress = this.props.dataProgress
   	return (
       <div className="row module" >
           <div className="col-md-12 header-channel">
@@ -50,34 +72,34 @@ class Channel extends React.Component{
 
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-newspaper-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Báo chí</div></div>
-              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={30} bsStyle="danger"/></div>
-              <div className="col-md-3 custom-progess-success"><ProgressBarCustom showLabel={true} now={70} bsStyle="success"/></div>
+              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={dataProgress["News"].positive} bsStyle="danger"/></div>
+              <div className="col-md-3 custom-progess-success"><ProgressBarCustom showLabel={true} now={dataProgress["News"].setiment} bsStyle="success"/></div>
           </div>
           <div style={{ display: this.state.display["facebook"] ? "block" : "none" ,backgroundColor:" #002c6e",borderRadius:"8px" }} className="col-md-12 channel parent-note">
           <div onClick={this.collapse.bind(this, 'facebook')} style={{ cursor: "pointer" }} className="col-md-6 name-channel"><i className="fa fa-facebook" style={{    cursor: "pointer"}} aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px",float:"left"}}>Facebook  </div><i style={{cursor: "pointer", cursor: "pointer", left: "8px",fontSize: "9px",lineHeight:"22px",fontWeight:"bold" }} className={!this.state.collapse["facebook"] ? "glyphicon glyphicon-menu-down" : "glyphicon glyphicon-menu-up"}></i> </div>
-          <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={40} bsStyle="danger"/></div>
-          <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={60} bsStyle="success"/></div>
+          <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={dataProgress["Facebook"].positive} bsStyle="danger"/></div>
+          <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Facebook"].setiment} bsStyle="success"/></div>
            <Collapse in={this.state.collapse["facebook"]}>
                <div className="col-md-12 note-list">
                <div className="col-md-12 note-channel">
                    < div className="col-md-6 name-chirld-channel"> <div  className="name-note" style={{lineHeight:"21px"}}>Bài viết Fanpage</div></div>
-                   <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={20} bsStyle="danger"/></div>
-                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={10} bsStyle="success"/></div>
+                   <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={dataProgress["Fanpage Post"].positive} bsStyle="danger"/></div>
+                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={dataProgress["Fanpage Post"].setiment} bsStyle="success"/></div>
              </div>
              <div className="col-md-12 note-channel">
                    < div className="col-md-6 name-chirld-channel"> <div  className="name-note" style={{lineHeight:"21px"}}>Bài viết cá nhân</div></div>
-                   <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={80} bsStyle="danger"/></div>
-                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={60} bsStyle="success"/></div>
+                   <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={dataProgress["User Post"].positive} bsStyle="danger"/></div>
+                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={dataProgress["User Post"].setiment} bsStyle="success"/></div>
              </div>
              <div className="col-md-12 note-channel">
                    < div className="col-md-6 name-chirld-channel"> <div  className="name-note"  style={{lineHeight:"21px"}}>Bài viết trong Nhóm</div></div>
-                   <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={90} bsStyle="danger"/></div>
-                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={100} bsStyle="success"/></div>
+                   <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={false} now={dataProgress["Group Post"].positive} bsStyle="danger"/></div>
+                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={dataProgress["Group Post"].setiment} bsStyle="success"/></div>
              </div>
              <div className="col-md-12 note-channel">
                    < div className="col-md-6 name-chirld-channel"> <div  className="name-note" style={{lineHeight:"21px"}}>Bình luận</div></div>
-                   <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={false} now={40} bsStyle="danger"/></div>
-                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={90} bsStyle="success"/></div>
+                   <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={false} now={dataProgress["Comment"].positive} bsStyle="danger"/></div>
+                   <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={false} now={dataProgress["Comment"].setiment} bsStyle="success"/></div>
              </div>
              </div>
            </Collapse>
@@ -85,23 +107,24 @@ class Channel extends React.Component{
         </div>
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-youtube" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Youtube</div></div>
-              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={true} now={50} bsStyle="danger"/></div>
-              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={50} bsStyle="success"/></div>
+              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].positive} bsStyle="danger"/></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].setiment} bsStyle="success"/></div>
           </div>
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-file-text-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Block</div></div>
-              <div className="col-md-3 custom-progess-danger ">{progressInstance1}</div>
-              <div className="col-md-3 custom-progess-success ">{progressInstance2}</div>
+              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
           </div>
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-commenting-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Diễn đàn</div></div>
-              <div className="col-md-3 custom-progess-danger">{progressInstance1}</div>
-              <div className="col-md-3 custom-progess-success ">{progressInstance2}</div>
+              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={dataProgress["Forum"].positive} bsStyle="danger" /></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Forum"].setiment} bsStyle="success" /></div>
           </div>
           <div className="col-md-12 channel">
+
            < div className="col-md-6 name-channel"><i className="fa fa-user-md" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Khác</div></div>
-              <div className="col-md-3 custom-progess-danger ">{progressInstance1}</div>
-              <div className="col-md-3 custom-progess-success ">{progressInstance2}</div>
+              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
           </div>
       </div>
     );
@@ -109,16 +132,7 @@ class Channel extends React.Component{
 }
 
 
-// class DashBoard extends React.Component{
 
-//   render(){
-//      return(
 
-//         <div className="row module" >
-//              Chart
 
-//         </div>
-//      )
-//   }
-// }
 module.exports =  Channel;

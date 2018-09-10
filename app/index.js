@@ -17,9 +17,6 @@ var ReactDOM = require('react-dom');
 // injectTapEventPlugin();
  ReactDOM.render(
 
-
-     		 <App />
-
-    ,
-  document.getElementById('layout')
+		 <App />
+    ,document.getElementById('layout')
 );

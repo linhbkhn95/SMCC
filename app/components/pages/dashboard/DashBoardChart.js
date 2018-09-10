@@ -14,7 +14,7 @@ class DashBoard extends React.Component{
              </div>
              <div className="col-md-5">
 
-                {/* <Center /> */}
+                <Center />
              </div>
              <div className="col-md-4">
                 <ListCharts />

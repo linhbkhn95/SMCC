@@ -1,5 +1,8 @@
 var React = require('react');
+// var $ = require('jquery');
 
+// // load jvectormap jquery plugin
+// require('jvectormap-next')($);
 import { BrowserRouter as Router, Route, Switch, Ridirect, hashHistory, Redirect, NavLink, Link } from 'react-router-dom';
 
 var { Provider } = require('react-redux');
@@ -16,6 +19,7 @@ var Login = require('app/components/pages/login/Login.js');
 var LiveStream = require('app/components/pages/livestream/LiveStream.js');
 var ListUser = require('app/components/pages/listuser/ListUser.js');
 var UserDetail = require('app/components/pages/userdetail/UserDetail.js');
+import WordHashTag from 'app/components/pages/listuser/WordHashTag.js'
 
 // import OrderStep from  'app/components/pages/shopcart/OrderStep.js';
 // import DetailProduct from 'app/utils/DetailProduct.js';
@@ -45,15 +49,84 @@ if (localStorage.jwToken) {
 //     height: 50,
 //   },
 // });
+function setFocusMapCenter() {
+  var mapObj = $('#map').vectorMap('get', 'mapObject'),
+      center = mapObj.pointToLatLng(mapObj.width / 2, mapObj.height / 2);
+
+  var config = {
+      animate: true,
+      lat: center.lat,
+      lng: center.lng,
+      scale: 1
+  }
+
+  mapObj.setFocus(config)
+}
+
+
 class App extends React.Component {
 
   // require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
   //require('style!css!sass!./css/style.scss');
   // $(document).ready(() => $(document).foundation());
   componentDidMount() {
+    this.createMap();
 
   }
+  componentWillReceiveProps(){
+    // this.createMap();
+  }
+  createMap(){
+    console.log('creat map')
+    $('#map').vectorMap({
+      map: 'vietnam',
+      backgroundColor: "transparent",
+      onRegionClick:function(event, code){
+          var name = (code);
+          localStorage.setItem('city_id', code);
 
+          // $('id_city').text('test');
+
+      },
+      onRegionTipShow: function (e, el, code) {
+
+        // el.html(el.html() + '<p  id="popop"></p>').css("zIndex","5");
+        el.html(el.html()).css("zIndex","5");
+
+      },
+      onMarkerClick: function (e, c) {
+        setFocusLatLng(5, markers[c].latLng[0], markers[c].latLng[1]);
+       },
+
+      zoomOnScroll: false,
+      zoomButtons : false,
+      regionStyle: {
+          initial: {
+              fill: '#0f5acb',
+          },
+          selected: {
+            fill: 'black',
+            "fill-opacity": 0.7,
+
+          },
+          hover : {
+             fill:'#002864',
+             "fill-opacity": 1,
+             cursor: 'pointer',
+        },
+      },
+      series: {
+          regions: [{
+              attribute: 'fill',
+              normalizeFunction: 'polynomial'
+          }]
+      },
+    })
+  }
+  componentWillMount(){
+     $('#map').empty()
+
+  }
   render() {
     return (
       // <MuiThemeProvider muiTheme={muiTheme}>
@@ -67,7 +140,8 @@ class App extends React.Component {
                 <Route path='/livestream' component={LiveStream} />
                 <Route path='/list-user' component={ListUser} />
                 <Route path='/user-special' component={UserDetail} />
-                <Route path='/map' component={Map} />
+                {/* <Route path='/map' component={Map} /> */}
+                <Route path='/hash-wordtag' component={WordHashTag} />
 
                 {/* <Route  exact   path="/wall" component={Home}/> */}
                 <Route render={function () {

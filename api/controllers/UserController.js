@@ -11,6 +11,8 @@ var LogHelper = require('../common/LogHelper.js');
 var lodash = require('lodash')
 
 module.exports = {
+
+      
       get_all_info:function(req,res){
         try {
                var data = {
@@ -34,7 +36,7 @@ module.exports = {
                 }
                 else {
 
-                  return res.send(Ioutput.errServer(dt));
+                  return res.send(Ioutput.errServer(rs));
 
                     // return res.send(rs);
                 }
