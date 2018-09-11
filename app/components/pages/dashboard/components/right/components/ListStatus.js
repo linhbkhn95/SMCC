@@ -28,28 +28,34 @@ class ListStatus extends React.Component{
         showLoading:false,
         pager:0,
         // pageActive:1
-        pagesize:6
+        pagesize:6,
+        d1:'',
+        d2:''
     }
   }
   getDataWithCity(city_id,page,pagesize,valueActive){
     let that = this
+    let {d1,d2} = this.props
     this.setState({showLoading:true})
-    RestfulUtils.post('/dashboard/getDataWithCity',{city_id,page,pagesize,se:valueActive}).then((res)=>{
+    RestfulUtils.post('/dashboard/getDataWithCity',{city_id,page,pagesize,se:valueActive,d1,d2}).then((res)=>{
           let pager = parseInt(res.pager)
           that.setState({listStatus:res.results,pager,page,pagesize,showLoading:false})
 
     })
 }
   componentWillReceiveProps(nextProps){
-      let {city_id,valueActive} = nextProps
-      if(this.state.city_id!=city_id){
-          this.setState({city_id,page:1,pagesice:6})
-          this.getDataWithCity(city_id,1,6,this.props.se)
+      let {city_id,valueActive,d1,d2} = nextProps
+      if((this.state.city_id!=city_id)||(d1!=this.state.d1||d2!=this.state.d2)||(this.props.valueActive!=nextProps.valueActive)){
+          this.setState({city_id,page:1,pagesice:6,d1,d2})
+          this.getDataWithCity(city_id,1,6,this.props.se,d1,d2)
       }
-      if(this.props.valueActive!=nextProps.valueActive){
-          this.setState({city_id,page:1,pagesice:6})
-          this.getDataWithCity(city_id,1,6,valueActive)
-      }
+      // if(){
+      //     this.setState({d1,d2})
+      // }
+      // if({
+      //     this.setState({city_id,page:1,pagesice:6})
+      //     this.getDataWithCity(city_id,1,6,valueActive)
+      // }
   }
   componentDidMount(){
     // this.getDataWithCity('24',1,6);
@@ -180,12 +186,12 @@ class ListStatus extends React.Component{
             <div style={{display:"flex",justifyContent:"center",paddingTop:"10px"}} className="col-md-12">
             <Pagination className="ant-pagination"
           selectComponentClass={Select}
-          showQuickJumper
-          showSizeChanger
+          // showQuickJumper
+          // showSizeChanger
           defaultPageSize={6}
           defaultCurrent={1}
-          pageSizeOptions={['6','12','24']}
-          onShowSizeChange={this.onShowSizeChange.bind(this)}
+          // pageSizeOptions={['6','12','24']}
+          // onShowSizeChange={this.onShowSizeChange.bind(this)}
           onChange={this.onChange.bind(this)}
           total={this.state.pager}
           locale={localeInfo}

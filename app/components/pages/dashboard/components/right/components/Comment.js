@@ -27,7 +27,7 @@ class Comment extends React.Component{
                 label:'Tiêu cực'
               },
           ],
-          
+
           valueActive:2
     }
   }
@@ -86,7 +86,7 @@ class Comment extends React.Component{
                 </div> */}
               </div>
          </div>
-         <ListStatus valueActive={this.state.valueActive} city_id ={this.props.city_id}/>
+         <ListStatus d1={this.props.d1} d2={this.props.d2} valueActive={this.state.valueActive} city_id ={this.props.city_id}/>
       </div>
     );
   }

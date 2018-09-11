@@ -34,7 +34,8 @@ class Channel extends React.Component{
             "News":{},
             "Comment":{}
 
-        }
+        },
+        d1:''
 
     };
 
@@ -51,9 +52,9 @@ componentDidMount(){
   this.setState({city_id,dataProgress})
 }
 componentWillReceiveProps(nextProps){
-  let {city_id,dataProgress} = nextProps
-  if(this.state.city_id!=city_id){
-      this.setState({city_id,dataProgress})
+  let {city_id,dataProgress,d1} = nextProps
+  if(this.state.city_id!=city_id||d1!=this.state.d1){
+      this.setState({city_id,dataProgress,d1})
 
    }
   }
@@ -72,13 +73,13 @@ componentWillReceiveProps(nextProps){
 
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-newspaper-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Báo chí</div></div>
-              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={dataProgress["News"].positive} bsStyle="danger"/></div>
-              <div className="col-md-3 custom-progess-success"><ProgressBarCustom showLabel={true} now={dataProgress["News"].setiment} bsStyle="success"/></div>
+              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={dataProgress["News"].positive>30} now={dataProgress["News"].positive} bsStyle="danger"/></div>
+              <div className="col-md-3 custom-progess-success"><ProgressBarCustom showLabel={dataProgress["News"].setiment>30} now={dataProgress["News"].setiment} bsStyle="success"/></div>
           </div>
           <div style={{ display: this.state.display["facebook"] ? "block" : "none" ,backgroundColor:" #002c6e",borderRadius:"8px" }} className="col-md-12 channel parent-note">
           <div onClick={this.collapse.bind(this, 'facebook')} style={{ cursor: "pointer" }} className="col-md-6 name-channel"><i className="fa fa-facebook" style={{    cursor: "pointer"}} aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px",float:"left"}}>Facebook  </div><i style={{cursor: "pointer", cursor: "pointer", left: "8px",fontSize: "9px",lineHeight:"22px",fontWeight:"bold" }} className={!this.state.collapse["facebook"] ? "glyphicon glyphicon-menu-down" : "glyphicon glyphicon-menu-up"}></i> </div>
-          <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={dataProgress["Facebook"].positive} bsStyle="danger"/></div>
-          <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Facebook"].setiment} bsStyle="success"/></div>
+          <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={dataProgress["Facebook"].positive>30} now={dataProgress["Facebook"].positive} bsStyle="danger"/></div>
+          <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Facebook"].setiment>30} now={dataProgress["Facebook"].setiment} bsStyle="success"/></div>
            <Collapse in={this.state.collapse["facebook"]}>
                <div className="col-md-12 note-list">
                <div className="col-md-12 note-channel">
@@ -107,24 +108,24 @@ componentWillReceiveProps(nextProps){
         </div>
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-youtube" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Youtube</div></div>
-              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].positive} bsStyle="danger"/></div>
-              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].setiment} bsStyle="success"/></div>
+              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={dataProgress["Youtube"].positive>30} now={dataProgress["Youtube"].positive} bsStyle="danger"/></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Youtube"].setiment>30} now={dataProgress["Youtube"].setiment} bsStyle="success"/></div>
           </div>
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-file-text-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Block</div></div>
-              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
-              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
+              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={dataProgress["Youtube"].positive>30} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Youtube"].setiment>30} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
           </div>
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-commenting-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Diễn đàn</div></div>
-              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={true} now={dataProgress["Forum"].positive} bsStyle="danger" /></div>
-              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Forum"].setiment} bsStyle="success" /></div>
+              <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={dataProgress["Forum"].positive>30} now={dataProgress["Forum"].positive} bsStyle="danger" /></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Forum"].setiment>30} now={dataProgress["Forum"].setiment} bsStyle="success" /></div>
           </div>
           <div className="col-md-12 channel">
 
            < div className="col-md-6 name-channel"><i className="fa fa-user-md" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Khác</div></div>
-              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
-              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={true} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
+              <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={dataProgress["Youtube"].positive>30} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
+              <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Youtube"].setiment>30} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
           </div>
       </div>
     );

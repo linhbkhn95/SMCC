@@ -12,9 +12,9 @@ class Charts extends React.Component{
     this.setState({city_id,dataLineChart})
   }
   componentWillReceiveProps(nextProps){
-    let {city_id,dataLineChart} = nextProps
-    if(this.state.dataLineChart.length==0||this.state.city_id!=city_id){
-        this.setState({city_id,dataLineChart})
+    let {city_id,dataLineChart,d1} = nextProps
+    if(this.state.dataLineChart.length==0||this.state.city_id!=city_id||this.state.d1!=d1){
+        this.setState({city_id,dataLineChart,d1})
 
         // this.getDataWithCity(city_id)
     }
@@ -33,7 +33,8 @@ class Charts extends React.Component{
 
         ],
         city_id:0,
-        dataLineChart:[]
+        dataLineChart:[],
+        d1:''
     }
   }
   // getDataChartLine(city_id){

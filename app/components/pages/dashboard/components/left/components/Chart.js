@@ -41,7 +41,7 @@ class Chart extends React.Component{
           }
         </Pie>
       </PieChart> */}
-         <ChartCustom city_id={this.props.city_id}  dataPieChart = {this.props.dataPieChart} />
+         <ChartCustom d1={this.props.d1} city_id={this.props.city_id}  dataPieChart = {this.props.dataPieChart} />
 
       </div>
     );

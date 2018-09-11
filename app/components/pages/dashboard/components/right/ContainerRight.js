@@ -24,9 +24,9 @@ class DashBoard extends React.Component{
               <BarChart />
               <ChartAnalyst /> */}
               {/* <GaugeChart /> */}
-              <Comment onChangeSe={this.props.onChangeSe} city_id={this.props.city_id} />
+              <Comment d1={this.props.d1} d2 ={this.props.d2} onChangeSe={this.props.onChangeSe} city_id={this.props.city_id} />
 
-              <Chart dataLineChart ={this.props.dataLineChart} city_id ={this.props.city_id} />
+              <Chart d1={this.props.d1} dataLineChart ={this.props.dataLineChart} city_id ={this.props.city_id} />
 
 
 
