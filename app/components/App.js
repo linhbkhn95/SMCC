@@ -10,27 +10,19 @@ import DashBoard from './pages/dashboard/DashBoard'
 import DashBoardChart from './pages/dashboard/DashBoardChart'
 
 var store = require('app/store.js');
-// var Test =require('app/components/Test.js');
 import Layout from 'app/components/Menu.js';
-import  LayoutMaterial from './LayoutMaterial';
 
-var Login = require('app/components/pages/login/Login.js');
-// var ShopCart = require('app/components/pages/shopcart/ShopCart.js');
 var LiveStream = require('app/components/pages/livestream/LiveStream.js');
 var ListUser = require('app/components/pages/listuser/ListUser.js');
 var UserDetail = require('app/components/pages/userdetail/UserDetail.js');
 import WordHashTag from 'app/components/pages/listuser/WordHashTag.js'
 
-// import OrderStep from  'app/components/pages/shopcart/OrderStep.js';
-// import DetailProduct from 'app/utils/DetailProduct.js';
 import jwt from 'jsonwebtoken';
 import jwtDecode from 'jwt-decode';
 import setAuthorizationToken from 'app/utils/setAuthorizationToken.js';
 import { setCurrentUser } from 'app/action/authActions.js';
 import Map from './pages/dashboard/components/center/components/Map'
-import { logout } from 'app/action/actionAuthenticate.js';
 if (localStorage.jwToken) {
-  console.log('cssssssssssssssssssssssssssmm');
   setAuthorizationToken(localStorage.jwToken);
   store.dispatch(setCurrentUser(jwtDecode(localStorage.jwToken)));
 
@@ -77,7 +69,6 @@ class App extends React.Component {
     // this.createMap();
   }
   createMap(){
-    console.log('creat map')
     $('#map').vectorMap({
       map: 'vietnam',
       backgroundColor: "transparent",

@@ -20,6 +20,7 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
+  keyword:"'[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22b%C3%A1n+h%C3%A0ng%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]'",
   URL_PROCESSING: 'http://103.192.236.178:1338', //link BPSService
 
   // URL_PROCESSING: 'http://localhost:1338', //link BPSService
