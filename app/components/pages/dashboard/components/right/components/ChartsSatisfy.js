@@ -1,6 +1,5 @@
  import React from 'react';
 import {NavLink} from 'react-router-dom';
-import ListStatus from './ListStatus'
 import Chart from 'react-google-charts'
 
 import ReactSpeedometer from "react-d3-speedometer";

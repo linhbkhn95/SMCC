@@ -28,6 +28,9 @@ module.exports = {
       '__BROWSER__': 'true', // you really only need one of these, but I like to have both
     }),
   ],
+  watchOptions: {
+    poll: true
+},
   resolve: {
     modules: [__dirname, 'node_modules'],
     extensions: ['*', '.jsx', '.js', '.json'],

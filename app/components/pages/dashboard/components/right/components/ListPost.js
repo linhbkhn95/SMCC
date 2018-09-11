@@ -10,7 +10,7 @@ import localeInfo from 'rc-pagination/lib/locale/vi_VN';
 import Post from './Post'
 import moment from 'moment'
 var datedemo=1536072804565
-class ListStatus extends React.Component{
+class ListPost extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -47,7 +47,7 @@ class ListStatus extends React.Component{
       let {city_id,valueActive,d1,d2} = nextProps
       if((this.state.city_id!=city_id)||(d1!=this.state.d1||d2!=this.state.d2)||(this.props.valueActive!=nextProps.valueActive)){
           this.setState({city_id,page:1,pagesice:6,d1,d2})
-          this.getDataWithCity(city_id,1,6,this.props.se,d1,d2)
+          this.getDataWithCity(city_id,1,6,valueActive,d1,d2)
       }
       // if(){
       //     this.setState({d1,d2})
@@ -147,38 +147,12 @@ class ListStatus extends React.Component{
    }}></div>
   	return (
         <div className="container-list">
-               {/* <LinearProgress /> */}
                {this.state.showLoading?<div className="loading-progress"> <CircularProgress size={50} /></div>:null}
 
          <div id="list-status list-user" className="col-md-12 list-status">
 
-             {/* {listStatus.map((status)=>{
-               return(
-                <div className="col-md-4 status ">
-                <div className="user-info">
-                   <img className="img-user" src={status.user.url_avatar} />
-                    <div className="info">
-                          <div className="name">{status.user.fullname} </div>
-                          <div className="title-facbook">Facbook</div>
-                    </div>
-                </div>
-                <div className="content-status">
-                    {status.status.content}
-                </div>
-                <div className="info-status">
-                      <a href={status.url_ref}>Bài viết</a> trên <a href={status.user.url_user}>{status.user.fullname}</a> </div>
 
-                <div className="like-comment row">
-                   <div className="action"><i className="fa fa-thumbs-o-up" aria-hidden="true"></i>{status.action.like}</div>
-                   <div className="action"><i className="fa fa-commenting-o" aria-hidden="true"></i>{status.action.comment}</div>
-                   <div className="action"><i className="fa fa-share" aria-hidden="true"></i>{status.action.share}</div>
-
-                </div>
-            </div>
-               )
-             })} */}
-
-             {ListStatus}
+             <ListPost />
             </div>
             <div style={{textAlign:"center",fontSize:"12px"}}>{this.state.loadingState ? <p style={{fontSize:"12px"}} className="loading"> đang tải dữ liệu..</p> : ""} </div>
 
@@ -205,4 +179,4 @@ class ListStatus extends React.Component{
   }
 }
 
-module.exports =  ListStatus;
+module.exports =  ListPost;

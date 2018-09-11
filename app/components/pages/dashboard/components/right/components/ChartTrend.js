@@ -9,7 +9,7 @@ class Charts extends React.Component{
   componentDidMount(){
     let {city_id,dataLineChart} = this.props
 
-    this.setState({city_id,dataLineChart})
+    this.setState({city_id,dataLineChart,showLoading:true})
   }
   componentWillReceiveProps(nextProps){
     let {city_id,dataLineChart,d1} = nextProps
@@ -27,7 +27,7 @@ class Charts extends React.Component{
 
       items: 10,
       page:1,
-      loadingState: false,
+      showLoading: false,
       fulldata:false,
        listStatus:[
 
@@ -50,10 +50,8 @@ class Charts extends React.Component{
   	return (
 
         <div className="comment col-md-12 module" >
-            {/* <div className="name-chart">ĐƯỜNG XU HƯỚNG THẢO LUẬN</div>
-            <div className="chart-develop">
-               <SimpleLineChart />
-            </div> */}
+
+              {this.state.showLoading?<div className="loading-progress"> <CircularProgress size={50} /></div>:null}
          <Chart
   width={'100%'}
   height={'200px'}

@@ -86,7 +86,8 @@
     "sails": "~0.12.13",
     "sails-disk": "~0.10.9",
     "slick-carousel": "^1.7.1",
-    "utils-merge": "^1.0.0"
+    "utils-merge": "^1.0.0",
+    "webpack": "^3.12.0"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -120,7 +121,6 @@
     "script-loader": "^0.7.0",
     "scriptloader": "^1.1.2",
     "style-loader": "^0.18.2",
-    "webpack": "^3.12.0",
     "webpack-dev-server": "^3.1.0"
   }
 }

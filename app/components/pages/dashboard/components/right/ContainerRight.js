@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import Comment from './components/Comment'
-import Chart from './components/Chart'
+import Comment from './components/ContainerPost'
+import ChartTrend from './components/ChartTrend'
 import GaugeChart from './components/ChartsSatisfy'
 import BarChart from './components/ChartTendencyComment'
 import ChartAnalyst from './components/ChartAnalyst'
@@ -26,7 +26,7 @@ class DashBoard extends React.Component{
               {/* <GaugeChart /> */}
               <Comment d1={this.props.d1} d2 ={this.props.d2} onChangeSe={this.props.onChangeSe} city_id={this.props.city_id} />
 
-              <Chart d1={this.props.d1} dataLineChart ={this.props.dataLineChart} city_id ={this.props.city_id} />
+              <ChartTrend d1={this.props.d1} dataLineChart ={this.props.dataLineChart} city_id ={this.props.city_id} />
 
 
 

@@ -1,6 +1,5 @@
 // var Menu = require('Menu');
 // var Main = require('Main');
-var Nav = require('./Nav.js');
 import Menu from './Menu.js';
 var React = require('react');
 import LayoutMaterial from './LayoutMaterial'

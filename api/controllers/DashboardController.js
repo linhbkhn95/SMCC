@@ -9,7 +9,7 @@ var Ioutput = require('../common/OutputInterface.js');
 var RestfulHandler = require('../common/RestfulHandler');
 var processingserver = require('../commonwebuser/ProcessingServer');
 var LogHelper = require('../common/LogHelper.js');
-let keyword = sails.config.keyword
+let keyword = 'sails.config.keyword'
 module.exports = {
 
         getDataLineChart:function(req,res){

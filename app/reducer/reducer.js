@@ -1,4 +1,4 @@
 var redux = require('redux');
 var auth = require('./auth.js');
- var reducer = redux.combineReducers ({username,auth,settings,shoppingCart});
+ var reducer = redux.combineReducers ({auth});
  module.exports = reducer;
