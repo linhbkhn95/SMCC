@@ -44,7 +44,7 @@ class ListStatus extends React.Component{
       let {city_id,valueActive} = nextProps
       if(this.state.city_id!=city_id){
           this.setState({city_id,page:1,pagesice:6})
-          this.getDataWithCity(city_id,1,6,this.props.se)
+          this.getDataWithCity(city_id,1,6,valueActive)
       }
       if(this.props.valueActive!=nextProps.valueActive){
           this.setState({city_id,page:1,pagesice:6})

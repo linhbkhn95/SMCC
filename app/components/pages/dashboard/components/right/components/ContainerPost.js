@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import ListStatus from './ListStatus'
-import Chart from './Chart'
+import ListPost from './ListPost'
 import RestfulUtils from 'app/utils/RestfulUtils'
 import listcity from 'app/utils/country.json'
 import index from 'react-google-charts';
@@ -27,7 +26,7 @@ class Comment extends React.Component{
                 label:'Tiêu cực'
               },
           ],
-          
+
           valueActive:2
     }
   }
@@ -86,7 +85,7 @@ class Comment extends React.Component{
                 </div> */}
               </div>
          </div>
-         <ListStatus valueActive={this.state.valueActive} city_id ={this.props.city_id}/>
+         <ListPost valueActive={this.state.valueActive} city_id ={this.props.city_id}/>
       </div>
     );
   }
