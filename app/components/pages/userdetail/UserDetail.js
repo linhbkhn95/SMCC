@@ -68,7 +68,7 @@ class ListUser extends React.Component{
 
         <div className="row list-user" >
             <div className="col-md-12">
-                   <div style={{marginBottom:"9px"}} className="col-md-2">
+                   <div style={{marginBottom:"9px"}} className="col-md-2 remove-pading-col">
                         <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.topic} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="topic"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
                   </div>
                   <div className="hr-title"></div>

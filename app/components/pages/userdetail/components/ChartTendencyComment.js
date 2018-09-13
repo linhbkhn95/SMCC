@@ -90,7 +90,7 @@ class Charts extends React.Component{
               color: "#0092f1",
               fontFamily: 'Maven Pro',
               fontName:'Maven Pro',
-              fontSize: '10',
+              fontSize: '7',
               fontWeight:"normal",
 
             },
@@ -117,15 +117,19 @@ class Charts extends React.Component{
            legend:{
             position:'top',
             textStyle: {color: 'white'}
-           },          series: {
+           },
+             series: {
             1: { curveType: 'function' },
-          },
-          chartArea:{width:'95%'}
 
+
+          },
+          chartArea:{left:20,width:'95%'},
+          pointSize: 9,
   }}
 
   rootProps={{ 'data-testid': '2' }}
 />
+
 
                {/* <div  className="col-md-12 remove-padding-col">
                        <div className="filter">

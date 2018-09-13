@@ -26,6 +26,13 @@ module.exports =class InfoPerSon extends React.Component{
           ['Nhắc đến', 2],
           ['Spam', 2],
         ],
+        dataPieChartWithChannel:[
+          ['Task', 'Hours per Day'],
+          ['Facebook', 4],
+          ['Báo chí', 2],
+          ['Diễn đàn', 2],
+          ['Khác', 2],
+        ],
         Total: {
             "source_id": 0,
             "number": 835
@@ -70,7 +77,9 @@ module.exports =class InfoPerSon extends React.Component{
     }
 
   }
+
   render(){
+    let{data} =this.state
     return(
 
       <div className="col-md-12 remove-padding-col info-detail">
@@ -87,28 +96,28 @@ module.exports =class InfoPerSon extends React.Component{
 
                </div>
                <div style={{right:"-29px",borderBottom:" 1.1px dotted #0092f1"}} className="text-information" >
-                   <strong style={{color:"#0092f1"}}>47</strong> lần được nhắc đến
+                   <strong style={{color:"#0092f1"}}>{data.setiment_count}</strong> lần được nhắc đến
                </div>
                 <div style={{ display:'none',   marginTop: "100px",transform:" rotate(0deg)"}}  className="text-info-user" >
 
                    </div>
                        <div style={{top: '63px',right: "0px",borderBottom:" 1.1px dotted #00ce7d"}} className="text-information" >
-                            <strong style={{color:"#00ce7d"}}>46</strong> thông tin tích cực
+                            <strong style={{color:"#00ce7d"}}>{data.positive_count}</strong> thông tin tích cực
                     </div>
                     <div style={{    marginTop: "206px",transform:" rotate(18deg)"}}  className="text-info-user" >
 
                  </div>
                      <div style={{top: '132px',right: "-3px",width:"132px",borderBottom:" 1.1px dotted #ff0000"}} className="text-information" >
-                         <strong style={{color:"#ff0000"}}>1</strong> Thông tin tiêu cực
+                         <strong style={{color:"#ff0000"}}>{data.neutral_count}</strong> Thông tin tiêu cực
                  </div>
 
             </div>
 
        </div>
-       <div className="col-md-3 remove-padding-col">
-           <PieChart dataPieChart  ={this.state.data.dataPieChart} />
-       </div>
        <div className="col-md-4 remove-padding-col">
+           <PieChart dataPieChartWithChannel = {this.state.data.dataPieChartWithChannel} dataPieChart  ={this.state.data.dataPieChart} />
+       </div>
+       <div className="col-md-3 remove-padding-col">
            <ChartLine topic ={this.props.topic} />
        </div>
      </div>

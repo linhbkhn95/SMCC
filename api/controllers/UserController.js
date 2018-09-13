@@ -17,23 +17,27 @@ module.exports = {
       //lay tin bai @linh.trinh
       get_new_search:function(req,res){
                   try {
-                    let {topic} = req.body
+                    let {topic,source_id,date_from,date_to,page} = req.body
                     topic = topic||71
                     let dataTopic = []
                     dataTopic[0] = topic
+                    source_id = source_id||0
+                    let dataSource = []
+                    dataSource[0] = topic
+
                 let obj = {
                   "topic":dataTopic,
                   "user_id":651,
-                  "source_id":[1,2,3,4,12],
+                  "source_id":dataSource,
                   "order_by":"1",
                   "sentiment":[-1,0,1],
                   "domain":"",
-                  "keyword":"",
+                  "keyword":sails.config.keyword,
                   "seconKeyword":[],
                   "limit":"1",
                   "page":"0",
-                  "date_from":"2018-09-08 00:00:00",
-                  "date_to":"2018-09-12 00:00:00",
+                  "date_from":date_from,
+                  "date_to":date_to,
                   "event_master":"1"
                 }
                 var data = {
@@ -88,24 +92,49 @@ module.exports = {
 
 
               if(rs.code==0){
-
+                if(rs.data){
+                //thống kê theo tích cực tiêu cực
                  let dataPieChart = []
+
                  dataPieChart[0] = ['Task', 'Hours per Day'],
                  dataPieChart[1] =[];
                  dataPieChart[2]=[]
                  dataPieChart[3] = []
                  dataPieChart[1][0]= "Tích cực"
                  dataPieChart[1][1]= rs.data["positive_count"]
-                 dataPieChart[2][0]= "Trung bình"
+                 dataPieChart[2][0]= "Tiêu cực"
                  dataPieChart[2][1]= rs.data["neutral_count"]
-                 dataPieChart[3][0]= "Tình cảm"
-                 dataPieChart[3][1]= rs.data["Sentiment_count"]
+                //  dataPieChart[3][0]= "Tình tiêu"
+                //  dataPieChart[3][1]= rs.data["Sentiment_count"]
 
 
+                //thống kê theo từng channel
                  rs.data.dataPieChart = dataPieChart
+
+                 let dataPieChartWithChannel = []
+                 dataPieChartWithChannel[0] = ['Task', 'Hours per Day']
+                 dataPieChartWithChannel[1]=[]
+                 dataPieChartWithChannel[2]=[]
+                 dataPieChartWithChannel[3] = []
+                 dataPieChartWithChannel[4] = []
+                 dataPieChartWithChannel[5] = []
+                 dataPieChartWithChannel[1][0]= "Facebook"
+                 dataPieChartWithChannel[1][1]= rs.data["Social"].number
+                 dataPieChartWithChannel[2][0]= "Báo chí"
+                 dataPieChartWithChannel[2][1]= rs.data["News"].number
+                 dataPieChartWithChannel[3][0]= "Diễn đàn"
+                 dataPieChartWithChannel[3][1]=rs.data["Forum"].number
+                 dataPieChartWithChannel[4][0]= "Blog"
+                 dataPieChartWithChannel[4][1]=rs.data["Blog"].number
+                 dataPieChartWithChannel[5][0]= "Khác"
+                 dataPieChartWithChannel[5][1]=rs.data["Other"].number
+
+                 rs.data.dataPieChartWithChannel = dataPieChartWithChannel
+                 console.log('dâd',dataPieChartWithChannel)
                  return res.send(Ioutput.success(rs.data));
 
               }
+            }
             else{
                 res.send(Ioutput.errServer(rs));
             }
@@ -149,7 +178,7 @@ module.exports = {
 
 
                 let resultLineChart = [
-                  ['x','Facbook','Báo chí','Diễn đàn','Blog','Khác']
+                  ['x','Tích cực','Tiêu cực']
                 ]
                 let i=1
                 let data = rs.data
@@ -157,11 +186,9 @@ module.exports = {
                   row =[]
                   row[0]=data[index].key_as_string.substring(5,10)
 
-                  row[1] = data[index]['source_id'][2]['Social'].doc_count
-                  row[2] = data[index]['source_id'][1]['News'].doc_count
-                  row[3] = data[index]['source_id'][3]['Blog'].doc_count
-                  row[4] = data[index]['source_id'][4]['Forum'].doc_count
-                  row[5] = data[index]['source_id'][0]['Other'].doc_count
+                  row[1] = data[index]['source_id'][0]['Other'].sentiment+ data[index]['source_id'][4]['Forum'].sentiment+  data[index]['source_id'][2]['Social'].sentiment + data[index]['source_id'][1]['News'].sentiment + data[index]['source_id'][3]['Blog'].sentiment
+                  row[2] =  data[index]['source_id'][0]['Other'].neutral+ data[index]['source_id'][4]['Forum'].neutral+  data[index]['source_id'][2]['Social'].neutral + data[index]['source_id'][1]['News'].neutral + data[index]['source_id'][3]['Blog'].neutral
+
 
                   resultLineChart[i++] = row
               }
