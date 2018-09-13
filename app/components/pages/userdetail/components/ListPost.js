@@ -1,5 +1,7 @@
 import React from 'react'
 import Post from './Post'
+import Pagination from 'rc-pagination';
+import 'rc-pagination/assets/index.css';
 class ListPost extends React.Component{
   constructor(props){
     super(props);
@@ -7,11 +9,21 @@ class ListPost extends React.Component{
         listPost :[]
     }
   }
+  componentDidMount(){
+    let that = this
+       io.socket.post('/post/getSpecial',function(res,jwres){
+         if(res.EC==0){
+             that.setState({listPost:res.DT})
+
+         }
+     })
+
+ }
   render(){
        let listPost = this.state.listPost
               return(
-                <div>
-                <div className="col-md-12 remove-padding-col info-detail ">
+              <div className="col-md-12 remove-padding-col">
+                  <div className="col-md-12 remove-padding-col info-detail ">
                     <div className="list-tab">
                         <div className="tab-filter active">
                             <div className="text">Tất cả</div>
@@ -29,19 +41,24 @@ class ListPost extends React.Component{
                             <div className="text">Khác</div>
                         </div>
                     </div>
-
-            </div>
+             </div>
              <div className="col-md-12 remove-padding-col info-detail list-status ">
                         {listPost.length>0?listPost.map((post,index)=>{
-                            return (
+                            return
                               <Post key={index} post={post} />
-                            )
-                        })
+
+                        }):null
+
                       }
-                  </div>
-              </div>
+                        <div className="col-md-12 pagination-web remove-padding-col info-detail list-status ">
+                        <Pagination className="ant-pagination" defaultCurrent={1} total={100} />
+                        </div>
+
+               </div>
+            </div>
               )
-        }
+  }
+
 }
 
 module.exports = ListPost
