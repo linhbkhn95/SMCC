@@ -9,14 +9,7 @@ class InforChannel extends React.Component{
 
     }
   }
-  get_all_info(){
-    RestfulUtils.post('/user/get_all_info',{}).then((res)=>{
 
-    })
-  }
-  componentDidMount(){
-
-  }
   componentWillReceiveProps(nextProps){
 
   }
@@ -54,30 +47,31 @@ class InforChannel extends React.Component{
       <div style={{paddingTop:"20px"}} className="col-md-12 remove-padding-col">
            <div className="col-md-4 remove-padding-col info-channel ">
                   <i className="fa fa-facebook" aria-hidden="true"></i>
-                   4.5M
+                  {dataChannel.Social.number}
             </div>
             <div className="col-md-4 remove-padding-col info-channel ">
                   <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                   666
+                  {dataChannel.Other.number}
+
             </div>
             <div className="col-md-4 remove-padding-col info-channel ">
                   <i className="fa fa-twitter" aria-hidden="true"></i>
-                   1.2M
+                  {dataChannel.Social.number}
             </div>
         </div>
         <div style={{paddingTop:"20px"}} className="col-md-12 remove-padding-col">
 
             <div className="col-md-4 remove-padding-col info-channel ">
             <i className="fa fa-link" aria-hidden="true"></i>
-            120
+            {dataChannel.Blog.number}
             </div>
             <div className="col-md-4 remove-padding-col info-channel ">
             <i className="fa fa-newspaper-o" aria-hidden="true"></i>
-                     456
+            {dataChannel.News.number}
             </div>
             <div className="col-md-4 remove-padding-col info-channel ">
                   <i className="fa fa-commenting" aria-hidden="true"></i>
-                   999
+                  {dataChannel.Forum.number}
             </div>
       </div>
   </div>

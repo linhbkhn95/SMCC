@@ -3,19 +3,15 @@ import Chart from 'react-google-charts'
 
 class ChartSatify extends React.Component{
 	render () {
+    let dataPieChart = this.props.dataPieChart
+
   	return (
 <Chart
   width={'300px'}
   height={'250px'}
   chartType="PieChart"
   loader={<div>Tải dữ liệu...</div>}
-  data={[
-    ['Task', 'Hours per Day'],
-    ['Tích cực', 4],
-    ['Tiêu cực', 2],
-    ['Nhắc đến', 2],
-    ['Spam', 2],
-  ]}
+  data={dataPieChart}
   options={{
     // title: 'My Daily Activities',
     // Just add this option
@@ -33,6 +29,8 @@ class ChartSatify extends React.Component{
           position:'right',
           textStyle: {color: 'white'}
       },
+    colors: ['#00ce7d', '#e6693e'],
+
     pieSliceBorderColor:'',
     fontSize:'11px',
     fontName:'Maven Pro',

@@ -12,12 +12,70 @@ import DropdownUtils from 'app/utils/input/DropdownUtils'
 import RestfulUtils from 'app/utils/RestfulUtils'
 import InforChannel from './InforChannel'
 module.exports =class InfoPerSon extends React.Component{
+
+
+  constructor(props){
+    super(props);
+    this.state ={
+      topic:'',
+      data: {
+        dataPieChart:[
+          ['Task', 'Hours per Day'],
+          ['Tích cực', 4],
+          ['Tiêu cực', 2],
+          ['Nhắc đến', 2],
+          ['Spam', 2],
+        ],
+        Total: {
+            "source_id": 0,
+            "number": 835
+        },
+        News: {
+            "source_id": 1,
+            "number": 107
+        },
+        Social: {
+            "source_id": 2,
+            "number": 545
+        },
+        Blog: {
+            "source_id": 3,
+            "number": 11
+        },
+        Other: {
+            "source_id": 4,
+            "number": 172
+        },
+        Forum: {
+            "source_id": 12,
+            "number": 0
+        },
+
+      }
+    }
+  }
+  get_new_statistic_domain(topic){
+    let self = this
+    RestfulUtils.post('/user/get_new_statistic_daily',{topic}).then((res)=>{
+          if(res.EC==0)
+            self.setState({data:res.DT,topic})
+
+    })
+  }
+
+  componentWillReceiveProps(nextProps){
+    let {topic}  = nextProps;
+    if(topic!=this.state.topic&&topic){
+        this.get_new_statistic_domain(topic)
+    }
+
+  }
   render(){
     return(
 
       <div className="col-md-12 remove-padding-col info-detail">
       <div className="col-md-3 remove-padding-col ">
-           <InforChannel ></InforChannel>
+           <InforChannel dataChannel={this.state.data} ></InforChannel>
        </div>
        <div className="col-md-3">
             <div className="user-info-image">
@@ -48,10 +106,10 @@ module.exports =class InfoPerSon extends React.Component{
 
        </div>
        <div className="col-md-3 remove-padding-col">
-           <PieChart />
+           <PieChart dataPieChart  ={this.state.data.dataPieChart} />
        </div>
        <div className="col-md-3 remove-padding-col">
-           <ChartLine />
+           <ChartLine topic ={this.props.topic} />
        </div>
      </div>
     )

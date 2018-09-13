@@ -21,9 +21,9 @@ class ContainerLeft extends React.Component{
      return(
 
         <div className="left" >
-              <Chart onChangeFilterDay={this.props.onChangeFilterDay} city_id={this.props.city_id}  dataPieChart = {this.props.dataPieChart} />
+              <Chart d1={this.props.d1} onChangeFilterDay={this.props.onChangeFilterDay} city_id={this.props.city_id}  dataPieChart = {this.props.dataPieChart} />
               {/* <Chart /> */}
-              <Channel dataProgress  = {this.props.dataProgress} />
+              <Channel d1={this.props.d1} dataProgress  = {this.props.dataProgress} />
         </div>
      )
   }

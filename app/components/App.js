@@ -73,9 +73,7 @@ class App extends React.Component {
     this.createMap();
 
   }
-  componentWillReceiveProps(){
-    // this.createMap();
-  }
+
   createMap(){
     console.log('creat map')
     $('#map').vectorMap({

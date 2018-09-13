@@ -40,7 +40,8 @@ class Charts extends React.Component{
             },
           ],
           city_id:'',
-          dataPieChart:[]
+          dataPieChart:[],
+          d1:''
     }
   }
   componentDidMount(){
@@ -49,15 +50,15 @@ class Charts extends React.Component{
 
     this.setState({city_id,dataPieChart})
   }
-  componentWillReceiveProps(nextProps){
-    let {city_id,dataPieChart} = nextProps
-    if(this.state.dataPieChart.length==0||this.state.city_id!=city_id){
-         console.log('set piechart',city_id,dataPieChart)
-        this.setState({city_id,dataPieChart})
+  // componentWillReceiveProps(nextProps){
+  //   let {city_id,dataPieChart,d1} = nextProps
+  //   if(this.state.dataPieChart.length==0||this.state.city_id!=city_id||d1!=this.state.d1){
+  //        console.log('set piechart',city_id,dataPieChart)
+  //       this.setState({city_id,dataPieChart,d1})
 
-        // this.getDataWithCity(city_id)
-    }
-  }
+  //       // this.getDataWithCity(city_id)
+  //   }
+  // }
   render(){
     return(
        <div className="pie-chart">
@@ -84,7 +85,6 @@ class Charts extends React.Component{
     bar: { groupWidth: '65%' },
     legend: { position: 'none' },
     is3D: true,
-
   }}
   rootProps={{ 'data-testid': '1' }}
 /> */}
@@ -133,13 +133,11 @@ class Charts extends React.Component{
     ['Tiêu chí 4', 2,'#00ce7d',null],
     ['Tiêu chí 5', 2,'#0092f1',null],
     ['Tiêu chí 6', 2,'#ff3b8e',null],
-
     // ['Sleep', 7],
   ]}
   options={{
     // title: 'My Daily Activities',
     backgroundColor: '#002864',
-
   }}
   rootProps={{ 'data-testid': '1' }}
 />*/}

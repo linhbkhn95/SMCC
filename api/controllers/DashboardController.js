@@ -1,15 +1,8 @@
-
-/**
- * DashboardController
- *
- * @description :: Server-side logic for managing dashboards
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
- */
 var Ioutput = require('../common/OutputInterface.js');
 var RestfulHandler = require('../common/RestfulHandler');
 var processingserver = require('../commonwebuser/ProcessingServer');
 var LogHelper = require('../common/LogHelper.js');
-let keyword = '[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22b%C3%A1n+h%C3%A0ng%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]'
+let keyword = 'sails.config.keyword'
 module.exports = {
 
         getDataLineChart:function(req,res){
@@ -25,9 +18,9 @@ module.exports = {
         },
         //lấy dữ liệu chart và progress
         getDataChart:function(req,res){
-           let {city_id} = req.body
+           let {city_id,d1,d2} = req.body
            city_id = city_id||24
-          let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4'+'&location='+city_id
+          let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1='+d1+'&d2='+d2+'&rt=0,1,2,3,4,5,6&dr=4'+'&location='+city_id
           processingserver.callAPIWithUrlPublic(urlAPi+'&se=3', async function (err, data_positive) {
               //tích cực
 
@@ -74,8 +67,8 @@ module.exports = {
                }
                console.log('data',result_positive[index].count,result[index].count,)
                //tính % theo từng channel
-               dataProgress.positive =parseFloat(result_positive[index].count>0?100*parseInt(result_positive[index].count)/(parseInt(result_positive[index].count)+parseInt(result[index].count)):0).toFixed(2);
-               dataProgress.setiment = parseFloat(dataProgress.positive>0?100 - dataProgress.positive :0).toFixed(2);
+               dataProgress.positive =parseFloat(result_positive[index].count>0?100*parseInt(result_positive[index].count)/(parseInt(result_positive[index].count)+parseInt(result[index].count)):0).toFixed();
+               dataProgress.setiment = parseFloat(dataProgress.positive>0?100 - dataProgress.positive :0).toFixed(0);
 
 
 
@@ -141,13 +134,14 @@ module.exports = {
 
             dt.charts.dataPieChart = dataPieChart;
             listProgress.Facebook = {}
-            listProgress["Facebook"].positive = parseFloat(fb_positive?100*fb_positive/(fb_positive+fb_setiment):0).toFixed(2);
-            listProgress["Facebook"].setiment = parseFloat(listProgress["Facebook"].positive?100 - listProgress["Facebook"].positive:0).toFixed(2);
+            listProgress["Facebook"].positive = parseFloat(fb_positive?100*fb_positive/(fb_positive+fb_setiment):0).toFixed();
+            listProgress["Facebook"].setiment = parseFloat(listProgress["Facebook"].positive?100 - listProgress["Facebook"].positive:0).toFixed();
             dt.listProgress = listProgress
             // row
 
 
             //Đồ thị tích cực tiêu cực
+            console.log('datalienchat',dt_positive.charts)
             let {sentiment_positive_count_per_day} = dt_positive.charts.chart_sentiment
             let {sentiment_negative_count_per_day}  = dt.charts.chart_sentiment
             let row = []
@@ -158,7 +152,7 @@ module.exports = {
             // console.log('sentment',sentiment_positive_count_per_day,sentiment_negative_count_per_day)
             for(var index in sentiment_negative_count_per_day) {
                 row =[]
-                row[0]=index
+                row[0]=index.substring(6,index.length)
                 row[1] = sentiment_negative_count_per_day[index]
                 row[2] = sentiment_positive_count_per_day[index]
                 resultLineChart[i++] = row
@@ -171,7 +165,7 @@ module.exports = {
       },
        getDataWithCity: async function(req,res){
         try {
-              let {city_id,page,pagesize,se} = req.body
+              let {city_id,page,pagesize,se,d1,d2} = req.body
               page = page ||1,
               pagesize = pagesize || 6
               city_id = city_id || 24
@@ -181,7 +175,7 @@ module.exports = {
 
               if(city_id==0||!city_id)
                   city_id = '24'
-              let urlAPi = '/PagingApi.aspx?key='+keyword+'&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&p='+page+'&se='+se+'&size='+pagesize+'&location='+city_id
+              let urlAPi = '/PagingApi.aspx?key='+keyword+'&d1='+d1+'&d2='+d2+'&rt=0,1,2,3,4,5,6&dr=4&p='+page+'&se='+se+'&size='+pagesize+'&location='+city_id
               serviceTest.getUrlPulic(urlAPi,async function (err, data) {
                 let dt  = JSON.parse(data);
 
@@ -237,4 +231,3 @@ module.exports = {
       });
       },
 };
-

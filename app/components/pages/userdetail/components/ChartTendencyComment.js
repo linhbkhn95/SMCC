@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 var Recharts = require('recharts')
 import Chart from 'react-google-charts'
+import RestfulUtils from 'app/utils/RestfulUtils'
 
 const {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} = Recharts;
 const data = [
@@ -31,6 +32,37 @@ class SimpleLineChart extends React.Component{
 
 class Charts extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.state ={
+        dataLineChart :[
+          ['x', 'Facebook', 'Youtube','Blog'],
+          [0, 0, 0,0],
+          [1, 10, 5,3],
+          [2, 23, 15,4],
+          [3, 17, 9,13],
+          [4, 18, 10,9],
+          [5, 9, 5,3],
+          [6, 11, 3,14],
+          [7, 27, 19,5],
+        ]
+    }
+  }
+
+  get_new_chartline_domain(topic){
+    let self =this
+           RestfulUtils.post('/user/get_new_chartline_domain',{topic}).then((res)=>{
+               if(res.EC==0){
+                   self.setState({topic,dataLineChart:res.DT.dataLineChart})
+               }
+     })
+ }
+     componentWillReceiveProps(nextProps){
+           let {topic} = nextProps
+           if(topic!=this.props.topic){
+             this.get_new_chartline_domain(topic);
+           }
+     }
 	render () {
   	return (
 
@@ -44,17 +76,7 @@ class Charts extends React.Component{
   height={'250px'}
   chartType="LineChart"
   loader={<div>Loading Chart</div>}
-  data={[
-    ['x', 'Facebook', 'Youtube','Blog'],
-    [0, 0, 0,0],
-    [1, 10, 5,3],
-    [2, 23, 15,4],
-    [3, 17, 9,13],
-    [4, 18, 10,9],
-    [5, 9, 5,3],
-    [6, 11, 3,14],
-    [7, 27, 19,5],
-  ]}
+  data={this.state.dataLineChart}
   options={{
     title: 'TẦN SUẤT XUẤT HIỆN',
 

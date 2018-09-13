@@ -17,9 +17,12 @@ module.exports = {
       //lay tin bai @linh.trinh
       get_new_search:function(req,res){
                   try {
-
+                    let {topic} = req.body
+                    topic = topic||71
+                    let dataTopic = []
+                    dataTopic[0] = topic
                 let obj = {
-                  "topic":[71],
+                  "topic":dataTopic,
                   "user_id":651,
                   "source_id":[1,2,3,4,12],
                   "order_by":"1",
@@ -41,26 +44,13 @@ module.exports = {
                 processingserver.callPostAuth(data, async function (err, rs) {
 
                     if (rs.code == 0) {
-                  //   //  sails.log.info('data',rs)
-                  //     let dt  = rs.data.topics;
-                  //   //
-                  // //   var listuser = lodash.filter(dt, function (item) {
 
-                  // //      return item.topic_type==0;
-                  // //  });
-                  //     let listuser = dt.map((user)=>{
-                  //       return {
-                  //             id:user.id,
-                  //             display_name:ReWriteText.ReWriteName(user.display_name)
-                  //       }
-                  //     })
-                      return res.send(Ioutput.success(rs));
+                      return res.send(Ioutput.success(rs.data.search));
                     }
                     else {
 
                       return res.send(Ioutput.errServer(rs));
 
-                        // return res.send(rs);
                     }
 
 
@@ -74,9 +64,13 @@ module.exports = {
            //lấy thông kê liên quan đối tượng
             get_new_statistic_daily:function(req,res){
               try {
+                let {topic} = req.body
+                topic = topic||71
+                let dataTopic = []
+                dataTopic[0] = topic
 
                 let obj = {
-                  "topic":["71"],
+                  "topic":dataTopic,
                   "date_from":"2018-09-08 00:00:00",
                   "date_to":"2018-09-12 00:00:00",
                   "event_master":"1"
@@ -93,7 +87,28 @@ module.exports = {
 
 
 
-                  return res.send(Ioutput.success(rs));
+              if(rs.code==0){
+
+                 let dataPieChart = []
+                 dataPieChart[0] = ['Task', 'Hours per Day'],
+                 dataPieChart[1] =[];
+                 dataPieChart[2]=[]
+                 dataPieChart[3] = []
+                 dataPieChart[1][0]= "Tích cực"
+                 dataPieChart[1][1]= rs.data["positive_count"]
+                 dataPieChart[2][0]= "Trung bình"
+                 dataPieChart[2][1]= rs.data["neutral_count"]
+                 dataPieChart[3][0]= "Tình cảm"
+                 dataPieChart[3][1]= rs.data["Sentiment_count"]
+
+
+                 rs.data.dataPieChart = dataPieChart
+                 return res.send(Ioutput.success(rs.data));
+
+              }
+            else{
+                res.send(Ioutput.errServer(rs));
+            }
 
 
 
@@ -106,41 +121,105 @@ module.exports = {
       }
       },
         //lấy thông kê liên trang domain
-        get_new_statistic_domain:function(req,res){
+        get_new_chartline_domain:function(req,res){
           try {
-
+            let {topic} = req.body
+            topic = topic||71
+            let dataTopic = []
+            dataTopic[0] = topic
             let obj = {
-              "topic":["71"],
+              "topic":dataTopic,
               "date_from":"2018-09-08 00:00:00",
               "date_to":"2018-09-12 00:00:00",
               "event_master":"1",
               "secondKeyword":[],
-              "keyword":""
+              "keyword":"",
+              "type_time":"d"
             }
             var data = {
               "access_token":access_token,
-              "action":"/news/statistic-daily",
+              "action":"/news/statistic-source",
               "data":obj
             };
 
 
 
         processingserver.callPostAuth(data, async function (err, rs) {
+            if(rs.code==0){
 
 
+                let resultLineChart = [
+                  ['x','Facbook','Báo chí','Diễn đàn','Blog','Khác']
+                ]
+                let i=1
+                let data = rs.data
+                for(var index =0;i<rs.data.length;index++) {
+                  row =[]
+                  row[0]=data[index].key_as_string.substring(5,10)
 
+                  row[1] = data[index]['source_id'][2]['Social'].doc_count
+                  row[2] = data[index]['source_id'][1]['News'].doc_count
+                  row[3] = data[index]['source_id'][3]['Blog'].doc_count
+                  row[4] = data[index]['source_id'][4]['Forum'].doc_count
+                  row[5] = data[index]['source_id'][0]['Other'].doc_count
+
+                  resultLineChart[i++] = row
+              }
+              rs.dataLineChart = resultLineChart
               return res.send(Ioutput.success(rs));
 
-
-
+            }
+            else{
+                res.send(Ioutput.errServer(rs));
+            }
 
 
         });
         } catch (error) {
-        sails.log.error(error);
-        return res.send(Ioutput.errServer(error));
-        }
+            sails.log.error(error);
+            return res.send(Ioutput.errServer(error));
+          }
         },
+
+          //lấy dồ thị line liên trang domain
+          get_new_statistic_domain:function(req,res){
+            try {
+              let {topic} = req.body
+              topic = topic||71
+              let dataTopic = []
+              dataTopic[0] = topic
+              let obj = {
+                "topic":dataTopic,
+                "date_from":"2018-09-08 00:00:00",
+                "date_to":"2018-09-12 00:00:00",
+                "event_master":"0",
+                "secondKeyword":[],
+                "keyword":""
+              }
+              var data = {
+                "access_token":access_token,
+                "action":"/news/statistic-source",
+                "data":obj
+              };
+
+
+
+          processingserver.callPostAuth(data, async function (err, rs) {
+
+
+
+                return res.send(Ioutput.success(rs));
+
+
+
+
+
+          });
+          } catch (error) {
+          sails.log.error(error);
+          return res.send(Ioutput.errServer(error));
+          }
+      },
       //lay danh sách nguoi dung dac biet @linh.trinh
       get_all_info:function(req,res){
         try {
@@ -155,7 +234,7 @@ module.exports = {
 
                if (rs.code == 0) {
                 //  sails.log.info('data',rs)
-                 let dt  = rs.data.topics;
+                 let dt  = rs.data.childrenOrmTopics;
                 //
               //   var listuser = lodash.filter(dt, function (item) {
 

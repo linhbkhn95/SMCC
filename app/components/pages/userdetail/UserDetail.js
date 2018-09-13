@@ -31,116 +31,7 @@ class ListUser extends React.Component{
         max: 40,
       },
       listStatus:[],
-      listData:[
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Thanh Hiếu Bùi',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'3',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4.5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'1.5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'2.5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'3',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'3',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'2',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        }
-      ],
+
       user:{}
 
     }
@@ -189,14 +80,14 @@ class ListUser extends React.Component{
         <div className="row list-user" >
             <div className="col-md-12">
                    <div style={{marginBottom:"9px"}} className="col-md-2">
-                        <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.user_id} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="user_id"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
+                        <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.topic} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="topic"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
                   </div>
                   <div className="hr-title"></div>
-                  <InfoPerSon />
+                  <InfoPerSon topic={this.state.user.topic} />
                    <div className="hr-title"></div>
                    </div>
-                
-                   <ListPost />
+
+                   <ListPost topic={this.state.user.topic} />
 
             </div>
 

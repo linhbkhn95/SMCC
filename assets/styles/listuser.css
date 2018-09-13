@@ -526,10 +526,11 @@ margin-right: 4px;
   text-align: center;
   /* color: #3a5a99; */
 }
-.list-status .status .type-channel .fa-facebook{
+.list-user .list-status .status .type-channel .fa{
   color: #3a5a99;
 
 }
+
 .list-status .status .type-channel .fa-youtube-play{
   color:#fe0605;
 
@@ -601,4 +602,23 @@ margin-right: 4px;
   border-radius: 3px;
 
 
+}
+.list-user .title-post{
+  font-family: Maven Pro;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* word-break: break-all; */
+  white-space: normal;
+  /* word-break: break-all; */
+  white-space: normal;
 }

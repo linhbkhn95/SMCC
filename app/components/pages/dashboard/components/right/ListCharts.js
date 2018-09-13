@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import ChartLine from './components/ChartLine'
+import ChartTrend from './components/ChartTrend'
 import GaugeChart from './components/ChartsSatisfy'
 import BarChart from './components/ChartTendencyComment'
 import ChartAnalyst from './components/ChartAnalyst'
@@ -15,7 +15,7 @@ class DashBoard extends React.Component{
               <GaugeChart />
               <BarChart />
               <ChartAnalyst />
-              <ChartLine />
+              <ChartTrend />
 
 
 

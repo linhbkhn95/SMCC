@@ -3,56 +3,49 @@ import {NavLink} from 'react-router-dom';
 var Recharts = require('recharts')
 import Chart from 'react-google-charts'
 
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
-class Charts extends React.Component{
-  componentDidMount(){
-    let {city_id,dataLineChart} = this.props
-
-    this.setState({city_id,dataLineChart})
-  }
-  componentWillReceiveProps(nextProps){
-    let {city_id,dataLineChart} = nextProps
-    if(this.state.dataLineChart.length==0||this.state.city_id!=city_id){
-        this.setState({city_id,dataLineChart})
-
-        // this.getDataWithCity(city_id)
-    }
-  }
+class ChartTrend extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
+     this.state = {
       options:[],
       subject:null,
 
       items: 10,
       page:1,
-      loadingState: false,
+      showLoading: false,
       fulldata:false,
        listStatus:[
 
         ],
         city_id:0,
-        dataLineChart:[]
+        dataLineChart:[],
+        d1:''
     }
   }
-  // getDataChartLine(city_id){
-  //   let that = this
-  //   RestfulUtils.post('/dashboard/getDataChartLine',{city_id}).then((res)=>{
-  //         that.setState({listStatus:res.results})
+  componentDidMount(){
+    let {city_id,dataLineChart} = this.props
 
-  //   })
+    this.setState({city_id,dataLineChart,showLoading:true})
+  }
+  componentWillReceiveProps(nextProps){
+    let {city_id,dataLineChart,d1} = nextProps
+    if(this.state.dataLineChart.length==0||this.state.city_id!=city_id||this.state.d1!=d1){
+        this.setState({city_id,dataLineChart,d1})
 
+        // this.getDataWithCity(city_id)
+    }
+  }
 
 
 	render () {
   	return (
 
         <div className="comment col-md-12 module" >
-            {/* <div className="name-chart">ĐƯỜNG XU HƯỚNG THẢO LUẬN</div>
-            <div className="chart-develop">
-               <SimpleLineChart />
-            </div> */}
+
+              {this.state.showLoading?<div className="loading-progress"> <CircularProgress size={50} /></div>:null}
          <Chart
   width={'100%'}
   height={'200px'}
@@ -115,4 +108,4 @@ class Charts extends React.Component{
   }
 }
 
-module.exports =  Charts;
+module.exports =  ChartTrend;
