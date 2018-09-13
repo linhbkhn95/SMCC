@@ -51,21 +51,10 @@ class ListUser extends React.Component{
           // }
       });
 
-        console.log('  componentDidMount(){')
-      io.socket.post('/post/getSpecial',{page:that.state.page},function(res,jwres){
-          if(res.EC==0){
-              that.setState({listStatus:res.DT,page:that.state.page+1,loadingState:false})
 
-          }
-      })
-      this.get_all_info();
 
   }
-  get_all_info(){
-      RestfulUtils.post('/user/get_all_info',{}).then((res)=>{
 
-      })
-  }
   onChangeDropdown(type,data){
 
 

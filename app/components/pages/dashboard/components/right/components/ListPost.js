@@ -33,86 +33,24 @@ class ListPost extends React.Component{
         d2:''
     }
   }
-  getDataWithCity(city_id,page,pagesize,valueActive){
+  getDataWithCity(city_id,page,pagesize,valueActive,d1,d2){
     let that = this
-    let {d1,d2} = this.props
     this.setState({showLoading:true})
     RestfulUtils.post('/dashboard/getDataWithCity',{city_id,page,pagesize,se:valueActive,d1,d2}).then((res)=>{
           let pager = parseInt(res.pager)
-          that.setState({listStatus:res.results,pager,page,pagesize,showLoading:false})
+          that.setState({listStatus:res.results,pager,page,pagesize,d1,d2,showLoading:false})
 
     })
 }
   componentWillReceiveProps(nextProps){
       let {city_id,valueActive,d1,d2} = nextProps
       if((this.state.city_id!=city_id)||(d1!=this.state.d1||d2!=this.state.d2)||(this.props.valueActive!=nextProps.valueActive)){
-          this.setState({city_id,page:1,pagesice:6,d1,d2})
-          this.getDataWithCity(city_id,1,6,valueActive,d1,d2)
+          // this.setState({city_id,page:1,pagesice:6,d1,d2})
+           this.getDataWithCity(city_id,1,6,valueActive,d1,d2)
       }
-      // if(){
-      //     this.setState({d1,d2})
-      // }
-      // if({
-      //     this.setState({city_id,page:1,pagesice:6})
-      //     this.getDataWithCity(city_id,1,6,valueActive)
-      // }
-  }
-  componentDidMount(){
-    // this.getDataWithCity('24',1,6);
-
-    let that  = this
-     $(".list-status").scroll(function () {
-       console.log('vao')
-      var $this = $(this);
-
-          // if( ( ($(document).height() - $(window).height())-$(window).scrollTop())<50&&!self.state.fulldata) {
-          //   if(($("#list-status").height() - $this.scrollTop()) -$this.height()<50&&!that.state.fulldata) {
-
-          //    console.log('load',$("#list-status").height(),$this.scrollTop(),$this.height())
-          //     that.loadMoreItems();
-          // }
-      });
-
-        console.log('  componentDidMount(){')
-      // io.socket.post('/post/getListPost',{page:that.state.page},function(res,jwres){
-      //     if(res.EC==0){
-      //         that.setState({listStatus:res.DT,page:that.state.page+1,loadingState:false})
-
-      //     }
-      // })
-      // this.getDataWithCity();
 
   }
-  loadMoreItems() {
-    if(this.state.loadingState){
-        return;
-    }
-   this.setState({ loadingState: true });
-   let self  =this;
-   let {dispatch} = this.props
-    let {subject} = this.state
-    io.socket.post('/post/getlistPost',{page:this.state.page,listsubject:subject},function(res,jwres){
-      if(res.EC==0){
-          console.log('dataload',res.DT)
-          if(res.DT.length<3){
-              console.log('stopp loaddata')
-              self.state.fulldata  = true
-          }
-          let data = self.state.listStatus.concat(res.DT)
-          self.setState({listStatus:data,page:self.state.page+1,loadingState:false,fulldata:self.state.fulldata})
 
-      }
-    })
-   // setTimeout(() => {
-   //   this.setState({ items: this.state.items + 10, loadingState: false });
-   // }, 1000);
- }
-  onShowSizeChange(current, pageSize) {
-    // console.log(current);
-    // console.log(pageSize);
-
-    this.getDataWithCity(this.state.city_id,current,pageSize,this.props.valueActive)
-}
 
  onChange(current, pageSize) {
   // console.log('onChange:current=', current);
@@ -123,17 +61,10 @@ class ListPost extends React.Component{
 
 	render () {
     let {listStatus} = this.state
-    let ListStatus = listStatus.length>0?
+    let ListPost = listStatus.length>0?
 
     listStatus.map((status,index)=>{
-      let id = index%3
-      // let length = status.content_oryginal.length
-      // let len = status.tag.length
-      // if(len>20)
-      //   status.tag = status.tag.substring(0, 20) +"...";
-      // if(length>80)
-      //    status.content_oryginal = status.content_oryginal.substring(0, 80) +"...";
-      // let typeChannel = id==0?"fa fa-facebook":id=="1" ?"fa fa-youtube-play" : "fa fa-twitter"
+
       let typeChannel = "fa fa-facebook"
       let isSentiment = status.sentiment ==1
       return(
@@ -150,16 +81,15 @@ class ListPost extends React.Component{
                {this.state.showLoading?<div className="loading-progress"> <CircularProgress size={50} /></div>:null}
 
          <div id="list-status list-user" className="col-md-12 list-status">
+            {ListPost}
 
-
-             <ListPost />
+             {/* <ListPost /> */}
             </div>
             <div style={{textAlign:"center",fontSize:"12px"}}>{this.state.loadingState ? <p style={{fontSize:"12px"}} className="loading"> đang tải dữ liệu..</p> : ""} </div>
 
 
             <div style={{display:"flex",justifyContent:"center",paddingTop:"10px"}} className="col-md-12">
             <Pagination className="ant-pagination"
-          selectComponentClass={Select}
           // showQuickJumper
           // showSizeChanger
           defaultPageSize={6}

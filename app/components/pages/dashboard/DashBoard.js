@@ -39,8 +39,8 @@ class DashBoard extends React.Component{
     let d2 = moment().format('YYYY-MM-DD');                          // 2018-09-11T02:46:15+07:00
     let d1 = moment().subtract(7, 'days').format('YYYY-MM-DD'); // 01/09/2018
      this.setState({d1,d2})
-    // this.getDataChart('24',d1,d2);
-    // this.intervalId = setInterval(this.getCity_id.bind(this), 1000);
+    this.getDataChart('24',d1,d2);
+    this.intervalId = setInterval(this.getCity_id.bind(this), 1000);
 
   }
   getCity_id(){
@@ -65,9 +65,7 @@ class DashBoard extends React.Component{
         self.setState({dataPieChart:resdata.data.charts.dataPieChart,dataLineChart:resdata.data.charts.dataLineChart,dataProgress:resdata.data.listProgress})
     })
   }
-  onChangeSe(se){
-      this.setState({se})
-  }
+
   onChangeFilterDay(numberDay){
      let city_id = this.state.city_id
      let d2 =moment().format('YYYY-MM-DD');                          // 2018-09-11T02:46:15+07:00
@@ -92,7 +90,7 @@ class DashBoard extends React.Component{
                  {/* <img style={{width: "103%",height: "914px",}} src="./images/map.png" /> */}
                    </div>
              <div className="col-md-5 remove-padding-col">
-                <ContainerRight d1={this.state.d1} d2={this.state.d2} onChangeSe={this.onChangeSe.bind(this)} dataLineChart ={this.state.dataLineChart} city_id={this.state.city_id} />
+                <ContainerRight d1={this.state.d1} d2={this.state.d2} dataLineChart ={this.state.dataLineChart} city_id={this.state.city_id} />
              </div>
         </div>
      )

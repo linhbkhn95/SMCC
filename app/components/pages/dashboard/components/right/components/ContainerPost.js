@@ -34,10 +34,10 @@ class Comment extends React.Component{
     if(this.props.city_id&&this.props.city_id!=0)
         this.setState({city:listcity[this.props.city_id]})
   }
-  // componentWillReceiveProps(nextProps){
-  //   if(nextProps.city_id&&nextProps.city_id!=this.state.city_id)
-  //       this.setState({city:listcity[nextProps.city_id]})
-  // }
+  componentWillReceiveProps(nextProps){
+    if(nextProps.city_id&&nextProps.city_id!=this.state.city_id)
+        this.setState({city:listcity[nextProps.city_id]})
+  }
   filter(value){
 
     let listFilter = this.state.listFilter
@@ -47,7 +47,7 @@ class Comment extends React.Component{
       else
         listFilter[i].className = "type-filter"
     }
-    this.props.onChangeSe(value)
+    // this.props.onChangeSe(value)
     this.setState({valueActive:value,listFilter})
   }
 	render () {
@@ -83,7 +83,7 @@ class Comment extends React.Component{
                 </div> */}
               </div>
          </div>
-         {/* <ListPost valueActive={this.state.valueActive} city_id ={this.props.city_id}/> */}
+         <ListPost d1={this.props.d1} d2={this.props.d2} valueActive={this.state.valueActive} city_id ={this.props.city_id}/>
       </div>
     );
   }

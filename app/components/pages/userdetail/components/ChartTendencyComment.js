@@ -113,12 +113,14 @@ class Charts extends React.Component{
 
           },
 
-           bar: { groupWidth: '65%' },
-           legend: { position: 'none' },
-          series: {
+           bar: { groupWidth: '85%' },
+           legend:{
+            position:'top',
+            textStyle: {color: 'white'}
+           },          series: {
             1: { curveType: 'function' },
           },
-          chartArea:{left:30,right:30,width:'95%'}
+          chartArea:{width:'95%'}
 
   }}
 

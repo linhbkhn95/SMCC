@@ -74,7 +74,7 @@ module.exports =class InfoPerSon extends React.Component{
     return(
 
       <div className="col-md-12 remove-padding-col info-detail">
-      <div className="col-md-3 remove-padding-col ">
+      <div className="col-md-2 remove-padding-col ">
            <InforChannel dataChannel={this.state.data} ></InforChannel>
        </div>
        <div className="col-md-3">
@@ -108,7 +108,7 @@ module.exports =class InfoPerSon extends React.Component{
        <div className="col-md-3 remove-padding-col">
            <PieChart dataPieChart  ={this.state.data.dataPieChart} />
        </div>
-       <div className="col-md-3 remove-padding-col">
+       <div className="col-md-4 remove-padding-col">
            <ChartLine topic ={this.props.topic} />
        </div>
      </div>

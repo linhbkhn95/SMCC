@@ -45,7 +45,7 @@ class ChartTrend extends React.Component{
 
         <div className="comment col-md-12 module" >
 
-              {this.state.showLoading?<div className="loading-progress"> <CircularProgress size={50} /></div>:null}
+              {/* {this.state.showLoading?<div className="loading-progress"> <CircularProgress size={50} /></div>:null} */}
          <Chart
   width={'100%'}
   height={'200px'}

@@ -50,15 +50,15 @@ class Charts extends React.Component{
 
     this.setState({city_id,dataPieChart})
   }
-  // componentWillReceiveProps(nextProps){
-  //   let {city_id,dataPieChart,d1} = nextProps
-  //   if(this.state.dataPieChart.length==0||this.state.city_id!=city_id||d1!=this.state.d1){
-  //        console.log('set piechart',city_id,dataPieChart)
-  //       this.setState({city_id,dataPieChart,d1})
+  componentWillReceiveProps(nextProps){
+    let {city_id,dataPieChart,d1} = nextProps
+    if(this.state.dataPieChart.length==0||this.state.city_id!=city_id||d1!=this.state.d1){
+         console.log('set piechart',city_id,dataPieChart)
+        this.setState({city_id,dataPieChart,d1})
 
-  //       // this.getDataWithCity(city_id)
-  //   }
-  // }
+        // this.getDataWithCity(city_id)
+    }
+  }
   render(){
     return(
        <div className="pie-chart">
