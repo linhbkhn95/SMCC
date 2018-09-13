@@ -11,6 +11,8 @@ import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 import DropdownUtils from 'app/utils/input/DropdownUtils'
 import RestfulUtils from 'app/utils/RestfulUtils'
+import InforChannel from './components/InforChannel'
+import ListPost from './components/ListPost'
 class ListUser extends React.Component{
   constructor(props) {
     super(props);
@@ -28,116 +30,7 @@ class ListUser extends React.Component{
         max: 40,
       },
       listStatus:[],
-      listData:[
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Thanh Hiếu Bùi',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'3',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4.5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'1.5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'2.5',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'3',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'3',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'2',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        },
-        {
-          url_avatar:'https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-1/p40x40/39966469_861674570697640_3286366296085626880_n.jpg?_nc_cat=0&oh=a0da8a4c9087cee64056760b1f0aa91f&oe=5C32F9A7',
-          name:'Trịnh Đức Bảo Linh',
-          studied:'Studied at Hust',
-          live:'Lives in Ha Noi',
-          star:'4',
-          from:'From Ha Noi, Viet Nam',
-          work:'Works at Điều hành'
-        }
-      ],
+
       user:{}
 
     }
@@ -179,13 +72,13 @@ class ListUser extends React.Component{
      this.state.user[type] = data.value;
 
      this.setState(this.state)
- }
+  }
   render(){
      return(
 
         <div className="row list-user" >
             <div className="col-md-12">
-                   <div style={{marginBottom:"9px"}} className="col-md-4">
+                   <div style={{marginBottom:"9px"}} className="col-md-3">
                         <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.user_id} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="user_id"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
                   </div>
                   <div className="hr-title"></div>
@@ -219,35 +112,7 @@ class ListUser extends React.Component{
                                            Tuyền Anh Hair Salon
                                       </div>
                                 </div> */}
-                                <div style={{paddingTop:"20px"}} className="col-md-12 remove-padding-col">
-                                     <div className="col-md-4 remove-padding-col info-channel ">
-                                            <i className="fa fa-facebook" aria-hidden="true"></i>
-                                             4.5M
-                                      </div>
-                                      <div className="col-md-4 remove-padding-col info-channel ">
-                                            <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                                             666
-                                      </div>
-                                      <div className="col-md-4 remove-padding-col info-channel ">
-                                            <i className="fa fa-twitter" aria-hidden="true"></i>
-                                             1.2M
-                                      </div>
-                                  </div>
-                                  <div style={{paddingTop:"20px"}} className="col-md-12 remove-padding-col">
-
-                                      <div className="col-md-4 remove-padding-col info-channel ">
-                                      <i className="fa fa-link" aria-hidden="true"></i>
-                                      120
-                                      </div>
-                                      <div className="col-md-4 remove-padding-col info-channel ">
-                                      <i className="fa fa-newspaper-o" aria-hidden="true"></i>
-                                               456
-                                      </div>
-                                      <div className="col-md-4 remove-padding-col info-channel ">
-                                            <i className="fa fa-commenting" aria-hidden="true"></i>
-                                             999
-                                      </div>
-                                </div>
+                               <InforChannel  />
                             </div>
                         </div>
                         <div className="col-md-3">

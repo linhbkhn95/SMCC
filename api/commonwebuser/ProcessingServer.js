@@ -41,6 +41,21 @@ module.exports = {
 
       })
     },
+    callPostAuth: function (obj,done) {
+      serviceTest.requsetPost(obj,'/front/postRequestAuth', function (err, rs) {
+          if (err) {
+              done(err, null)
+          }
+          try {
+              done(null, rs)
+
+          } catch (error) {
+              done(error, null)
+          }
+
+
+      })
+    },
     callAPIWithUrlPublic: function (urlApi,done) {
       serviceTest.getUrlPulic(urlApi, function (err, rs) {
           if (err) {

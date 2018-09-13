@@ -1,5 +1,5 @@
 /**
- * Development environment settings
+ * Development envisaronment settings
  *
  * This file can include shared settings for a development team,
  * such as API keys or remote database passwords.  If you're using
@@ -20,8 +20,8 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
-  URL_PROCESSING: 'http://103.192.236.178:1338', //link BPSService
+  // URL_PROCESSING: 'http://103.192.236.178:1338', //link BPSService
 
-  // URL_PROCESSING: 'http://localhost:1338', //link BPSService
+  URL_PROCESSING: 'http://localhost:1338', //link BPSService
   URL_PUBLIC_GET_DATA:'http://smcc.socials.vn'
 };
