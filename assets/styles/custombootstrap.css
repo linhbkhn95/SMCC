@@ -3,3 +3,40 @@
     width: 32% !important;
     }
 }
+
+
+
+@media only screen and (max-width: 1330px) {
+  body {
+      background-color: red !important;
+  }
+  .user-info-image .user-action{
+    width: 137px !important;
+    height: 137px !important;
+    border-radius: 50% !important;
+  }
+  .user-info-image .user-action img{
+    width: 128px !important;
+    height: 128px !important;
+    border-radius: 50% !important;
+  }
+  .user-info-image div:nth-child(6)::after {
+    transform: rotate(37deg) !important;
+    top: -15px !important;
+    display: none !important
+  }
+  .user-info-image div:nth-child(1)::after {
+
+    display: none !important
+  }
+  .user-info-image div:nth-child(4){
+
+    top: 35% !important;
+    right: -16px !important;
+  }
+  .user-info-image div:nth-child(7) {
+    top: 114px !important;
+    right: -5px !important;
+
+  }
+}

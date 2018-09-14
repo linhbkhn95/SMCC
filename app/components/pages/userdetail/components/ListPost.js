@@ -4,8 +4,30 @@ import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 import RestfulUtils from 'app/utils/RestfulUtils'
 import moment from 'moment'
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+
+import LinearProgress from '@material-ui/core/LinearProgress';
+const styles = theme => ({
+  root: {
+    width: '100%',
+    // backgroundColor: theme.palette.background.paper,
+    hieght:'100%',
+
+  },
+  linearproccess:{
+    color:'white',
+    hieght:"2px",
+
+  },
+  icon: {
+    color:'white',
+    fontSize: "21px"
 
 
+  },
+
+});
 class ListPost extends React.Component{
   constructor(props){
     super(props);
@@ -52,9 +74,10 @@ class ListPost extends React.Component{
  get_new_search(topic,source_id){
    let self =this
    let date_to = moment().format('YYYY-MM-DD HH:MM:SS');                          // 2018-09-11T02:46:15+07:00
-   let date_from = moment().subtract(1, 'days').format('YYYY-MM-DD'); // 01/09/2018
-          RestfulUtils.post('/user/get_new_search',{topic,source_id,date_from,date_to}).then((res)=>{
+   let date_from = moment().subtract(7, 'days').format('YYYY-MM-DD HH:MM:SS'); // 01/09/2018
+     RestfulUtils.post('/user/get_new_search',{topic,source_id,date_from,date_to}).then((res)=>{
               if(res.EC==0){
+
                   self.setState({topic,listPost:res.DT})
               }
     })
@@ -67,7 +90,7 @@ class ListPost extends React.Component{
           }
     }
     filter(value){
-
+      console.log('change',value)
       let listFilter = this.state.listFilter
       for(var i=0;i<listFilter.length;i++){
         if(value==listFilter[i].value)
@@ -76,22 +99,23 @@ class ListPost extends React.Component{
           listFilter[i].className = "tab-filter"
       }
       this.get_new_search(this.props.topic,value)
-      // this.props.onChangeSe(value)
       this.setState({source_id:value,listFilter})
     }
 
   render(){
+    let {classes}  = this.props;
 
        let {listFilter,listPost,valueActive} = this.state
        console.log(listPost,listPost.length)
        let renderListPost =  listPost.length>0?listPost.map((post,index)=>{
         return  <Post key={index} post={post} />
 
-    }):<div>ffffffffffffffffffffff</div>
+    }):<div></div>
 
 
               return(
               <div className="col-md-12 remove-padding-col">
+                {/* <LinearProgress classes={classes.linearproccess} /> */}
                   <div className="col-md-12 remove-padding-col info-detail ">
 
 
@@ -122,5 +146,9 @@ class ListPost extends React.Component{
   }
 
 }
+ListPost.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
-module.exports = ListPost
+export default withStyles(styles)(ListPost);
+

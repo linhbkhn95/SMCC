@@ -333,7 +333,7 @@
 .list-user .info-detail{
   color: white;
   font-size: 12px;
-  margin-top: 20px;
+  margin-top: 40px;
   /* margin-bottom: 20px; */
 }
 .list-user .info-detail .info-person .infor-atribute .note{
@@ -363,8 +363,8 @@ margin-right: 4px;
 }
 .user-action{
   z-index: 5;
-  width: 151px;
-  height: 150px;
+  width: 157px;
+  height: 157px;
   border-radius: 90px;
   border: solid 6px transparent;
   background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(230deg, #0092f1, #00398f);
@@ -372,8 +372,8 @@ margin-right: 4px;
   background-clip: content-box, border-box;
 }
 .user-action img{
-  width: 141px;
-  height: 142px;
+  width: 146px;
+  height: 146px;
   z-index: 5;
   border-radius: 90px;
   border: solid 6px transparent;
@@ -404,9 +404,9 @@ margin-right: 4px;
   display: block;
   border-bottom: 1px solid #faf9f9;
   position: absolute;
-  width: 48px;
-  left: -148px;
-  top: 50%;
+  width: 69px;
+  left: -141px;
+  /* top: 42%; */
   z-index: 1;
 }
 
@@ -415,8 +415,10 @@ margin-right: 4px;
 
 
 .text-info-user{
-  top: -27px;
-  right: 30px;
+  top: -28px;
+  /* width: 112px; */
+  right: 112px;
+  /* left: 30px; */
   /* left: 100px; */
   position: absolute;
   transform: rotate(-23deg);
@@ -431,15 +433,21 @@ margin-right: 4px;
 
 .text-information{
   position: absolute;
-    top: -5px;
-    right: 47px;
-    border-bottom: 1px solid;
-    text-align: right;
-    width: 152px;
+  top: -23px;
+  right: 47px;
+  border-bottom: 1px solid;
+  text-align: right;
+  width: 177px;
+  padding-bottom: 5px;
 }
 
+.user-info-image div:nth-child(2)::after {
+  border-bottom: 1px dotted rgb(0, 146, 241) !important;
+}
 
-
+.user-info-image div:nth-child(6)::after {
+  border-bottom: 1.1px dotted rgb(255, 0, 0) !important;
+}
 
 
 .pagination-web{

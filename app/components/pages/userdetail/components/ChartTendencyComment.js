@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 var Recharts = require('recharts')
 import Chart from 'react-google-charts'
 import RestfulUtils from 'app/utils/RestfulUtils'
+import moment from 'moment'
 
 const {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} = Recharts;
 const data = [
@@ -51,7 +52,9 @@ class Charts extends React.Component{
 
   get_new_chartline_domain(topic){
     let self =this
-           RestfulUtils.post('/user/get_new_chartline_domain',{topic}).then((res)=>{
+    let date_to = moment().format('YYYY-MM-DD HH:MM:SS');                          // 2018-09-11T02:46:15+07:00
+    let date_from = moment().subtract(7, 'days').format('YYYY-MM-DD HH:MM:SS'); // 01/09/2018
+           RestfulUtils.post('/user/get_new_chartline_domain',{topic,date_to,date_from}).then((res)=>{
                if(res.EC==0){
                    self.setState({topic,dataLineChart:res.DT.dataLineChart})
                }
@@ -123,7 +126,7 @@ class Charts extends React.Component{
 
 
           },
-          chartArea:{left:20,width:'95%'},
+          chartArea:{left:40,width:'95%'},
           pointSize: 9,
   }}
 

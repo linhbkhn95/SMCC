@@ -55,7 +55,8 @@ class ListPost extends React.Component{
  onChange(current, pageSize) {
   // console.log('onChange:current=', current);
   // console.log('onChange:pageSize=', pageSize);
-  this.getDataWithCity(this.state.city_id,current,pageSize,this.props.valueActive)
+  let {d1,d2} = this.props
+  this.getDataWithCity(this.state.city_id,current,pageSize,this.props.valueActive,d1,d2)
 
   }
 

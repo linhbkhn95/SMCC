@@ -31,8 +31,8 @@ class ChartSatify extends React.Component{
           position:'right',
           textStyle: {color: 'white'}
       },
-    colors: ['#00ce7d', '#e6693e'],
-    bar: { groupWidth: '95%' },
+      colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
+      bar: { groupWidth: '95%' },
     pieSliceBorderColor:'',
     fontSize:'11px',
     fontName:'Maven Pro',
@@ -64,7 +64,7 @@ class ChartSatify extends React.Component{
           position:'right',
           textStyle: {color: 'white'}
       },
-    colors: ['#00ce7d', '#e6693e','ff3b8e','#ff6900','#0092f1'],
+    colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
     bar: { groupWidth: '95%' },
     pieSliceBorderColor:'',
     fontSize:'11px',

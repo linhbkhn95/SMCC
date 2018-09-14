@@ -14,6 +14,19 @@ import RestfulUtils from 'app/utils/RestfulUtils'
 import InforChannel from './components/InforChannel'
 import ListPost from './components/ListPost'
 import InfoPerSon from './components/InfoPerSon'
+
+function setFocusLatLng(scale, lat, lng) {
+  var mapObj = $('#map').vectorMap('get', 'mapObject');
+
+  var config = {
+   animate: true,
+   lat: lat,
+   lng: lng,
+   scale: scale
+  }
+
+  mapObj.setFocus(config)
+}
 class ListUser extends React.Component{
   constructor(props) {
     super(props);
@@ -52,7 +65,6 @@ class ListUser extends React.Component{
       });
 
 
-
   }
 
   onChangeDropdown(type,data){
@@ -68,7 +80,7 @@ class ListUser extends React.Component{
 
         <div className="row list-user" >
             <div className="col-md-12">
-                   <div style={{marginBottom:"9px"}} className="col-md-2 remove-pading-col">
+                   <div style={{marginBottom:"9px"}} className="col-md-2 remove-padding-col">
                         <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.topic} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="topic"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
                   </div>
                   <div className="hr-title"></div>

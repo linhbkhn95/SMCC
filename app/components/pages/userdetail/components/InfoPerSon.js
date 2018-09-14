@@ -61,7 +61,7 @@ module.exports =class InfoPerSon extends React.Component{
       }
     }
   }
-  get_new_statistic_domain(topic){
+  get_new_statistic_daily(topic){
     let self = this
     RestfulUtils.post('/user/get_new_statistic_daily',{topic}).then((res)=>{
           if(res.EC==0)
@@ -73,7 +73,7 @@ module.exports =class InfoPerSon extends React.Component{
   componentWillReceiveProps(nextProps){
     let {topic}  = nextProps;
     if(topic!=this.state.topic&&topic){
-        this.get_new_statistic_domain(topic)
+        this.get_new_statistic_daily(topic)
     }
 
   }
@@ -95,19 +95,19 @@ module.exports =class InfoPerSon extends React.Component{
                <div className="text-info-user" >
 
                </div>
-               <div style={{right:"-29px",borderBottom:" 1.1px dotted #0092f1"}} className="text-information" >
-                   <strong style={{color:"#0092f1"}}>{data.setiment_count}</strong> lần được nhắc đến
+               <div style={{right:"2px",top:"-21px",borderBottom:" 1.1px dotted #0092f1"}} className="text-information" >
+                   <strong style={{color:"#0092f1"}}>{data.Sentiment_count}</strong> lần được nhắc đến
                </div>
                 <div style={{ display:'none',   marginTop: "100px",transform:" rotate(0deg)"}}  className="text-info-user" >
 
                    </div>
-                       <div style={{top: '63px',right: "0px",borderBottom:" 1.1px dotted #00ce7d"}} className="text-information" >
+                       <div style={{top: '30%',width:"200px",right: "4px",borderBottom:" 1.1px dotted #00ce7d"}} className="text-information" >
                             <strong style={{color:"#00ce7d"}}>{data.positive_count}</strong> thông tin tích cực
                     </div>
                     <div style={{    marginTop: "206px",transform:" rotate(18deg)"}}  className="text-info-user" >
 
                  </div>
-                     <div style={{top: '132px',right: "-3px",width:"132px",borderBottom:" 1.1px dotted #ff0000"}} className="text-information" >
+                     <div style={{top: '134px',right: "3px",borderBottom:" 1.1px dotted #ff0000"}} className="text-information" >
                          <strong style={{color:"#ff0000"}}>{data.neutral_count}</strong> Thông tin tiêu cực
                  </div>
 

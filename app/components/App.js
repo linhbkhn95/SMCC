@@ -49,19 +49,19 @@ if (localStorage.jwToken) {
 //     height: 50,
 //   },
 // });
-function setFocusMapCenter() {
-  var mapObj = $('#map').vectorMap('get', 'mapObject'),
-      center = mapObj.pointToLatLng(mapObj.width / 2, mapObj.height / 2);
+// function setFocusMapCenter() {
+//   var mapObj = $('#map').vectorMap('get', 'mapObject'),
+//       center = mapObj.pointToLatLng(mapObj.width / 2, mapObj.height / 2);
 
-  var config = {
-      animate: true,
-      lat: center.lat,
-      lng: center.lng,
-      scale: 1
-  }
+//   var config = {
+//       animate: true,
+//       lat: center.lat,
+//       lng: center.lng,
+//       scale: 1
+//   }
 
-  mapObj.setFocus(config)
-}
+//   mapObj.setFocus(config)
+// }
 
 
 class App extends React.Component {
@@ -70,61 +70,10 @@ class App extends React.Component {
   //require('style!css!sass!./css/style.scss');
   // $(document).ready(() => $(document).foundation());
   componentDidMount() {
-    this.createMap();
 
   }
 
-  createMap(){
-    console.log('creat map')
-    $('#map').vectorMap({
-      map: 'vietnam',
-      backgroundColor: "transparent",
-      onRegionClick:function(event, code){
-          var name = (code);
-          localStorage.setItem('city_id', code);
 
-          // $('id_city').text('test');
-
-      },
-      onRegionTipShow: function (e, el, code) {
-
-        // el.html(el.html() + '<p  id="popop"></p>').css("zIndex","5");
-        el.html(el.html()).css("zIndex","5");
-
-      },
-      onMarkerClick: function (e, c) {
-        setFocusLatLng(5, markers[c].latLng[0], markers[c].latLng[1]);
-       },
-
-      zoomOnScroll: false,
-      zoomButtons : false,
-      regionStyle: {
-          initial: {
-              fill: '#0f5acb',
-          },
-          selected: {
-            fill: 'black',
-            "fill-opacity": 0.7,
-
-          },
-          hover : {
-             fill:'#002864',
-             "fill-opacity": 1,
-             cursor: 'pointer',
-        },
-      },
-      series: {
-          regions: [{
-              attribute: 'fill',
-              normalizeFunction: 'polynomial'
-          }]
-      },
-    })
-  }
-  componentWillMount(){
-     $('#map').empty()
-
-  }
   render() {
     return (
       // <MuiThemeProvider muiTheme={muiTheme}>

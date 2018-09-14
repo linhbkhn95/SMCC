@@ -16,7 +16,7 @@ module.exports = {
 
       //lay tin bai @linh.trinh
       get_new_search:function(req,res){
-                  try {
+                   try {
                     let {topic,source_id,date_from,date_to,page} = req.body
                     topic = topic||71
                     let dataTopic = []
@@ -32,7 +32,7 @@ module.exports = {
                   "order_by":"1",
                   "sentiment":[-1,0,1],
                   "domain":"",
-                  "keyword":sails.config.keyword,
+                  "keyword":'',
                   "seconKeyword":[],
                   "limit":"1",
                   "page":"0",
@@ -99,7 +99,6 @@ module.exports = {
                  dataPieChart[0] = ['Task', 'Hours per Day'],
                  dataPieChart[1] =[];
                  dataPieChart[2]=[]
-                 dataPieChart[3] = []
                  dataPieChart[1][0]= "Tích cực"
                  dataPieChart[1][1]= rs.data["positive_count"]
                  dataPieChart[2][0]= "Tiêu cực"
@@ -152,14 +151,14 @@ module.exports = {
         //lấy thông kê liên trang domain
         get_new_chartline_domain:function(req,res){
           try {
-            let {topic} = req.body
+            let {topic,date_to,date_from} = req.body
             topic = topic||71
             let dataTopic = []
             dataTopic[0] = topic
             let obj = {
               "topic":dataTopic,
-              "date_from":"2018-09-08 00:00:00",
-              "date_to":"2018-09-12 00:00:00",
+              "date_from":date_from,
+              "date_to":date_to,
               "event_master":"1",
               "secondKeyword":[],
               "keyword":"",

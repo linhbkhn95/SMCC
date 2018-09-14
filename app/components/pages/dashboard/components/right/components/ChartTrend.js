@@ -93,7 +93,8 @@ class ChartTrend extends React.Component{
           curveType: 'function',
           legend: { position: 'bottom' },
 
-
+          chartArea:{left:40,width:'95%'},
+          pointSize: 9,
            bar: { groupWidth: '100%' },
           //  legend: { position: 'none' },
           series: {

@@ -5,6 +5,9 @@ import ContainerRight from './components/right/ContainerRight'
 import Center from './components/center/Center'
 import axios from 'axios'
 import moment from 'moment'
+// var $ = require('jquery');
+// $ = require('jvectormap-next');
+
 class DashBoard extends React.Component{
   constructor(props){
     super(props);
@@ -31,6 +34,8 @@ class DashBoard extends React.Component{
 
   componentDidMount() {
     let self = this
+    this.createMap();
+
     // axios.post('/dashboard/getDataChart',{city_id:'24'})
     // .then((resdata)=>{
     //     self.setState({dataPieChart:resdata.data.charts.dataPieChart,dataLineChart:resdata.data.charts.dataLineChart,city_id:'24'})
@@ -43,6 +48,10 @@ class DashBoard extends React.Component{
     this.intervalId = setInterval(this.getCity_id.bind(this), 1000);
 
   }
+  componentWillMount(){
+    $('#map').empty()
+
+ }
   getCity_id(){
     let city_id = localStorage.getItem('city_id');
     let {d1,d2} = this.state
@@ -50,6 +59,53 @@ class DashBoard extends React.Component{
       this.getDataChart(city_id,d1,d2);
        this.setState({city_id})
     }
+  }
+
+  createMap(){
+    console.log('creat map')
+    $('#map').vectorMap({
+      map: 'vietnam',
+      backgroundColor: "transparent",
+      onRegionClick:function(event, code){
+          var name = (code);
+          localStorage.setItem('city_id', code);
+
+          // $('id_city').text('test');
+
+      },
+      onRegionTipShow: function (e, el, code) {
+
+        // el.html(el.html() + '<p  id="popop"></p>').css("zIndex","5");
+        el.html(el.html()).css("zIndex","5");
+
+      },
+      onMarkerClick: function (e, c) {
+        setFocusLatLng(5, markers[c].latLng[0], markers[c].latLng[1]);
+       } ,
+      zoomOnScroll: false,
+      zoomButtons : false,
+      regionStyle: {
+          initial: {
+              fill: '#0f5acb',
+          },
+          selected: {
+            fill: 'black',
+            "fill-opacity": 0.7,
+
+          },
+          hover : {
+             fill:'#002864',
+             "fill-opacity": 1,
+             cursor: 'pointer',
+        },
+      },
+      series: {
+          regions: [{
+              attribute: 'fill',
+              normalizeFunction: 'polynomial'
+          }]
+      },
+    })
   }
   componentWillUnmount(){
     // $('#map').empty()
