@@ -88,8 +88,7 @@ class ListPost extends React.Component{
 }
 
   onChange(current, pageSize) {
-  // console.log('onChange:current=', current);
-  // console.log('onChange:pageSize=', pageSize);
+
 
   this.get_new_search(this.props.topic,this.state.source_id,current,pageSize,)
 
