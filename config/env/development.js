@@ -17,6 +17,7 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
   port:1339,
+  access_token:"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM4MTQ3MTgwLCJpYXQiOjE1MzY5Mzc1ODB9.Tgstj7p-s3As6oAgMINhOJsAZNWwk7dGP_PPwrxMrIo4g3jkMKewUns5mbsrpKaOQ5Rb_rcvWIi7Ny_vLhKVbA",
   // models: {
   //   connection: 'someMongodbServer'
   // }

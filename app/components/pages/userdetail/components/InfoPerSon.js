@@ -95,7 +95,7 @@ module.exports =class InfoPerSon extends React.Component{
                <div className="text-info-user" >
 
                </div>
-               <div style={{right:"2px",top:"-21px",borderBottom:" 1.1px dotted #0092f1"}} className="text-information" >
+               <div style={{right:"2px",top:"-30px",borderBottom:" 1.1px dotted #0092f1"}} className="text-information" >
                    <strong style={{color:"#0092f1"}}>{data.Sentiment_count}</strong> lần được nhắc đến
                </div>
                 <div style={{ display:'none',   marginTop: "100px",transform:" rotate(0deg)"}}  className="text-info-user" >
@@ -107,7 +107,7 @@ module.exports =class InfoPerSon extends React.Component{
                     <div style={{    marginTop: "206px",transform:" rotate(18deg)"}}  className="text-info-user" >
 
                  </div>
-                     <div style={{top: '134px',right: "3px",borderBottom:" 1.1px dotted #ff0000"}} className="text-information" >
+                     <div style={{top: '126px',right: "3px",borderBottom:" 1.1px dotted #ff0000"}} className="text-information" >
                          <strong style={{color:"#ff0000"}}>{data.neutral_count}</strong> Thông tin tiêu cực
                  </div>
 

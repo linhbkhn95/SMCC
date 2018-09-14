@@ -6,6 +6,7 @@ import RestfulUtils from 'app/utils/RestfulUtils'
 import moment from 'moment'
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import localeInfo from 'rc-pagination/lib/locale/vi_VN';
 
 import LinearProgress from '@material-ui/core/LinearProgress';
 const styles = theme => ({
@@ -34,6 +35,7 @@ class ListPost extends React.Component{
     this.state = {
         listPost :[],
         topic:'',
+        total:6,
         listFilter:[
           {
             value:0,
@@ -66,27 +68,38 @@ class ListPost extends React.Component{
             label:'Khác'
           },
       ],
-
+      page:1,
+      // pageActive:1
+      pagesize:10,
       source_id:0
     }
   }
 
- get_new_search(topic,source_id){
+ get_new_search(topic,source_id,page,pagesize){
    let self =this
    let date_to = moment().format('YYYY-MM-DD HH:MM:SS');                          // 2018-09-11T02:46:15+07:00
-   let date_from = moment().subtract(7, 'days').format('YYYY-MM-DD HH:MM:SS'); // 01/09/2018
-     RestfulUtils.post('/user/get_new_search',{topic,source_id,date_from,date_to}).then((res)=>{
+   let date_from = moment().subtract(1, 'days').format('YYYY-MM-DD HH:MM:SS'); // 01/09/2018
+     RestfulUtils.post('/user/get_new_search',{topic,source_id,date_from,date_to,page,pagesize}).then((res)=>{
               if(res.EC==0){
 
-                  self.setState({topic,listPost:res.DT})
+                  self.setState({topic,listPost:res.DT.data.search,total:res.DT.total,pagesize,page})
               }
     })
 }
+
+  onChange(current, pageSize) {
+  // console.log('onChange:current=', current);
+  // console.log('onChange:pageSize=', pageSize);
+
+  this.get_new_search(this.props.topic,this.state.source_id,current,pageSize,)
+
+  }
     componentWillReceiveProps(nextProps){
           let {topic} = nextProps
+          let {page,pagesize} = this.state
           if(topic!=this.props.topic){
             let {source_id} = this.state
-            this.get_new_search(topic,source_id);
+            this.get_new_search(topic,source_id,page,pagesize);
           }
     }
     filter(value){
@@ -98,7 +111,9 @@ class ListPost extends React.Component{
         else
           listFilter[i].className = "tab-filter"
       }
-      this.get_new_search(this.props.topic,value)
+      let {page,pagesize} = this.state
+
+      this.get_new_search(this.props.topic,value,page,pagesize)
       this.setState({source_id:value,listFilter})
     }
 
@@ -137,7 +152,14 @@ class ListPost extends React.Component{
              <div className="col-md-12 remove-padding-col info-detail list-status ">
                         {renderListPost}
                         <div className="col-md-12 pagination-web remove-padding-col info-detail list-status ">
-                        <Pagination className="ant-pagination" defaultCurrent={1} total={100} />
+                        <Pagination className="ant-pagination"
+
+          onChange={this.onChange.bind(this)}
+          total={this.state.total}
+          locale={localeInfo}
+          style={{color:"white"}}
+
+                        />
                         </div>
 
                </div>

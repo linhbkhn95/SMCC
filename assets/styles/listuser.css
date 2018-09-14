@@ -411,7 +411,9 @@ margin-right: 4px;
 }
 
 
-
+.text-information strong{
+  font-size: 18px;
+}
 
 
 .text-info-user{
@@ -619,6 +621,8 @@ margin-right: 4px;
 .list-user .title-post{
   font-family: Maven Pro;
   font-size: 14px;
+  height: 32px;
+
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;

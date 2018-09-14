@@ -17,13 +17,13 @@ module.exports = {
       //lay tin bai @linh.trinh
       get_new_search:function(req,res){
                    try {
-                    let {topic,source_id,date_from,date_to,page} = req.body
+                    let {topic,source_id,date_from,date_to,page,pagesize} = req.body
                     topic = topic||71
                     let dataTopic = []
                     dataTopic[0] = topic
                     source_id = source_id||0
                     let dataSource = []
-                    dataSource[0] = topic
+                    dataSource[0] = source_id
 
                 let obj = {
                   "topic":dataTopic,
@@ -34,24 +34,24 @@ module.exports = {
                   "domain":"",
                   "keyword":'',
                   "seconKeyword":[],
-                  "limit":"1",
-                  "page":"0",
+                  "limit":pagesize,
+                  "page":page,
                   "date_from":date_from,
                   "date_to":date_to,
                   "event_master":"1"
                 }
                 var data = {
-                  "access_token":access_token,
+                  "access_token":sails.config.access_token,
                   "action":"/news/search",
                   "data":obj
                 };
                 processingserver.callPostAuth(data, async function (err, rs) {
 
                     if (rs.code == 0) {
-
-                      return res.send(Ioutput.success(rs.data.search));
+                      return res.send(Ioutput.success(rs));
                     }
                     else {
+                      sails.log.info(rs);
 
                       return res.send(Ioutput.errServer(rs));
 
@@ -80,7 +80,7 @@ module.exports = {
                   "event_master":"1"
                 }
                 var data = {
-                  "access_token":access_token,
+                  "access_token":sails.config.access_token,
                   "action":"/news/statistic-daily",
                   "data":obj
                 };
@@ -135,6 +135,8 @@ module.exports = {
               }
             }
             else{
+              sails.log.info(rs);
+
                 res.send(Ioutput.errServer(rs));
             }
 
@@ -165,7 +167,7 @@ module.exports = {
               "type_time":"d"
             }
             var data = {
-              "access_token":access_token,
+              "access_token":sails.config.access_token,
               "action":"/news/statistic-source",
               "data":obj
             };
@@ -223,7 +225,7 @@ module.exports = {
                 "keyword":""
               }
               var data = {
-                "access_token":access_token,
+                "access_token":sails.config.access_token,
                 "action":"/news/statistic-source",
                 "data":obj
               };
@@ -250,11 +252,11 @@ module.exports = {
       get_all_info:function(req,res){
         try {
                var data = {
-                  "access_token":access_token,
-                  "action":"/user/get-all-info"
+                "access_token":sails.config.access_token,
+                "action":"/user/get-all-info"
                 };
 
-
+          console.log('access_token',sails.config.access_token)
 
             processingserver.callAPIWithUrl(data, async function (err, rs) {
 

@@ -592,7 +592,7 @@ module.exports = {
 
           processingserver.callAPI(data, async function (err, rs) {
 
-              
+
 
 
                 return res.send(rs);
@@ -605,7 +605,7 @@ module.exports = {
        password:'aaa'
      }
     var data = {
-      "access_token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM3NTI2MjY4LCJpYXQiOjE1MzYzMTY2Njh9.oBe7m_tAZIMFrOpRinYCdIBabKgfZSE15YHWrC2sJsNtmYLIiV0U0BXmbc_e4UOvPv4K584Yn0nPzJUCEPzQdA",
+      "access_token":sails.config.access_token,
       "action":"/user/get-all-info"
     };
 

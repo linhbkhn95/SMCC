@@ -24,7 +24,7 @@ class Post extends React.Component{
 
             <div style={{float:"left",marginTop:"4px"}} className="info">
                   {/* <div className="name">{status.user.fullname} </div> */}
-                  <p className="time">{moment(status.receive_time).lang('vi').fromNow()}</p>
+                  <p className="time">{moment(post.create_time).lang('vi').fromNow()}</p>
 
             </div>
               <div className={isSentiment?"type-action tieu-cuc":"type-action tich-cuc"}>{isSentiment?"Tiêu cực":"Tích cực"}</div>

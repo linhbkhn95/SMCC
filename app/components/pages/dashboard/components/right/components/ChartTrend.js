@@ -45,7 +45,9 @@ class ChartTrend extends React.Component{
 
         <div className="comment col-md-12 module" >
 
+
               {/* {this.state.showLoading?<div className="loading-progress"> <CircularProgress size={50} /></div>:null} */}
+         {this.state.dataLineChart.length>0?
          <Chart
   width={'100%'}
   height={'200px'}
@@ -102,7 +104,7 @@ class ChartTrend extends React.Component{
           },
   }}
   rootProps={{ 'data-testid': '2' }}
-/>
+/>:null}
          </div>
 
     );

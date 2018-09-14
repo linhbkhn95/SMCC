@@ -15,7 +15,7 @@ class DashBoard extends React.Component{
               <GaugeChart />
               <BarChart />
               <ChartAnalyst />
-              <ChartTrend />
+              <ChartTrend d1={this.props.d1} dataLineChart ={this.props.dataLineChart} city_id ={this.props.city_id}  />
 
 
 
