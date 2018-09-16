@@ -639,3 +639,8 @@ margin-right: 4px;
   /* word-break: break-all; */
   white-space: normal;
 }
+.data-trend .pull-right,.data-trend .pull-left{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}

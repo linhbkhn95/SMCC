@@ -46,6 +46,7 @@ class ListPost extends React.Component{
       let {city_id,valueActive,d1,d2} = nextProps
       if((this.state.city_id!=city_id)||(d1!=this.state.d1||d2!=this.state.d2)||(this.props.valueActive!=nextProps.valueActive)){
           // this.setState({city_id,page:1,pagesice:6,d1,d2})
+          console.log('datacity',city_id)
            this.getDataWithCity(city_id,1,6,valueActive,d1,d2)
       }
 

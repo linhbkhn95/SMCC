@@ -12,7 +12,7 @@ class DashBoard extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-        city_id : '24',
+        city_id : '27',
         se:'2',
         d1:'',
         d2:'',
@@ -44,16 +44,15 @@ class DashBoard extends React.Component{
     let d2 = moment().format('YYYY-MM-DD');                          // 2018-09-11T02:46:15+07:00
     let d1 = moment().subtract(7, 'days').format('YYYY-MM-DD'); // 01/09/2018
      this.setState({d1,d2})
-    this.getDataChart('24',d1,d2);
-    this.intervalId = setInterval(this.getCity_id.bind(this), 1000);
+    this.getDataChart('27',d1,d2);
+    // this.intervalId = setInterval(this.getCity_id.bind(this), 1000);
 
   }
   componentWillMount(){
     $('#map').empty()
 
  }
-  getCity_id(){
-    let city_id = localStorage.getItem('city_id');
+  getCity_id(city_id){
     let {d1,d2} = this.state
     if(city_id&& this.state.city_id!=city_id){
       this.getDataChart(city_id,d1,d2);
@@ -62,12 +61,14 @@ class DashBoard extends React.Component{
   }
 
   createMap(){
+    let self = this
     console.log('creat map')
     $('#map').vectorMap({
       map: 'vietnam',
       backgroundColor: "transparent",
       onRegionClick:function(event, code){
           var name = (code);
+          self.getCity_id(code)
           localStorage.setItem('city_id', code);
 
           // $('id_city').text('test');
@@ -110,7 +111,7 @@ class DashBoard extends React.Component{
   componentWillUnmount(){
     // $('#map').empty()
 
-    clearInterval(this.intervalId);
+    // clearInterval(this.intervalId);
   }
 
   getDataChart(city_id,d1,d2){
@@ -130,6 +131,9 @@ class DashBoard extends React.Component{
     this.setState({d1,d2})
 
   }
+  onchangeCity(objectCity){
+    this.getCity_id(objectCity.value);
+  }
   render(){
      return(
 
@@ -146,7 +150,7 @@ class DashBoard extends React.Component{
                  {/* <img style={{width: "103%",height: "914px",}} src="./images/map.png" /> */}
                    </div>
              <div className="col-md-5 remove-padding-col">
-                <ContainerRight d1={this.state.d1} d2={this.state.d2} dataLineChart ={this.state.dataLineChart} city_id={this.state.city_id} />
+                <ContainerRight onchangeCity={this.onchangeCity.bind(this)} d1={this.state.d1} d2={this.state.d2} dataLineChart ={this.state.dataLineChart} city_id={this.state.city_id} />
              </div>
         </div>
      )

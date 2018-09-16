@@ -71,8 +71,40 @@ class Trend extends React.Component{
               <div className="col-md-3">
                     <Chart />
               </div>
-              <div className="col-md-3 data-trend ">
-                  <div className="">
+              <div className="col-md-3 ">
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
                      <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
                      <div className="pull-right">
                         12.7
@@ -81,8 +113,8 @@ class Trend extends React.Component{
                     </div>
                   </div>
               </div>
-              <div className="col-md-3 data-trend">
-                  <div className="">
+              <div className="col-md-3">
+                  <div className="col-md-12  data-trend">
                      <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
                      <div className="pull-right">
                        12.7
@@ -90,15 +122,76 @@ class Trend extends React.Component{
 
                     </div>
                   </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                        12.7
+                       <TrendingUp className={classes.trending_up}  />
+
+                    </div>
+                  </div>
               </div>
-              <div className="col-md-3 data-trend">
-                  <div className="">
+              <div className="col-md-3 ">
+                  <div className="col-md-12  data-trend">
                      <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
                      <div className="pull-right">
                        <TrendingUp className={classes.trending_down}  />
                         12.7
                     </div>
                   </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                       <TrendingUp className={classes.trending_down}  />
+                        12.7
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                       <TrendingUp className={classes.trending_down}  />
+                        12.7
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                       <TrendingDown className={classes.trending_down}  />
+                        12.7
+                    </div>
+                  </div>
+                  <div className="col-md-12  data-trend">
+                     <div className="pull-left"><Lens className={classes.icon_chirld_menu} /> Tiêu chí</div>
+                     <div className="pull-right">
+                       <TrendingDown className={classes.trending_down}  />
+                        12.7
+                    </div>
+                  </div>
+
               </div>
           </div>
 

@@ -1,0 +1,1671 @@
+2018-09-16 23:32:46.280 - verbose: logger hook loaded successfully.
+2018-09-16 23:32:46.285 - verbose: request hook loaded successfully.
+2018-09-16 23:32:46.290 - verbose: Loading the app's models and any custom adapters...
+2018-09-16 23:32:46.291 - verbose: Loading app models...
+2018-09-16 23:32:46.298 - verbose: Loading app adapters...
+2018-09-16 23:32:46.345 - verbose: Overriding ejs engine config with ejslocals to implement layout support...
+2018-09-16 23:32:46.350 - verbose: views hook loaded successfully.
+2018-09-16 23:32:46.351 - verbose: Loading blueprint middleware...
+2018-09-16 23:32:46.356 - verbose: blueprints hook loaded successfully.
+2018-09-16 23:32:46.361 - verbose: responses hook loaded successfully.
+2018-09-16 23:32:46.582 - verbose: controllers hook loaded successfully.
+2018-09-16 23:32:46.622 - verbose: Loading policy modules from app...
+2018-09-16 23:32:46.639 - verbose: Finished loading policy middleware logic.
+2018-09-16 23:32:46.641 - verbose: policies hook loaded successfully.
+2018-09-16 23:32:46.643 - verbose: services hook loaded successfully.
+2018-09-16 23:32:46.646 - verbose: csrf hook loaded successfully.
+2018-09-16 23:32:46.648 - verbose: cors hook loaded successfully.
+2018-09-16 23:32:46.922 - verbose: i18n hook loaded successfully.
+2018-09-16 23:32:47.139 - verbose: session hook loaded successfully.
+2018-09-16 23:32:47.141 - verbose: Loading app Gruntfile...
+2018-09-16 23:32:47.155 - verbose: Tracking new grunt child process...
+2018-09-16 23:32:47.157 - verbose: grunt hook loaded successfully.
+2018-09-16 23:32:47.281 - verbose: Setting default Express view engine to ejs...
+2018-09-16 23:32:48.737 - verbose: http hook loaded successfully.
+2018-09-16 23:32:48.740 - verbose: Preparing socket.io...
+2018-09-16 23:32:48.895 - verbose: sockets hook loaded successfully.
+2018-09-16 23:32:48.903 - verbose: Starting ORM...
+2018-09-16 23:32:48.911 - verbose: orm hook loaded successfully.
+2018-09-16 23:32:48.912 - verbose: pubsub hook loaded successfully.
+2018-09-16 23:32:48.914 - verbose: Built-in hooks are ready.
+2018-09-16 23:32:48.915 - verbose: Instantiating registry...
+2018-09-16 23:32:48.917 - verbose: Loading router...
+2018-09-16 23:32:48.939 - verbose: Policy-controller bindings complete!
+2018-09-16 23:32:49.030 - verbose: All hooks were loaded successfully.
+2018-09-16 23:32:49.032 - verbose: Starting app at D:\tryhard\src\git\SMCC...
+2018-09-16 23:32:49.033 - verbose: Running the setup logic in `sails.config.bootstrap(cb)`...
+2018-09-16 23:32:49.045 - info:  
+2018-09-16 23:32:49.049 - info:                .-..-.
+2018-09-16 23:32:49.051 - info:  
+2018-09-16 23:32:49.059 - info:    Sails              <|    .-..-.
+2018-09-16 23:32:49.060 - info:    v0.12.14            |\
+2018-09-16 23:32:49.061 - info:                       /|.\
+2018-09-16 23:32:49.062 - info:                      / || \
+2018-09-16 23:32:49.063 - info:                    ,'  |'  \
+2018-09-16 23:32:49.063 - info:                 .-'.-==|/_--'
+2018-09-16 23:32:49.064 - info:                 `--'-------' 
+2018-09-16 23:32:49.065 - info:    __---___--___---___--___---___--___
+2018-09-16 23:32:49.066 - info:  ____---___--___---___--___---___--___-__
+2018-09-16 23:32:49.067 - info:  
+2018-09-16 23:32:49.067 - info: Server lifted in `D:\tryhard\src\git\SMCC`
+2018-09-16 23:32:49.069 - info: [4mTo see your app, visit http://localhost:1339[24m
+2018-09-16 23:32:49.071 - info: To shut down Sails, press <CTRL> + C at any time.
+2018-09-16 23:32:49.072 - debug: [90m-------------------------------------------------------[39m
+2018-09-16 23:32:49.074 - debug: [90m:: Sun Sep 16 2018 23:32:49 GMT+0700 (SE Asia Standard Time)[39m
+2018-09-16 23:32:49.075 - debug: Environment : development
+2018-09-16 23:32:49.077 - debug: Port        : 1339
+2018-09-16 23:32:49.078 - debug: [90m-------------------------------------------------------[39m
+2018-09-16 23:32:49.861 - verbose: Grunt :: Running "clean:dev" (clean) task
+2018-09-16 23:32:50.146 - verbose: Grunt :: >> 65 paths cleaned.
+2018-09-16 23:32:50.148 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:32:50.154 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:32:50.155 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:32:50.231 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:32:50.234 - verbose: Grunt :: Running "copy:dev" (copy) task
+2018-09-16 23:32:52.032 - verbose: Grunt :: Copied 54 files
+2018-09-16 23:32:52.033 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:32:52.038 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:32:52.039 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:32:52.083 - verbose: Grunt :: padding length 4
+2018-09-16 23:32:52.095 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:32:52.096 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:32:52.154 - verbose: Grunt :: padding length 2
+2018-09-16 23:32:52.164 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:32:52.165 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:32:52.173 - verbose: Grunt :: padding length 4
+2018-09-16 23:32:52.183 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:32:52.184 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:32:52.192 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:32:52.205 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:32:52.216 - verbose: Grunt :: Running "watch" task
+Waiting...
+2018-09-16 23:32:54.150 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:32:54.151 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:32:54.213 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:32:54.241 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:32:54.243 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:32:54.563 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:32:54.580 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:32:54.590 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:32:54.600 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:32:54.607 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:32:54.608 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:32:54.609 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:32:54.613 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:32:54.614 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:32:54.615 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:32:54.619 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:32:54.619 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:32:56.369 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:32:56.373 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:32:56.374 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:33:35.833 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:33:37.876 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:33:37.885 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:33:37.919 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:33:37.923 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:33:37.924 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:33:38.041 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:33:38.049 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:33:38.049 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:33:38.114 - verbose: Grunt :: padding length 4
+2018-09-16 23:33:38.123 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:33:38.124 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:33:38.174 - verbose: Grunt :: padding length 2
+2018-09-16 23:33:38.181 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:33:38.182 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:33:38.188 - verbose: Grunt :: padding length 4
+2018-09-16 23:33:38.197 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:33:38.198 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:33:38.206 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:33:38.216 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:33:38.219 - verbose: Grunt :: Done.
+2018-09-16 23:33:38.239 - verbose: Grunt :: Completed in 2.400s at Sun Sep 16 2018 23:33:38 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:33:51.147 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:33:53.229 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:33:53.247 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:33:53.248 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:33:53.282 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:33:53.330 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:33:53.384 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:33:53.394 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:33:53.437 - verbose: Grunt :: padding length 4
+2018-09-16 23:33:53.443 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:33:53.485 - verbose: Grunt :: padding length 2
+2018-09-16 23:33:53.491 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:33:53.492 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:33:53.501 - verbose: Grunt :: padding length 4
+2018-09-16 23:33:53.506 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:33:53.511 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:33:53.518 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:33:53.528 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:33:53.531 - verbose: Grunt :: Done.
+2018-09-16 23:33:53.541 - verbose: Grunt :: Completed in 2.394s at Sun Sep 16 2018 23:33:53 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:34:34.574 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:34:36.366 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:34:36.376 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:34:36.377 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:34:36.402 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:34:36.404 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:34:36.494 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:34:36.501 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:34:36.506 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:34:36.542 - verbose: Grunt :: padding length 4
+2018-09-16 23:34:36.552 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:34:36.558 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:34:36.606 - verbose: Grunt :: padding length 2
+2018-09-16 23:34:36.617 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:34:36.618 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:34:36.624 - verbose: Grunt :: padding length 4
+2018-09-16 23:34:36.631 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:34:36.632 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:34:36.640 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:34:36.652 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:34:36.670 - verbose: Grunt :: Done.
+2018-09-16 23:34:36.697 - verbose: Grunt :: Completed in 2.119s at Sun Sep 16 2018 23:34:36 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:34:38.992 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:38.993 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:39.071 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:39.096 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:39.097 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:39.384 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:39.387 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:39.388 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:39.396 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:39.403 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:39.404 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:39.406 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:39.410 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:39.411 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:39.420 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:39.426 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:39.429 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:40.688 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:40.693 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:40.695 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:45.896 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:45.897 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:45.955 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:45.960 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:45.960 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:46.234 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:46.239 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:46.240 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:46.245 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:46.249 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:46.250 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:46.253 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:46.259 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:46.260 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:46.273 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:46.277 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:46.277 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:34:47.312 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:34:47.316 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:34:47.316 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:35:33.608 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:35:35.522 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:35:35.533 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:35:35.534 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:35:35.564 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:35:35.568 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:35:35.716 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:35:35.722 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:35:35.723 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:35:35.786 - verbose: Grunt :: padding length 4
+2018-09-16 23:35:35.795 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:35.797 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:35:35.868 - verbose: Grunt :: padding length 2
+2018-09-16 23:35:35.873 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:35.874 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:35:35.888 - verbose: Grunt :: padding length 4
+2018-09-16 23:35:35.893 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:35:35.903 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:35:35.916 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:35:35.919 - verbose: Grunt :: Done.
+2018-09-16 23:35:35.935 - verbose: Grunt :: Completed in 2.326s at Sun Sep 16 2018 23:35:35 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:35:43.578 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:35:46.657 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:35:46.669 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:35:46.671 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:35:46.702 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:35:46.773 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:35:46.896 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:35:46.912 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:35:46.913 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:35:46.969 - verbose: Grunt :: padding length 4
+2018-09-16 23:35:46.975 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:46.976 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:35:47.035 - verbose: Grunt :: padding length 2
+2018-09-16 23:35:47.041 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:47.042 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:35:47.051 - verbose: Grunt :: padding length 4
+2018-09-16 23:35:47.056 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:47.057 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:35:47.066 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:35:47.081 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:35:47.084 - verbose: Grunt :: Done.
+2018-09-16 23:35:47.107 - verbose: Grunt :: Completed in 3.530s at Sun Sep 16 2018 23:35:47 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:35:50.497 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:35:53.037 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:35:53.052 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:35:53.052 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:35:53.089 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:35:53.092 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:35:53.215 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:35:53.226 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:35:53.228 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:35:53.277 - verbose: Grunt :: padding length 4
+2018-09-16 23:35:53.282 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:53.284 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:35:53.346 - verbose: Grunt :: padding length 2
+2018-09-16 23:35:53.354 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:53.356 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:35:53.364 - verbose: Grunt :: padding length 4
+2018-09-16 23:35:53.375 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:35:53.377 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:35:53.391 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:35:53.418 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:35:53.423 - verbose: Grunt :: Done.
+2018-09-16 23:35:53.538 - verbose: Grunt :: Completed in 3.040s at Sun Sep 16 2018 23:35:53 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:35:59.614 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:02.404 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:02.422 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:02.424 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:02.458 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:02.462 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:02.580 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:02.619 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:02.628 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:02.640 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:02.641 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:02.683 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:02.689 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:02.690 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:02.702 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:02.709 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:02.710 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:02.718 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:02.730 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:02.734 - verbose: Grunt :: Done.
+2018-09-16 23:36:02.758 - verbose: Grunt :: Completed in 3.145s at Sun Sep 16 2018 23:36:02 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:03.319 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:05.832 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:05.844 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:05.845 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:05.874 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:05.922 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:05.987 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:05.993 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:36:05.994 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:06.032 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:06.040 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:06.041 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:06.088 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:06.097 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:06.098 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:06.107 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:06.112 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:06.114 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:06.122 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:06.140 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:06.144 - verbose: Grunt :: Done.
+2018-09-16 23:36:06.182 - verbose: Grunt :: Completed in 2.861s at Sun Sep 16 2018 23:36:06 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:12.488 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:15.140 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:15.154 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:15.155 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:15.197 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:15.279 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:15.372 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:15.378 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:36:15.380 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:15.418 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:15.426 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:15.427 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:15.484 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:15.491 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:15.492 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:15.502 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:15.508 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:15.509 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:15.519 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:15.534 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:15.539 - verbose: Grunt :: Done.
+2018-09-16 23:36:15.555 - verbose: Grunt :: Completed in 3.069s at Sun Sep 16 2018 23:36:15 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:19.902 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:22.716 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:22.728 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:22.729 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:22.762 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:22.765 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:22.883 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:22.889 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:36:22.889 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:22.928 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:22.933 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:22.933 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:22.977 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:22.983 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:22.984 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:22.990 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:22.996 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:22.996 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:23.003 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:23.020 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:23.024 - verbose: Grunt :: Done.
+2018-09-16 23:36:23.071 - verbose: Grunt :: Completed in 3.169s at Sun Sep 16 2018 23:36:23 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:23.662 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:26.107 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:26.124 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:26.126 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:26.162 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:26.208 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:26.320 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:26.326 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:36:26.327 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:26.369 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:26.375 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:26.377 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:26.432 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:26.437 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:26.439 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:26.445 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:26.453 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:26.454 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:26.462 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:26.473 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:26.477 - verbose: Grunt :: Done.
+2018-09-16 23:36:26.620 - verbose: Grunt :: Completed in 2.958s at Sun Sep 16 2018 23:36:26 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:28.050 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:31.292 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:31.307 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:31.308 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:31.342 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:31.400 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:31.511 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:31.516 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:31.557 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:31.566 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:31.567 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:31.617 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:31.626 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:31.636 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:31.644 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:31.644 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:31.657 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:31.671 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:31.676 - verbose: Grunt :: Done.
+2018-09-16 23:36:31.688 - verbose: Grunt :: Completed in 3.640s at Sun Sep 16 2018 23:36:31 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:32.149 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:34.525 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:34.535 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:34.536 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:34.568 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:34.613 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:34.677 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:34.684 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:36:34.686 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:34.727 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:34.735 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:34.793 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:34.800 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:34.801 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:34.808 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:34.814 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:34.815 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:34.831 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:34.845 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:34.850 - verbose: Grunt :: Done.
+2018-09-16 23:36:34.872 - verbose: Grunt :: Completed in 2.727s at Sun Sep 16 2018 23:36:34 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:38.153 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:40.479 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:40.495 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:40.497 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:40.532 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:40.578 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:40.674 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:40.716 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:40.729 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:40.746 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:40.751 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:40.872 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:40.876 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:40.877 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:40.892 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:40.896 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:40.897 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:40.906 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:40.939 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:40.943 - verbose: Grunt :: Done.
+2018-09-16 23:36:41.020 - verbose: Grunt :: Completed in 2.868s at Sun Sep 16 2018 23:36:41 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:46.191 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:48.253 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:48.262 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:48.263 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:48.294 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:48.329 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:48.385 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:48.390 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:36:48.392 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:48.430 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:48.435 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:48.436 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:48.479 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:48.487 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:48.487 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:48.494 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:48.506 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:48.507 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:48.513 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:48.525 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:48.530 - verbose: Grunt :: Done.
+2018-09-16 23:36:48.546 - verbose: Grunt :: Completed in 2.353s at Sun Sep 16 2018 23:36:48 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:36:54.466 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:36:56.295 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:36:56.305 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:36:56.306 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:36:56.335 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:36:56.338 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:36:56.425 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:36:56.429 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:36:56.430 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:36:56.463 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:56.469 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:56.469 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:36:56.519 - verbose: Grunt :: padding length 2
+2018-09-16 23:36:56.525 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:56.526 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:36:56.533 - verbose: Grunt :: padding length 4
+2018-09-16 23:36:56.539 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:36:56.541 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:36:56.548 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:36:56.561 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:36:56.565 - verbose: Grunt :: Done.
+2018-09-16 23:36:56.598 - verbose: Grunt :: Completed in 2.131s at Sun Sep 16 2018 23:36:56 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:37:07.980 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:37:07.981 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:37:08.057 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:37:08.064 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:37:08.066 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:37:08.298 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:37:08.304 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:37:08.304 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:37:08.311 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:37:08.318 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:37:08.319 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:37:08.322 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:37:08.328 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:37:08.328 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:37:08.381 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:37:08.388 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:37:08.390 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:37:09.553 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:37:09.559 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:37:09.560 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:38:26.325 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:38:28.879 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:38:28.890 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:38:28.891 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:38:28.922 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:38:28.924 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:38:29.146 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:38:29.152 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:38:29.152 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:38:29.193 - verbose: Grunt :: padding length 4
+2018-09-16 23:38:29.200 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:38:29.201 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:38:29.280 - verbose: Grunt :: padding length 2
+2018-09-16 23:38:29.326 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:38:29.327 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:38:29.332 - verbose: Grunt :: padding length 4
+2018-09-16 23:38:29.339 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:38:29.340 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:38:29.348 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:38:29.360 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:38:29.363 - verbose: Grunt :: Done.
+2018-09-16 23:38:29.385 - verbose: Grunt :: Completed in 3.058s at Sun Sep 16 2018 23:38:29 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:38:35.739 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:38:38.099 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:38:38.110 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:38:38.113 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:38:38.143 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:38:38.145 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:38:38.252 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:38:38.264 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:38:38.295 - verbose: Grunt :: padding length 4
+2018-09-16 23:38:38.301 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:38:38.301 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:38:38.359 - verbose: Grunt :: padding length 2
+2018-09-16 23:38:38.369 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:38:38.370 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:38:38.377 - verbose: Grunt :: padding length 4
+2018-09-16 23:38:38.384 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:38:38.391 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:38:38.403 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:38:38.415 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:38:38.418 - verbose: Grunt :: Done.
+2018-09-16 23:38:38.428 - verbose: Grunt :: Completed in 2.691s at Sun Sep 16 2018 23:38:38 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:38:39.048 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:38:39.049 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:38:39.126 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:38:39.157 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:38:39.158 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:38:39.398 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:38:39.402 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:38:39.402 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:38:39.409 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:38:39.413 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:38:39.414 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:38:39.416 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:38:39.421 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:38:39.453 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:38:39.474 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:38:39.479 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:38:39.493 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:38:40.929 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:38:40.934 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:38:40.935 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:39:10.361 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:39:13.404 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:39:13.418 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:39:13.420 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:39:13.468 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:39:13.506 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:39:13.604 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:39:13.611 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:39:13.659 - verbose: Grunt :: padding length 4
+2018-09-16 23:39:13.666 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:39:13.668 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:39:13.732 - verbose: Grunt :: padding length 2
+2018-09-16 23:39:13.739 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:39:13.740 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:39:13.747 - verbose: Grunt :: padding length 4
+2018-09-16 23:39:13.755 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:39:13.756 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:39:13.764 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:39:13.775 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:39:13.779 - verbose: Grunt :: Done.
+2018-09-16 23:39:13.803 - verbose: Grunt :: Completed in 3.442s at Sun Sep 16 2018 23:39:13 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:39:14.667 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:39:17.176 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:39:17.201 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:39:17.204 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:39:17.242 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:39:17.324 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:39:17.407 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:39:17.413 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:39:17.414 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:39:17.448 - verbose: Grunt :: padding length 4
+2018-09-16 23:39:17.456 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:39:17.456 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:39:17.498 - verbose: Grunt :: padding length 2
+2018-09-16 23:39:17.503 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:39:17.504 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:39:17.510 - verbose: Grunt :: padding length 4
+2018-09-16 23:39:17.519 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:39:17.521 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:39:17.569 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:39:17.582 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:39:17.587 - verbose: Grunt :: Done.
+2018-09-16 23:39:17.630 - verbose: Grunt :: Completed in 2.962s at Sun Sep 16 2018 23:39:17 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:39:27.056 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:39:27.060 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:39:27.136 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:39:27.170 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:39:27.171 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:39:27.421 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:39:27.431 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:39:27.431 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:39:27.434 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:39:27.440 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:39:27.441 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:39:27.445 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:39:27.450 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:39:27.451 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:39:27.630 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:39:27.637 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:39:27.638 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:39:28.864 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:39:28.870 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:39:28.871 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:45:00.334 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:45:03.249 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:45:03.260 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:45:03.261 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:45:03.292 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:45:03.295 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:45:03.431 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:45:03.445 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:45:03.445 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:45:03.547 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:03.554 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:03.554 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:45:03.607 - verbose: Grunt :: padding length 2
+2018-09-16 23:45:03.613 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:03.614 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:45:03.627 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:03.637 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:45:03.644 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:45:03.655 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:45:03.659 - verbose: Grunt :: Done.
+2018-09-16 23:45:03.678 - verbose: Grunt :: Completed in 3.347s at Sun Sep 16 2018 23:45:03 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:45:04.267 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:45:07.491 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:45:07.534 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:45:07.535 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:45:07.577 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:45:07.616 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:45:07.765 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:45:07.772 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:45:07.773 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:45:07.869 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:07.919 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:07.920 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:45:08.010 - verbose: Grunt :: padding length 2
+2018-09-16 23:45:08.015 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:08.016 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:45:08.022 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:08.043 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:08.044 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:45:08.094 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:45:08.124 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:45:08.128 - verbose: Grunt :: Done.
+2018-09-16 23:45:08.144 - verbose: Grunt :: Completed in 3.878s at Sun Sep 16 2018 23:45:08 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:45:08.963 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:45:11.569 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:45:11.587 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:45:11.589 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:45:11.621 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:45:11.678 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:45:11.788 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:45:11.795 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:45:11.797 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:45:11.831 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:11.836 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:11.837 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:45:11.880 - verbose: Grunt :: padding length 2
+2018-09-16 23:45:11.888 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:11.889 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:45:11.897 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:11.901 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:11.902 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:45:11.911 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:45:11.921 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:45:11.925 - verbose: Grunt :: Done.
+2018-09-16 23:45:11.971 - verbose: Grunt :: Completed in 3.006s at Sun Sep 16 2018 23:45:11 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:45:13.739 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:45:16.282 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:45:16.301 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:45:16.304 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:45:16.342 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:45:16.345 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:45:16.452 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:45:16.461 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:45:16.461 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:45:16.503 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:16.509 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:16.515 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:45:16.562 - verbose: Grunt :: padding length 2
+2018-09-16 23:45:16.570 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:16.571 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:45:16.577 - verbose: Grunt :: padding length 4
+2018-09-16 23:45:16.588 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:45:16.589 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:45:16.600 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:45:16.611 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:45:16.615 - verbose: Grunt :: Done.
+2018-09-16 23:45:16.663 - verbose: Grunt :: Completed in 2.924s at Sun Sep 16 2018 23:45:16 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:45:50.515 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:45:50.516 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:45:50.587 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:45:50.621 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:45:50.623 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:45:50.895 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:45:50.901 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:45:50.902 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:45:50.907 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:45:50.913 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:45:50.913 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:45:50.915 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:45:50.920 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:45:50.920 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:45:50.923 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:45:50.928 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:45:50.929 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:46:47.835 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:46:51.137 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:46:51.193 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:46:51.195 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:46:51.246 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:46:51.290 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:46:51.363 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:46:51.370 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:46:51.371 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:46:51.412 - verbose: Grunt :: padding length 4
+2018-09-16 23:46:51.420 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:46:51.451 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:46:51.519 - verbose: Grunt :: padding length 2
+2018-09-16 23:46:51.534 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:46:51.535 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:46:51.543 - verbose: Grunt :: padding length 4
+2018-09-16 23:46:51.550 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:46:51.551 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:46:51.679 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:46:51.690 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:46:51.695 - verbose: Grunt :: Done.
+2018-09-16 23:46:51.790 - verbose: Grunt :: Completed in 3.956s at Sun Sep 16 2018 23:46:51 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:46:53.704 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:46:57.337 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:46:57.352 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:46:57.355 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:46:57.390 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:46:57.441 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:46:57.518 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:46:57.523 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:46:57.524 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:46:57.559 - verbose: Grunt :: padding length 4
+2018-09-16 23:46:57.568 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:46:57.568 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:46:57.615 - verbose: Grunt :: padding length 2
+2018-09-16 23:46:57.621 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:46:57.622 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:46:57.630 - verbose: Grunt :: padding length 4
+2018-09-16 23:46:57.640 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:46:57.643 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:46:57.651 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:46:57.663 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:46:57.669 - verbose: Grunt :: Done.
+2018-09-16 23:46:57.717 - verbose: Grunt :: Completed in 4.012s at Sun Sep 16 2018 23:46:57 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:46:58.364 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:47:01.136 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:47:01.147 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:47:01.153 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:47:01.188 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:47:01.190 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:47:01.447 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:47:01.553 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:47:01.574 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:47:01.592 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:01.598 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:01.598 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:47:01.645 - verbose: Grunt :: padding length 2
+2018-09-16 23:47:01.651 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:01.652 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:47:01.658 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:01.663 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:01.664 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:47:01.672 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:47:01.682 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:47:01.685 - verbose: Grunt :: Done.
+2018-09-16 23:47:01.793 - verbose: Grunt :: Completed in 3.431s at Sun Sep 16 2018 23:47:01 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:47:08.373 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:47:10.988 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:47:11.001 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:47:11.002 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:47:11.035 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:47:11.037 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:47:11.269 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:47:11.278 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:47:11.279 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:47:11.355 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:11.403 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:11.409 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:47:11.517 - verbose: Grunt :: padding length 2
+2018-09-16 23:47:11.522 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:11.523 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:47:11.529 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:11.534 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:11.535 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:47:11.543 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:47:11.680 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:47:11.689 - verbose: Grunt :: Done.
+2018-09-16 23:47:11.731 - verbose: Grunt :: Completed in 3.358s at Sun Sep 16 2018 23:47:11 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:47:14.279 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:47:16.375 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:47:16.384 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:47:16.386 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:47:16.426 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:47:16.428 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:47:16.521 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:47:16.528 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:47:16.529 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:47:16.572 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:16.578 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:16.580 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:47:16.632 - verbose: Grunt :: padding length 2
+2018-09-16 23:47:16.638 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:16.639 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:47:16.647 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:16.653 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:16.655 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:47:16.662 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:47:16.678 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:47:16.682 - verbose: Grunt :: Done.
+2018-09-16 23:47:16.735 - verbose: Grunt :: Completed in 2.456s at Sun Sep 16 2018 23:47:16 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:47:41.576 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:47:43.842 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:47:43.857 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:47:43.858 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:47:43.890 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:47:43.938 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:47:44.012 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:47:44.024 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:47:44.025 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:47:44.065 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:44.075 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:47:44.128 - verbose: Grunt :: padding length 2
+2018-09-16 23:47:44.134 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:44.135 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:47:44.144 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:44.149 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:44.150 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:47:44.159 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:47:44.176 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:47:44.180 - verbose: Grunt :: Done.
+2018-09-16 23:47:44.233 - verbose: Grunt :: Completed in 2.658s at Sun Sep 16 2018 23:47:44 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:47:45.974 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:47:50.087 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:47:50.102 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:47:50.102 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:47:50.144 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:47:50.200 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:47:50.328 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:47:50.338 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:47:50.339 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:47:50.392 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:50.398 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:50.399 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:47:50.461 - verbose: Grunt :: padding length 2
+2018-09-16 23:47:50.468 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:50.469 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:47:50.477 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:50.483 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:50.484 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:47:50.537 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:47:50.551 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:47:50.555 - verbose: Grunt :: Done.
+2018-09-16 23:47:50.589 - verbose: Grunt :: Completed in 4.616s at Sun Sep 16 2018 23:47:50 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:47:53.210 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:47:55.565 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:47:55.581 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:47:55.581 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:47:55.611 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:47:55.654 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:47:55.791 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:47:55.801 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:47:55.867 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:55.874 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:55.875 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:47:55.929 - verbose: Grunt :: padding length 2
+2018-09-16 23:47:55.936 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:55.940 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:47:55.942 - verbose: Grunt :: padding length 4
+2018-09-16 23:47:55.949 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:47:55.960 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+
+Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:47:55.969 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:47:55.972 - verbose: Grunt :: Done.
+2018-09-16 23:47:55.987 - verbose: Grunt :: Completed in 2.776s at Sun Sep 16 2018 23:47:55 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:48:01.679 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:48:03.627 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:48:03.639 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:48:03.640 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:48:03.674 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:48:03.679 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:48:03.843 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:48:03.851 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:48:03.876 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:48:03.890 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:03.899 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:03.899 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:48:03.940 - verbose: Grunt :: padding length 2
+2018-09-16 23:48:03.948 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:03.949 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:48:03.966 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:03.978 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:48:03.981 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:48:03.992 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:48:03.995 - verbose: Grunt :: Done.
+2018-09-16 23:48:04.061 - verbose: Grunt :: Completed in 2.381s at Sun Sep 16 2018 23:48:04 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:48:14.898 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:48:17.043 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:48:17.055 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:48:17.057 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:48:17.086 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:48:17.089 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:48:17.183 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:48:17.188 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:48:17.191 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:48:17.246 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:17.253 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:17.254 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:48:17.302 - verbose: Grunt :: padding length 2
+2018-09-16 23:48:17.307 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:17.307 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:48:17.317 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:17.323 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:17.324 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:48:17.334 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:48:17.349 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:48:17.379 - verbose: Grunt :: Done.
+Completed in 2.474s at Sun Sep 16 2018 23:48:17 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:48:20.402 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:48:22.480 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:48:22.496 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:48:22.498 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:48:22.536 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:48:22.602 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:48:22.663 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:48:22.668 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:48:22.670 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:48:22.711 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:22.719 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:22.720 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:48:22.775 - verbose: Grunt :: padding length 2
+2018-09-16 23:48:22.780 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:22.781 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:48:22.787 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:22.793 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:22.793 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:48:22.801 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:48:22.815 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:48:22.818 - verbose: Grunt :: Done.
+2018-09-16 23:48:22.857 - verbose: Grunt :: Completed in 2.453s at Sun Sep 16 2018 23:48:22 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:48:33.414 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:48:35.671 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:48:35.684 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:48:35.685 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:48:35.719 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:48:35.725 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:48:35.825 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:48:35.833 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:48:35.840 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:48:35.889 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:35.894 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:35.895 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:48:35.952 - verbose: Grunt :: padding length 2
+2018-09-16 23:48:35.958 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:35.959 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:48:35.965 - verbose: Grunt :: padding length 4
+2018-09-16 23:48:35.970 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:48:35.971 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:48:35.978 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:48:35.994 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:48:35.997 - verbose: Grunt :: Done.
+2018-09-16 23:48:36.015 - verbose: Grunt :: Completed in 2.599s at Sun Sep 16 2018 23:48:36 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:49:10.310 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:49:12.444 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:49:12.453 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:49:12.454 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:49:12.485 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:49:12.523 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:49:12.578 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:49:12.586 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:49:12.625 - verbose: Grunt :: padding length 4
+2018-09-16 23:49:12.635 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:12.638 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:49:12.693 - verbose: Grunt :: padding length 2
+2018-09-16 23:49:12.699 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:12.700 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:49:12.707 - verbose: Grunt :: padding length 4
+2018-09-16 23:49:12.715 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:12.717 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:49:12.730 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:49:12.739 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:49:12.742 - verbose: Grunt :: Done.
+2018-09-16 23:49:12.763 - verbose: Grunt :: Completed in 2.452s at Sun Sep 16 2018 23:49:12 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:49:20.050 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:49:22.141 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:49:22.151 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:49:22.152 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:49:22.178 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:49:22.231 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:49:22.289 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:49:22.296 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:49:22.297 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:49:22.337 - verbose: Grunt :: padding length 4
+2018-09-16 23:49:22.344 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:22.345 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:49:22.390 - verbose: Grunt :: padding length 2
+2018-09-16 23:49:22.399 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:22.400 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:49:22.408 - verbose: Grunt :: padding length 4
+2018-09-16 23:49:22.415 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:22.417 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:49:22.423 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:49:22.434 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:49:22.439 - verbose: Grunt :: Done.
+2018-09-16 23:49:22.463 - verbose: Grunt :: Completed in 2.413s at Sun Sep 16 2018 23:49:22 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:49:34.404 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:49:36.568 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:49:36.579 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:49:36.580 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:49:36.615 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:49:36.618 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:49:36.724 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:49:36.730 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:49:36.734 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:49:36.779 - verbose: Grunt :: padding length 4
+2018-09-16 23:49:36.786 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:36.787 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:49:36.872 - verbose: Grunt :: padding length 2
+2018-09-16 23:49:36.878 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:36.887 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:49:36.888 - verbose: Grunt :: padding length 4
+2018-09-16 23:49:36.893 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:49:36.895 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:49:36.904 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:49:36.920 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:49:36.924 - verbose: Grunt :: Done.
+2018-09-16 23:49:36.941 - verbose: Grunt :: Completed in 2.537s at Sun Sep 16 2018 23:49:36 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:49:58.598 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:50:01.074 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:50:01.087 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:50:01.089 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:50:01.130 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:50:01.182 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:50:01.259 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:50:01.264 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:50:01.266 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:50:01.310 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:01.316 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:01.317 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:50:01.453 - verbose: Grunt :: padding length 2
+2018-09-16 23:50:01.532 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:01.534 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:50:01.578 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:01.583 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:01.584 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:50:01.591 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:50:01.602 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:50:01.613 - verbose: Grunt :: Done.
+2018-09-16 23:50:01.632 - verbose: Grunt :: Completed in 3.037s at Sun Sep 16 2018 23:50:01 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:50:03.299 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:50:06.462 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:50:06.477 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+
+Running "less:dev" (less) task
+2018-09-16 23:50:06.514 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:50:06.528 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:50:06.674 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:50:06.681 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:50:06.682 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:50:06.741 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:06.748 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:06.749 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:50:06.817 - verbose: Grunt :: padding length 2
+2018-09-16 23:50:06.823 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:06.824 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:50:06.832 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:06.837 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:06.838 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:50:06.846 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:50:06.877 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:50:06.884 - verbose: Grunt :: Done.
+2018-09-16 23:50:06.973 - verbose: Grunt :: Completed in 3.675s at Sun Sep 16 2018 23:50:06 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:50:12.415 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:50:15.224 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:50:15.247 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+
+Running "less:dev" (less) task
+2018-09-16 23:50:15.277 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:50:15.281 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:50:15.396 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:50:15.402 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:50:15.402 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:50:15.448 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:15.453 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:15.456 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:50:15.511 - verbose: Grunt :: padding length 2
+2018-09-16 23:50:15.516 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:15.523 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:50:15.529 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:15.536 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:15.537 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:50:15.549 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:50:15.564 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:50:15.568 - verbose: Grunt :: Done.
+2018-09-16 23:50:15.642 - verbose: Grunt :: Completed in 3.226s at Sun Sep 16 2018 23:50:15 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:50:18.458 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:50:21.737 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:50:21.754 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:50:21.756 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:50:21.791 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:50:21.838 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:50:22.095 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:50:22.104 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:50:22.107 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:50:22.156 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:22.162 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:22.163 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:50:22.213 - verbose: Grunt :: padding length 2
+2018-09-16 23:50:22.233 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:22.234 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:50:22.381 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:22.386 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:22.388 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:50:22.396 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:50:22.409 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:50:22.412 - verbose: Grunt :: Done.
+2018-09-16 23:50:22.430 - verbose: Grunt :: Completed in 3.972s at Sun Sep 16 2018 23:50:22 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:50:24.704 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:50:27.600 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:50:27.619 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:50:27.623 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:50:27.660 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:50:27.663 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:50:27.777 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:50:27.826 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:50:27.837 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:27.847 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:27.868 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:50:27.903 - verbose: Grunt :: padding length 2
+2018-09-16 23:50:27.911 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:27.912 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:50:27.922 - verbose: Grunt :: padding length 4
+2018-09-16 23:50:27.928 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:50:27.965 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+
+Running "sails-linker:devStylesJade" (sails-linker) task
+
+Running "sails-linker:devTplJade" (sails-linker) task
+
+Done.
+2018-09-16 23:50:27.968 - verbose: Grunt :: Completed in 3.261s at Sun Sep 16 2018 23:50:27 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:50:31.829 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:50:31.830 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:50:31.873 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:50:31.886 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:50:31.887 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:50:42.692 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:50:42.700 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:50:42.701 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:50:43.523 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:50:43.530 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:50:43.534 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:50:43.543 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:50:43.548 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:50:43.549 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:50:43.550 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:50:43.556 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:50:43.558 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:50:43.560 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:50:43.567 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:50:43.568 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:06.264 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:06.269 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:06.270 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:06.314 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:06.320 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:06.321 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:06.327 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:06.332 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:06.333 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:06.334 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:06.339 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:06.340 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:06.341 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:06.347 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:06.347 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:43.031 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:43.034 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:43.100 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:43.105 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:43.106 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:43.388 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:43.392 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:43.392 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:43.399 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:43.404 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:43.404 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:43.406 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:43.412 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:43.414 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:43.566 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:43.571 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:43.572 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:51:44.725 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:51:44.732 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:51:44.740 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:52:31.746 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:52:34.238 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:52:34.252 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:52:34.253 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:52:34.283 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:52:34.334 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:52:34.387 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:52:34.393 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:52:34.393 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:52:34.438 - verbose: Grunt :: padding length 4
+2018-09-16 23:52:34.445 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:52:34.447 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:52:34.491 - verbose: Grunt :: padding length 2
+2018-09-16 23:52:34.499 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:52:34.504 - verbose: Grunt :: padding length 4
+2018-09-16 23:52:34.508 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:52:34.522 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+
+Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:52:34.530 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:52:34.534 - verbose: Grunt :: Done.
+2018-09-16 23:52:34.546 - verbose: Grunt :: Completed in 2.800s at Sun Sep 16 2018 23:52:34 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:52:54.949 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:52:54.950 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:52:55.007 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:52:55.011 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:52:55.012 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:52:55.248 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:52:55.252 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:52:55.256 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:52:55.262 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:52:55.266 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:52:55.266 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:52:55.267 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:52:55.272 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:52:55.273 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:52:55.418 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:52:55.425 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:52:55.427 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:52:56.744 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:52:56.750 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:52:56.756 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:53:32.285 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:53:34.380 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:53:34.390 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:53:34.391 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:53:34.422 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:53:34.425 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:53:34.516 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:53:34.522 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:53:34.523 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:53:34.572 - verbose: Grunt :: padding length 4
+2018-09-16 23:53:34.578 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:53:34.579 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:53:34.628 - verbose: Grunt :: padding length 2
+2018-09-16 23:53:34.633 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:53:34.635 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:53:34.641 - verbose: Grunt :: padding length 4
+2018-09-16 23:53:34.648 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:53:34.651 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:53:34.659 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:53:34.670 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:53:34.673 - verbose: Grunt :: Done.
+2018-09-16 23:53:34.687 - verbose: Grunt :: Completed in 2.404s at Sun Sep 16 2018 23:53:34 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:54:05.493 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:54:05.496 - verbose: Grunt :: >> File "assets\js\vectormap.js" changed.
+2018-09-16 23:54:07.444 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:54:07.460 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:54:07.461 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:54:07.497 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:54:07.500 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:54:07.586 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:54:07.593 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:54:07.600 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:54:07.633 - verbose: Grunt :: padding length 4
+2018-09-16 23:54:07.641 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:54:07.642 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:54:07.686 - verbose: Grunt :: padding length 2
+2018-09-16 23:54:07.696 - verbose: Grunt :: File "views/layout.ejs" updated.
+
+Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:54:07.704 - verbose: Grunt :: padding length 4
+2018-09-16 23:54:07.711 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:54:07.712 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:54:07.720 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:54:07.733 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:54:07.737 - verbose: Grunt :: Done.
+2018-09-16 23:54:07.752 - verbose: Grunt :: Completed in 2.259s at Sun Sep 16 2018 23:54:07 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:54:09.921 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:09.922 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:09.979 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:09.984 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:09.985 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:10.234 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:10.240 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:10.240 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:10.245 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:10.249 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:10.250 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:10.251 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:10.256 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:10.256 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:10.410 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:10.416 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:10.417 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:11.699 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:11.707 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:11.708 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:16.226 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:16.227 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:16.292 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:16.296 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:16.297 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:16.590 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:16.593 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:16.594 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:16.595 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:16.599 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:16.599 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:16.605 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:16.610 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:16.611 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:16.613 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:16.616 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:16.617 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:54:17.902 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:54:17.906 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:54:17.906 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:56:04.722 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:56:06.788 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:56:06.795 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:56:06.796 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:56:06.818 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:56:06.820 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:56:06.900 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:56:06.906 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:56:06.907 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:56:06.936 - verbose: Grunt :: padding length 4
+2018-09-16 23:56:06.942 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:56:06.944 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:56:06.982 - verbose: Grunt :: padding length 2
+2018-09-16 23:56:06.988 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:56:06.990 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:56:06.994 - verbose: Grunt :: padding length 4
+2018-09-16 23:56:07.000 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:56:07.002 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:56:07.009 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:56:07.018 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:56:07.021 - verbose: Grunt :: Done.
+2018-09-16 23:56:07.044 - verbose: Grunt :: Completed in 2.323s at Sun Sep 16 2018 23:56:07 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:57:01.818 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:01.818 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:01.886 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:01.892 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:01.892 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:02.137 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:02.140 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:02.141 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:02.151 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:02.155 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:02.156 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:02.157 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:02.162 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:02.162 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:02.329 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:02.338 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:02.338 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:03.286 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:03.292 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:03.293 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:08.122 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:08.133 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:08.217 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:08.229 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:08.230 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:08.819 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:08.844 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:08.845 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:08.848 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:08.854 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:08.855 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:08.863 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:08.871 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:08.872 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:08.874 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:08.879 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:08.882 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:10.380 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:10.385 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:10.386 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:46.273 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:57:47.714 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:47.716 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:47.774 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:47.780 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:47.781 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:48.113 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:48.118 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:48.120 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:48.124 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:48.131 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:48.132 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:48.133 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:48.138 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:48.138 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:48.729 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:57:48.743 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:57:48.744 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:57:48.770 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:57:48.817 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:57:48.864 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:57:48.868 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:57:48.870 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:57:48.898 - verbose: Grunt :: padding length 4
+2018-09-16 23:57:48.907 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:57:48.908 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:57:48.944 - verbose: Grunt :: padding length 2
+2018-09-16 23:57:48.951 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:57:48.952 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:57:48.958 - verbose: Grunt :: padding length 4
+2018-09-16 23:57:48.964 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:57:48.965 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:57:48.972 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:57:48.982 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:57:48.985 - verbose: Grunt :: Done.
+2018-09-16 23:57:48.997 - verbose: Grunt :: Completed in 2.724s at Sun Sep 16 2018 23:57:48 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:57:49.069 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:49.076 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:49.079 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:49.154 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:49.171 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:49.175 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:50.686 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:50.687 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:50.730 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:50.734 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:50.735 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:50.969 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:50.973 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:50.975 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:50.980 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:50.987 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:50.988 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:50.989 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:50.993 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:50.994 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:51.127 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:51.134 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:51.137 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:57:56.660 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:57:56.671 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:57:56.672 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:58:52.405 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:58:56.314 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:58:56.331 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:58:56.332 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:58:56.373 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:58:56.426 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:58:56.521 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:58:56.527 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:58:56.528 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:58:56.584 - verbose: Grunt :: padding length 4
+2018-09-16 23:58:56.591 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:58:56.592 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:58:56.705 - verbose: Grunt :: padding length 2
+2018-09-16 23:58:56.715 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:58:56.715 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:58:56.724 - verbose: Grunt :: padding length 4
+2018-09-16 23:58:56.732 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:58:56.732 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:58:56.744 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:58:56.757 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:58:56.762 - verbose: Grunt :: Done.
+2018-09-16 23:58:56.825 - verbose: Grunt :: Completed in 4.419s at Sun Sep 16 2018 23:58:56 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:58:59.593 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:59:02.225 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:59:02.237 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:59:02.238 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:59:02.284 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:59:02.335 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:59:02.430 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:59:02.435 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:59:02.437 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:59:02.573 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:02.581 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:02.581 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:59:02.721 - verbose: Grunt :: padding length 2
+2018-09-16 23:59:02.730 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:02.731 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:59:02.739 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:02.747 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:02.748 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:59:02.757 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:59:02.809 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:59:02.813 - verbose: Grunt :: Done.
+2018-09-16 23:59:03.025 - verbose: Grunt :: Completed in 3.433s at Sun Sep 16 2018 23:59:03 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:59:04.880 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:59:08.577 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:59:08.594 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:59:08.595 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:59:08.643 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:59:08.646 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:59:08.812 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:59:08.821 - verbose: Grunt :: >> 0 files created.
+
+Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:59:08.865 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:08.874 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:08.875 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:59:08.957 - verbose: Grunt :: padding length 2
+2018-09-16 23:59:08.963 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:08.964 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:59:08.971 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:08.981 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:08.981 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:59:08.990 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:59:09.003 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:59:09.014 - verbose: Grunt :: Done.
+2018-09-16 23:59:09.220 - verbose: Grunt :: Completed in 4.339s at Sun Sep 16 2018 23:59:09 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:59:10.480 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:59:13.925 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:59:13.939 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:59:13.948 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:59:13.979 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:59:13.982 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:59:14.151 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:59:14.158 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:59:14.160 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:59:14.203 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:14.212 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:14.213 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:59:14.280 - verbose: Grunt :: padding length 2
+2018-09-16 23:59:14.290 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:14.292 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:59:14.297 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:14.306 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:14.307 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:59:14.314 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:59:14.326 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:59:14.329 - verbose: Grunt :: Done.
+2018-09-16 23:59:14.348 - verbose: Grunt :: Completed in 3.867s at Sun Sep 16 2018 23:59:14 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:59:16.842 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:59:19.208 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:59:19.219 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:59:19.220 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:59:19.248 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:59:19.251 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:59:19.338 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:59:19.344 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:59:19.346 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:59:19.383 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:19.391 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:19.392 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:59:19.431 - verbose: Grunt :: padding length 2
+2018-09-16 23:59:19.438 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:19.439 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:59:19.445 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:19.451 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:19.452 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:59:19.460 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:59:19.471 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:59:19.476 - verbose: Grunt :: Done.
+2018-09-16 23:59:19.490 - verbose: Grunt :: Completed in 2.651s at Sun Sep 16 2018 23:59:19 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:59:24.296 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
+2018-09-16 23:59:26.247 - verbose: Grunt :: Running "jst:dev" (jst) task
+2018-09-16 23:59:26.257 - verbose: Grunt :: >> Destination not written because compiled files were empty.
+2018-09-16 23:59:26.258 - verbose: Grunt :: Running "less:dev" (less) task
+2018-09-16 23:59:26.288 - verbose: Grunt :: >> 1 stylesheet created.
+2018-09-16 23:59:26.323 - verbose: Grunt :: Running "sync:dev" (sync) task
+2018-09-16 23:59:26.373 - verbose: Grunt :: Running "coffee:dev" (coffee) task
+2018-09-16 23:59:26.379 - verbose: Grunt :: >> 0 files created.
+2018-09-16 23:59:26.380 - verbose: Grunt :: Running "sails-linker:devJs" (sails-linker) task
+2018-09-16 23:59:26.416 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:26.422 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:26.424 - verbose: Grunt :: Running "sails-linker:devStyles" (sails-linker) task
+2018-09-16 23:59:26.474 - verbose: Grunt :: padding length 2
+2018-09-16 23:59:26.482 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:26.483 - verbose: Grunt :: Running "sails-linker:devTpl" (sails-linker) task
+2018-09-16 23:59:26.489 - verbose: Grunt :: padding length 4
+2018-09-16 23:59:26.496 - verbose: Grunt :: File "views/layout.ejs" updated.
+2018-09-16 23:59:26.498 - verbose: Grunt :: Running "sails-linker:devJsJade" (sails-linker) task
+2018-09-16 23:59:26.506 - verbose: Grunt :: Running "sails-linker:devStylesJade" (sails-linker) task
+2018-09-16 23:59:26.515 - verbose: Grunt :: Running "sails-linker:devTplJade" (sails-linker) task
+2018-09-16 23:59:26.519 - verbose: Grunt :: Done.
+2018-09-16 23:59:26.541 - verbose: Grunt :: Completed in 2.245s at Sun Sep 16 2018 23:59:26 GMT+0700 (SE Asia Standard Time) - Waiting...
+2018-09-16 23:59:37.127 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:59:37.133 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:59:37.190 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:59:37.223 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:59:37.224 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:59:37.526 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:59:37.534 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:59:37.534 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:59:37.536 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:59:37.540 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:59:37.541 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:59:37.544 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:59:37.548 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:59:37.549 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:59:37.697 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:59:37.702 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:59:37.703 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:59:38.975 - verbose: Sending 404 ("Not Found") response
+2018-09-16 23:59:38.984 - verbose: Rendering view: "homepage" (located @ "D:\tryhard\src\git\SMCC\views\homepage")
+2018-09-16 23:59:38.984 - verbose: • using configured layout:: layout (located @ "D:\tryhard\src\git\SMCC\views\layout")
+2018-09-16 23:59:59.392 - verbose: Grunt :: >> File "assets\js\bundle.js" changed.
