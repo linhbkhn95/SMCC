@@ -1,38 +1,90 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import StarRatingComponent from 'react-star-rating-component';
-import InputRange from 'react-input-range';
-import 'react-input-range/lib/css/index.css'
-import PieChart from './components/PieChart'
-import ChartLine from './components/ChartTendencyComment'
-import moment from 'moment'
-var datedemo=1536072804565
-import Pagination from 'rc-pagination';
-import 'rc-pagination/assets/index.css';
 import DropdownUtils from 'app/utils/input/DropdownUtils'
-import RestfulUtils from 'app/utils/RestfulUtils'
 import InforChannel from './components/InforChannel'
 import ListPost from './components/ListPost'
 import InfoPerSon from './components/InfoPerSon'
 
-function setFocusLatLng(scale, lat, lng) {
-  var mapObj = $('#map').vectorMap('get', 'mapObject');
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
-  var config = {
-   animate: true,
-   lat: lat,
-   lng: lng,
-   scale: scale
-  }
+import Typography from '@material-ui/core/Typography';
+import Dashboard from '@material-ui/icons/Dashboard';
+import TrendingUp from '@material-ui/icons/TrendingUp';
 
-  mapObj.setFocus(config)
+import Statistic from './Statistic'
+function TabContainer(props) {
+  return (
+    <Typography component="div" style={{ padding: 8 * 3 }}>
+      {props.children}
+    </Typography>
+  );
 }
-class ListUser extends React.Component{
+
+TabContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    width: '100%',
+    backgroundColor: theme.palette.background.paper,
+  },
+  icon: {
+    color:'white',
+    fontSize: "21px"
+
+
+  },
+  tabsRoot: {
+    borderBottom: '1px solid #1456ba',
+  },
+  tabsIndicator: {
+    backgroundColor: '#1890ff',
+  },
+  tabRoot: {
+    color:'white',
+    // fontSize:'20px',
+    textTransform: 'initial',
+    minWidth: 72,
+    fontWeight: theme.typography.fontWeightRegular,
+    marginRight: theme.spacing.unit * 4,
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Maven Pro',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:hover': {
+      color: '#40a9ff',
+      opacity: 1,
+    },
+    '&$tabSelected': {
+      color: '#fffff',
+      fontWeight: theme.typography.fontWeightMedium,
+    },
+    '&:focus': {
+      color: '#fffff',
+    },
+  },
+  tabSelected: {},
+});
+class UserSpecial extends React.Component{
   constructor(props) {
     super(props);
 
     this.state = {
-
+      value: 0,
       items: 10,
       page:1,
       loadingState: false,
@@ -49,23 +101,10 @@ class ListUser extends React.Component{
 
     }
   }
-  componentDidMount(){
-     console.log(Date.now())
-    let that  = this
-     $(".list-status").scroll(function () {
-       console.log('vao')
-      var $this = $(this);
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
 
-          // if( ( ($(document).height() - $(window).height())-$(window).scrollTop())<50&&!self.state.fulldata) {
-          //   if(($("#list-status").height() - $this.scrollTop()) -$this.height()<50&&!that.state.fulldata) {
-
-          //    console.log('load',$("#list-status").height(),$this.scrollTop(),$this.height())
-          //     that.loadMoreItems();
-          // }
-      });
-
-
-  }
 
   onChangeDropdown(type,data){
 
@@ -76,6 +115,9 @@ class ListUser extends React.Component{
      this.setState(this.state)
  }
   render(){
+    const { classes } = this.props;
+    const { value } = this.state;
+
      return(
 
         <div className="row list-user" >
@@ -84,12 +126,23 @@ class ListUser extends React.Component{
                         <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.topic} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="topic"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
                   </div>
                   <div className="hr-title"></div>
+                  <div className="col-md-12 remove-padding-col">
+
+                  <Tabs    classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }} centered={true} fullWidth={true} value={value} onChange={this.handleChange} scrollable scrollButtons="off">
+                      <Tab             classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="THÔNG TIN CHUNG" icon={<Dashboard className={classes.icon}  />} />
+                      <Tab    classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="THỐNG KÊ" icon={<TrendingUp className={classes.icon}  />} />
+                   />
+                </Tabs>
+                {value === 0 && <TabContainer>
+                  {/* <div className="hr-title"></div> */}
                   <InfoPerSon topic={this.state.user.topic} />
                    <div className="hr-title"></div>
-                   </div>
 
                    <ListPost topic={this.state.user.topic} />
-
+                    </TabContainer>}
+             {value === 1 && <TabContainer><Statistic /></TabContainer>}
+                      </div>
+                      </div>
             </div>
 
 
@@ -97,4 +150,8 @@ class ListUser extends React.Component{
      )
   }
 }
-module.exports =  ListUser;
+UserSpecial.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+module.exports =  withStyles(styles)(UserSpecial);
