@@ -78,7 +78,7 @@ class TabShade extends React.Component{
           },
           chartArea:{left:40,width:'95%'},
           pointSize: 9,
-          colors: [ '#ff0000','#0092f1','#ff6900','#ffbb00'],
+          colors: [ '#ff0000','#ffbb00'],
 
   }}
 
@@ -88,7 +88,7 @@ class TabShade extends React.Component{
             <Chart
         width={'100%'}
         height={'300px'}
-        chartType="Bar"
+        chartType="BarChart"
         loader={<div>Loading Chart</div>}
         data={[
           ['Nguồn tin', 'Tiêu cực', 'Tích cực'],
@@ -101,17 +101,15 @@ class TabShade extends React.Component{
         ]}
         options={{
           // Material design options
-          title: 'TIÊU CỰC THEO NGUỒN TIN',
-          // chart: {
-          //   title: 'TIÊU CỰC THEO NGUỒN TIN',
-          //   // subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          // },
+          // title: 'TIÊU CỰC THEO NGUỒN TIN',
+          chart: {
+            title: 'TIÊU CỰC THEO NGUỒN TIN',
+             subtitle: 'Facebook, báo chí, blog 2018',
+          },
           backgroundColor: "#00398f",
-
+          isStacked: true,
           legendTextStyle: { color: '#FFF' },
           titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro', fontSize: '13'},
-          background: "#00398f",
-          // chartArea: { width: '50%' },
 
           hAxis: {
             format: 'decimal',
@@ -151,9 +149,24 @@ class TabShade extends React.Component{
 
 
          },
-         barArea:{left:40,width:'95%'},
-         pointSize: 9,
-         colors: [ '#ff0000','#ffbb00'],
+         axes: {
+          y: {
+            0: { side: 'right' },
+          },
+        },
+        //  backgroundColor: {
+        //   fill: '#FF0000',
+        //   fillOpacity: 0.8
+        // },
+         chartArea:{
+          // backgroundColor: {
+          //   fill: '#00398f',
+          //   fillOpacity: 1
+          // },
+
+          left:'15%',width:'75%',
+        },
+         colors: [ '#ff0000','#00ce7d'],
         }}
         // For tests
         rootProps={{ 'data-testid': '2' }}

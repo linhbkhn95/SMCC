@@ -71,7 +71,7 @@ body{
 
 }
 #layout{
-  position: absolute;
+  /* position: absolute; */
   z-index: 2;
 
 }
