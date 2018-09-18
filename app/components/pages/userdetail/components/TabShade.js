@@ -102,6 +102,11 @@ class TabShade extends React.Component{
         options={{
           // Material design options
           // title: 'TIÊU CỰC THEO NGUỒN TIN',
+          animation: {
+            startup: true,
+            easing: 'linear',
+            duration: 1500,
+          },
           chart: {
             title: 'TIÊU CỰC THEO NGUỒN TIN',
              subtitle: 'Facebook, báo chí, blog 2018',
@@ -158,18 +163,28 @@ class TabShade extends React.Component{
         //   fill: '#FF0000',
         //   fillOpacity: 0.8
         // },
-         chartArea:{
+        annotations: {
+          stem: {
+            color: "transparent",
+            length: 28
+          },
+          textStyle: {
+            color: "#000000",
+          }
+        },
+        chartArea:{
           // backgroundColor: {
           //   fill: '#00398f',
           //   fillOpacity: 1
           // },
-
+           width: '50%',
           left:'15%',width:'75%',
+          bottom:"30px"
         },
          colors: [ '#ff0000','#00ce7d'],
         }}
         // For tests
-        rootProps={{ 'data-testid': '2' }}
+        rootProps={{ 'data-testid': '3' }}
       />
       </div>
 
@@ -197,6 +212,11 @@ class TabShade extends React.Component{
         fontWeight:"normal",
 
       },
+      animation: {
+        startup: true,
+        easing: 'linear',
+        duration: 1500,
+      },
       gridlines: {
         color: "#0a4caf"
       },
@@ -215,7 +235,7 @@ class TabShade extends React.Component{
       baselineColor: '#0a4caf',
 
     },
-    bar: { groupWidth: '85%' },
+    // bar: { groupWidth: '85%' },
     legend:{
      position:'bottom',
      textStyle: {color: 'white'}
@@ -225,6 +245,7 @@ class TabShade extends React.Component{
 
 
    },
+
    barArea:{left:40,width:'95%'},
    pointSize: 9,
 
@@ -235,7 +256,7 @@ class TabShade extends React.Component{
     titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro', fontSize: '13'},
     backgroundColor: "#00398f",
   }}
-  rootProps={{ 'data-testid': '2' }}
+  rootProps={{ 'data-testid': '3' }}
 />
       </div>
 
