@@ -150,6 +150,12 @@ module.exports = {
           return res.send(Ioutput.errServer(error));
       }
       },
+      getDataLineChart(){
+
+      },
+      getDataPieChart(){
+
+      },
         //lấy thông kê liên trang domain
         get_new_chartline_domain:function(req,res){
           try {
@@ -177,23 +183,179 @@ module.exports = {
         processingserver.callPostAuth(data, async function (err, rs) {
             if(rs.code==0){
 
+                //let covert data sang line chart cả tiêu cực và tích cực
 
                 let resultLineChart = [
                   ['x','Tích cực','Tiêu cực']
                 ]
-                let i=1
+                //barchart theo tên miền
+
+                let resultLineChartWithDomain = [
+                  ['x','Facebook','Báo chí','Diễn đàn','Blog','Khác']
+                ]
+                //piechart theo tên miền
+                let resulPieChartChartWithDomain = [
+                  [
+                    'Element',
+                    '%',
+                    { role: 'style' },
+                   //  {
+                   //   sourceColumn: 0,
+                   //   role: 'annotation',
+                   //   type: 'string',
+                   //   calc: 'stringify',
+                   // },
+                    {
+                      sourceColumn: 1,
+                      role: 'annotation',
+                      type: 'string',
+                      calc: 'stringify',
+                    },
+                  ],
+                ]
+                let totalFacebook=totalNews=totalForum=totalBlog=totalOther=0
+                resulPieChartChartWithDomain[1] = []
+                resulPieChartChartWithDomain[2] = []
+                resulPieChartChartWithDomain[3] = []
+                resulPieChartChartWithDomain[4] = []
+                resulPieChartChartWithDomain[5] = []
+
+
+                //barchart bên thống kê special
+                let resultBarChart  = [['Nguồn tin', 'Tiêu cực', 'Tích cực']]
+                let objectBarChart = {}
+                let j=0
                 let data = rs.data
-                for(var index =0;i<rs.data.length;index++) {
-                  row =[]
+
+
+                let dataPieChart =    [['Trạng thái', 'Tổng số tin']]
+
+
+
+                dataPieChart[1] = []
+                dataPieChart[2] = []
+                let totalPositive  = 0 //tong tich cuc
+                let totalNeutral = 0 // tong tich cuc
+
+                for(var index =0;index<data.length;index++) {
+                  let row =[]
+                  let rowLineChartWithDomain = []
+                  let rowPiChart
+                  let rowBarchart = []
                   row[0]=data[index].key_as_string.substring(5,10)
+
 
                   row[1] = data[index]['source_id'][0]['Other'].sentiment+ data[index]['source_id'][4]['Forum'].sentiment+  data[index]['source_id'][2]['Social'].sentiment + data[index]['source_id'][1]['News'].sentiment + data[index]['source_id'][3]['Blog'].sentiment
                   row[2] =  data[index]['source_id'][0]['Other'].neutral+ data[index]['source_id'][4]['Forum'].neutral+  data[index]['source_id'][2]['Social'].neutral + data[index]['source_id'][1]['News'].neutral + data[index]['source_id'][3]['Blog'].neutral
 
 
-                  resultLineChart[i++] = row
+
+                  //set row linechart theo tên miền
+                  rowLineChartWithDomain[0] =data[index].key_as_string.substring(5,10)
+                  rowLineChartWithDomain[1] = data[index]['source_id'][2]['Social'].sentiment + data[index]['source_id'][2]['Social'].neutral
+                  rowLineChartWithDomain[2] = data[index]['source_id'][1]['News'].sentiment + data[index]['source_id'][1]['News'].neutral
+                  rowLineChartWithDomain[3] = data[index]['source_id'][4]['Forum'].sentiment + data[index]['source_id'][4]['Forum'].neutral
+                  rowLineChartWithDomain[4] = data[index]['source_id'][3]['Blog'].sentiment + data[index]['source_id'][3]['Blog'].neutral
+                  rowLineChartWithDomain[5] = data[index]['source_id'][0]['Other'].sentiment + data[index]['source_id'][0]['Other'].neutral
+
+
+                  //tính tổng lượng tin theo từng tên miền
+
+                  totalFacebook += rowLineChartWithDomain[1]
+                  totalNews += rowLineChartWithDomain[2]
+                  totalForum +=rowLineChartWithDomain[3]
+                  totalBlog +=rowLineChartWithDomain[4]
+                  totalOther +=rowLineChartWithDomain[5]
+
+
+                  totalPositive += row[1]
+                  totalNeutral +=row[2]
+                  //for trên các channel
+                  for(var i=0 ;i<= data[index].source_id.length;i++){
+                    for(var property in data[index].source_id[i]){
+                      if( !objectBarChart[property])
+                        objectBarChart[property] ={
+                           sentiment:0,
+                           neutral:0
+                        }
+
+                       objectBarChart[property].sentiment +=data[index]['source_id'][i][property].sentiment
+                       objectBarChart[property].neutral +=data[index]['source_id'][i][property].neutral
+
+                      }
+                  }
+                  j +=1
+                  resultLineChart[j] = row
+                  resultLineChartWithDomain[j] = rowLineChartWithDomain
               }
+              //convert objectBarchart to array
+              resultBarChart[1] = []
+              resultBarChart[2] = []
+
+              resultBarChart[3] = []
+
+              resultBarChart[4] = []
+
+              resultBarChart[5] = []
+              //dataBarChart
+              resultBarChart[1][0] = 'Facebook'
+              resultBarChart[1][1] = objectBarChart['Social'].neutral
+              resultBarChart[1][2] = objectBarChart['Social'].sentiment
+              resultBarChart[2][0] = 'Báo chí'
+              resultBarChart[2][1] = objectBarChart['News'].neutral
+              resultBarChart[2][2] = objectBarChart['News'].sentiment
+
+              resultBarChart[3][0] = 'Diễn đàn'
+              resultBarChart[3][1] = objectBarChart['Forum'].neutral
+              resultBarChart[3][2] = objectBarChart['Forum'].sentiment
+              resultBarChart[4][0] = 'Blog'
+              resultBarChart[4][1] = objectBarChart['Blog'].neutral
+              resultBarChart[4][2] = objectBarChart['Blog'].sentiment
+              resultBarChart[5][0] = 'Khác'
+              resultBarChart[5][1] = objectBarChart['Other'].neutral
+              resultBarChart[5][2] = objectBarChart['Other'].sentiment
+
+
+              //set dataPieChart theo tich cực tiêu cực
+              dataPieChart[1][0] = "Tích cực"
+              dataPieChart[1][1] = totalPositive
+              dataPieChart[2][0] = "Tiêu cực"
+
+              dataPieChart[2][1] = totalNeutral
+
+
+
+              //set dataPieChart theo domain
+              resulPieChartChartWithDomain[1][0]= "Facebook"
+              resulPieChartChartWithDomain[1][1]= totalFacebook
+              resulPieChartChartWithDomain[1][2]= "00ce7d"
+              resulPieChartChartWithDomain[1][3]= null
+
+              resulPieChartChartWithDomain[2][0]= "Báo chí"
+              resulPieChartChartWithDomain[2][1]= totalNews
+              resulPieChartChartWithDomain[2][2]= "#0092f1"
+              resulPieChartChartWithDomain[2][3]= null
+
+              resulPieChartChartWithDomain[3][0]= "Diên đàn"
+              resulPieChartChartWithDomain[3][1]= totalForum
+              resulPieChartChartWithDomain[3][2]= "#ffbb00"
+              resulPieChartChartWithDomain[3][3]= null
+
+              resulPieChartChartWithDomain[4][0]= "Blog"
+              resulPieChartChartWithDomain[4][1]= totalBlog
+              resulPieChartChartWithDomain[4][3]= "#ff6900"
+              resulPieChartChartWithDomain[4][3]= null
+
+              resulPieChartChartWithDomain[5][0]= "Khác"
+              resulPieChartChartWithDomain[5][1]= totalOther
+              resulPieChartChartWithDomain[5][2]= "#ff0000"
+              resulPieChartChartWithDomain[5][3]= null
+
+              rs.dataPiechartWithDomain = resulPieChartChartWithDomain
+              rs.dataPieChart = dataPieChart
+              rs.dataBarChart =resultBarChart
               rs.dataLineChart = resultLineChart
+              rs.dataLineChartWithDomain = resultLineChartWithDomain
               return res.send(Ioutput.success(rs));
 
             }

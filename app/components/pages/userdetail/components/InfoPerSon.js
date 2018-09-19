@@ -118,7 +118,7 @@ module.exports =class InfoPerSon extends React.Component{
            <PieChart dataPieChartWithChannel = {this.state.data.dataPieChartWithChannel} dataPieChart  ={this.state.data.dataPieChart} />
        </div>
        <div className="col-md-3 remove-padding-col">
-           <ChartLine topic ={this.props.topic} />
+           <ChartLine dataChart={this.props.dataChartWithDomain}  topic ={this.props.topic} />
        </div>
      </div>
     )

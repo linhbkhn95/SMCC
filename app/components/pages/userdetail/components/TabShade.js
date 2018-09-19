@@ -15,7 +15,25 @@ class TabShade extends React.Component{
           [5, 9],
           [6, 11],
           [7, 27],
-        ]
+        ],
+        dataBarChart :[
+        ],
+        dataPieChart:[]
+      }
+
+    }
+    // componentDidMount(){
+    //   console.log('nexxpradadsdasdadoadad',this.props.dataChart)
+
+    //   if(this.props.dataChart.dataBarChart)
+    //     this.setState({dataBarChart:this.props.dataChart.dataBarChart,dataPieChart:this.props.dataChart.dataPieChart})
+
+    // }
+    componentWillReceiveProps(nextProps){
+      let {dataChart} = nextProps
+      if(dataChart.dataBarChart){
+          let {dataBarChart,dataLineChart,dataPieChart} = dataChart
+          this.setState({dataPieChart,dataLineChart,dataPieChart})
       }
     }
   render(){
@@ -29,7 +47,7 @@ class TabShade extends React.Component{
   height={'250px'}
   chartType="LineChart"
   loader={<div>Loading Chart</div>}
-  data={this.state.dataLineChart}
+  data={this.props.dataChart.dataLineChart}
   options={{
     title: 'TIÊU CỰC THEO THỜI GIAN',
 
@@ -90,15 +108,7 @@ class TabShade extends React.Component{
         height={'300px'}
         chartType="BarChart"
         loader={<div>Loading Chart</div>}
-        data={[
-          ['Nguồn tin', 'Tiêu cực', 'Tích cực'],
-          ['Facebook', 1000, 400],
-          ['Báo chí', 1170, 460],
-          ['Diễn đàn', 660, 1120],
-          ['Blog', 660, 1120],
-
-          ['Khác', 1030, 540],
-        ]}
+        data={this.props.dataChart.dataBarChart}
         options={{
           // Material design options
           // title: 'TIÊU CỰC THEO NGUỒN TIN',
@@ -144,7 +154,8 @@ class TabShade extends React.Component{
             baselineColor: '#0a4caf',
 
           },
-          bar: { groupWidth: '85%' },
+
+          bar: { groupWidth: '65%' },
           legend:{
            position:'bottom',
            textStyle: {color: 'white'}
@@ -178,13 +189,13 @@ class TabShade extends React.Component{
           //   fillOpacity: 1
           // },
            width: '50%',
-          left:'15%',width:'75%',
+          left:'50',width:'75%',
           bottom:"30px"
         },
          colors: [ '#ff0000','#00ce7d'],
         }}
         // For tests
-        rootProps={{ 'data-testid': '3' }}
+        rootProps={{ 'data-testid': '6' }}
       />
       </div>
 
@@ -194,12 +205,8 @@ class TabShade extends React.Component{
   height={'300px'}
   chartType="PieChart"
   loader={<div>Loading Chart</div>}
-  data={[
-    ['Task', 'Hours per Day'],
-    ['Tích cực', 11],
-    ['Tiêu cực', 2],
-
-  ]}
+  data={this.props.dataChart.dataPieChart
+   }
   options={{
     title: 'TỈ LỆ TIÊU CỰC',
     hAxis: {
@@ -247,7 +254,6 @@ class TabShade extends React.Component{
    },
 
    barArea:{left:40,width:'95%'},
-   pointSize: 9,
 
    colors: [ '#ff0000','#00ce7d'],
     // Just add this option
@@ -256,7 +262,7 @@ class TabShade extends React.Component{
     titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro', fontSize: '13'},
     backgroundColor: "#00398f",
   }}
-  rootProps={{ 'data-testid': '3' }}
+  rootProps={{ 'data-testid': '6' }}
 />
       </div>
 

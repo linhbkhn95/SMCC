@@ -42,15 +42,7 @@ class TabShade extends React.Component{
         height={'300px'}
         chartType="BarChart"
         loader={<div>Loading Chart</div>}
-        data={[
-          ['Nguồn tin', 'Tổng số tin'],
-          ['Facebook', 1000],
-          ['Báo chí', 1170],
-          ['Diễn đàn', 660],
-          ['Blog', 660],
-
-          ['Khác', 1030],
-        ]}
+        data={this.props.dataChart.dataPiechartWithDomain}
         options={{
           // Material design options
          title: 'DIỄN BIẾN THEO TÊN MIỀN',
@@ -160,7 +152,7 @@ class TabShade extends React.Component{
   height={'300px'}
   chartType="PieChart"
   loader={<div>Loading Chart</div>}
-  data={this.state.dataPieChart}
+  data={this.props.dataChart.dataPiechartWithDomain}
   options={{
     animation: {
       startup: true,
@@ -221,8 +213,8 @@ class TabShade extends React.Component{
    barArea:{left:40,width:'95%'},
    pointSize: 9,
 
-   colors: [ '#ff0000','#00ce7d'],
-    // Just add this option
+   colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
+   // Just add this option
     is3D: true,
     legendTextStyle: { color: '#FFF' },
     titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro', fontSize: '13'},

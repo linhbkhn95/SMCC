@@ -13,8 +13,13 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Dashboard from '@material-ui/icons/Dashboard';
 import TrendingUp from '@material-ui/icons/TrendingUp';
-
+import RestfulUtils from 'app/utils/RestfulUtils'
+import moment from 'moment'
 import Statistic from './Statistic'
+
+import TowDate from 'app/utils/input/TowDate'
+import { DateRange } from 'react-date-range';
+
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -97,23 +102,59 @@ class UserSpecial extends React.Component{
       },
       listStatus:[],
 
-      user:{}
-
+      user:{},
+      dataChartWithDomain:{},
+      date_from:'',
+      date_to:''
     }
+  }
+  componentDidMount(){
+    let date_to = moment().format('YYYY-MM-DD HH:MM:SS');                          // 2018-09-11T02:46:15+07:00
+    let date_from = moment().subtract(7, 'days').format('YYYY-MM-DD HH:MM:SS'); // 01/09/2018
+    this.setState({date_from,date_to})
   }
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
+  onChange(type,value){
+    console.log(type,value)
+      if(this.state[type] != value){
 
+        this.state[type]=value
+        this.setState(this.state)
+        let {date_from,date_to,topic} = this.state
+
+        this.get_new_chartline_domain(date_from,date_to,topic)
+
+      }
+
+  }
   onChangeDropdown(type,data){
 
 
 
      this.state.user[type] = data.value;
+     let {date_from,date_to,topic} = this.state
 
+     this.get_new_chartline_domain(date_from,date_to,topic)
      this.setState(this.state)
+
  }
+
+ get_new_chartline_domain(date_from,date_to,topic){
+  let self =this
+       RestfulUtils.post('/user/get_new_chartline_domain',{topic,date_to,date_from}).then((res)=>{
+             if(res.EC==0){
+                 self.setState({dataChartWithDomain:res.DT})
+             }
+   })
+}
+handleSelect(range){
+  console.log(range);
+  // An object with two keys,
+  // 'startDate' and 'endDate' which are Momentjs objects.
+}
   render(){
     const { classes } = this.props;
     const { value } = this.state;
@@ -122,8 +163,12 @@ class UserSpecial extends React.Component{
 
         <div className="row list-user" >
             <div className="col-md-12">
-                   <div style={{marginBottom:"9px"}} className="col-md-2 remove-padding-col">
-                        <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.topic} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="topic"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
+                   <div style={{marginBottom:"9px"}} className="col-md-12 remove-padding-col">
+                        <div className="col-md-2 remove-padding-col">
+                          <DropdownUtils className="form-control title-content"  typeValue="id" typeLabel="display_name" value={this.state.user.topic} callApi={true} onChange={this.onChangeDropdown.bind(this)} type="topic"  CDID="" urlApi="/user/get_all_info" optionFilter={{}} />
+                        </div>
+                        <div className="pull-right">
+                <TowDate date_to="date_to" date_from="date_from" onChange={this.onChange.bind(this)} />               </div>
                   </div>
                   <div className="hr-title"></div>
                   <div className="col-md-12 remove-padding-col">
@@ -135,12 +180,12 @@ class UserSpecial extends React.Component{
                 </Tabs>
                 {value === 0 && <TabContainer>
                   {/* <div className="hr-title"></div> */}
-                  <InfoPerSon topic={this.state.user.topic} />
+                  <InfoPerSon dataChartWithDomain={this.state.dataChartWithDomain}  topic={this.state.user.topic} />
                    <div className="hr-title"></div>
 
                    <ListPost topic={this.state.user.topic} />
                     </TabContainer>}
-             {value === 1 && <TabContainer><Statistic /></TabContainer>}
+             {value === 1 && <TabContainer><Statistic dataChartWithDomain={this.state.dataChartWithDomain} /></TabContainer>}
                       </div>
                       </div>
             </div>

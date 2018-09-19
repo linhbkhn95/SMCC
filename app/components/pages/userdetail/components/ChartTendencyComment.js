@@ -60,10 +60,16 @@ class Charts extends React.Component{
                }
      })
  }
+ componentDidMount(){
+   if(this.props.topic&&this.props.dataChart.dataLineChart)
+   this.setState({dataLineChart:this.props.dataChart.dataLineChart})
+
+ }
      componentWillReceiveProps(nextProps){
-           let {topic} = nextProps
-           if(topic!=this.props.topic){
-             this.get_new_chartline_domain(topic);
+           let {topic,dataChart} = nextProps
+           if(topic!=this.props.topic&&dataChart&&dataChart.dataLineChart){
+            //  this.get_new_chartline_domain(topic);\
+            this.setState({dataLineChart:dataChart.dataLineChart,topic})
            }
      }
 	render () {

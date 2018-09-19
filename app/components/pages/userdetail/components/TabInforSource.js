@@ -6,7 +6,7 @@ class TabShade extends React.Component{
     super(props);
     this.state ={
       dataPieChart:[
-        ['Task', 'Hours per Day'],
+        ['Tên miền', 'Tổng lượng tin'],
         ['Facebook', 4],
         ['Báo chí',1],
         ['Blog', 2.5],
@@ -38,7 +38,7 @@ class TabShade extends React.Component{
         height={'250px'}
         chartType="LineChart"
         loader={<div>Loading Chart</div>}
-        data={this.state.dataLineChart}
+        data={this.props.dataChart.dataLineChartWithDomain}
         options={{
           title: 'DIỄN BIẾN LƯỢNG TIN',
           animation: {
@@ -91,7 +91,7 @@ class TabShade extends React.Component{
                 },
                 chartArea:{left:40,width:'95%',right:60},
                 pointSize: 9,
-                colors: [ '#ff0000','#ffbb00'],
+                colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
 
         }}
 
@@ -105,7 +105,7 @@ class TabShade extends React.Component{
   height={'300px'}
   chartType="PieChart"
   loader={<div>Loading Chart</div>}
-  data={this.state.dataPieChart}
+  data={this.props.dataChart.dataPiechartWithDomain}
   options={{
     animation: {
       startup: true,
@@ -154,8 +154,8 @@ class TabShade extends React.Component{
    barArea:{left:40,width:'95%'},
    pointSize: 9,
 
-   colors: [ '#ff0000','#00ce7d'],
-    // Just add this option
+   colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
+   // Just add this option
     is3D: true,
     legendTextStyle: { color: '#FFF' },
     titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro', fontSize: '13'},
@@ -228,7 +228,7 @@ class TabShade extends React.Component{
           },
           chartArea:{left:40,width:'95%',right:60},
           pointSize: 9,
-          colors: [ '#ff0000','#ffbb00'],
+          colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
 
   }}
 
@@ -292,8 +292,8 @@ class TabShade extends React.Component{
    barArea:{left:40,width:'95%'},
    pointSize: 9,
 
-   colors: [ '#ff0000','#00ce7d'],
-    // Just add this option
+   colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
+   // Just add this option
     is3D: true,
     legendTextStyle: { color: '#FFF' },
     titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro', fontSize: '13'},

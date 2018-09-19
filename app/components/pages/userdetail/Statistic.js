@@ -42,7 +42,7 @@ class Statistic extends React.Component{
                           </div>
                     </div>
             </div>
-                   {this.state.typeStatistic=="1"? <TabShade />:this.state.typeStatistic=="2"? <TabInfo />:  <TabDomain />}
+                   {this.state.typeStatistic=="1"? <TabShade dataChart={this.props.dataChartWithDomain} />:this.state.typeStatistic=="2"? <TabInfo dataChart={this.props.dataChartWithDomain} />:  <TabDomain dataChart={this.props.dataChartWithDomain} />}
 
             {/* </Paper> */}
           {/* <TabShade /> */}
