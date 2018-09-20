@@ -426,17 +426,17 @@ module.exports = {
                 //  sails.log.info('data',rs)
                  let dt  = rs.data.childrenOrmTopics;
                 //
-              //   var listuser = lodash.filter(dt, function (item) {
+                  var listuser = lodash.filter(dt, function (item) {
 
-              //      return item.topic_type==0;
-              //  });
-                  let listuser = dt.map((user)=>{
+                    return item.topic_type==0;
+                });
+                  let result = listuser.map((user)=>{
                     return {
                          id:user.id,
                          display_name:ReWriteText.ReWriteName(user.display_name)
                     }
                   })
-                  return res.send(Ioutput.success(listuser));
+                  return res.send(Ioutput.success(result));
                 }
                 else {
 
