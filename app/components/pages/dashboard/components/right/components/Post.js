@@ -20,7 +20,7 @@ class Post extends React.Component{
       <div className="user-info col-md-12 remove-padding-col">
           <div className="col-md-1 remove-padding-col"><img className="img-user" src={status.author_avatar_url} /></div>
           <div  className="info col-md-11">
-                <div className="name">{status.tag} </div>
+                <div className="name">{status.title} </div>
 
             </div>
       </div>

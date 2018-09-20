@@ -111,22 +111,22 @@ componentWillReceiveProps(nextProps){
               <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={dataProgress["Youtube"].positive>30} now={dataProgress["Youtube"].positive} bsStyle="danger"/></div>
               <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Youtube"].setiment>30} now={dataProgress["Youtube"].setiment} bsStyle="success"/></div>
           </div>
-          <div className="col-md-12 channel">
+          {/* <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-file-text-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Block</div></div>
               <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={dataProgress["Youtube"].positive>30} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
               <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Youtube"].setiment>30} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
-          </div>
+          </div> */}
           <div className="col-md-12 channel">
            < div className="col-md-6 name-channel"><i className="fa fa-commenting-o" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Diễn đàn</div></div>
               <div className="col-md-3 custom-progess-danger"><ProgressBarCustom showLabel={dataProgress["Forum"].positive>30} now={dataProgress["Forum"].positive} bsStyle="danger" /></div>
               <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Forum"].setiment>30} now={dataProgress["Forum"].setiment} bsStyle="success" /></div>
           </div>
-          <div className="col-md-12 channel">
+          {/* <div className="col-md-12 channel">
 
            < div className="col-md-6 name-channel"><i className="fa fa-user-md" aria-hidden="true"></i><div className="name-note" style={{lineHeight:"21px"}}>Khác</div></div>
               <div className="col-md-3 custom-progess-danger "><ProgressBarCustom showLabel={dataProgress["Youtube"].positive>30} now={dataProgress["Youtube"].positive} bsStyle="danger" /></div>
               <div className="col-md-3 custom-progess-success "><ProgressBarCustom showLabel={dataProgress["Youtube"].setiment>30} now={dataProgress["Youtube"].setiment} bsStyle="success" /></div>
-          </div>
+          </div> */}
       </div>
     );
   }

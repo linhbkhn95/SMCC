@@ -11,7 +11,7 @@ class DashBoard extends React.Component{
      return(
 
         <div className="header-chart" >
-            <div className="type-filter active">
+            {/* <div className="type-filter active">
                <div className="text" > Ngày</div>
             </div>
             <div className=" type-filter">
@@ -19,7 +19,7 @@ class DashBoard extends React.Component{
             </div>
             <div className=" type-filter">
                  <div className="text" > Tháng</div>
-            </div>
+            </div> */}
             {/* <div className="option-filter"> */}
                 <select onChange={this.onChange.bind(this)} className="form-control option-filter">
                     <option value="7">7 ngày trước</option>

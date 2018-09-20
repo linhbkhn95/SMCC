@@ -5,7 +5,7 @@ var LogHelper = require('../common/LogHelper.js');
 let keyword = sails.config.keyword
 module.exports = {
 
-        getDataLineChart:function(req,res){
+       getDataLineChart:function(req,res){
           try {
                 let urlAPi = '/TrendingApi.aspx?&prjid=29421&prjid=29421&d1=2018-08-08&d2=2018-09-07&rt=0,1,2,3,4,5,6&dr=4&callback=fb_trending_callback'
                 processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
@@ -22,19 +22,37 @@ module.exports = {
           }
 
         },
+
+       getDataBarchart:function(req,res){
+        try {
+          let h = '/TrendingApi.aspx?key=[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22mua+h%C3%A0ng%22},{%22main_keyword%22:%22ph%C3%A1p+lu%E1%BA%ADt%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]'
+          // let keyword = '[{"main_keyword":"chính+phủ","require_keywords":"việt+nam","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"việt+nam","exclude_keywords":"mua+hàng"},{"main_keyword":"pháp+luật","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"cộng+sản","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]'
+          let urlAPi = '/ChartApi.aspx?key='+h+'&d1=2018-09-13&d2=2018-09-20&rt=0,1,2,3,4,5,6&callback=fb_trending_callback'
+          serviceTest.getUrlPulic(urlAPi,async function (err, data) {
+            let dt  = JSON.parse(data);
+
+            return res.send(dt);
+          });
+
+        } catch (error) {
+          return res.send(Ioutput.errServer(error));
+
+        }
+
+      },
         //lấy dữ liệu chart và progress
         getDataChart:function(req,res){
           try {
             let {city_id,d1,d2} = req.body
             city_id = city_id||24
            let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1='+d1+'&d2='+d2+'&rt=0,1,2,3,4,5,6&dr=4'+'&location='+city_id
-           processingserver.callAPIWithUrlPublic(urlAPi+'&se=3', async function (err, data_positive) {
+           processingserver.callAPIWithUrlPublic(urlAPi+'&se=2,3', async function (err, data_positive) {
                //tích cực
 
              processingserver.callAPIWithUrlPublic(urlAPi+'&se=1', async function (err, data) {
-             let dt_positive  = JSON.parse(data_positive);
+             let dt_positive  = JSON.parse(data);
 
-             let dt  = JSON.parse(data);
+             let dt  = JSON.parse(data_positive);
 
              let {tab_results_count} = dt.charts
 
@@ -46,8 +64,31 @@ module.exports = {
 
              let sum = 0;
 
-             let dataPieChart = []
-             let rowPeChart ={}
+             let dataPieChart =[
+              [
+                'Element',
+                'số tin',
+                { role: 'style' },
+               //  {
+               //   sourceColumn: 0,
+               //   role: 'annotation',
+               //   type: 'string',
+               //   calc: 'stringify',
+               // },
+                {
+                  sourceColumn: 1,
+                  role: 'annotation',
+                  type: 'string',
+                  calc: 'stringify',
+                },
+              ],
+            ]
+            dataPieChart[1] = []
+            dataPieChart[2] = []
+            dataPieChart[3] = []
+            dataPieChart[4] = []
+            // dataPieChart[5] = []
+             let rowPieChart ={}
              var  rowfb = {
                    title : 'Facebook',
                    color : "#ffbb00",
@@ -66,13 +107,13 @@ module.exports = {
              //tính tổng fb
              let fb_positive = 0;
              let fb_setiment= 0
+             let count =1;
              for(var index in result) {
-                rowPeChart ={}
+                rowPieChart ={}
                 let dataProgress = {
                     positive:50,
                     setiment:50
                 }
-                console.log('data',result_positive[index].count,result[index].count,)
                 //tính % theo từng channel
                 dataProgress.positive =parseFloat(result_positive[index].count>0?100*parseInt(result_positive[index].count)/(parseInt(result_positive[index].count)+parseInt(result[index].count)):0).toFixed();
                 dataProgress.setiment = parseFloat(dataProgress.positive>0?100 - dataProgress.positive :0).toFixed(0);
@@ -82,60 +123,73 @@ module.exports = {
                 listProgress[index] = dataProgress
 
 
-                rowPeChart.value = result[index].count;
+                rowPieChart.value = result[index].count;
                //  if(index!="Forum"||index!="Youtube"||index!="News")
                 switch(index){
                  // case 'Fanpage Post' :
-                 //   rowPeChart.title= "Facebook"
-                 //   rowPeChart.color = "#ffbb00"
-                 //   rowPeChart.value = result[index].count;
+                 //   rowPieChart.title= "Facebook"
+                 //   rowPieChart.color = "#ffbb00"
+                 //   rowPieChart.value = result[index].count;
 
                  //   break ;
                  case 'Group Post' :
-                       rowPeChart.title= "Bài viết trong Nhóm"
-                       rowPeChart.color = "#ff6900"
-                       rowPeChart.value = result[index].count +result_positive[index].count;
+
                        fb_positive += result_positive[index].count
                        fb_setiment += result[index].count
-
+                       dataPieChart[count][0] ="Bài viêt trong nhóm"
+                       dataPieChart[count][1] = result[index].count +result_positive[index].count
+                       dataPieChart[count][2] = "#ff0000"
+                       dataPieChart[count][3] =null
+                       count++
                        break ;
 
                  case 'Fanpage Post' :
-                     rowPeChart.title= "Bài viết Fanpage"
-                     rowPeChart.color = "#00ce7d"
-                     rowPeChart.value = result[index].count +result_positive[index].count;
+
                      fb_positive += result_positive[index].count
                      fb_setiment += result[index].count
+                     dataPieChart[count][0] ="Bài viêt Fanpage"
+                     dataPieChart[count][1] = result[index].count +result_positive[index].count
+                     dataPieChart[count][2] = "#0092f1"
+                     dataPieChart[count][3] =null
+                     count++
                      break ;
                  // case 'User Post' :
-                 //     rowPeChart.title= "Block"
-                 //     rowPeChart.color = "#0092f1"
-                 //     rowPeChart.value = result[index].count;
+                 //     rowPieChart.title= "Block"
+                 //     rowPieChart.color = "#0092f1"
+                 //     rowPieChart.value = result[index].count;
 
                  //     break ;
                  case 'User Post' :
-                     rowPeChart.title= "Bài viết cá nhân"
-                     rowPeChart.color = "#ff3b8e"
-                     rowPeChart.value = result[index].count +result_positive[index].count;
+
                      fb_positive += result_positive[index].count
                      fb_setiment += result[index].count
+                     console.log('addadad',dataPieChart)
+                     dataPieChart[count][0] ="Bài viêt cá nhân"
+                     dataPieChart[count][1] = result[index].count +result_positive[index].count
+                     dataPieChart[count][2] = "#00ce7d"
+                     dataPieChart[count][3] =null
+                     count++
                      break ;
                   case "Comment" :
-                       rowPeChart.title= "Bình luận"
-                       rowPeChart.color = "#0092f1"
-                       rowPeChart.value = result[index].count +result_positive[index].count;
+
                        fb_positive += result_positive[index].count
                        fb_setiment += result[index].count
+                       dataPieChart[count][0] ="Bình luận"
+                       dataPieChart[count][1] = result[index].count +result_positive[index].count
+                       dataPieChart[count][2] = "#ff6900"
+                       dataPieChart[count][3] =null
+                       count++
                      break ;
 
                    default:break
                }
-                  if(index!="Forum"&&
-                 index!="Youtube"&&
-                 index!="News"&&
-                 index!="Forum")
-                 dataPieChart.push(rowPeChart)
 
+
+                //   if(index!="Forum"&&
+                //  index!="Youtube"&&
+                //  index!="News"&&
+                //  index!="Forum")
+                //  break
              }
 
 
@@ -156,16 +210,19 @@ module.exports = {
                ['x','Tích cực','Tiêu cực']
              ]
              let i=1
+             let satisfy
              // console.log('sentment',sentiment_positive_count_per_day,sentiment_negative_count_per_day)
              for(var index in sentiment_negative_count_per_day) {
                  row =[]
                  row[0]=index.substring(6,index.length)
+                 satisfy  =
                  row[1] = sentiment_negative_count_per_day[index]
                  row[2] = sentiment_positive_count_per_day[index]
                  resultLineChart[i++] = row
              }
+             satisfy = resultLineChart[i-1][1] ?resultLineChart[i-1][1] *100/(resultLineChart[i-1][1] +resultLineChart[i-1][2]) :0
              dt.charts.dataLineChart = resultLineChart
-
+             dt.satisfy = satisfy
              return res.send(dt);
            })
          });
@@ -175,6 +232,19 @@ module.exports = {
           }
 
       },
+      // http://smcc.socials.vn/ChartApi.aspx?key={keyword}&d1={start_date}&d2={end_date}&rt={source}&se={sentiment_status}
+      // getDataChart:function(req,res){
+      //   try {
+      //     let {city_id,d1,d2} = req.body
+      //     city_id = city_id||24
+      //    let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1='+d1+'&d2='+d2+'&rt=0,1,2,3,4,5,6&dr=4'+'&location='+city_id
+      //    processingserver.callAPIWithUrlPublic(urlAPi+'&se=3', async function (err, data_positive) {
+      //    })
+      //   } catch (error) {
+      //     return res.send(Ioutput.errServer(error));
+
+      //   }
+      // }
        getDataWithCity: async function(req,res){
         try {
               let {city_id,page,pagesize,se,d1,d2} = req.body
@@ -200,66 +270,6 @@ module.exports = {
 
       },
 
-      //lay thong tin tieu cuc tichs cuc
-      getDataTC:function(req,res){
-        try {
-              let {city_id} = req.body
-
-              let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&se='+city_id
-              processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
-                // let dt  = JSON.parse(data);
-                // dt = dt.slice(0,5)
-
-                return res.send(data);
-
-            });
-        } catch (error) {
-          return res.send(Ioutput.errServer(error));
-
-        }
-
-      },
-      getDataChartPie:function(req,res){
-        try {
-          let {city_id} = req.body
-
-          let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4'
-
-          processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
-            let dt  = JSON.parse(data);
-            // dt = dt.slice(0,5)
-
-            return res.send(dt);
-
-           });
-        } catch (error) {
-          return res.send(Ioutput.errServer(error));
-
-        }
 
 
-      },
-      //xu huong
-      getDataChartLine:function(req,res){
-
-        try {
-          let {city_id} = req.body
-
-          let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1=2018-09-01&d2=2018-09-08&rt=0,1,2,3,4,5,6&dr=4&location='+city_id+"&se=1"
-          processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
-            let dt  = JSON.parse(data);
-
-
-
-              // dt = dt.slice(0,5)
-
-            return res.send(data);
-
-        });
-        } catch (error) {
-            return res.send(Ioutput.errServer(error));
-
-        }
-
-      },
 };

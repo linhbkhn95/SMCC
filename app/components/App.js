@@ -20,6 +20,7 @@ var LiveStream = require('app/components/pages/livestream/LiveStream.js');
 var ListUser = require('app/components/pages/listuser/ListUser.js');
 var UserDetail = require('app/components/pages/userdetail/UserDetail.js');
 import WordHashTag from 'app/components/pages/listuser/WordHashTag.js'
+import AnalistUser from 'app/components/pages/analist_user/AnalistUser'
 
 // import OrderStep from  'app/components/pages/shopcart/OrderStep.js';
 // import DetailProduct from 'app/utils/DetailProduct.js';
@@ -28,6 +29,7 @@ import jwtDecode from 'jwt-decode';
 import setAuthorizationToken from 'app/utils/setAuthorizationToken.js';
 import { setCurrentUser } from 'app/action/authActions.js';
 import Map from './pages/dashboard/components/center/components/Map'
+
 import { logout } from 'app/action/actionAuthenticate.js';
 if (localStorage.jwToken) {
   console.log('cssssssssssssssssssssssssssmm');
@@ -82,8 +84,10 @@ class App extends React.Component {
             <Layout>
               {/* <Link to="/user/login">Đăng nhập</Link>  */}
               <Switch>
-                <Route exact path="/" component={DashBoard} />
-                <Route path="/trend" component={DashBoardChart} />
+                <Route exact path="/" component={DashBoardChart} />
+                <Route path="/trend" component={DashBoard} />
+                <Route path="/analist-user" component={AnalistUser} />
+
                 <Route path='/livestream' component={LiveStream} />
                 <Route path='/list-user' component={ListUser} />
                 <Route path='/user-special' component={UserDetail} />

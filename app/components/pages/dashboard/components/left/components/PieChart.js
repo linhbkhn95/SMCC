@@ -61,8 +61,7 @@ class Charts extends React.Component{
   }
   render(){
     return(
-       <div className="pie-chart">
-       <div className="col-md-7">
+       <div className="pie-chart col-md-12 ">
 
        {/* <Chart
   width={'100%'}
@@ -88,7 +87,7 @@ class Charts extends React.Component{
   }}
   rootProps={{ 'data-testid': '1' }}
 /> */}
-            <PieChart
+            {/* <PieChart
                 data={
                     this.state.dataPieChart
                 }
@@ -110,38 +109,83 @@ class Charts extends React.Component{
 
 
                     )
-                  })}
-                         {/* <Chart
-   width={'100%'}
-  height={'300px'}
+                  })} */}
+
+ <Chart
+  width={'100%'}
+  height={'250px'}
   chartType="PieChart"
-  loader={<div>Tải đồ thị</div>}
-  data={[
-    ['Element',
-    'Density',
-    { role: 'style' },
-    {
-      sourceColumn: 0,
-      role: 'annotation',
-      type: 'string',
-      calc: 'stringify',
-    }
-    ],
-    // ['Tiêu chí 1', 'Hours per Day',null],
-    ['Tiêu chí 2', 11,'#ffbb00',null],
-    ['Tiêu chí 3', 2,'#ff6900',null],
-    ['Tiêu chí 4', 2,'#00ce7d',null],
-    ['Tiêu chí 5', 2,'#0092f1',null],
-    ['Tiêu chí 6', 2,'#ff3b8e',null],
-    // ['Sleep', 7],
-  ]}
+  loader={<div>Loading Chart</div>}
+  data={this.props.dataPieChart}
   options={{
-    // title: 'My Daily Activities',
-    backgroundColor: '#002864',
-  }}
-  rootProps={{ 'data-testid': '1' }}
-/>*/}
-       </div>
+    animation: {
+      startup: true,
+      easing: 'linear',
+      duration: 1500,
+    },
+
+    // title: 'TỈ LỆ SỐ LƯỢNG TIN',
+    hAxis: {
+      format: 'decimal',
+      textStyle: {
+        color: "#0092f1",
+        fontFamily: 'Maven Pro',
+        fontName:'Maven Pro',
+        fontSize: '10',
+        fontWeight:"normal",
+
+      },
+      gridlines: {
+        color: "#0a4caf"
+      },
+       baselineColor: '#0a4caf'
+    },
+    vAxis: {
+      textStyle: {
+      color: "#0092f1",
+      fontFamily: 'Maven Pro',
+      fontName:'Maven Pro',
+      fontSize: '10',
+      },
+      gridlines: {
+        color: "#0a4caf"
+      },
+      baselineColor: '#0a4caf',
+
+    },
+    bar: { groupWidth: '100%' },
+    legend:{
+     position:'right',
+     textStyle: {color: 'white',  fontName:'Maven Pro',
+     fontSize: '10',
+     fontWeight:"normal",}
+    },
+    series: {
+      2: {
+        annotations: {
+          stem: {
+            color: "transparent",
+            length: 28
+          },
+          textStyle: {
+            color: "#000000",
+          }
+        },
+        enableInteractivity: false,
+        // tooltip: "none",
+        visibleInLegend: false
+      },
+    },
+   barArea:{left:40,width:'100%'},
+
+   colors: ['#00ce7d', '#ff0000','#0092f1','#ff6900','#ffbb00'],
+   // Just add this option
+    is3D: true,
+    legendTextStyle: { color: '#FFF' },
+    titleTextStyle: { color: '#FFF',  fontFamily: 'Maven Pro', fontSize: '13'},
+    backgroundColor: '#002864'  }}
+  rootProps={{ 'data-testid': '6' }}
+/>
        </div>
     )
   }

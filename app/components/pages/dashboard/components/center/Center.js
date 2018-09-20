@@ -8,7 +8,7 @@ class Center extends React.Component{
      return(
 
         <div className="center" >
-              <HeaderFilter />
+              {/* <HeaderFilter /> */}
               {/* <Map /> */}
         </div>
      )

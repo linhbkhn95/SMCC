@@ -6,7 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import StarIcon from '@material-ui/icons/Star';
-// import VideoIcon from '@material-ui/icons/VideoCam';
+import VideoIcon from '@material-ui/icons/VideoCam';
 import PeopleIcon from '@material-ui/icons/People';
 import FolderSharedIcon from '@material-ui/icons/FolderShared';
 import ReportIcon from '@material-ui/icons/Report';
@@ -115,29 +115,15 @@ render(){
       <ListItemText disableTypography
         primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>NGƯỜI ĐẶC BIỆT</Typography>}   />
     </ListItem>
-    {/* <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/trend"} activeClassName={classes.active}  button>
-      <ListItemIcon>
-        <VideoIcon className={classes.icon}  />
-        </ListItemIcon>
-      <ListItemText disableTypography
-      primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>LIVESTREAM</Typography>}   />
-
-       </ListItem> */}
-    <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/trend"} activeClassName={classes.active} button>
-      <ListItemIcon>
-      <TrendIcon className={classes.icon}  />
-
-      </ListItemIcon>
-      <ListItemText disableTypography
-      primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>XU HƯỚNG</Typography>}   />    </ListItem>
 
 
-<ListItem button onClick={this.handleClick}>
+       <ListItem button onClick={this.handleClick}>
 <ListItemIcon>
-<PeopleIcon className={classes.icon}  />
+<TrendIcon className={classes.icon}  />
+{/* <PeopleIcon className={classes.icon}  /> */}
 </ListItemIcon>
 <ListItemText disableTypography
-primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>NGƯỜI DÙNG</Typography>}   />
+primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>XU HƯỚNG</Typography>}   />
             {this.state.open ? <ExpandLess className={classes.expand} /> : <ExpandMore  className={classes.expand}  />}
           </ListItem>
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
@@ -160,15 +146,36 @@ primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",font
           </ListItemIcon>
           <ListItemText disableTypography
           primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"10px",fontFamily:"Maven Pro, sans-serif" }}>Phân tích theo mật độ</Typography>}   />              </ListItem>
-            <ListItem button className={classes.nested}>
+            <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/analist-user"} activeClassName={classes.active} button className={classes.nested}>
             <ListItemIcon >
             <Lens className={classes.icon_chirld_menu} />
           </ListItemIcon>
-          <ListItemText disableTypography
+          <ListItemText  disableTypography
           primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"10px",fontFamily:"Maven Pro, sans-serif" }}>Phân tích theo thời gian</Typography>}   />              </ListItem>
 
             </List>
           </Collapse>
+             <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/livestream"} activeClassName={classes.active}  button>
+      <ListItemIcon>
+        <VideoIcon className={classes.icon}  />
+        </ListItemIcon>
+      <ListItemText disableTypography
+      primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>LIVESTREAM</Typography>}   />
+
+       </ListItem>
+    <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/trend"} activeClassName={classes.active} button>
+      <ListItemIcon>
+      {/* <TrendIcon className={classes.icon}  /> */}
+<PeopleIcon className={classes.icon}  />
+
+      </ListItemIcon>
+      <ListItemText disableTypography
+      primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>NGƯỜI DÙNG</Typography>}   />
+
+         </ListItem>
+
+
+
     <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/list-user"} activeClassName={classes.active}  button>
       <ListItemIcon>
         <FolderSharedIcon className={classes.icon}  />

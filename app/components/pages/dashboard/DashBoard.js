@@ -12,11 +12,96 @@ class DashBoard extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-        city_id : '27',
+        city_id : '0',
         se:'2',
         d1:'',
         d2:'',
-        dataPieChart:[],
+        dataPieChart: [
+          [
+            "Element",
+            "số tin",
+            {
+              "role": "style"
+            },
+            {
+              "sourceColumn": 1,
+              "role": "annotation",
+              "type": "string",
+              "calc": "stringify"
+            }
+          ],
+          [
+            "Bài viêt Fanpage",
+            0,
+            "#0092f1",
+            null
+          ],
+          [
+            "Bài viêt trong nhóm",
+            143,
+            "#ff0000",
+            null
+          ],
+          [
+            "Bài viêt cá nhân",
+            1226,
+            "#00ce7d",
+            null
+          ],
+          [
+            "Bình luận",
+            696,
+            "#ff6900",
+            null
+          ]
+        ],
+        "dataLineChart": [
+          [
+            "x",
+            "Tích cực",
+            "Tiêu cực"
+          ],
+          [
+            "9-14",
+            211,
+            193
+          ],
+          [
+            "9-15",
+            205,
+            193
+          ],
+          [
+            "9-16",
+            156,
+            132
+          ],
+          [
+            "9-17",
+            155,
+            131
+          ],
+          [
+            "9-18",
+            173,
+            127
+          ],
+          [
+            "9-19",
+            117,
+            112
+          ],
+          [
+            "9-20",
+            90,
+            68
+          ],
+          [
+            "9-21",
+            2,
+            null
+          ]
+        ],
         dataLineChart:[],
         dataProgress:{
           "Group Post":{},

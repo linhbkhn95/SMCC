@@ -14,17 +14,17 @@ class Comment extends React.Component{
           city_id:'',
           listFilter:[
               {
-                value:2,
+                value:'1,2,3',
                 className:'type-filter active',
                 label:'Tất cả'
               },
               {
-                value:3,
+                value:'2,3',
                 className:'type-filter',
                 label:'Tích cực'
               },
               {
-                value:1,
+                value:'1',
                 className:'type-filter ',
                 label:'Tiêu cực'
               },
@@ -33,7 +33,7 @@ class Comment extends React.Component{
           listOptionSelect:[],
 
 
-          valueActive:2
+          valueActive:'1,2,3'
     }
   }
   setOptionSelect(){

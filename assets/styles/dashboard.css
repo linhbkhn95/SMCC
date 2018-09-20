@@ -632,7 +632,7 @@ padding-right: 0px;
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
+  /* display: -webkit-box; */
   -webkit-box-orient: vertical;
 }
 .right .info .name{

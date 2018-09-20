@@ -53,7 +53,7 @@ class ChartTrend extends React.Component{
   height={'200px'}
   chartType="LineChart"
   loader={<div>Loading Chart</div>}
-  data={this.state.dataLineChart}
+  data={this.props.dataLineChart}
   options={{
     title: 'ĐƯỜNG XU HƯỚNG THẢO LUẬN',
 
@@ -94,7 +94,7 @@ class ChartTrend extends React.Component{
           },
           curveType: 'function',
           legend: { position: 'bottom' },
-
+          colors:["#00ce7d","#ff0000"],
           chartArea:{left:40,width:'95%'},
           pointSize: 9,
            bar: { groupWidth: '100%' },
