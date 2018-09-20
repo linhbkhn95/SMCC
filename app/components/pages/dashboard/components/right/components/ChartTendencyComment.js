@@ -75,7 +75,7 @@ module.exports = class Charts extends React.Component{
          data={[
            [
              'Element',
-             '%',
+             'số tin',
              { role: 'style' },
             //  {
             //   sourceColumn: 0,

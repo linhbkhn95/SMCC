@@ -128,7 +128,7 @@ primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",font
           </ListItem>
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem button className={classes.nested}>
+              <ListItem component={NavLink} exact to={"/trend"} activeClassName={classes.active} button className={classes.nested}>
               <ListItemIcon >
             <Lens className={classes.icon_chirld_menu} />
           </ListItemIcon>
@@ -163,7 +163,7 @@ primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",font
       primary={<Typography type="body2" style={{ color: '#FFFFFF',fontSize:"11px",fontWeight:"bold",fontFamily:"Maven Pro, sans-serif" }}>LIVESTREAM</Typography>}   />
 
        </ListItem>
-    <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/trend"} activeClassName={classes.active} button>
+    <ListItem onClick={this.props.closeDrawer} component={NavLink} exact to={"/list-user"} activeClassName={classes.active} button>
       <ListItemIcon>
       {/* <TrendIcon className={classes.icon}  /> */}
 <PeopleIcon className={classes.icon}  />
