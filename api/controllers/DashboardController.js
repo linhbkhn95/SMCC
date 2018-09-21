@@ -27,8 +27,9 @@ module.exports = {
         try {
           let h = '/TrendingApi.aspx?key=[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22mua+h%C3%A0ng%22},{%22main_keyword%22:%22ph%C3%A1p+lu%E1%BA%ADt%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]'
           // let keyword = '[{"main_keyword":"chính+phủ","require_keywords":"việt+nam","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"việt+nam","exclude_keywords":"mua+hàng"},{"main_keyword":"pháp+luật","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"cộng+sản","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]'
-          let urlAPi = '/ChartApi.aspx?key='+h+'&d1=2018-09-13&d2=2018-09-20&rt=0,1,2,3,4,5,6&callback=fb_trending_callback'
+          let urlAPi = '/TrendingApi.aspx?key=[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22mua+h%C3%A0ng%22},{%22main_keyword%22:%22ph%C3%A1p+lu%E1%BA%ADt%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]&d1=2018-09-13&d2=2018-09-20&rt=0,1,2,3,4,5,6&callback=fb_trending_callbackack'
           serviceTest.getUrlPulic(urlAPi,async function (err, data) {
+            console.log('databarrcjar',data)
             let dt  = JSON.parse(data);
 
             return res.send(dt);
@@ -44,15 +45,15 @@ module.exports = {
         getDataChart:function(req,res){
           try {
             let {city_id,d1,d2} = req.body
-            city_id = city_id||24
+            city_id = city_id||0
            let urlAPi = '/ChartApi.aspx?key='+keyword+'&d1='+d1+'&d2='+d2+'&rt=0,1,2,3,4,5,6&dr=4'+'&location='+city_id
            processingserver.callAPIWithUrlPublic(urlAPi+'&se=2,3', async function (err, data_positive) {
                //tích cực
 
              processingserver.callAPIWithUrlPublic(urlAPi+'&se=1', async function (err, data) {
-             let dt_positive  = JSON.parse(data);
+             let dt_positive  = JSON.parse(data_positive);
 
-             let dt  = JSON.parse(data_positive);
+             let dt  = JSON.parse(data);
 
              let {tab_results_count} = dt.charts
 
@@ -202,9 +203,10 @@ module.exports = {
 
 
              //Đồ thị tích cực tiêu cực
-             console.log('datalienchat',dt_positive.charts)
              let {sentiment_positive_count_per_day} = dt_positive.charts.chart_sentiment
              let {sentiment_negative_count_per_day}  = dt.charts.chart_sentiment
+             console.log('datalienchat',sentiment_positive_count_per_day,sentiment_negative_count_per_day)
+
              let row = []
              let resultLineChart = [
                ['x','Tích cực','Tiêu cực']
@@ -215,9 +217,9 @@ module.exports = {
              for(var index in sentiment_negative_count_per_day) {
                  row =[]
                  row[0]=index.substring(6,index.length)
-                 satisfy  =
-                 row[1] = sentiment_negative_count_per_day[index]
-                 row[2] = sentiment_positive_count_per_day[index]
+
+                 row[1] = sentiment_positive_count_per_day[index]
+                 row[2] = sentiment_negative_count_per_day[index]
                  resultLineChart[i++] = row
              }
              satisfy = resultLineChart[i-1][1] ?resultLineChart[i-1][1] *100/(resultLineChart[i-1][1] +resultLineChart[i-1][2]) :0
@@ -250,13 +252,13 @@ module.exports = {
               let {city_id,page,pagesize,se,d1,d2} = req.body
               page = page ||1,
               pagesize = pagesize || 6
-              city_id = city_id || 24
-              se = se || 2
+              city_id = city_id || 0
+              se = se || '1,2,3'
 
               console.log('se',se)
 
               if(city_id==0||!city_id)
-                  city_id = '24'
+                  city_id = '0'
               let urlAPi = '/PagingApi.aspx?key='+keyword+'&d1='+d1+'&d2='+d2+'&rt=0,1,2,3,4,5,6&dr=4&p='+page+'&se='+se+'&size='+pagesize+'&location='+city_id
               serviceTest.getUrlPulic(urlAPi,async function (err, data) {
                 let dt  = JSON.parse(data);

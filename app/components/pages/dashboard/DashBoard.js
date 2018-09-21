@@ -129,7 +129,7 @@ class DashBoard extends React.Component{
     let d2 = moment().format('YYYY-MM-DD');                          // 2018-09-11T02:46:15+07:00
     let d1 = moment().subtract(7, 'days').format('YYYY-MM-DD'); // 01/09/2018
      this.setState({d1,d2})
-    this.getDataChart('27',d1,d2);
+    this.getDataChart('0',d1,d2);
     // this.intervalId = setInterval(this.getCity_id.bind(this), 1000);
 
   }
