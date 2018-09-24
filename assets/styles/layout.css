@@ -313,6 +313,11 @@ padding-left: 104px !important;
   background-image: linear-gradient(123deg, #00398f, #086ed5,#0850bd) !important;
     /* background-image: linear-gradient(123deg, #00398f, #006bd7) !important; */
 }
+.MuiPaper-root-19{
+    background-image: url("../images/background.png");
+    background-image: linear-gradient(123deg, #00398f, #086ed5,#0850bd) !important;
+      /* background-image: linear-gradient(123deg, #00398f, #006bd7) !important; */
+  }
 .MuiTypography-subheading-79{
   font-family: Maven Pro !important;
   font-size: 13px !important;

@@ -6,7 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import StarIcon from '@material-ui/icons/Star';
-import VideoIcon from '@material-ui/icons/VideoCam';
+import VideoIcon from '@material-ui/icons/Videocam';
 import PeopleIcon from '@material-ui/icons/People';
 import FolderSharedIcon from '@material-ui/icons/FolderShared';
 import ReportIcon from '@material-ui/icons/Report';
