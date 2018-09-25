@@ -9,7 +9,6 @@ var RestfulHandler = require('../common/RestfulHandler');
 var processingserver = require('../commonwebuser/ProcessingServer');
 var LogHelper = require('../common/LogHelper.js');
 var lodash = require('lodash')
-
 var access_token ="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM3NTI2MjY4LCJpYXQiOjE1MzYzMTY2Njh9.oBe7m_tAZIMFrOpRinYCdIBabKgfZSE15YHWrC2sJsNtmYLIiV0U0BXmbc_e4UOvPv4K584Yn0nPzJUCEPzQdA"
 module.exports = {
 
@@ -66,7 +65,7 @@ module.exports = {
           }
       },
            //lấy thông kê liên quan đối tượng
-            get_new_statistic_daily:function(req,res){
+     get_new_statistic_daily:function(req,res){
               try {
                 let {topic} = req.body
                 topic = topic||71
@@ -148,16 +147,94 @@ module.exports = {
         } catch (error) {
           sails.log.error(error);
           return res.send(Ioutput.errServer(error));
-      }
+        }
       },
-      getDataLineChart(){
+     get_topKeyword:function(req,res){
+              try {
+                let {topic} = req.body
+                topic = topic||71
+                let dataTopic = []
+                dataTopic[0] = topic
 
-      },
-      getDataPieChart(){
+                let obj = {
+                  "topic":dataTopic,
+                  "date_from":"2018-09-08 00:00:00",
+                  "date_to":"2018-09-12 00:00:00",
+                  "event_master":"1"
+                }
+                var data = {
+                  "access_token":sails.config.access_token,
+                  "action":"/news/statistic-daily",
+                  "data":obj
+                };
 
-      },
+
+
+            processingserver.callPostAuth(data, async function (err, rs) {
+
+
+
+              if(rs.code==0){
+                if(rs.data){
+                //thống kê theo tích cực tiêu cực
+                let dataPieChart = []
+
+                dataPieChart[0] = ['Task', 'Hours per Day'],
+                dataPieChart[1] =[];
+                dataPieChart[2]=[]
+                dataPieChart[1][0]= "Tích cực"
+                dataPieChart[1][1]= rs.data["positive_count"]
+                dataPieChart[2][0]= "Tiêu cực"
+                dataPieChart[2][1]= rs.data["neutral_count"]
+                //  dataPieChart[3][0]= "Tình tiêu"
+                //  dataPieChart[3][1]= rs.data["Sentiment_count"]
+
+
+                //thống kê theo từng channel
+                rs.data.dataPieChart = dataPieChart
+
+                let dataPieChartWithChannel = []
+                dataPieChartWithChannel[0] = ['Task', 'Hours per Day']
+                dataPieChartWithChannel[1]=[]
+                dataPieChartWithChannel[2]=[]
+                dataPieChartWithChannel[3] = []
+                dataPieChartWithChannel[4] = []
+                dataPieChartWithChannel[5] = []
+                dataPieChartWithChannel[1][0]= "Facebook"
+                dataPieChartWithChannel[1][1]= rs.data["Social"].number
+                dataPieChartWithChannel[2][0]= "Báo chí"
+                dataPieChartWithChannel[2][1]= rs.data["News"].number
+                dataPieChartWithChannel[3][0]= "Diễn đàn"
+                dataPieChartWithChannel[3][1]=rs.data["Forum"].number
+                dataPieChartWithChannel[4][0]= "Blog"
+                dataPieChartWithChannel[4][1]=rs.data["Blog"].number
+                dataPieChartWithChannel[5][0]= "Khác"
+                dataPieChartWithChannel[5][1]=rs.data["Other"].number
+
+                rs.data.dataPieChartWithChannel = dataPieChartWithChannel
+                console.log('dâd',dataPieChartWithChannel)
+                return res.send(Ioutput.success(rs.data));
+
+              }
+            }
+            else{
+              sails.log.info(rs);
+
+                res.send(Ioutput.errServer(rs));
+            }
+
+
+
+
+
+          });
+        } catch (error) {
+          sails.log.error(error);
+          return res.send(Ioutput.errServer(error));
+        }
+     },
         //lấy thông kê liên trang domain
-        get_new_chartline_domain:function(req,res){
+      get_new_chartline_domain:function(req,res){
           try {
             let {topic,date_to,date_from} = req.body
             topic = topic||71
@@ -369,10 +446,10 @@ module.exports = {
             sails.log.error(error);
             return res.send(Ioutput.errServer(error));
           }
-        },
+      },
 
           //lấy dồ thị line liên trang domain
-          get_new_statistic_domain:function(req,res){
+      get_new_statistic_domain:function(req,res){
             try {
               let {topic} = req.body
               topic = topic||71

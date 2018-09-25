@@ -344,11 +344,10 @@ padding-right: 0px;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 
-  word-break: break-all;
   white-space: normal;
 
 
-  word-break:break-all;
+  /* word-break:break-all; */
   white-space:normal;
 }
 .status .info-status{

@@ -2,6 +2,9 @@ import React from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import Chart from 'react-google-charts'
 import axios from 'axios'
+
+import RestfulUtils from 'app/utils/RestfulUtils'
+
 import moment from 'moment'
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -53,14 +56,39 @@ module.exports = class Charts extends React.Component{
               title:"Tiêu chí 5"
 
             },
-          ]
+          ],
+          listTopTitleTrending:[[
+            'Density',
+            'số tin',
+            { role: 'style' },
+           //  {
+           //   sourceColumn: 0,
+           //   role: 'annotation',
+           //   type: 'string',
+           //   calc: 'stringify',
+           // },
+            {
+              sourceColumn: 1,
+              role: 'annotation',
+              type: 'string',
+              calc: 'stringify',
+            },
+          ],
+          ['Cộng sản', 41, '#ff0000', null],
+          ['Vòng xoay dần', 64, '#ff6900 ', null],
+          ['Hà Giang', 32,'#ffbb00', null],
+          ['Tự do',41, '#0092f1', null],
+          ['Hồ ngọc đại',98, '#00ce7d', null],
+
+        ]
     }
   }
   componentDidMount(){
     let self = this
-    axios.get('/dashboard/getDataLineChart')
-    .then((resdata)=>{
-        // self.setState({listDataPieChart:resdata.data.charts.dataPieChart})
+    RestfulUtils.post('/dashboard/getTopTitleTrending',{})
+    .then((res)=>{
+        if(res.EC==0)
+         self.setState({listTopTitleTrending:res.DT})
     })
   }
   render() {
@@ -72,31 +100,8 @@ module.exports = class Charts extends React.Component{
          height={'180px'}
          chartType="BarChart"
          loader={<div>Loading Chart</div>}
-         data={[
-           [
-             'Element',
-             'số tin',
-             { role: 'style' },
-            //  {
-            //   sourceColumn: 0,
-            //   role: 'annotation',
-            //   type: 'string',
-            //   calc: 'stringify',
-            // },
-             {
-               sourceColumn: 1,
-               role: 'annotation',
-               type: 'string',
-               calc: 'stringify',
-             },
-           ],
-           ['Cộng sản', 41, '#ff0000', null],
-           ['Vòng xoay dần', 64, '#ff6900 ', null],
-           ['Hà Giang', 32,'#ffbb00', null],
-           ['Tự do',41, '#0092f1', null],
-           ['Hồ ngọc đại',98, '#00ce7d', null],
-
-         ]}
+         data={this.state.listTopTitleTrending
+           }
          options={{
            title: 'XU HƯỚNG THẢO LUẬN CHÍNH',
            height: 180,

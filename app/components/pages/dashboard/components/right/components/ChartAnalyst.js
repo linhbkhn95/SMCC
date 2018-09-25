@@ -23,7 +23,45 @@ const data = {
 //   })
 // }
 module.exports = class Charts extends React.Component{
-
+  constructor(props){
+    super(props);
+    this.state = {
+       
+          listTopTitleTrending:[
+            [
+              'Element',
+              'số tin',
+              { role: 'style' },
+             //  {
+             //   sourceColumn: 0,
+             //   role: 'annotation',
+             //   type: 'string',
+             //   calc: 'stringify',
+             // },
+              {
+                sourceColumn: 1,
+                role: 'annotation',
+                type: 'string',
+                calc: 'stringify',
+              },
+            ],
+            ['Nhân dân tệ được sử dụng tại biên giới', 41, '#ff0000', null],
+            ['TBT Nguyễn Phú Trọng thăm Nga', 64, '#ff6900 ', null],
+            ['Dùng ký tự trong dạy tiếng việt', 32,'#ffbb00', null],
+            ['Bức xúc tại trường tiểu học Sơn Đồng',41, '#0092f1', null],
+            ['Nhà máy rác thải tại quảng ngãi và hải dương',98, '#00ce7d', null],
+ 
+          ]
+    }
+  }
+  componentDidMount(){
+    let self = this
+    RestfulUtils.post('/dashboard/getTopTitleTrending',{})
+    .then((res)=>{
+        if(res.EC==0)
+         self.setState({listTopTitleTrending:res.DT})
+    })
+  }
   render() {
     return (
       <div className="comment col-md-12 module" >
@@ -32,32 +70,8 @@ module.exports = class Charts extends React.Component{
          width={"100%"}
          height={'180px'}
          chartType="BarChart"
-         loader={<div>Loading Chart</div>}
-         data={[
-           [
-             'Element',
-             'số tin',
-             { role: 'style' },
-            //  {
-            //   sourceColumn: 0,
-            //   role: 'annotation',
-            //   type: 'string',
-            //   calc: 'stringify',
-            // },
-             {
-               sourceColumn: 1,
-               role: 'annotation',
-               type: 'string',
-               calc: 'stringify',
-             },
-           ],
-           ['Nhân dân tệ được sử dụng tại biên giới', 41, '#ff0000', null],
-           ['TBT Nguyễn Phú Trọng thăm Nga', 64, '#ff6900 ', null],
-           ['Dùng ký tự trong dạy tiếng việt', 32,'#ffbb00', null],
-           ['Bức xúc tại trường tiểu học Sơn Đồng',41, '#0092f1', null],
-           ['Nhà máy rác thải tại quảng ngãi và hải dương',98, '#00ce7d', null],
-
-         ]}
+         loader={<div>Tải dữ liệu</div>}
+         data={this.state.listTopTitleTrending}
          options={{
            title: 'PHÂN TÍCH NHÂN ĐỊNH VỀ XU HƯỚNG THẢO LUẬN',
            height: 180,
