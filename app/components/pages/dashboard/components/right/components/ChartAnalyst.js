@@ -1,6 +1,8 @@
 import React from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 import Chart from 'react-google-charts'
+import RestfulUtils from 'app/utils/RestfulUtils'
+
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [

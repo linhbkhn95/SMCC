@@ -80,8 +80,8 @@ module.exports.log = {
   *                                                                          *
   ***************************************************************************/
 
-  custom: logger,
-  level: 'verbose',
+  // custom: logger,
+  // level: 'verbose',
 
 
   // Disable captain's log so it doesn't prefix or stringify our meta data.
