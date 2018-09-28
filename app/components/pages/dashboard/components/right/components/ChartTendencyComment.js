@@ -83,13 +83,30 @@ module.exports = class Charts extends React.Component{
         ]
     }
   }
-  componentDidMount(){
+  // componentDidMount(){
+  //   let self = this
+  //   let {d1,d2} = this.props
+  //   let callback = 'fb_trending_callback'
+  //   RestfulUtils.post('/dashboard/getTopTitleTrending',{callback,d1,d2})
+  //   .then((res)=>{
+  //       if(res.EC==0)
+  //        self.setState({listTopTitleTrending:res.DT})
+  //   })
+  // }
+  getTopTitle(d1,d2){
+    let callback = 'fb_trending_callback'
     let self = this
-    RestfulUtils.post('/dashboard/getTopTitleTrending',{})
+    RestfulUtils.post('/dashboard/getTopTitleTrending',{callback,d1,d2})
     .then((res)=>{
-        if(res.EC==0)
+        if(res.EC==0&&res.DT.length>1)
          self.setState({listTopTitleTrending:res.DT})
     })
+  }
+  componentWillReceiveProps(nextProps){
+      let {d1,d2} = nextProps
+      if(d1!=this.props.d1||d2!=this.props.d2){
+         this.getTopTitle(d1,d2)
+      }
   }
   render() {
     return (

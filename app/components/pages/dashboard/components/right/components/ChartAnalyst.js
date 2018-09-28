@@ -28,7 +28,7 @@ module.exports = class Charts extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-       
+
           listTopTitleTrending:[
             [
               'Element',
@@ -52,17 +52,35 @@ module.exports = class Charts extends React.Component{
             ['Dùng ký tự trong dạy tiếng việt', 32,'#ffbb00', null],
             ['Bức xúc tại trường tiểu học Sơn Đồng',41, '#0092f1', null],
             ['Nhà máy rác thải tại quảng ngãi và hải dương',98, '#00ce7d', null],
- 
+
           ]
     }
   }
-  componentDidMount(){
+  // componentDidMount(){
+  //   let self = this
+  //   let callback = 'orm_trending_callback'
+  //   let {d1,d2} = this.props;
+  //   if(d1&&d2)
+  //   RestfulUtils.post('/dashboard/getTopTitleTrending',{callback,d1,d2})
+  //   .then((res)=>{
+  //       if(res.EC==0)
+  //        self.setState({listTopTitleTrending:res.DT})
+  //   })
+  // }
+  getTopTitle(d1,d2){
+    let callback = 'orm_trending_callback'
     let self = this
-    RestfulUtils.post('/dashboard/getTopTitleTrending',{})
+    RestfulUtils.post('/dashboard/getTopTitleTrending',{callback,d1,d2})
     .then((res)=>{
-        if(res.EC==0)
+        if(res.EC==0 &&res.DT.length>1)
          self.setState({listTopTitleTrending:res.DT})
     })
+  }
+  componentWillReceiveProps(nextProps){
+      let {d1,d2} = nextProps
+      if(d1!=this.props.d1||d2!=this.props.d2){
+         this.getTopTitle(d1,d2)
+      }
   }
   render() {
     return (

@@ -13,8 +13,8 @@ class DashBoard extends React.Component{
           <div className="right" >
               {/* <Comment /> */}
               <GaugeChart />
-              <BarChart />
-              <ChartAnalyst />
+              <BarChart d1={this.props.d1} d2={this.props.d2} />
+              <ChartAnalyst   d1={this.props.d1} d2={this.props.d2}  />
               <ChartTrend d1={this.props.d1} dataLineChart ={this.props.dataLineChart} city_id ={this.props.city_id}  />
 
 
