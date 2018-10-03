@@ -95,7 +95,11 @@ module.exports = class Charts extends React.Component{
          options={{
            title: 'PHÂN TÍCH NHÂN ĐỊNH VỀ XU HƯỚNG THẢO LUẬN',
            height: 180,
-
+           animation: {
+            startup: true,
+            easing: 'linear',
+            duration: 1500,
+          },
           //  colors: ['#b0120a', '#ffab91'],
            backgroundColor: '#002864',
            legendTextStyle: { color: '#FFF' },
@@ -134,7 +138,7 @@ module.exports = class Charts extends React.Component{
 
           } ,
 
-           bar: { groupWidth: '65%' },
+           bar: { groupWidth: '85%' },
            legend: { position: 'none' },
          }}
          style={{

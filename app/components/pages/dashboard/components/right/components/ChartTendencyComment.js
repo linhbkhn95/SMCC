@@ -122,7 +122,11 @@ module.exports = class Charts extends React.Component{
          options={{
            title: 'XU HƯỚNG THẢO LUẬN CHÍNH',
            height: 180,
-
+           animation: {
+            startup: true,
+            easing: 'linear',
+            duration: 1500,
+          },
           //  colors: ['#b0120a', '#ffab91'],
            backgroundColor: '#002864',
            legendTextStyle: { color: '#FFF' },
@@ -143,26 +147,43 @@ module.exports = class Charts extends React.Component{
              baselineColor: '#002864'
           },
           vAxis: {
+            textPosition:"none",
               textStyle: {
             color: "#FFFFFF",
             fontFamily: 'Maven Pro',
             fontName:'Maven Pro',
             fontSize: '10'
               },
+            format: 'decimal',
+
             gridlines: {
               color: "#fffff"
             },
             baselineColor: '#fffff',
 
            },
-
-           bar: { groupWidth: '65%' },
+           bars: 'horizontal',
+           visibleInLegend: true,
+           enableInteractivity: true,
+           axes: {
+            y: {
+              0: { side: 'right' },
+            },
+          },
+          chartArea:{
+            // backgroundColor: {
+            //   fill: '#00398f',
+            //   fillOpacity: 1
+            // },
+            width:'75%',
+          },
+          //  bar: { groupWidth: '85%' },
            legend: { position: 'none' },
          }}
          style={{
          }}
          // For tests
-         rootProps={{ 'data-testid': '6' }}
+         rootProps={{ 'data-testid': '2' }}
        />      </div>
 
     </div>

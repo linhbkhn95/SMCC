@@ -41,7 +41,7 @@ class TabShade extends React.Component{
         width={'100%'}
         height={'300px'}
         chartType="BarChart"
-        loader={<div>Loading Chart</div>}
+        loader={<div>Đang tải dữ liệu</div>}
         data={this.props.dataChart.dataPiechartWithDomain}
         options={{
           // Material design options

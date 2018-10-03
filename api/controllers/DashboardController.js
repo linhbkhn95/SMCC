@@ -64,10 +64,10 @@ module.exports = {
                 for(var i=0;i<result.length;i++){
                     let count = i+1
                     resultBarchart[i+1] = []
-                    resultBarchart[i+1][0] = result[i].key
+                    resultBarchart[i+1][0] = null
                     resultBarchart[i+1][1] = parseInt(result[i].doc_count) + parseInt(result[i].bg_count)
                     resultBarchart[i+1][2] = colors[i]
-                    resultBarchart[i+1][3] = result[i].key
+                    resultBarchart[i+1][3] = result[i].key +'-'   + resultBarchart[i+1][1]
                 }
 
                  return res.send(Ioutput.success(resultBarchart));
