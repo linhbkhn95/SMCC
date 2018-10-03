@@ -25,7 +25,7 @@ module.exports = {
    * Set the port in the production environment to 80                        *
    ***************************************************************************/
   port:1339,
-  access_token:"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM4MTQ3MTgwLCJpYXQiOjE1MzY5Mzc1ODB9.Tgstj7p-s3As6oAgMINhOJsAZNWwk7dGP_PPwrxMrIo4g3jkMKewUns5mbsrpKaOQ5Rb_rcvWIi7Ny_vLhKVbA",
+  access_token:"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjdWNfYXR0dF9tb25pdG9yIiwiZXhwIjoxNTM5ODAwNDE0LCJpYXQiOjE1Mzg1OTA4MTR9.d_ZI1PcXunj4tuG5V4XEk6OgmHd8IPiWpmS52ShJg1nVvaLAzWKTbgJ952UDIQmIQ3M2hwYIOBF_jTaPfivP2Q",
   // models: {
   //   connection: 'someMongodbServer'
   // }
