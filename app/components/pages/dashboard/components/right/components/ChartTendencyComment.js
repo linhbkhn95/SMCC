@@ -120,7 +120,7 @@ module.exports = class Charts extends React.Component{
          data={this.state.listTopTitleTrending
            }
          options={{
-           title: 'XU HƯỚNG THẢO LUẬN CHÍNH',
+           title: 'XU HƯỚNG THẢO LUẬN CHÍNH TRÊN MẠNG XÃ HỘI',
            height: 180,
            animation: {
             startup: true,

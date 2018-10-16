@@ -45,16 +45,16 @@ class InforChannel extends React.Component{
             </div>
       </div> */}
       <div style={{paddingTop:"20px"}} className="col-md-12 remove-padding-col">
-           <div className="col-md-4 remove-padding-col info-channel ">
+           <div className="col-md-4 col-sm-6 col-xs-6 remove-padding-col info-channel ">
                   <i className="fa fa-facebook" aria-hidden="true"></i>
                   {dataChannel.Social.number}
             </div>
-            <div className="col-md-4 remove-padding-col info-channel ">
+            <div className="col-md-4 col-sm-6 col-xs-6  remove-padding-col info-channel ">
             <i className="fa fa-newspaper-o" aria-hidden="true"></i>
             {dataChannel.News.number}
             </div>
 
-            <div className="col-md-4 remove-padding-col info-channel ">
+            <div className="col-md-4  col-sm-6 col-xs-6 remove-padding-col info-channel ">
             <i className="fa fa-forumbee" aria-hidden="true"></i>
             {dataChannel.Blog.number}
             </div>
@@ -67,11 +67,11 @@ class InforChannel extends React.Component{
 
 
 
-            <div className="col-md-4 remove-padding-col info-channel ">
+            <div className="col-md-4 col-sm-6 col-xs-6  remove-padding-col info-channel ">
                   <i className="fa fa-commenting" aria-hidden="true"></i>
                   {dataChannel.Forum.number}
             </div>
-            <div className="col-md-4 remove-padding-col info-channel ">
+            <div className="col-md-4 col-sm-6 col-xs-6  remove-padding-col info-channel ">
                   <i className="fa  fa-user-md" aria-hidden="true"></i>
                   {dataChannel.Other.number}
 

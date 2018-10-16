@@ -11,6 +11,7 @@ module.exports = {
           try {
                 let urlAPi = '/TrendingApi.aspx?&prjid=29421&prjid=29421&d1=2018-08-08&d2=2018-09-07&rt=0,1,2,3,4,5,6&dr=4&callback=fb_trending_callback'
                 processingserver.callAPIWithUrlPublic(urlAPi, async function (err, data) {
+
                   let dt  = JSON.parse(data);
                   // dt = dt.slice(0,5)
 
@@ -34,6 +35,7 @@ module.exports = {
           // let keyword = '[{"main_keyword":"chính+phủ","require_keywords":"việt+nam","exclude_keywords":""},{"main_keyword":"chính+sách","require_keywords":"việt+nam","exclude_keywords":"mua+hàng"},{"main_keyword":"pháp+luật","require_keywords":"","exclude_keywords":""},{"main_keyword":"luật+pháp","require_keywords":"","exclude_keywords":""},{"main_keyword":"chế+độ","require_keywords":"cộng+sản","exclude_keywords":""},{"main_keyword":"cộng+sản","require_keywords":"","exclude_keywords":""},{"main_keyword":"dân+chủ","require_keywords":"","exclude_keywords":""},{"main_keyword":"đường+lối","require_keywords":"","exclude_keywords":""},{"main_keyword":"đảng","require_keywords":"","exclude_keywords":""}]'
           let urlAPi = '/TrendingApi.aspx?key=[{%22main_keyword%22:%22ch%C3%ADnh+ph%E1%BB%A7%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%C3%ADnh+s%C3%A1ch%22,%22require_keywords%22:%22vi%E1%BB%87t+nam%22,%22exclude_keywords%22:%22mua+h%C3%A0ng%22},{%22main_keyword%22:%22ph%C3%A1p+lu%E1%BA%ADt%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22lu%E1%BA%ADt+ph%C3%A1p%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22ch%E1%BA%BF+%C4%91%E1%BB%99%22,%22require_keywords%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22c%E1%BB%99ng+s%E1%BA%A3n%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22d%C3%A2n+ch%E1%BB%A7%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%C6%B0%E1%BB%9Dng+l%E1%BB%91i%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22},{%22main_keyword%22:%22%C4%91%E1%BA%A3ng%22,%22require_keywords%22:%22%22,%22exclude_keywords%22:%22%22}]&d1='+d1+'&d2='+d2+'&rt=0,1,2,3,4,5,6&callback='+callback
           serviceTest.getUrlPulic(urlAPi,async function (err, data) {
+            console.log('getTopTitleTrending',data)
             let dt  = JSON.parse(data);
             let result = []
             if(dt.fb_trending_callback)

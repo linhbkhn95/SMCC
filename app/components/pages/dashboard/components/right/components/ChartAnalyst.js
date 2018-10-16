@@ -93,7 +93,7 @@ module.exports = class Charts extends React.Component{
          loader={<div>Tải dữ liệu</div>}
          data={this.state.listTopTitleTrending}
          options={{
-           title: 'PHÂN TÍCH NHÂN ĐỊNH VỀ XU HƯỚNG THẢO LUẬN',
+           title: 'XU HƯỚNG THẢO LUẬN CHÍNH TRÊN CÁC TRANG TIN',
            height: 180,
            animation: {
             startup: true,

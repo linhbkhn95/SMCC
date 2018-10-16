@@ -101,7 +101,7 @@ module.exports =class InfoPerSon extends React.Component{
                 <div style={{ display:'none',   marginTop: "100px",transform:" rotate(0deg)"}}  className="text-info-user" >
 
                    </div>
-                       <div style={{top: '30%',width:"200px",right: "4px",borderBottom:" 1.1px dotted #00ce7d"}} className="text-information" >
+                       <div style={{top: '30%',width:"224px",right: "4px",borderBottom:" 1.1px dotted #00ce7d"}} className="text-information" >
                             <strong style={{color:"#00ce7d"}}>{data.positive_count}</strong> thông tin tích cực
                     </div>
                     <div style={{    marginTop: "206px",transform:" rotate(18deg)"}}  className="text-info-user" >

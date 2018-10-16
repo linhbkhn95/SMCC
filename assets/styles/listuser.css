@@ -350,11 +350,12 @@ margin-right: 4px;
   padding-bottom: 3px;
 }
 .list-user  .info-detail .info-person .info-channel{
-
+  FONT-SIZE: 14PX;
+  FONT-WEIGHT: BOLD;
 }
 .list-user  .info-detail .info-person .info-channel i{
   /* font-family: Material-Design-Iconic-Font; */
-  font-size: 16px;
+  font-size: 22px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
